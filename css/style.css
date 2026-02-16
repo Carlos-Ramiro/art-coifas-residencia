@@ -171,3 +171,41 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
     gap: .35rem 1rem;
   }
 }
+/* ===========================
+   MOBILE: imagem NÃO como background
+   (PC continua fullscreen)
+   =========================== */
+@media (max-width: 991px){
+
+  .hero{
+    min-height: auto;          /* para de forçar tela inteira no mobile */
+    display: block;
+  }
+
+  /* a imagem deixa de ser camada absoluta no mobile */
+  .hero__bg{
+    position: relative;
+    inset: auto;
+    z-index: 1;
+  }
+
+  /* remove overlay pesado no mobile (opcional, mas melhora) */
+  .hero__overlay{
+    display: none;
+  }
+
+  /* conteúdo vem primeiro */
+  .hero__wrap{
+    padding: 2.2rem 1.25rem 1.25rem;
+  }
+
+  /* imagem aparece como “card” */
+  .hero__bg img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;       /* 800x600 */
+    object-fit: cover;
+    border-radius: 18px;
+  }
+}
+
