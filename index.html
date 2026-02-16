@@ -829,6 +829,109 @@
   </div>
 </section>
 
+<!-- ================= BLOCO AUTORIDADE NUMÉRICA ================= -->
+<section class="authority" aria-label="Autoridade e experiência da Art Coifas">
+  <style>
+    .authority{
+      background: linear-gradient(180deg,#ffffff 0%,#f4f7fb 100%);
+      padding:110px 0;
+      text-align:center;
+    }
+
+    .authority .wrap{
+      width:min(1100px, calc(100% - 4rem));
+      margin:0 auto;
+    }
+
+    .authority__title{
+      font-size: clamp(2rem, 1.3rem + 2vw, 2.8rem);
+      font-weight:900;
+      color:#0f2b46;
+      letter-spacing:-0.02em;
+      margin-bottom:22px;
+    }
+
+    .authority__subtitle{
+      max-width:70ch;
+      margin:0 auto 70px;
+      color:#475569;
+      font-size:1.05rem;
+      line-height:1.7;
+    }
+
+    .authority__grid{
+      display:grid;
+      gap:40px;
+    }
+
+    @media(min-width:768px){
+      .authority__grid{
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+
+    .authority__item h3{
+      font-size:3rem;
+      font-weight:900;
+      color:#0f2b46;
+      margin-bottom:10px;
+    }
+
+    .authority__item span{
+      display:block;
+      font-size:1rem;
+      color:#475569;
+      font-weight:600;
+    }
+
+    .authority__item{
+      position:relative;
+    }
+
+    .authority__item::after{
+      content:"";
+      position:absolute;
+      bottom:-20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:40px;
+      height:3px;
+      background:#d4a017;
+      border-radius:3px;
+    }
+  </style>
+
+  <div class="wrap">
+    <h2 class="authority__title">
+      Coifa Piramidal Sob Medida em Campinas
+    </h2>
+
+    <p class="authority__subtitle">
+      Cada projeto é desenvolvido conforme o espaço e a necessidade real de exaustão.
+      Não trabalhamos com modelos prontos — entregamos soluções sob medida,
+      com fabricação própria e padrão premium.
+    </p>
+
+    <div class="authority__grid">
+
+      <div class="authority__item">
+        <h3>+20</h3>
+        <span>Anos de experiência no mercado</span>
+      </div>
+
+      <div class="authority__item">
+        <h3>+10.000</h3>
+        <span>Projetos realizados em cozinhas e áreas gourmet</span>
+      </div>
+
+      <div class="authority__item">
+        <h3>+100</h3>
+        <span>Cidades atendidas a partir de Campinas</span>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
