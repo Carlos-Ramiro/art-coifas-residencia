@@ -428,6 +428,12 @@
         grid-template-columns: repeat(2, 1fr);
         gap:28px;
       }
+
+      /* ✅ AJUSTE 1 (SÓ PC): quebra depois de "Campinas," */
+      .testimonials__sub .subline:nth-child(2)::before{
+        content:"\A";
+        white-space:pre;
+      }
     }
 
     .tcard{
@@ -537,6 +543,17 @@
       margin-bottom:28px;
       line-height:1.6;
     }
+
+    /* ✅ AJUSTE 2 (SÓ PC): manter a frase em 1 linha no desktop */
+    @media (min-width: 992px){
+      .cta-footer__cta p{
+        max-width: 80ch;
+        margin-left:auto;
+        margin-right:auto;
+        white-space: nowrap;
+      }
+    }
+
     .btn--big{
       padding:18px 34px;
       font-size:1.05rem;
@@ -929,9 +946,7 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
 
     <div class="cta-footer__cta">
       <h2>Peça seu orçamento direto com a fábrica</h2>
-      <p>
-        Fale com quem realmente <br> entende de coifas sob medida.
-      </p>
+      <p>Fale com quem realmente entende de coifas sob medida.</p>
 
       <a class="btn btn--wa btn--big"
          href="https://wa.me/551932131636"
