@@ -189,7 +189,16 @@
 
       .title{max-width:18ch;}
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
+	  
+	    
+	  
     }
+
+
+
+
+
+
 
     /* ================= BLOCO 3 CARDS (Fundo escuro premium + amarelo) ================= */
 
@@ -243,70 +252,106 @@
       display:grid;
       gap:22px;
     }
+	
+	
+	
+	
+	
+	
     @media (min-width: 992px){
-      .flow__grid{ grid-template-columns: repeat(3, 1fr); gap:26px; }
-    }
+  .flow__grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap:32px;
+  }
+}
 
-    .flow__card{
-      position:relative;
-      border-radius:18px;
-      padding:34px 30px 30px;
-      background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 28px 70px rgba(0,0,0,.35);
-      overflow:hidden;
-      min-height: 210px;
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
-    }
+.flow__card{
+  position:relative;
+  border-radius:22px;
+  padding:42px 34px 38px;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.07) 0%,
+      rgba(255,255,255,.03) 100%
+    );
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+  overflow:hidden;
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease,
+    background .28s ease;
+}
 
-    .flow__card::after{
-      content:"";
-      position:absolute;
-      inset:-60%;
-      background: radial-gradient(circle at 30% 30%, rgba(212,160,23,.14), transparent 55%);
-      transform: rotate(10deg);
-      opacity:.5;
-      pointer-events:none;
-    }
+/* brilho sutil premium */
+.flow__card::after{
+  content:"";
+  position:absolute;
+  inset:-70%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(212,160,23,.18), transparent 55%);
+  transform: rotate(8deg);
+  opacity:.55;
+  pointer-events:none;
+}
 
-    .flow__card:hover{
-      transform: translateY(-8px);
-      border-color: rgba(212,160,23,.28);
-      box-shadow: 0 34px 90px rgba(0,0,0,.45);
-      background: linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.035) 100%);
-    }
+.flow__card:hover{
+  transform: translateY(-10px);
+  border-color: rgba(212,160,23,.35);
+  box-shadow:
+    0 40px 110px rgba(0,0,0,.55);
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.09) 0%,
+      rgba(255,255,255,.04) 100%
+    );
+}
 
-    .flow__num{
-      width:54px;
-      height:54px;
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      color: var(--gold);
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: inset 0 0 0 1px rgba(212,160,23,.10);
-      margin: 2px auto 18px;
-      font-size: 1.2rem;
-      letter-spacing:.02em;
-    }
+.flow__num{
+  width:62px;
+  height:62px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  color: var(--gold);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow:
+    inset 0 0 0 1px rgba(212,160,23,.15),
+    0 10px 25px rgba(0,0,0,.35);
+  margin: 4px auto 22px;
+  font-size: 1.3rem;
+  letter-spacing:.04em;
+}
 
-    .flow__card h3{
-      text-align:center;
-      font-size:1.18rem;
-      font-weight:900;
-      margin-bottom:12px;
-      letter-spacing:-0.01em;
-    }
+.flow__card h3{
+  text-align:center;
+  font-size:1.25rem;
+  font-weight:900;
+  margin-bottom:14px;
+  letter-spacing:-0.01em;
+  color:#fff;
+}
 
-    .flow__card p{
-      text-align:center;
-      color: rgba(255,255,255,.78);
-      line-height:1.7;
-      font-size:1rem;
-    }
+.flow__card p{
+  text-align:center;
+  color: rgba(255,255,255,.82);
+  line-height:1.75;
+  font-size:1.02rem;
+  max-width:32ch;
+}
+
+	
 
     /* ================= BLOCO ESTRUTURA (imagem + texto) ================= */
 
@@ -438,47 +483,58 @@
   </div>
 </header>
 
+
+
+
+
+
+
 <!-- 3 CARDS logo abaixo da HERO -->
-<section class="flow" aria-label="Etapas objetivas do atendimento">
+<section class="flow" aria-label="Etapas do atendimento">
   <div class="wrap">
-    <h2 class="flow__title">Esta é a <span class="accent">triagem técnica</span></h2>
+    <h2 class="flow__title">Atendimento <span class="accent">presencial</span> e sob medida</h2>
     <p class="flow__sub">
-      Etapas objetivas para organizar seu atendimento, alinhar o projeto e garantir um resultado premium —
-      do primeiro contato à instalação.
+      Você fala direto com a fábrica em Campinas. Nosso especialista vai até o local, define o melhor modelo com você
+      e entregamos a coifa pronta com acabamento premium.
     </p>
 
     <div class="flow__grid">
 
       <div class="flow__card">
         <div class="flow__num">01</div>
-        <h3>Contato inicial</h3>
+        <h3>Visita técnica no local</h3>
         <p>
-          Você descreve seu ambiente e envia medidas/fotos. Confirmamos Campinas e região,
-          tiramos dúvidas e definimos o melhor caminho para o seu projeto.
+          Agendamos a visita presencial para avaliar o ambiente, o fogão/cooktop e o layout da cozinha ou área gourmet.
+          Você não precisa medir nada.
         </p>
       </div>
 
       <div class="flow__card">
         <div class="flow__num">02</div>
-        <h3>Projeto e orçamento</h3>
+        <h3>Definição do modelo ideal</h3>
         <p>
-          Validamos o modelo sob medida (piramidal, ilha ou parede), definimos dimensões e acabamento
-          e retornamos com orçamento técnico alinhado ao padrão do ambiente.
+          Junto com você, definimos o melhor projeto: coifa de parede ou de ilha, acabamento inox ou pintura (preta e outras),
+          dimensões e detalhes do seu ambiente.
         </p>
       </div>
 
       <div class="flow__card">
         <div class="flow__num">03</div>
-        <h3>Fabricação e instalação</h3>
+        <h3>Fabricação + instalação</h3>
         <p>
-          Produção interna em inox com controle de qualidade e instalação profissional especializada,
-          garantindo encaixe preciso, estética final e performance real.
+          Produção interna com controle total do corte ao acabamento final. Instalação profissional especializada para encaixe preciso,
+          performance real e resultado premium.
         </p>
       </div>
 
     </div>
   </div>
 </section>
+
+
+
+
+
 
 <section class="structure">
   <div class="wrap">
@@ -519,6 +575,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 
 </body>
 </html>
