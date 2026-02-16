@@ -499,5 +499,173 @@
     </div>
   </div>
 </section>
+<!-- ================= DEPOIMENTOS (Premium, fundo escuro + cards brancos) ================= -->
+<section class="testimonials" aria-label="Depoimentos de clientes">
+  <style>
+    .testimonials{
+      background:
+        radial-gradient(900px 520px at 18% 22%, rgba(212,160,23,.10), transparent 55%),
+        radial-gradient(900px 520px at 82% 28%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, #07111c 0%, #0a1826 100%);
+      padding: 110px 0 95px;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .testimonials::before{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,.06), transparent 55%),
+        radial-gradient(circle at 80% 40%, rgba(212,160,23,.08), transparent 55%),
+        radial-gradient(circle at 65% 85%, rgba(255,255,255,.05), transparent 58%);
+      filter: blur(18px);
+      pointer-events:none;
+      opacity:.85;
+    }
+
+    .testimonials .wrap{ position:relative; z-index:1; }
+
+    .testimonials__title{
+      text-align:center;
+      font-size: clamp(2rem, 1.35rem + 2vw, 3rem);
+      line-height:1.12;
+      letter-spacing:-0.02em;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+    .testimonials__title .accent{ color:#d4a017; }
+
+    .testimonials__sub{
+      text-align:center;
+      max-width:78ch;
+      margin: 0 auto 52px;
+      color: rgba(255,255,255,.82);
+      line-height:1.7;
+      font-size:1.04rem;
+    }
+
+    .testimonials__grid{
+      display:grid;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (min-width: 992px){
+      .testimonials__grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap:28px;
+      }
+    }
+
+    .tcard{
+      background:#fff;
+      border-radius:16px;
+      padding:28px 28px 24px;
+      box-shadow: 0 28px 70px rgba(0,0,0,.35);
+      border: 1px solid rgba(0,0,0,.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height: 168px;
+    }
+
+    .tcard:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 36px 95px rgba(0,0,0,.42);
+    }
+
+    .tstars{
+      color:#d4a017;
+      letter-spacing:.14em;
+      font-size: .95rem;
+      margin-bottom: 12px;
+      line-height:1;
+    }
+
+    .tquote{
+      color:#1a2533;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .tquote em{
+      font-style: italic;
+      color:#1f2c3d;
+    }
+
+    .tauthor{
+      font-weight:900;
+      color:#0f2b46;
+      font-size: 1rem;
+    }
+
+    .testimonials__cta{
+      margin-top: 34px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .testimonials__cta a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.65rem;
+      padding:1.05rem 1.45rem;
+      border-radius:999px;
+      font-weight:900;
+      text-decoration:none;
+      background:#1fb85a;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 44px rgba(31,184,90,.22);
+      transition:.2s ease;
+      user-select:none;
+    }
+    .testimonials__cta a:hover{
+      transform: translateY(-2px);
+      box-shadow:0 22px 60px rgba(31,184,90,.28);
+    }
+  </style>
+
+  <div class="wrap">
+    <h2 class="testimonials__title">Depoimentos de quem <span class="accent">já instalou</span></h2>
+    <p class="testimonials__sub">
+      Atendimento direto com a fábrica em Campinas, projeto sob medida e instalação com acabamento premium.
+    </p>
+
+    <div class="testimonials__grid">
+      <article class="tcard">
+        <div>
+          <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+          <p class="tquote">
+            <em>"Atendimento profissional do início ao fim. A equipe ajudou na definição do modelo e a instalação ficou perfeita."</em>
+          </p>
+        </div>
+        <div class="tauthor">Eduardo A. Gomes</div>
+      </article>
+
+      <article class="tcard">
+        <div>
+          <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+          <p class="tquote">
+            <em>"Projeto sob medida, acabamento excelente e comunicação clara durante todo o processo."</em>
+          </p>
+        </div>
+        <div class="tauthor">Giovanna Santiago</div>
+      </article>
+    </div>
+
+    <div class="testimonials__cta">
+      <a class="btn--wa" href="https://wa.me/551932131636" target="_blank" rel="noopener">
+        Falar com um especialista no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
