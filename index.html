@@ -6,13 +6,18 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Coifa Piramidal Sob Medida em Campinas | Art Coifas</title>
   <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, acabamento premium e instalação profissional." />
+
   <!-- LCP MOBILE -->
   <link rel="preload" as="image" href="/images/hero-coifa-piramidal-mobile-800x600.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="/images/hero-coifa-piramidal-desktop-1920x1080.webp" />
+
   <style>
     :root{
       --brand:#0f2b46;
-      --gold:#d4a017;
+
+      /* amarelo mais claro (substitui o dourado/laranja) */
+      --gold:#ffd66b;
+
       --text:#ffffff;
       --muted:rgba(255,255,255,.86);
       --muted2:rgba(255,255,255,.76);
@@ -30,6 +35,7 @@
     }
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
+
     /* ================= HERO ================= */
     .hero{
       background: var(--brand);
@@ -119,6 +125,7 @@
       object-fit:cover;
     }
     .desktop-only{display:none;}
+
     @media (min-width: 992px){
       .desktop-only{display:inline;}
       .hero{
@@ -143,7 +150,7 @@
             rgba(15,43,70,.62) 52%,
             rgba(15,43,70,.20) 100%
           ),
-          radial-gradient(900px 600px at 20% 18%, rgba(212,160,23,.16), transparent 55%);
+          radial-gradient(900px 600px at 20% 18%, rgba(255,214,107,.18), transparent 55%);
         z-index:1;
         pointer-events:none;
       }
@@ -162,14 +169,12 @@
       }
       .title{max-width:18ch;}
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
-	  
-	    
-	  
     }
-    /* ================= BLOCO 3 CARDS (Fundo escuro premium + amarelo) ================= */
+
+    /* ================= BLOCO 3 CARDS ================= */
     .flow{
       background:
-        radial-gradient(900px 520px at 15% 20%, rgba(212,160,23,.10), transparent 55%),
+        radial-gradient(900px 520px at 15% 20%, rgba(255,214,107,.12), transparent 55%),
         radial-gradient(900px 520px at 85% 30%, rgba(31,184,90,.06), transparent 60%),
         linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
       padding:110px 0 95px;
@@ -183,7 +188,7 @@
       inset:-20%;
       background:
         radial-gradient(circle at 25% 25%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(circle at 80% 40%, rgba(212,160,23,.08), transparent 55%),
+        radial-gradient(circle at 80% 40%, rgba(255,214,107,.10), transparent 55%),
         radial-gradient(circle at 65% 85%, rgba(255,255,255,.05), transparent 58%);
       filter: blur(18px);
       pointer-events:none;
@@ -211,100 +216,92 @@
       display:grid;
       gap:22px;
     }
-	
-	
-	
-	
-	
-	
     @media (min-width: 992px){
-  .flow__grid{
-    grid-template-columns: repeat(3, 1fr);
-    gap:32px;
-  }
-}
-.flow__card{
-  position:relative;
-  border-radius:22px;
-  padding:42px 34px 38px;
-  background:
-    linear-gradient(180deg,
-      rgba(255,255,255,.07) 0%,
-      rgba(255,255,255,.03) 100%
-    );
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(255,255,255,.04);
-  overflow:hidden;
-  min-height:260px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  transition:
-    transform .28s ease,
-    border-color .28s ease,
-    box-shadow .28s ease,
-    background .28s ease;
-}
-/* brilho sutil premium */
-.flow__card::after{
-  content:"";
-  position:absolute;
-  inset:-70%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(212,160,23,.18), transparent 55%);
-  transform: rotate(8deg);
-  opacity:.55;
-  pointer-events:none;
-}
-.flow__card:hover{
-  transform: translateY(-10px);
-  border-color: rgba(212,160,23,.35);
-  box-shadow:
-    0 40px 110px rgba(0,0,0,.55);
-  background:
-    linear-gradient(180deg,
-      rgba(255,255,255,.09) 0%,
-      rgba(255,255,255,.04) 100%
-    );
-}
-.flow__num{
-  width:62px;
-  height:62px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  color: var(--gold);
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.16);
-  box-shadow:
-    inset 0 0 0 1px rgba(212,160,23,.15),
-    0 10px 25px rgba(0,0,0,.35);
-  margin: 4px auto 22px;
-  font-size: 1.3rem;
-  letter-spacing:.04em;
-}
-.flow__card h3{
-  text-align:center;
-  font-size:1.25rem;
-  font-weight:900;
-  margin-bottom:14px;
-  letter-spacing:-0.01em;
-  color:#fff;
-}
-.flow__card p{
-  text-align:center;
-  color: rgba(255,255,255,.82);
-  line-height:1.75;
-  font-size:1.02rem;
-  max-width:32ch;
-}
-	
-    /* ================= BLOCO ESTRUTURA (imagem + texto) ================= */
+      .flow__grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap:32px;
+      }
+    }
+    .flow__card{
+      position:relative;
+      border-radius:22px;
+      padding:42px 34px 38px;
+      background:
+        linear-gradient(180deg,
+          rgba(255,255,255,.07) 0%,
+          rgba(255,255,255,.03) 100%
+        );
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        inset 0 0 0 1px rgba(255,255,255,.04);
+      overflow:hidden;
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease,
+        background .28s ease;
+    }
+    .flow__card::after{
+      content:"";
+      position:absolute;
+      inset:-70%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,214,107,.20), transparent 55%);
+      transform: rotate(8deg);
+      opacity:.55;
+      pointer-events:none;
+    }
+    .flow__card:hover{
+      transform: translateY(-10px);
+      border-color: rgba(255,214,107,.38);
+      box-shadow: 0 40px 110px rgba(0,0,0,.55);
+      background:
+        linear-gradient(180deg,
+          rgba(255,255,255,.09) 0%,
+          rgba(255,255,255,.04) 100%
+        );
+    }
+    .flow__num{
+      width:62px;
+      height:62px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      color: var(--gold);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,214,107,.18),
+        0 10px 25px rgba(0,0,0,.35);
+      margin: 4px auto 22px;
+      font-size: 1.3rem;
+      letter-spacing:.04em;
+    }
+    .flow__card h3{
+      text-align:center;
+      font-size:1.25rem;
+      font-weight:900;
+      margin-bottom:14px;
+      letter-spacing:-0.01em;
+      color:#fff;
+    }
+    .flow__card p{
+      text-align:center;
+      color: rgba(255,255,255,.82);
+      line-height:1.75;
+      font-size:1.02rem;
+      max-width:32ch;
+    }
+
+    /* ================= BLOCO ESTRUTURA ================= */
     .structure{
       background:#ffffff;
       padding:100px 0;
@@ -368,8 +365,25 @@
       margin-top:0;
       border-color: rgba(15,43,70,0.10);
     }
+
+    /* ================= MOBILE AJUSTES (rigoroso, sem afetar PC) ================= */
+    @media (max-width: 768px){
+      /* reduzir respiro do HERO até o próximo título (~12%) */
+      .hero__inner{ padding: 1.9rem 0 1.05rem; }
+      .hero__media{ margin-top: 1.0rem; }
+      .flow{ padding: 94px 0 90px; } /* menor top, mantém premium */
+
+      /* Depoimentos: quebra depois de "quem" + sub sem quebra feia */
+      .testimonials__title .tbreak{ display:block; }
+      .testimonials__sub .subline{ display:block; }
+      .testimonials__sub{ max-width: 34ch; }
+
+      /* refininho para não sobrar espaço demais */
+      .testimonials{ padding: 98px 0 74px; }
+    }
   </style>
 </head>
+
 <body>
 <header class="hero">
   <div class="hero__inner">
@@ -377,29 +391,35 @@
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
       </div>
+
       <h1 class="title">
         Coifa Piramidal <span class="accent">Sob Medida</span> em Campinas
       </h1>
+
       <p class="lead">
         Fabricação própria de coifas piramidais sob medida para cozinhas e áreas gourmet.
         Atendimento técnico presencial, projeto personalizado e instalação profissional em Campinas e região.
       </p>
+
       <a class="btn btn--wa"
          href="https://wa.me/551932131636"
          target="_blank"
          rel="noopener">
         Agendar visita técnica pelo WhatsApp
       </a>
+
       <div class="micro">
         <span class="stars">★★★★★</span>
         <span><strong>Atendimento premium</strong> do projeto à instalação</span>
       </div>
+
       <ul class="bullets" aria-label="Diferenciais">
         <li><span class="check">✓</span> Projeto técnico personalizado</li>
         <li><span class="check">✓</span> Atendimento presencial sob agendamento</li>
         <li><span class="check">✓</span> Fabricação própria com padrão premium</li>
         <li><span class="check">✓</span> Instalação profissional especializada</li>
       </ul>
+
       <div class="hero__media">
         <img
           src="/images/hero-coifa-piramidal-mobile-800x600.webp"
@@ -414,6 +434,7 @@
     </div>
   </div>
 </header>
+
 <!-- 3 CARDS logo abaixo da HERO -->
 <section class="flow" aria-label="Etapas do atendimento">
   <div class="wrap">
@@ -422,6 +443,7 @@
       Você fala direto com a fábrica em Campinas. Nosso especialista vai até o local, define o melhor modelo com você
       e entregamos a coifa pronta com acabamento premium.
     </p>
+
     <div class="flow__grid">
       <div class="flow__card">
         <div class="flow__num">01</div>
@@ -431,6 +453,7 @@
           Você não precisa medir nada.
         </p>
       </div>
+
       <div class="flow__card">
         <div class="flow__num">02</div>
         <h3>Definição do modelo ideal</h3>
@@ -439,6 +462,7 @@
           dimensões e detalhes do seu ambiente.
         </p>
       </div>
+
       <div class="flow__card">
         <div class="flow__num">03</div>
         <h3>Fabricação + instalação</h3>
@@ -450,10 +474,10 @@
     </div>
   </div>
 </section>
+
 <section class="structure">
   <div class="wrap">
     <div class="structure__grid">
-
       <div class="structure__media">
         <img
           src="/images/fabricante-de-coifa-piramidal-em-campinas.webp"
@@ -495,19 +519,19 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-<!-- ================= DEPOIMENTOS (Premium, fundo escuro + cards brancos) ================= -->
+
+<!-- ================= DEPOIMENTOS ================= -->
 <section class="testimonials" aria-label="Depoimentos de clientes">
   <style>
     .testimonials{
       background:
-        radial-gradient(900px 520px at 18% 22%, rgba(212,160,23,.10), transparent 55%),
+        radial-gradient(900px 520px at 18% 22%, rgba(255,214,107,.12), transparent 55%),
         radial-gradient(900px 520px at 82% 28%, rgba(255,255,255,.06), transparent 60%),
         linear-gradient(180deg, #07111c 0%, #0a1826 100%);
-      padding: 110px 0 95px;
+      padding: 110px 0 77px; /* reduzido (compensa o respiro extra do CTA) */
       color:#fff;
       position:relative;
       overflow:hidden;
@@ -519,7 +543,7 @@
       inset:-20%;
       background:
         radial-gradient(circle at 25% 25%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(circle at 80% 40%, rgba(212,160,23,.08), transparent 55%),
+        radial-gradient(circle at 80% 40%, rgba(255,214,107,.10), transparent 55%),
         radial-gradient(circle at 65% 85%, rgba(255,255,255,.05), transparent 58%);
       filter: blur(18px);
       pointer-events:none;
@@ -536,7 +560,8 @@
       font-weight:900;
       margin-bottom:14px;
     }
-    .testimonials__title .accent{ color:#d4a017; }
+    .testimonials__title .accent{ color: var(--gold); }
+    .testimonials__title .tbreak{ display:inline; } /* mobile muda pra block */
 
     .testimonials__sub{
       text-align:center;
@@ -546,6 +571,7 @@
       line-height:1.7;
       font-size:1.04rem;
     }
+    .testimonials__sub .subline{ display:inline; } /* mobile muda pra block */
 
     .testimonials__grid{
       display:grid;
@@ -579,7 +605,7 @@
     }
 
     .tstars{
-      color:#d4a017;
+      color: var(--gold);
       letter-spacing:.14em;
       font-size: .95rem;
       margin-bottom: 12px;
@@ -605,6 +631,7 @@
 
     .testimonials__cta{
       margin-top: 34px;
+      margin-bottom: 18px; /* MAIS RESPIRO abaixo do botão */
       display:flex;
       justify-content:center;
     }
@@ -632,9 +659,13 @@
   </style>
 
   <div class="wrap">
-    <h2 class="testimonials__title">Depoimentos de quem <span class="accent">já instalou</span></h2>
+    <h2 class="testimonials__title">
+      Depoimentos de <span class="tbreak">quem</span> <span class="accent">já instalou</span>
+    </h2>
+
     <p class="testimonials__sub">
-      Atendimento direto com a fábrica em Campinas,<br> projeto sob medida e instalação com acabamento premium.
+      <span class="subline">Atendimento direto com a fábrica em Campinas,</span>
+      <span class="subline">projeto sob medida e instalação com acabamento premium.</span>
     </p>
 
     <div class="testimonials__grid">
@@ -666,6 +697,7 @@
     </div>
   </div>
 </section>
+
 <!-- ================= MODELOS DE COIFA ================= -->
 <section class="models" aria-label="Modelos de Coifa Piramidal Sob Medida">
   <style>
@@ -762,11 +794,10 @@
 
     <div class="models__grid">
 
-      <!-- CARD 1 -->
       <article class="model-card">
         <div class="model-card__image">
-          <img 
-            src="/images/fabrica-de-coifa-piramidal-em-campinas-sp.webp" 
+          <img
+            src="/images/fabrica-de-coifa-piramidal-em-campinas-sp.webp"
             alt="Coifa Piramidal em Inox sob medida em Campinas"
             width="800"
             height="600"
@@ -783,11 +814,10 @@
         </div>
       </article>
 
-      <!-- CARD 2 -->
       <article class="model-card">
         <div class="model-card__image">
-          <img 
-            src="/images/coifa-piramidal-churrasqueira-em-campinas.webp" 
+          <img
+            src="/images/coifa-piramidal-churrasqueira-em-campinas.webp"
             alt="Coifa Piramidal para Churrasqueira em Campinas"
             width="800"
             height="600"
@@ -796,7 +826,7 @@
           />
         </div>
         <div class="model-card__content">
-          <h3>Coifa Piramidal Gourmet para Chusrrasqueira Sob Medida</h3>
+          <h3>Coifa Piramidal Gourmet para Churrasqueira Sob Medida</h3>
           <p>
             Desenvolvida para áreas gourmet, com exaustão dimensionada conforme o uso da
             churrasqueira ou parrilla.
@@ -804,11 +834,10 @@
         </div>
       </article>
 
-      <!-- CARD 3 -->
       <article class="model-card">
         <div class="model-card__image">
-          <img 
-            src="/images/fabrica-de-coifa-piramidal-sob-medida-campinas-sp.webp" 
+          <img
+            src="/images/fabrica-de-coifa-piramidal-sob-medida-campinas-sp.webp"
             alt="Coifa Piramidal com Acabamento Personalizado em Campinas"
             width="800"
             height="600"
@@ -896,15 +925,13 @@
       transform:translateX(-50%);
       width:40px;
       height:3px;
-      background:#d4a017;
+      background: var(--gold);
       border-radius:3px;
     }
   </style>
 
   <div class="wrap">
-    <h2 class="authority__title">
-      Coifa Piramidal Sob Medida em Campinas
-    </h2>
+    <h2 class="authority__title">Coifa Piramidal Sob Medida em Campinas</h2>
 
     <p class="authority__subtitle">
       Cada projeto é desenvolvido conforme o espaço e a necessidade real de exaustão.
@@ -913,7 +940,6 @@
     </p>
 
     <div class="authority__grid">
-
       <div class="authority__item">
         <h3>+20</h3>
         <span>Anos de experiência no mercado</span>
@@ -928,13 +954,12 @@
         <h3>+100</h3>
         <span>Cidades atendidas a partir de Campinas</span>
       </div>
-
     </div>
   </div>
 </section>
+
 <section class="faq-dark">
   <div class="wrap">
-
     <h2 class="faq-dark__title">
       Perguntas frequentes sobre <span>coifa sob medida</span>
     </h2>
@@ -986,7 +1011,6 @@
       </div>
 
     </div>
-
   </div>
 </section>
 
@@ -1056,7 +1080,7 @@
 }
 
 .faq-dark__item.active{
-  border-color: rgba(212,160,23,.35);
+  border-color: rgba(255,214,107,.42);
   background: rgba(255,255,255,.08);
 }
 
@@ -1077,6 +1101,7 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
   });
 });
 </script>
+
 <section class="cta-footer">
   <div class="wrap">
 
@@ -1098,7 +1123,6 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
     <div class="cta-footer__divider"></div>
 
     <div class="cta-footer__info">
-
       <div class="cta-footer__col">
         <h3>Art Coifas</h3>
         <p>
@@ -1126,7 +1150,6 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
           Projeto sob medida e instalação profissional.
         </p>
       </div>
-
     </div>
 
     <div class="cta-footer__copy">
