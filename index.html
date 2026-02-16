@@ -14,10 +14,7 @@
   <style>
     :root{
       --brand:#0f2b46;
-
-      /* amarelo mais claro (substitui o dourado/laranja) */
       --gold:#ffd66b;
-
       --text:#ffffff;
       --muted:rgba(255,255,255,.86);
       --muted2:rgba(255,255,255,.76);
@@ -35,15 +32,15 @@
     }
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
+    .wrap{
+      width:min(1100px, calc(100% - 2.5rem));
+      margin:0 auto;
+    }
 
     /* ================= COMEÇO BLOCO: HERO ================= */
     .hero{
       background: var(--brand);
       color: var(--text);
-    }
-    .wrap{
-      width:min(1100px, calc(100% - 2.5rem));
-      margin:0 auto;
     }
     .eyebrow{
       display:inline-flex;
@@ -171,6 +168,7 @@
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
     }
     /* ================= FIM BLOCO: HERO ================= */
+
 
     /* ================= COMEÇO BLOCO: 3 CARDS (FLOW) ================= */
     .flow{
@@ -303,6 +301,7 @@
     }
     /* ================= FIM BLOCO: 3 CARDS (FLOW) ================= */
 
+
     /* ================= COMEÇO BLOCO: ESTRUTURA ================= */
     .structure{
       background:#ffffff;
@@ -369,6 +368,7 @@
     }
     /* ================= FIM BLOCO: ESTRUTURA ================= */
 
+
     /* ================= COMEÇO BLOCO: DEPOIMENTOS ================= */
     .testimonials{
       background:
@@ -403,8 +403,6 @@
       margin-bottom:14px;
     }
     .testimonials__title .accent{ color: var(--gold); }
-    .testimonials__title .tbreak{ display:inline; } /* MOBILE muda pra block */
-
     .testimonials__sub{
       text-align:center;
       max-width:78ch;
@@ -413,8 +411,8 @@
       line-height:1.7;
       font-size:1.04rem;
     }
-    .testimonials__sub .subline{ display:inline; } /* MOBILE muda pra block */
 
+    .testimonials__sub .subline{ display:inline; }
     .testimonials__grid{
       display:grid;
       gap:22px;
@@ -444,6 +442,7 @@
       transform: translateY(-6px);
       box-shadow: 0 36px 95px rgba(0,0,0,.42);
     }
+
     .tstars{
       color: var(--gold);
       letter-spacing:.14em;
@@ -495,21 +494,94 @@
     }
     /* ================= FIM BLOCO: DEPOIMENTOS ================= */
 
+
+    /* ================= COMEÇO BLOCO: CTA FOOTER (RODAPÉ) ================= */
+    .cta-footer{
+      padding:90px 0 40px;
+      background: linear-gradient(180deg, #0f2b46 0%, #081a2e 100%);
+      color:#fff;
+    }
+    .cta-footer__cta{
+      text-align:center;
+      max-width:700px;
+      margin:0 auto 70px;
+    }
+    .cta-footer__cta h2{
+      font-size:2rem;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+    .cta-footer__cta p{
+      color:rgba(255,255,255,.75);
+      margin-bottom:28px;
+      line-height:1.6;
+    }
+    .btn--big{
+      padding:18px 34px;
+      font-size:1.05rem;
+      font-weight:700;
+    }
+    .cta-footer__divider{
+      height:1px;
+      background:rgba(255,255,255,.08);
+      margin-bottom:60px;
+    }
+    .cta-footer__info{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:40px;
+      margin-bottom:40px;
+    }
+    .cta-footer__col h3{
+      font-size:1rem;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+    .cta-footer__col p{
+      font-size:.9rem;
+      line-height:1.6;
+      color:rgba(255,255,255,.7);
+    }
+    .cta-footer__col ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .cta-footer__col li{
+      margin-bottom:10px;
+    }
+    .cta-footer__col a{
+      color:rgba(255,255,255,.75);
+      text-decoration:none;
+      transition:.3s ease;
+    }
+    .cta-footer__col a:hover{
+      color:var(--gold);
+    }
+    .cta-footer__copy{
+      text-align:center;
+      font-size:.8rem;
+      color:rgba(255,255,255,.5);
+      border-top:1px solid rgba(255,255,255,.06);
+      padding-top:20px;
+    }
+    /* ================= FIM BLOCO: CTA FOOTER (RODAPÉ) ================= */
+
+
     /* ================= COMEÇO AJUSTES MOBILE ONLY ================= */
     @media (max-width: 768px){
-      /* MOBILE ONLY: reduzir respiro do HERO até o próximo título (~12%) */
+      /* MOBILE ONLY: reduzir respiro do HERO até o próximo título */
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
 
-      /* MOBILE ONLY: DEPOIMENTOS — quebra perfeita do título e descrição (sem <br> feio) */
-      .testimonials__title .tbreak{ display:block; } /* quebra depois de "Depoimentos de" */
+      /* MOBILE ONLY: depoimentos título e descrição sem quebra feia */
+      .testimonials{ padding: 98px 0 74px; }
       .testimonials__sub{
-        max-width: 36ch; /* controla a largura sem quebrar no meio */
+        max-width: 36ch;
         margin: 0 auto 46px;
       }
-      .testimonials__sub .subline{ display:block; } /* 2 linhas limpas */
-      .testimonials{ padding: 98px 0 74px; }
+      .testimonials__sub .subline{ display:block; }
     }
     /* ================= FIM AJUSTES MOBILE ONLY ================= */
   </style>
@@ -569,6 +641,7 @@
 </header>
 <!-- ================= FIM BLOCO: HERO (HTML) ================= -->
 
+
 <!-- ================= COMEÇO BLOCO: 3 CARDS (FLOW) (HTML) ================= -->
 <section class="flow" aria-label="Etapas do atendimento">
   <div class="wrap">
@@ -609,6 +682,7 @@
   </div>
 </section>
 <!-- ================= FIM BLOCO: 3 CARDS (FLOW) (HTML) ================= -->
+
 
 <!-- ================= COMEÇO BLOCO: ESTRUTURA (HTML) ================= -->
 <section class="structure">
@@ -660,11 +734,12 @@
 </section>
 <!-- ================= FIM BLOCO: ESTRUTURA (HTML) ================= -->
 
+
 <!-- ================= COMEÇO BLOCO: DEPOIMENTOS (HTML) ================= -->
 <section class="testimonials" aria-label="Depoimentos de clientes">
   <div class="wrap">
     <h2 class="testimonials__title">
-      Depoimentos de <span class="tbreak">quem</span> <span class="accent">já instalou</span>
+      Depoimentos de quem <span class="accent">já instalou</span>
     </h2>
 
     <p class="testimonials__sub">
@@ -703,8 +778,196 @@
 </section>
 <!-- ================= FIM BLOCO: DEPOIMENTOS (HTML) ================= -->
 
-<!-- A PARTIR DAQUI você pode manter seus outros blocos (MODELS, AUTHORITY, FAQ, CTA-FOOTER) como estavam.
-     Se quiser, eu aplico os marcadores COMEÇO/FIM neles também — mas como você já colou tudo, eu não vou reescrever
-     o resto aqui para não correr risco de eu alterar algo que você não pediu agora. -->
+
+<!-- ================= COMEÇO BLOCO: FAQ (HTML + JS) ================= -->
+<section class="faq-dark">
+  <div class="wrap">
+    <h2 class="faq-dark__title">
+      Perguntas frequentes sobre <span>coifa sob medida</span>
+    </h2>
+
+    <div class="faq-dark__list">
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          Vocês vendem coifas prontas?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Não. Cada coifa é fabricada sob medida, conforme as dimensões e necessidades do seu projeto.
+          Não trabalhamos com modelos prontos ou de catálogo.
+        </div>
+      </div>
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          Trabalham com coifa de vidro ou coifa de ilha?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Apenas em projetos especiais, sob consulta técnica.
+          Esta página é dedicada exclusivamente à fabricação de coifas piramidais sob medida.
+        </div>
+      </div>
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          A coifa é realmente feita sob medida?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Sim. Cada projeto é desenvolvido conforme as medidas exatas do ambiente,
+          tipo de instalação e acabamento desejado.
+        </div>
+      </div>
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          Atendem Campinas e região?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Sim. Atendemos Campinas e cidades da região metropolitana,
+          incluindo Indaiatuba, Valinhos, Jundiaí, Sumaré, Hortolândia e Monte Mor.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-dark{
+  padding:90px 0;
+  background: linear-gradient(180deg, #0f2b46 0%, #091a2c 100%);
+  color:#fff;
+}
+.faq-dark__title{
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:900;
+  margin-bottom:60px;
+}
+.faq-dark__title span{ color: var(--gold); }
+.faq-dark__list{
+  max-width:850px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.faq-dark__item{
+  background: rgba(255,255,255,.05);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  transition:.3s ease;
+}
+.faq-dark__question{
+  width:100%;
+  background:none;
+  border:none;
+  padding:22px 26px;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.faq-dark__question span{
+  font-size:1.4rem;
+  color: var(--gold);
+  transition:.3s ease;
+}
+.faq-dark__answer{
+  padding:0 26px 22px;
+  font-size:0.95rem;
+  color:rgba(255,255,255,.75);
+  line-height:1.7;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s ease;
+}
+.faq-dark__item.active{
+  border-color: rgba(255,214,107,.42);
+  background: rgba(255,255,255,.08);
+}
+.faq-dark__item.active .faq-dark__answer{ max-height:300px; }
+.faq-dark__item.active .faq-dark__question span{ transform: rotate(45deg); }
+</style>
+
+<script>
+document.querySelectorAll('.faq-dark__question').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const item = btn.parentElement;
+    item.classList.toggle('active');
+  });
+});
+</script>
+<!-- ================= FIM BLOCO: FAQ (HTML + JS) ================= -->
+
+
+<!-- ================= COMEÇO BLOCO: CTA FOOTER (RODAPÉ) ================= -->
+<section class="cta-footer">
+  <div class="wrap">
+
+    <div class="cta-footer__cta">
+      <h2>Peça seu orçamento direto com a fábrica</h2>
+      <p>
+        Envie medidas aproximadas e fotos do ambiente.
+        Receba orientação técnica personalizada e orçamento sob medida.
+      </p>
+
+      <a class="btn btn--wa btn--big"
+         href="https://wa.me/551932131636"
+         target="_blank"
+         rel="noopener">
+         Solicitar orçamento no WhatsApp
+      </a>
+    </div>
+
+    <div class="cta-footer__divider"></div>
+
+    <div class="cta-footer__info">
+      <div class="cta-footer__col">
+        <h3>Art Coifas</h3>
+        <p>
+          Segunda – Sexta: 08:00 – 17:00<br>
+          Sábado e Domingo: Fechado
+        </p>
+        <p>
+          Rua Doutor Eduardo Edarge Badaró, 1170<br>
+          Campinas – São Paulo
+        </p>
+      </div>
+
+      <div class="cta-footer__col">
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
+        </ul>
+      </div>
+
+      <div class="cta-footer__col">
+        <h3>Atendimento</h3>
+        <p>
+          Atendimento direto com a fábrica.<br>
+          Projeto sob medida e instalação profissional.
+        </p>
+      </div>
+    </div>
+
+    <div class="cta-footer__copy">
+      © 2026 Art Coifas. Todos os direitos reservados.
+    </div>
+
+  </div>
+</section>
+<!-- ================= FIM BLOCO: CTA FOOTER (RODAPÉ) ================= -->
+
 </body>
 </html>
