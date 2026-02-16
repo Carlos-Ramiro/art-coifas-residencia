@@ -133,7 +133,10 @@
     .desktop-only{display:none;}
 
     /* ===== DESKTOP (fullscreen com imagem 1920x1080 como BACKGROUND) ===== */
-    @media (min-width: 992px){
+    
+	
+	
+	@media (min-width: 992px){
       .desktop-only{display:inline;}
 
       .hero{
@@ -185,13 +188,26 @@
       }
 
       .bullets{
-        grid-template-columns: repeat(2, minmax(0,1fr));
-        gap:.35rem 1rem;
+        display:grid;
+        grid-template-columns: max-content max-content;
+        gap:.35rem 2.2rem;
+        justify-content:start;
+        width:max-content;
+        max-width:100%;
       }
 
       .title{max-width:18ch;}
     }
   </style>
+
+  
+  
+  
+  
+  
+  
+  
+  
 </head>
 
 <body>
