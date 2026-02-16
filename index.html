@@ -656,7 +656,52 @@
       transform: translateY(-2px);
       box-shadow:0 22px 60px rgba(31,184,90,.28);
     }
+
+    /* ✅ AJUSTE SÓ MOBILE: quebra depois de "quem" */
+    @media (max-width: 768px){
+      .testimonials__title .tbreak{ display:block; }
+    }
   </style>
+
+  <div class="wrap">
+    <h2 class="testimonials__title">
+      Depoimentos de quem <span class="tbreak"></span><span class="accent">já instalou</span>
+    </h2>
+
+    <p class="testimonials__sub">
+      Atendimento direto com a fábrica em Campinas,<br> projeto sob medida e instalação com acabamento premium.
+    </p>
+
+    <div class="testimonials__grid">
+      <article class="tcard">
+        <div>
+          <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+          <p class="tquote">
+            <em>"Atendimento profissional do início ao fim. A equipe ajudou na definição do modelo e a instalação ficou perfeita."</em>
+          </p>
+        </div>
+        <div class="tauthor">Eduardo A. Gomes</div>
+      </article>
+
+      <article class="tcard">
+        <div>
+          <div class="tstars" aria-label="5 estrelas">★★★★★</div>
+          <p class="tquote">
+            <em>"Projeto sob medida, acabamento excelente e comunicação clara durante todo o processo."</em>
+          </p>
+        </div>
+        <div class="tauthor">Giovanna Santiago</div>
+      </article>
+    </div>
+
+    <div class="testimonials__cta">
+      <a class="btn--wa" href="https://wa.me/551932131636" target="_blank" rel="noopener">
+        Falar com um especialista no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
 
   <div class="wrap">
     <h2 class="testimonials__title">
