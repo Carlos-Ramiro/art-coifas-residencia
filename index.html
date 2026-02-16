@@ -201,7 +201,7 @@
       .title{max-width:18ch;}
     }
 
-    /* ================= BLOCO DIFERENCIAIS (CARDS VIDRO AZUL) ================= */
+    /* ================= BLOCO DIFERENCIAIS (CARDS VIDRO AZUL TRANSPARENTE) ================= */
 
     .why{
       background:
@@ -211,7 +211,6 @@
       padding:110px 0;
     }
 
-    /* título mais poderoso e quebra limpa (2 linhas no mobile) */
     .why__title{
       text-align:center;
       font-size:clamp(2rem, 1.3rem + 2.1vw, 2.9rem);
@@ -231,40 +230,45 @@
       .why__grid{grid-template-columns:repeat(2,1fr);}
     }
 
+    /* ✅ AQUI É O VIDRO “DE VERDADE”: opacidade BAIXA + blur + borda */
     .why__card{
       position:relative;
       padding:44px 38px;
       border-radius:24px;
-
-      /* VIDRO AZUL */
-      background: rgba(15,43,70,.55);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-
-      border: 1px solid rgba(255,255,255,.22);
-      box-shadow:
-        0 22px 55px rgba(15,43,70,.16),
-        inset 0 0 0 1px rgba(255,255,255,.06);
-
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
       overflow:hidden;
+
+      /* vidro azul transparente */
+      background: rgba(15,43,70,.18);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(15,43,70,.18);
+      box-shadow:
+        0 22px 55px rgba(15,43,70,.10),
+        inset 0 0 0 1px rgba(255,255,255,.08);
+
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
     }
+
+    /* brilho/gradiente interno bem sutil (não “cinza chapado”) */
     .why__card::before{
       content:"";
       position:absolute;
-      inset:-2px;
+      inset:0;
       background:
-        radial-gradient(380px 200px at 20% 10%, rgba(212,160,23,.20), transparent 55%),
-        radial-gradient(420px 220px at 85% 40%, rgba(255,255,255,.10), transparent 60%);
+        radial-gradient(380px 200px at 18% 12%, rgba(212,160,23,.16), transparent 60%),
+        radial-gradient(420px 240px at 88% 40%, rgba(255,255,255,.14), transparent 65%),
+        linear-gradient(135deg, rgba(15,43,70,.16), rgba(15,43,70,.06));
+      opacity:.75;
       pointer-events:none;
-      opacity:.65;
     }
 
     .why__card:hover{
       transform: translateY(-10px);
-      background: rgba(15,43,70,.62);
+      background: rgba(15,43,70,.22);
+      border-color: rgba(15,43,70,.22);
       box-shadow:
-        0 34px 85px rgba(15,43,70,.28),
+        0 34px 85px rgba(15,43,70,.16),
         inset 0 0 0 1px rgba(255,255,255,.12);
     }
 
@@ -280,7 +284,7 @@
       align-items:center;
       justify-content:center;
       font-weight:900;
-      box-shadow:0 14px 28px rgba(0,0,0,.18);
+      box-shadow:0 14px 28px rgba(0,0,0,.12);
       margin-bottom:18px;
     }
 
@@ -290,7 +294,7 @@
       margin-bottom:14px;
       font-size:1.25rem;
       font-weight:800;
-      color:#ffffff;         /* branco (permitido) */
+      color:#ffffff; /* branco */
       letter-spacing:-0.01em;
     }
 
@@ -299,7 +303,7 @@
       z-index:1;
       font-size:1rem;
       line-height:1.65;
-      color: rgba(255,255,255,.88);  /* branco suave */
+      color: rgba(255,255,255,.88); /* branco suave */
     }
 
     /* ================= BLOCO EMPRESA (IMAGEM + TEXTO) ================= */
@@ -381,7 +385,6 @@
       box-shadow: 0 18px 48px rgba(15,43,70,.14);
     }
 
-    /* ajuste de botões no mobile (não estourar) */
     @media(max-width:420px){
       .btn{white-space:normal; text-align:center; line-height:1.2;}
     }
