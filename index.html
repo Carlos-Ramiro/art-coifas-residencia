@@ -932,6 +932,151 @@
     </div>
   </div>
 </section>
+<section class="faq-dark">
+  <div class="wrap">
+
+    <h2 class="faq-dark__title">
+      Perguntas frequentes sobre <span>coifa sob medida</span>
+    </h2>
+
+    <div class="faq-dark__list">
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          Vocês vendem coifas prontas?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Não. Cada coifa é fabricada sob medida, conforme as dimensões e necessidades do seu projeto.
+          Não trabalhamos com modelos prontos ou de catálogo.
+        </div>
+      </div>
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          Trabalham com coifa de vidro ou coifa de ilha?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Apenas em projetos especiais, sob consulta técnica.
+          Esta página é dedicada exclusivamente à fabricação de coifas piramidais sob medida.
+        </div>
+      </div>
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          A coifa é realmente feita sob medida?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Sim. Cada projeto é desenvolvido conforme as medidas exatas do ambiente,
+          tipo de instalação e acabamento desejado.
+        </div>
+      </div>
+
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">
+          Atendem Campinas e região?
+          <span>+</span>
+        </button>
+        <div class="faq-dark__answer">
+          Sim. Atendemos Campinas e cidades da região metropolitana,
+          incluindo Indaiatuba, Valinhos, Jundiaí, Sumaré, Hortolândia e Monte Mor.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.faq-dark{
+  padding:90px 0;
+  background: linear-gradient(180deg, #0f2b46 0%, #091a2c 100%);
+  color:#fff;
+}
+
+.faq-dark__title{
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:900;
+  margin-bottom:60px;
+}
+
+.faq-dark__title span{
+  color: var(--gold);
+}
+
+.faq-dark__list{
+  max-width:850px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.faq-dark__item{
+  background: rgba(255,255,255,.05);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  transition:.3s ease;
+}
+
+.faq-dark__question{
+  width:100%;
+  background:none;
+  border:none;
+  padding:22px 26px;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.faq-dark__question span{
+  font-size:1.4rem;
+  color: var(--gold);
+  transition:.3s ease;
+}
+
+.faq-dark__answer{
+  padding:0 26px 22px;
+  font-size:0.95rem;
+  color:rgba(255,255,255,.75);
+  line-height:1.7;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s ease;
+}
+
+.faq-dark__item.active{
+  border-color: rgba(212,160,23,.35);
+  background: rgba(255,255,255,.08);
+}
+
+.faq-dark__item.active .faq-dark__answer{
+  max-height:300px;
+}
+
+.faq-dark__item.active .faq-dark__question span{
+  transform: rotate(45deg);
+}
+</style>
+
+<script>
+document.querySelectorAll('.faq-dark__question').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const item = btn.parentElement;
+    item.classList.toggle('active');
+  });
+});
+</script>
 
 </body>
 </html>
