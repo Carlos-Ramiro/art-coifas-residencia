@@ -1,9 +1,10 @@
 /* =========================
    ART COIFAS — ULTRA PREMIUM (LEVÍSSIMO)
-   Paleta:
-   - Navy: #0f2b46
-   - Gold: elegante (destaque)
-   - Verde: CTA WhatsApp
+   Ajustes deste round:
+   - accent mais “vivo premium”
+   - mobile: mais respiro no topo + centralizar até o CTA
+   - cards mais vitrificados e com presença
+   - vitrine com imagem da fábrica acima dos 3 modelos
    ========================= */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,8 +14,10 @@
   --navy-2: #0b2236;
   --navy-3: #071a2b;
 
-  --gold: #d6b36a;       /* dourado elegante */
-  --gold-soft: rgba(214,179,106,.18);
+  /* Accent: mais premium e menos “apagado” */
+  --gold: #f2c86e; /* dourado claro elegante */
+  --gold-deep: #e0aa3e;
+  --gold-soft: rgba(242,200,110,.20);
 
   --cta: #16a34a;
 
@@ -36,7 +39,6 @@
   --shadow-soft: 0 12px 34px rgba(15, 23, 42, 0.10);
   --shadow-strong: 0 18px 56px rgba(0,0,0,0.22);
 
-  /* Serif premium (sem carregar Google Font) */
   --serif: ui-serif, Georgia, "Times New Roman", Times, serif;
   --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
@@ -82,11 +84,11 @@ body{
   margin-top: 12px;
   font-size: 16px;
   line-height: 1.6;
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.92);
 }
 
 .lead .muted{
-  color: rgba(255,255,255,.76);
+  color: rgba(255,255,255,.78);
 }
 
 .text{
@@ -151,13 +153,19 @@ body{
 .hero{
   background: radial-gradient(1200px 620px at 20% 0%, var(--navy), var(--navy-3));
   color: var(--light);
-  padding: 28px 0 22px;
+  /* mais respiro no topo no mobile */
+  padding: 44px 0 22px;
   position: relative;
 }
 
 .hero__grid{
   display: grid;
   gap: 16px;
+}
+
+/* centralizar tudo até o CTA no mobile */
+.hero__content{
+  text-align: center;
 }
 
 .hero__eyebrow{
@@ -175,13 +183,15 @@ body{
   gap: 10px;
 }
 
+/* NÃO mexer no botão até a imagem:
+   Mantive o mesmo fluxo e espaçamentos */
 .microproof{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   font-size: 13px;
-  color: rgba(255,255,255,.82);
+  color: rgba(255,255,255,.84);
 }
 
 .stars{ color: var(--gold); letter-spacing: 1px; }
@@ -192,13 +202,14 @@ body{
   display: grid;
   gap: 8px;
   padding: 0;
+  justify-items: center;
 }
 
 .bullets li{
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgba(255,255,255,.88);
+  color: rgba(255,255,255,.90);
   font-size: 14px;
 }
 
@@ -209,8 +220,8 @@ body{
   border-radius: 8px;
   align-items: center;
   justify-content: center;
-  background: rgba(214,179,106,.14);
-  border: 1px solid rgba(214,179,106,.25);
+  background: rgba(242,200,110,.16);
+  border: 1px solid rgba(242,200,110,.28);
   color: var(--gold);
   font-weight: 900;
 }
@@ -232,9 +243,9 @@ body{
 .hero__divider{
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(214,179,106,.55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(242,200,110,.65), transparent);
   margin-top: 18px;
-  opacity: .85;
+  opacity: .90;
 }
 
 /* -------------------------
@@ -270,15 +281,37 @@ body{
 }
 
 .glass{
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.90);
 }
 
-@supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))){
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))){
   .glass{
-    background: rgba(255,255,255,0.72);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.76);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
+}
+
+/* Cards premium: mais presença (sem pesar) */
+.card--premium{
+  position: relative;
+  border: 1px solid rgba(15, 43, 70, 0.10);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.10);
+}
+
+.card--premium::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  pointer-events:none;
+  background: linear-gradient(135deg, rgba(242,200,110,.10), transparent 45%);
+}
+
+.card--premium:hover{
+  transform: translateY(-6px);
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
 }
 
 .badge{
@@ -290,9 +323,15 @@ body{
   justify-content: center;
 
   background: var(--gold-soft);
-  border: 1px solid rgba(214,179,106,.26);
+  border: 1px solid rgba(242,200,110,.30);
   margin-bottom: 12px;
   font-size: 20px;
+}
+
+.badge--premium{
+  background: rgba(15,43,70,.06);
+  border: 1px solid rgba(242,200,110,.38);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
 }
 
 /* -------------------------
@@ -341,15 +380,15 @@ body{
   height: 10px;
   border-radius: 999px;
   background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(214,179,106,.18);
+  box-shadow: 0 0 0 4px rgba(242,200,110,.18);
 }
 
 .note{
   margin-top: 14px;
   padding: 14px;
   border-radius: var(--radius-md);
-  background: rgba(214,179,106,.10);
-  border: 1px solid rgba(214,179,106,.22);
+  background: rgba(242,200,110,.12);
+  border: 1px solid rgba(242,200,110,.24);
   color: #1a2b3b;
   font-size: 14px;
 }
@@ -368,7 +407,7 @@ body{
 .quote p{
   margin-top: 10px;
   line-height: 1.6;
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.92);
 }
 
 .who{
@@ -376,6 +415,29 @@ body{
   margin-top: 10px;
   color: rgba(255,255,255,.72);
   font-size: 13px;
+}
+
+/* -------------------------
+   FACTORY SHOWCASE (acima da vitrine)
+   ------------------------- */
+
+.factory-showcase{
+  margin-top: 22px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(15, 43, 70, 0.10);
+  box-shadow: var(--shadow-soft);
+  background: rgba(255,255,255,0.92);
+}
+
+.factory-showcase__media img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.factory-showcase__body{
+  padding: 18px 18px 20px;
 }
 
 /* -------------------------
@@ -395,6 +457,11 @@ body{
 
 .model__body{
   padding: 18px 18px 20px;
+}
+
+.model--premium{
+  border: 1px solid rgba(15, 43, 70, 0.10);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.10);
 }
 
 /* -------------------------
@@ -424,8 +491,8 @@ body{
   justify-content: center;
   font-weight: 900;
   font-family: var(--sans);
-  background: rgba(214,179,106,.16);
-  border: 1px solid rgba(214,179,106,.26);
+  background: rgba(242,200,110,.16);
+  border: 1px solid rgba(242,200,110,.26);
   color: #7b5a1c;
   margin-bottom: 10px;
 }
@@ -535,6 +602,7 @@ body{
   .h2{ font-size: 38px; }
 
   .btn--whatsapp{ width: auto; padding: 15px 20px; font-size: 17px; }
+
   .hero{ padding: 64px 0 34px; }
 
   .hero__grid{
@@ -543,10 +611,17 @@ body{
     align-items: center;
   }
 
-  .hero__content{ text-align: left; }
+  .hero__content{
+    text-align: left;
+  }
+
   .microproof{ justify-content: flex-start; }
   .hero__actions{ max-width: 520px; }
-  .bullets{ grid-template-columns: 1fr 1fr; }
+
+  .bullets{
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+  }
 
   .grid--2{ grid-template-columns: 1fr 1fr; gap: 18px; }
   .grid--3{ grid-template-columns: repeat(3, 1fr); gap: 18px; }

@@ -9,7 +9,7 @@
   <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, projeto personalizado e instalação profissional. Peça orçamento direto no WhatsApp." />
 
   <!-- LCP (MOBILE) -->
-  <link rel="preload" as="image" href="images/fabrica-de-coifas-piramidal.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/fabrica-de-coifa-piramidal-sob-medida-campinas-sp.webp" fetchpriority="high" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -62,15 +62,20 @@
       </div>
 
       <div class="hero__media">
-        <img
-          src="images/fabrica-de-coifas-piramidal.webp"
-          alt="Coifa piramidal sob medida em cozinha moderna"
-          width="800"
-          height="600"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <!-- Desktop: imagem grande 1920x1080
+             Mobile: imagem 800x600 dedicada (LCP) -->
+        <picture>
+          <source media="(min-width: 992px)" srcset="images/coifa-piramidal-sob-medida-campinas.webp">
+          <img
+            src="images/fabrica-de-coifa-piramidal-sob-medida-campinas-sp.webp"
+            alt="Coifa piramidal sob medida em Campinas, acabamento premium"
+            width="800"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
     </div>
 
@@ -88,20 +93,20 @@
       </p>
 
       <div class="grid grid--3">
-        <article class="card glass">
-          <div class="badge" aria-hidden="true">🏭</div>
+        <article class="card glass card--premium">
+          <div class="badge badge--premium" aria-hidden="true">🏭</div>
           <h3 class="h3">Fabricação Própria</h3>
           <p class="text">Controle total da produção e do acabamento final para manter padrão premium.</p>
         </article>
 
-        <article class="card glass">
-          <div class="badge" aria-hidden="true">📐</div>
+        <article class="card glass card--premium">
+          <div class="badge badge--premium" aria-hidden="true">📐</div>
           <h3 class="h3">Projeto Sob Medida</h3>
           <p class="text">Medidas exatas para seu ambiente (cozinha, área gourmet, churrasqueira).</p>
         </article>
 
-        <article class="card glass">
-          <div class="badge" aria-hidden="true">🛠️</div>
+        <article class="card glass card--premium">
+          <div class="badge badge--premium" aria-hidden="true">🛠️</div>
           <h3 class="h3">Instalação Profissional</h3>
           <p class="text">Equipe preparada para garantir segurança, desempenho e acabamento impecável.</p>
         </article>
@@ -113,10 +118,9 @@
   <section class="section">
     <div class="container split">
       <div class="split__media">
-        <!-- Placeholder: troque por foto real da fábrica quando tiver -->
         <img
-          src="images/fabrica-de-coifas-piramidal.webp"
-          alt="Estrutura de produção (imagem ilustrativa)"
+          src="images/fabricante-de-coifa-piramidal-em-campinas.webp"
+          alt="Fabricação de coifas sob medida em Campinas — estrutura e produção própria"
           width="800"
           height="600"
           loading="lazy"
@@ -166,31 +170,70 @@
     </div>
   </section>
 
-  <!-- MODELOS (VITRINE) -->
+  <!-- VITRINE: IMAGEM DA FÁBRICA + 3 MODELOS -->
   <section class="section section--muted">
     <div class="container">
       <h2 class="h2 center">Modelos de <span class="accent">Coifa Piramidal</span></h2>
-      <p class="sub center">Vitrine ilustrativa. Você troca as imagens por fotos reais quando quiser — o layout já está “travado”.</p>
+      <p class="sub center">Vitrine ilustrativa com padrão premium. As imagens já estão tratadas e leves.</p>
+
+      <!-- imagem da fábrica (acima dos 3 modelos) -->
+      <article class="factory-showcase">
+        <div class="factory-showcase__media">
+          <img
+            src="images/fabricante-de-coifa-piramidal-em-campinas.webp"
+            alt="Fábrica de coifas sob medida em Campinas — fabricação própria Art Coifas"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="factory-showcase__body">
+          <h3 class="h3">Fabricação própria em Campinas</h3>
+          <p class="text">Produção interna para manter controle total do projeto, do acabamento e do padrão final.</p>
+        </div>
+      </article>
 
       <div class="grid grid--3">
-        <article class="model card">
-          <img src="images/fabrica-de-coifas-piramidal.webp" alt="Modelo 1 (substituir por foto real)" width="800" height="600" loading="lazy" decoding="async" />
+        <article class="model card model--premium">
+          <img
+            src="images/fabrica-de-coifa-piramidal-em-campinas-sp.webp"
+            alt="Coifa piramidal sob medida em Campinas — modelo inox premium"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="model__body">
             <h3 class="h3">Inox Escovado</h3>
             <p class="text">Visual clássico premium com acabamento limpo e elegante.</p>
           </div>
         </article>
 
-        <article class="model card">
-          <img src="images/fabrica-de-coifas-piramidal.webp" alt="Modelo 2 (substituir por foto real)" width="800" height="600" loading="lazy" decoding="async" />
+        <article class="model card model--premium">
+          <img
+            src="images/coifa-piramidal-churrasqueira-em-campinas.webp"
+            alt="Coifa piramidal para churrasqueira em Campinas — projeto sob medida"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="model__body">
-            <h3 class="h3">Preto Fosco</h3>
-            <p class="text">Estética contemporânea para cozinhas e áreas gourmet.</p>
+            <h3 class="h3">Para Churrasqueira</h3>
+            <p class="text">Projetada para áreas gourmet com exaustão eficiente e estética premium.</p>
           </div>
         </article>
 
-        <article class="model card">
-          <img src="images/fabrica-de-coifas-piramidal.webp" alt="Modelo 3 (substituir por foto real)" width="800" height="600" loading="lazy" decoding="async" />
+        <article class="model card model--premium">
+          <img
+            src="images/fabrica-de-coifa-piramidal-sob-medida-campinas-sp.webp"
+            alt="Coifa piramidal sob medida em Campinas — acabamento premium e instalação"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="model__body">
             <h3 class="h3">Sob Medida Total</h3>
             <p class="text">Dimensões e detalhes ajustados ao seu espaço e ao uso real.</p>
