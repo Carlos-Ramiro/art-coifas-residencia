@@ -4,14 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-
   <title>Coifa Piramidal Sob Medida em Campinas | Art Coifas</title>
   <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, acabamento premium e instalação profissional." />
-
   <!-- LCP MOBILE -->
   <link rel="preload" as="image" href="/images/hero-coifa-piramidal-mobile-800x600.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="/images/hero-coifa-piramidal-desktop-1920x1080.webp" />
-
   <style>
     :root{
       --brand:#0f2b46;
@@ -20,14 +17,11 @@
       --muted:rgba(255,255,255,.86);
       --muted2:rgba(255,255,255,.76);
       --wa:#1fb85a;
-
       --light:#f2f5f9;
       --light2:#eaf0f6;
-
       --dark:#07111c;
       --dark2:#0a1826;
     }
-
     *{margin:0;padding:0;box-sizing:border-box}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -36,19 +30,15 @@
     }
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
-
     /* ================= HERO ================= */
-
     .hero{
       background: var(--brand);
       color: var(--text);
     }
-
     .wrap{
       width:min(1100px, calc(100% - 2.5rem));
       margin:0 auto;
     }
-
     .eyebrow{
       display:inline-flex;
       gap:.5rem;
@@ -62,7 +52,6 @@
       border:1px solid rgba(255,255,255,.14);
       color:rgba(255,255,255,.92);
     }
-
     .title{
       margin-top:1.1rem;
       font-size: clamp(2.1rem, 1.3rem + 2.6vw, 4rem);
@@ -70,14 +59,12 @@
       letter-spacing:-0.02em;
     }
     .accent{color:var(--gold)}
-
     .lead{
       margin-top:1.05rem;
       max-width:62ch;
       font-size:1.08rem;
       color:var(--muted);
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
@@ -91,7 +78,6 @@
       transition:.2s ease;
       user-select:none;
     }
-
     .btn--wa{
       background: var(--wa);
       color:#fff;
@@ -101,7 +87,6 @@
       transform:translateY(-2px);
       box-shadow:0 22px 60px rgba(31,184,90,.28);
     }
-
     .micro{
       margin-top:.9rem;
       display:flex;
@@ -111,7 +96,6 @@
       align-items:center;
     }
     .stars{color:var(--gold);letter-spacing:.08em}
-
     .bullets{
       margin-top:.95rem;
       list-style:none;
@@ -121,9 +105,7 @@
       font-size:.98rem;
     }
     .check{color:var(--gold);font-weight:900;margin-right:.35rem}
-
     .hero__inner{ padding: 2.2rem 0 1.4rem; }
-
     .hero__media{
       margin-top: 1.25rem;
       border-radius: 18px;
@@ -136,18 +118,14 @@
       aspect-ratio:4/3;
       object-fit:cover;
     }
-
     .desktop-only{display:none;}
-
     @media (min-width: 992px){
       .desktop-only{display:inline;}
-
       .hero{
         position:relative;
         min-height:100vh;
         overflow:hidden;
       }
-
       .hero::before{
         content:"";
         position:absolute;
@@ -155,7 +133,6 @@
         background:url("/images/hero-coifa-piramidal-desktop-1920x1080.webp") center/cover no-repeat;
         z-index:0;
       }
-
       .hero::after{
         content:"";
         position:absolute;
@@ -170,7 +147,6 @@
         z-index:1;
         pointer-events:none;
       }
-
       .hero__inner{
         position:relative;
         z-index:2;
@@ -179,29 +155,18 @@
         align-items:center;
         padding:0;
       }
-
       .hero__media{display:none;}
-
       .bullets{
         grid-template-columns:max-content max-content;
         gap:.35rem 2rem;
       }
-
       .title{max-width:18ch;}
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
 	  
 	    
 	  
     }
-
-
-
-
-
-
-
     /* ================= BLOCO 3 CARDS (Fundo escuro premium + amarelo) ================= */
-
     .flow{
       background:
         radial-gradient(900px 520px at 15% 20%, rgba(212,160,23,.10), transparent 55%),
@@ -212,7 +177,6 @@
       position:relative;
       overflow:hidden;
     }
-
     .flow::before{
       content:"";
       position:absolute;
@@ -225,9 +189,7 @@
       pointer-events:none;
       opacity:.85;
     }
-
     .flow .wrap{ position:relative; z-index:1; }
-
     .flow__title{
       text-align:center;
       font-size: clamp(2rem, 1.35rem + 2vw, 3rem);
@@ -236,9 +198,7 @@
       font-weight:900;
       margin-bottom:14px;
     }
-
     .flow__title .accent{ color: var(--gold); }
-
     .flow__sub{
       text-align:center;
       max-width:72ch;
@@ -247,7 +207,6 @@
       line-height:1.7;
       font-size:1.04rem;
     }
-
     .flow__grid{
       display:grid;
       gap:22px;
@@ -264,7 +223,6 @@
     gap:32px;
   }
 }
-
 .flow__card{
   position:relative;
   border-radius:22px;
@@ -290,7 +248,6 @@
     box-shadow .28s ease,
     background .28s ease;
 }
-
 /* brilho sutil premium */
 .flow__card::after{
   content:"";
@@ -302,7 +259,6 @@
   opacity:.55;
   pointer-events:none;
 }
-
 .flow__card:hover{
   transform: translateY(-10px);
   border-color: rgba(212,160,23,.35);
@@ -314,7 +270,6 @@
       rgba(255,255,255,.04) 100%
     );
 }
-
 .flow__num{
   width:62px;
   height:62px;
@@ -333,7 +288,6 @@
   font-size: 1.3rem;
   letter-spacing:.04em;
 }
-
 .flow__card h3{
   text-align:center;
   font-size:1.25rem;
@@ -342,7 +296,6 @@
   letter-spacing:-0.01em;
   color:#fff;
 }
-
 .flow__card p{
   text-align:center;
   color: rgba(255,255,255,.82);
@@ -350,28 +303,22 @@
   font-size:1.02rem;
   max-width:32ch;
 }
-
 	
-
     /* ================= BLOCO ESTRUTURA (imagem + texto) ================= */
-
     .structure{
       background:#ffffff;
       padding:100px 0;
     }
-
     .structure__grid{
       display:grid;
       gap:34px;
       align-items:center;
     }
-
     @media (min-width: 992px){
       .structure__grid{
         grid-template-columns: 1fr 1fr;
       }
     }
-
     .structure__media{
       border-radius:22px;
       overflow:hidden;
@@ -379,13 +326,11 @@
       box-shadow:0 22px 60px rgba(15,43,70,0.10);
       background:#fff;
     }
-
     .structure__media img{
       width:100%;
       height:auto;
       display:block;
     }
-
     .structure__title{
       font-size: clamp(1.8rem, 1.2rem + 1.6vw, 2.5rem);
       line-height:1.12;
@@ -394,7 +339,6 @@
       font-weight:900;
       margin-bottom:14px;
     }
-
     .structure__text{
       color:#2a2f36;
       line-height:1.7;
@@ -402,7 +346,6 @@
       margin-bottom:16px;
       max-width:60ch;
     }
-
     .structure__list{
       list-style:none;
       display:grid;
@@ -421,52 +364,42 @@
       font-weight:900;
       margin-top:.05rem;
     }
-
     .structure__cta .btn{
       margin-top:0;
       border-color: rgba(15,43,70,0.10);
     }
   </style>
 </head>
-
 <body>
-
 <header class="hero">
   <div class="hero__inner">
     <div class="wrap">
-
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
       </div>
-
       <h1 class="title">
         Coifa Piramidal <span class="accent">Sob Medida</span> em Campinas
       </h1>
-
       <p class="lead">
         Fabricação própria de coifas piramidais sob medida para cozinhas e áreas gourmet.
         Atendimento técnico presencial, projeto personalizado e instalação profissional em Campinas e região.
       </p>
-
       <a class="btn btn--wa"
          href="https://wa.me/551932131636"
          target="_blank"
          rel="noopener">
         Agendar visita técnica pelo WhatsApp
       </a>
-
       <div class="micro">
         <span class="stars">★★★★★</span>
         <span><strong>Atendimento premium</strong> do projeto à instalação</span>
       </div>
-
       <ul class="bullets" aria-label="Diferenciais">
         <li><span class="check">✓</span> Projeto técnico personalizado</li>
         <li><span class="check">✓</span> Atendimento presencial sob agendamento</li>
         <li><span class="check">✓</span> Fabricação própria com padrão premium</li>
         <li><span class="check">✓</span> Instalação profissional especializada</li>
       </ul>
-
       <div class="hero__media">
         <img
           src="/images/hero-coifa-piramidal-mobile-800x600.webp"
@@ -478,17 +411,9 @@
           decoding="async"
         />
       </div>
-
     </div>
   </div>
 </header>
-
-
-
-
-
-
-
 <!-- 3 CARDS logo abaixo da HERO -->
 <section class="flow" aria-label="Etapas do atendimento">
   <div class="wrap">
@@ -497,9 +422,7 @@
       Você fala direto com a fábrica em Campinas. Nosso especialista vai até o local, define o melhor modelo com você
       e entregamos a coifa pronta com acabamento premium.
     </p>
-
     <div class="flow__grid">
-
       <div class="flow__card">
         <div class="flow__num">01</div>
         <h3>Visita técnica no local</h3>
@@ -508,7 +431,6 @@
           Você não precisa medir nada.
         </p>
       </div>
-
       <div class="flow__card">
         <div class="flow__num">02</div>
         <h3>Definição do modelo ideal</h3>
@@ -517,7 +439,6 @@
           dimensões e detalhes do seu ambiente.
         </p>
       </div>
-
       <div class="flow__card">
         <div class="flow__num">03</div>
         <h3>Fabricação + instalação</h3>
@@ -526,20 +447,12 @@
           performance real e resultado premium.
         </p>
       </div>
-
     </div>
   </div>
 </section>
-
-
-
-
-
-
 <section class="structure">
   <div class="wrap">
     <div class="structure__grid">
-
       <div class="structure__media">
         <img
           src="/images/fabricante-de-coifa-piramidal-em-campinas.webp"
@@ -550,35 +463,32 @@
           decoding="async"
         />
       </div>
-
       <div class="structure__content">
-        <h2 class="structure__title">Estrutura própria e equipe especializada</h2>
-
-        <p class="structure__text">
-          Aqui você fala direto com quem projeta, fabrica e instala. Isso reduz retrabalho, melhora o acabamento
-          e garante um resultado final consistente com o padrão do seu ambiente.
-        </p>
-
-        <ul class="structure__list" aria-label="Pontos de autoridade">
-          <li><span class="mark">✓</span><span>Produção interna com controle técnico e qualidade</span></li>
-          <li><span class="mark">✓</span><span>Projeto técnico antes da fabricação</span></li>
-          <li><span class="mark">✓</span><span>Instalação precisa e acabamento premium</span></li>
-        </ul>
-
-        <div class="structure__cta">
-          <a class="btn btn--wa" href="https://wa.me/551932131636" target="_blank" rel="noopener">
-            Falar com um especialista no WhatsApp
-          </a>
-        </div>
-      </div>
-
-    </div>
+  <h2 class="structure__title">Estrutura própria e equipe especializada</h2>
+  <p class="structure__text">
+    <strong>Fabricação própria em Campinas.</strong> Fundada em 2000, a Art Coifas atende mais de 100 cidades da região.
+    São mais de 10.000 projetos realizados com foco em desempenho, durabilidade e segurança
+    para cozinhas residenciais e áreas gourmet.
+  </p>
+  <p class="structure__text">
+    Aqui você fala direto com quem projeta, fabrica e instala. Nossa estrutura interna garante
+    controle total do projeto — do corte ao acabamento final — assegurando padrão elevado,
+    precisão técnica e resultado compatível com ambientes exigentes.
+  </p>
+  <ul class="structure__list" aria-label="Pontos de autoridade">
+    <li><span class="mark">✓</span><span>Produção interna com controle técnico e qualidade</span></li>
+    <li><span class="mark">✓</span><span>Definição técnica do modelo na visita presencial</span></li>
+    <li><span class="mark">✓</span><span>Garantia de fabricação e assistência técnica especializada</span></li>
+  </ul>
+  <div class="structure__cta">
+    <a class="btn btn--wa" href="https://wa.me/551932131636" target="_blank" rel="noopener">
+      Falar com um especialista no WhatsApp
+    </a>
   </div>
+</div>
+  
+  
+  
 </section>
-
-
-
-
-
 </body>
 </html>
