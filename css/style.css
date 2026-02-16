@@ -1,27 +1,24 @@
 /* =========================
-   KIT BASE (TRAVADO)
-   - Tokens
-   - Container
-   - Tipografia
-   - Botões
-   - Seções
-   - Cards
+   KIT BASE (TRAVADO) + VISUAL PREMIUM
    ========================= */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root{
-  /* Cores */
-  --bg-dark: #0b0b0b;
+  /* Identidade (AJUSTE AQUI) */
+  --brand-navy-1: #071a2b;  /* azul marinho escuro */
+  --brand-navy-2: #0b2740;  /* variação para gradiente */
+  --brand-accent: #16a34a;  /* CTA WhatsApp */
+
+  /* Neutros */
   --text-dark: #111111;
+  --surface: #ffffff;
+  --surface-muted: #f4f6f8;
+  --muted-dark: #56606b;
+
+  /* Texto em fundo escuro */
   --text-light: #ffffff;
   --muted-light: rgba(255,255,255,.82);
-  --muted-dark: #555555;
-  --surface: #ffffff;
-  --surface-muted: #f5f5f5;
-
-  /* CTA */
-  --cta: #16a34a;
 
   /* Layout */
   --container: 1100px;
@@ -30,23 +27,22 @@
   /* Tipografia */
   --font: Arial, sans-serif;
 
-  /* Espaçamentos (travados) */
-  --space-1: 8px;
+  /* Espaços */
   --space-2: 12px;
   --space-3: 16px;
-  --space-4: 20px;
   --space-5: 26px;
   --space-6: 34px;
   --space-7: 42px;
   --space-8: 56px;
   --space-9: 74px;
 
-  /* Radius e sombra */
+  /* Radius e sombras (premium) */
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 22px;
-  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-  --shadow-strong: 0 18px 50px rgba(0,0,0,.28);
+  --shadow-soft: 0 10px 28px rgba(0,0,0,0.08);
+  --shadow-strong: 0 18px 50px rgba(0,0,0,.22);
+  --border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 body{
@@ -61,7 +57,7 @@ body{
   margin: 0 auto;
 }
 
-/* Seções padrão (travadas) */
+/* Seções */
 .section{
   padding: var(--space-9) 0;
 }
@@ -76,17 +72,18 @@ body{
   letter-spacing: -0.4px;
   margin-bottom: var(--space-7);
   text-align: center;
+  color: #0f172a;
 }
 
 @media (min-width: 992px){
   .section__title{ font-size: 40px; }
 }
 
-/* Tipografia utilitária (travada) */
+/* Tipografia utilitária */
 .h1{
   font-size: 34px;
   line-height: 1.06;
-  letter-spacing: -0.6px;
+  letter-spacing: -0.8px;
 }
 
 .p{
@@ -99,7 +96,7 @@ body{
   .p{ font-size: 19px; }
 }
 
-/* Botões (travados) */
+/* Botões */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -116,16 +113,6 @@ body{
   max-width: 100%;
 }
 
-.btn:active{ transform: translateY(0px); }
-.btn:hover{ filter: brightness(1.05); transform: translateY(-1px); }
-
-.btn--whatsapp{
-  width: 100%;
-  background: var(--cta);
-  color: #fff;
-  box-shadow: var(--shadow-strong);
-}
-
 .btn__icon{
   display: inline-flex;
   align-items: center;
@@ -134,33 +121,60 @@ body{
   height: 22px;
 }
 
+.btn:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+.btn:active{ transform: translateY(0px); }
+
+.btn--whatsapp{
+  width: 100%;
+  background: var(--brand-accent);
+  color: #fff;
+  box-shadow: var(--shadow-strong);
+}
+
 @media (min-width: 992px){
   .btn--whatsapp{ width: auto; padding: 15px 20px; font-size: 17px; }
 }
 
-/* Cards (travados) */
+/* Cards (premium) */
 .cards{
   display: flex;
-  gap: 24px;
+  gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .card{
-  background: var(--surface);
-  padding: 34px 26px;
+  background: #fff;
+  padding: 28px 22px;
   width: 320px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
-  transition: transform .2s ease;
+  border: var(--border);
+  transition: transform .2s ease, box-shadow .2s ease;
+  text-align: left;
 }
 
-.card:hover{ transform: translateY(-6px); }
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.12);
+}
+
+.card__icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 26, 43, 0.06);
+  margin-bottom: 12px;
+  font-size: 20px;
+}
 
 .card__title{
   font-size: 20px;
-  margin-bottom: 12px;
-  color: #111;
+  margin-bottom: 10px;
+  color: #0f172a;
 }
 
 .card__text{
@@ -170,22 +184,25 @@ body{
 }
 
 /* =========================
-   BLOCO: HERO (usa kit base)
+   HERO — MOBILE CENTER + DESKTOP DEPOIS
    ========================= */
 
 .hero{
-  background: var(--bg-dark);
+  background: radial-gradient(1200px 600px at 20% 0%, var(--brand-navy-2), var(--brand-navy-1));
   color: var(--text-light);
-  padding: var(--space-5) 0 var(--space-6);
+  padding: var(--space-6) 0 var(--space-6);
 }
 
+/* mobile: centralizado (o que você pediu) */
 .hero__grid{
   display: grid;
   gap: 18px;
 }
 
 .hero__content{
-  max-width: 680px;
+  max-width: 760px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .hero__muted{
@@ -202,13 +219,17 @@ body{
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+  justify-content: center;
 }
 
+.hero__trust .dot{ opacity: .65; }
+
 .hero__media{
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: #000;
   box-shadow: var(--shadow-strong);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .hero__media img{
@@ -217,26 +238,42 @@ body{
   display: block;
 }
 
+/* desktop depois (por enquanto só dá mais respiro) */
 @media (min-width: 992px){
   .hero{ padding: var(--space-8) 0 var(--space-8); }
   .hero__grid{ gap: 22px; }
 }
 
 /* =========================
-   BLOCO: BENEFÍCIOS (usa kit base)
+   CTA FINAL (travado)
    ========================= */
 
-.beneficios{
-  padding: var(--space-9) 0;
-  background: var(--surface-muted);
-  text-align: center;
+.cta-final{
+  background: #fff;
 }
 
-.beneficios h2{
+.cta-final__inner{
+  text-align: center;
+  padding: 0;
+}
+
+.cta-final__title{
   font-size: 34px;
-  margin-bottom: var(--space-7);
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.cta-final__text{
+  max-width: 760px;
+  margin: 0 auto 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted-dark);
 }
 
 @media (min-width: 992px){
-  .beneficios h2{ font-size: 40px; }
+  .cta-final__title{ font-size: 40px; }
+  .cta-final__text{ font-size: 18px; }
 }
