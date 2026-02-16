@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -64,25 +65,43 @@
           </ul>
         </div>
       </div>
+	  
+	  
+	  
+	  
+	  
+	  
 
-      <div class="hero__media">
-        <!-- DESKTOP: 1920x1080
-             MOBILE: 800x600 -->
-        <picture>
-          <source media="(min-width: 992px)" srcset="/images/hero-coifa-piramidal-desktop-1920x1080.webp">
-          <img
-            src="/images/hero-coifa-piramidal-mobile-800x600.webp"
-            alt="Coifa piramidal sob medida em Campinas com acabamento premium"
-            width="800"
-            height="600"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
-      </div>
+      <div class="hero__media hero__media--fullscreen">
+  <picture>
+    <!-- DESKTOP: 1920x1080 FULLSCREEN -->
+    <source
+      media="(min-width: 992px)"
+      srcset="/images/hero-coifa-piramidal-desktop-1920x1080.webp"
+      width="1920"
+      height="1080"
+    />
 
-    </div>
+    <!-- MOBILE: 800x600 -->
+    <img
+      class="hero__img"
+      src="/images/hero-coifa-piramidal-mobile-800x600.webp"
+      alt="Coifa piramidal sob medida em Campinas com acabamento premium"
+      width="800"
+      height="600"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+</div>
+
+	
+	
+	
+	
+	
+	
     <div class="hero__divider" aria-hidden="true"></div>
   </header>
 
