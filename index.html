@@ -6,20 +6,24 @@
   <meta name="robots" content="noindex, nofollow" />
 
   <title>Coifa Piramidal Sob Medida em Campinas | Art Coifas</title>
-  <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, acabamento premium e instalação profissional." />
+  <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, acabamento premium e instalação profissional. Atendimento presencial sob agendamento." />
 
-  <!-- LCP MOBILE -->
+  <!-- LCP MOBILE (prioridade máxima) -->
   <link rel="preload" as="image" href="/images/hero-coifa-piramidal-mobile-800x600.webp" fetchpriority="high" />
+  <!-- Desktop (sem high) -->
   <link rel="preload" as="image" href="/images/hero-coifa-piramidal-desktop-1920x1080.webp" />
 
   <style>
     :root{
       --brand:#0f2b46;
-      --gold:#d4a017;
+      --gold:#d4a017;          /* laranja/dourado elegante */
       --text:#ffffff;
       --muted:rgba(255,255,255,.86);
       --muted2:rgba(255,255,255,.76);
       --wa:#1fb85a;
+
+      --ink:#0f2b46;
+      --paper:#f2f5f9;
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -27,9 +31,15 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background:#0b0f14;
       color:#111;
+      overflow-x:hidden;
     }
-
     img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+
+    .wrap{
+      width:min(1100px, calc(100% - 2.5rem));
+      margin:0 auto;
+    }
 
     /* ================= HERO ================= */
 
@@ -38,13 +48,9 @@
       color: var(--text);
     }
 
-    .wrap{
-      width:min(1100px, calc(100% - 2.5rem));
-      margin:0 auto;
-    }
-
     .eyebrow{
       display:inline-flex;
+      align-items:center;
       gap:.5rem;
       font-weight:800;
       letter-spacing:.08em;
@@ -54,6 +60,7 @@
       border-radius:999px;
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.14);
+      color:rgba(255,255,255,.92);
     }
 
     .title{
@@ -62,7 +69,6 @@
       line-height:1.05;
       letter-spacing:-0.02em;
     }
-
     .accent{color:var(--gold)}
 
     .lead{
@@ -75,6 +81,7 @@
     .btn{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:.65rem;
       margin-top:1.35rem;
       padding:1.05rem 1.35rem;
@@ -82,7 +89,9 @@
       font-weight:900;
       text-decoration:none;
       border:1px solid rgba(255,255,255,.12);
-      transition:.2s ease;
+      transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+      user-select:none;
+      white-space:nowrap;
     }
 
     .btn--wa{
@@ -93,18 +102,20 @@
 
     .btn--wa:hover{
       transform:translateY(-2px);
+      filter:brightness(1.02);
       box-shadow:0 22px 60px rgba(31,184,90,.28);
     }
 
     .micro{
       margin-top:.9rem;
       display:flex;
+      align-items:center;
       gap:.6rem;
       color:var(--muted2);
       font-size:.95rem;
+      flex-wrap:wrap;
     }
-
-    .stars{color:var(--gold)}
+    .stars{color:var(--gold);letter-spacing:.08em}
 
     .bullets{
       margin-top:.95rem;
@@ -114,31 +125,27 @@
       color:var(--muted2);
       font-size:.98rem;
     }
-
     .check{color:var(--gold);font-weight:900;margin-right:.35rem}
 
-    .hero__inner{
-      padding: 2.2rem 0 1.4rem;
-    }
-
+    /* MOBILE FIRST: imagem normal (não background) */
+    .hero__inner{padding: 2.2rem 0 1.4rem;}
     .hero__media{
       margin-top: 1.25rem;
       border-radius: 18px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 18px 50px rgba(0,0,0,.30);
+      background: rgba(255,255,255,.04);
     }
-
     .hero__media img{
       width:100%;
       aspect-ratio:4/3;
       object-fit:cover;
     }
-
     .desktop-only{display:none;}
 
+    /* DESKTOP: fullscreen com imagem 1920x1080 como BACKGROUND */
     @media (min-width: 992px){
-
       .desktop-only{display:inline;}
 
       .hero{
@@ -146,7 +153,6 @@
         min-height:100vh;
         overflow:hidden;
       }
-
       .hero::before{
         content:"";
         position:absolute;
@@ -154,16 +160,19 @@
         background:url("/images/hero-coifa-piramidal-desktop-1920x1080.webp") center/cover no-repeat;
         z-index:0;
       }
-
       .hero::after{
         content:"";
         position:absolute;
         inset:0;
-        background:linear-gradient(90deg,
-          rgba(15,43,70,.92) 0%,
-          rgba(15,43,70,.62) 52%,
-          rgba(15,43,70,.20) 100%);
+        background:
+          linear-gradient(90deg,
+            rgba(15,43,70,.92) 0%,
+            rgba(15,43,70,.62) 52%,
+            rgba(15,43,70,.20) 100%
+          ),
+          radial-gradient(900px 600px at 20% 18%, rgba(212,160,23,.16), transparent 55%);
         z-index:1;
+        pointer-events:none;
       }
 
       .hero__inner{
@@ -177,183 +186,347 @@
 
       .hero__media{display:none;}
 
+      .wrap{
+        width:min(1200px, calc(100% - 5rem));
+      }
+
       .bullets{
         grid-template-columns:max-content max-content;
         gap:.35rem 2rem;
+        justify-content:start;
+        width:max-content;
+        max-width:100%;
       }
 
       .title{max-width:18ch;}
     }
-    /* ================= BLOCO DIFERENCIAIS ================= */
+
+    /* ================= BLOCO DIFERENCIAIS (CARDS VIDRO AZUL) ================= */
 
     .why{
-      background:#f2f5f9;
-      padding:90px 0;
+      background:
+        radial-gradient(800px 500px at 20% 20%, rgba(15,43,70,.10), transparent 55%),
+        radial-gradient(700px 450px at 80% 30%, rgba(212,160,23,.10), transparent 60%),
+        linear-gradient(180deg, #f2f5f9 0%, #e7edf5 100%);
+      padding:110px 0;
     }
 
+    /* título mais poderoso e quebra limpa (2 linhas no mobile) */
     .why__title{
       text-align:center;
-      font-size: clamp(1.7rem, 1.1rem + 1.8vw, 2.4rem);
-      margin-bottom:60px;
-      color:#0f2b46;
-      font-weight:800;
-      line-height:1.25;
-      max-width:20ch;
-      margin-left:auto;
-      margin-right:auto;
-      letter-spacing:-0.01em;
+      font-size:clamp(2rem, 1.3rem + 2.1vw, 2.9rem);
+      font-weight:900;
+      color:var(--ink);
+      margin-bottom:70px;
+      line-height:1.15;
+      letter-spacing:-0.03em;
     }
+    .why__title .accent2{color:var(--gold);}
 
     .why__grid{
       display:grid;
-      gap:28px;
+      gap:34px;
     }
-
-    @media (min-width: 992px){
-      .why__grid{
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
-
-    @media (max-width: 991px){
-      .why__grid{
-        grid-template-columns:1fr;
-      }
+    @media(min-width:992px){
+      .why__grid{grid-template-columns:repeat(2,1fr);}
     }
 
     .why__card{
-      background:#ffffff;
-      padding:36px 32px;
-      border-radius:18px;
-      border:1px solid rgba(15,43,70,0.08);
-      box-shadow:0 18px 40px rgba(15,43,70,0.06);
-      transition:.3s ease;
+      position:relative;
+      padding:44px 38px;
+      border-radius:24px;
+
+      /* VIDRO AZUL */
+      background: rgba(15,43,70,.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 22px 55px rgba(15,43,70,.16),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      overflow:hidden;
+    }
+    .why__card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(380px 200px at 20% 10%, rgba(212,160,23,.20), transparent 55%),
+        radial-gradient(420px 220px at 85% 40%, rgba(255,255,255,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.65;
     }
 
     .why__card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 28px 60px rgba(15,43,70,0.14);
-    }
-
-    .why__card h3{
-      margin-bottom:14px;
-      font-size:1.15rem;
-      color:#0f2b46;
-      font-weight:700;
-    }
-
-    .why__card p{
-      font-size:.98rem;
-      color:#444;
-      line-height:1.6;
+      transform: translateY(-10px);
+      background: rgba(15,43,70,.62);
+      box-shadow:
+        0 34px 85px rgba(15,43,70,.28),
+        inset 0 0 0 1px rgba(255,255,255,.12);
     }
 
     .why__icon{
-      width:42px;
-      height:42px;
-      background:#0f2b46;
-      color:#fff;
+      position:relative;
+      z-index:1;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background: rgba(255,255,255,.92);
+      color: var(--brand);
       display:flex;
       align-items:center;
       justify-content:center;
-      border-radius:50%;
+      font-weight:900;
+      box-shadow:0 14px 28px rgba(0,0,0,.18);
       margin-bottom:18px;
-      font-weight:bold;
-      box-shadow:0 10px 20px rgba(15,43,70,0.15);
     }
 
+    .why__card h3{
+      position:relative;
+      z-index:1;
+      margin-bottom:14px;
+      font-size:1.25rem;
+      font-weight:800;
+      color:#ffffff;         /* branco (permitido) */
+      letter-spacing:-0.01em;
+    }
+
+    .why__card p{
+      position:relative;
+      z-index:1;
+      font-size:1rem;
+      line-height:1.65;
+      color: rgba(255,255,255,.88);  /* branco suave */
+    }
+
+    /* ================= BLOCO EMPRESA (IMAGEM + TEXTO) ================= */
+
+    .company{
+      background: #ffffff;
+      padding:110px 0;
+    }
+
+    .company__grid{
+      display:grid;
+      gap:42px;
+      align-items:center;
+    }
+
+    @media(min-width:992px){
+      .company__grid{
+        grid-template-columns: 1.05fr .95fr;
+      }
+    }
+
+    .company__media{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(15,43,70,.10);
+      box-shadow:0 28px 70px rgba(15,43,70,.10);
+      background:#f4f7fb;
+    }
+
+    .company__media img{
+      width:100%;
+      aspect-ratio: 4/3;
+      object-fit:cover;
+    }
+
+    .company__title{
+      font-size: clamp(1.9rem, 1.25rem + 1.7vw, 2.6rem);
+      line-height:1.15;
+      letter-spacing:-0.03em;
+      color: var(--ink);
+      font-weight:900;
+    }
+
+    .company__lead{
+      margin-top:14px;
+      color:#2a3a4a;
+      font-size:1.05rem;
+      line-height:1.7;
+      max-width:60ch;
+    }
+
+    .company__list{
+      margin-top:18px;
+      list-style:none;
+      display:grid;
+      gap:10px;
+      color:#243444;
+      font-weight:650;
+    }
+    .company__list li::before{
+      content:"✓";
+      color: var(--gold);
+      font-weight:900;
+      margin-right:10px;
+    }
+
+    .company__cta{
+      margin-top:22px;
+    }
+
+    .btn--ghost{
+      background: transparent;
+      color: var(--brand);
+      border: 1px solid rgba(15,43,70,.22);
+      box-shadow: 0 14px 38px rgba(15,43,70,.10);
+    }
+    .btn--ghost:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 18px 48px rgba(15,43,70,.14);
+    }
+
+    /* ajuste de botões no mobile (não estourar) */
+    @media(max-width:420px){
+      .btn{white-space:normal; text-align:center; line-height:1.2;}
+    }
   </style>
 </head>
 
 <body>
 
-<header class="hero">
-  <div class="hero__inner">
+  <!-- ================= HERO (NÃO MEXER) ================= -->
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="wrap">
+
+        <div class="eyebrow">
+          <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
+        </div>
+
+        <h1 class="title">
+          Coifa Piramidal <span class="accent">Sob Medida</span> em Campinas
+        </h1>
+
+        <p class="lead">
+          Fabricação própria de coifas piramidais sob medida para cozinhas e áreas gourmet.
+          Atendimento técnico presencial, projeto personalizado e instalação profissional em Campinas e região.
+        </p>
+
+        <a class="btn btn--wa"
+           href="https://wa.me/551932131636"
+           target="_blank"
+           rel="noopener">
+          Agendar visita técnica pelo WhatsApp
+        </a>
+
+        <div class="micro">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span><strong>Atendimento premium</strong> do projeto à instalação</span>
+        </div>
+
+        <ul class="bullets" aria-label="Diferenciais">
+          <li><span class="check">✓</span> Projeto técnico personalizado</li>
+          <li><span class="check">✓</span> Atendimento presencial sob agendamento</li>
+          <li><span class="check">✓</span> Fabricação própria com padrão premium</li>
+          <li><span class="check">✓</span> Instalação profissional especializada</li>
+        </ul>
+
+        <!-- MOBILE: imagem normal 800x600 -->
+        <div class="hero__media">
+          <img
+            src="/images/hero-coifa-piramidal-mobile-800x600.webp"
+            alt="Coifa piramidal sob medida em Campinas"
+            width="800"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BLOCO DIFERENCIAIS ================= -->
+  <section class="why">
     <div class="wrap">
+      <h2 class="why__title">
+        Por que a Art Coifas<br>
+        <span class="accent2">é referência em Campinas</span>
+      </h2>
 
-      <div class="eyebrow">
-        <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
+      <div class="why__grid">
+
+        <article class="why__card">
+          <div class="why__icon">✓</div>
+          <h3>Fabricação própria em inox</h3>
+          <p>Controle total da produção, do corte ao acabamento, garantindo padrão premium e consistência em cada projeto.</p>
+        </article>
+
+        <article class="why__card">
+          <div class="why__icon">✓</div>
+          <h3>Projeto realmente sob medida</h3>
+          <p>Dimensionamento técnico conforme layout do ambiente, com foco em desempenho, estética e proporção correta.</p>
+        </article>
+
+        <article class="why__card">
+          <div class="why__icon">✓</div>
+          <h3>Instalação profissional especializada</h3>
+          <p>Equipe técnica preparada para instalação precisa e acabamento alinhado ao padrão do seu ambiente.</p>
+        </article>
+
+        <article class="why__card">
+          <div class="why__icon">✓</div>
+          <h3>Atendimento presencial em Campinas</h3>
+          <p>Visita técnica sob agendamento para avaliar o projeto com exatidão antes de fabricar e instalar.</p>
+        </article>
+
       </div>
-
-      <h1 class="title">
-        Coifa Piramidal <span class="accent">Sob Medida</span> em Campinas
-      </h1>
-
-      <p class="lead">
-        Fabricação própria de coifas piramidais sob medida.
-        Atendimento técnico presencial, projeto personalizado e instalação profissional.
-      </p>
-
-      <a class="btn btn--wa"
-         href="https://wa.me/551932131636"
-         target="_blank"
-         rel="noopener">
-        Solicitar atendimento pelo WhatsApp
-      </a>
-
-      <div class="micro">
-        <span class="stars">★★★★★</span>
-        <span><strong>Atendimento premium</strong> do projeto à instalação</span>
-      </div>
-
-      <ul class="bullets">
-        <li><span class="check">✓</span> Projeto técnico personalizado</li>
-        <li><span class="check">✓</span> Atendimento presencial</li>
-        <li><span class="check">✓</span> Fabricação própria</li>
-        <li><span class="check">✓</span> Instalação especializada</li>
-      </ul>
-
-      <div class="hero__media">
-        <img
-          src="/images/hero-coifa-piramidal-mobile-800x600.webp"
-          alt="Coifa piramidal sob medida em Campinas"
-          width="800"
-          height="600"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="why">
-  <div class="wrap">
+  <!-- ================= BLOCO EMPRESA (IMAGEM + TEXTO) ================= -->
+  <section class="company">
+    <div class="wrap">
+      <div class="company__grid">
 
-    <h2 class="why__title">Por que escolher a Art Coifas</h2>
+        <div class="company__media">
+          <img
+            src="/images/fabricante-de-coifa-piramidal-em-campinas.webp"
+            alt="Fabricante de coifa piramidal em Campinas"
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
 
-    <div class="why__grid">
+        <div class="company__content">
+          <h2 class="company__title">
+            Estrutura própria e equipe especializada
+          </h2>
 
-      <div class="why__card">
-        <div class="why__icon">✓</div>
-        <h3>Fabricação própria em inox</h3>
-        <p>Controle total da produção, garantindo acabamento superior e padrão elevado.</p>
+          <p class="company__lead">
+            Aqui você fala direto com quem projeta, fabrica e instala. Isso evita retrabalho, melhora o acabamento
+            e garante um resultado final consistente com o padrão do seu ambiente.
+          </p>
+
+          <ul class="company__list" aria-label="Pontos de autoridade">
+            <li>Produção interna com controle de qualidade</li>
+            <li>Projeto técnico antes da fabricação</li>
+            <li>Instalação precisa e acabamento premium</li>
+          </ul>
+
+          <div class="company__cta">
+            <a class="btn btn--ghost"
+               href="https://wa.me/551932131636"
+               target="_blank"
+               rel="noopener">
+              Falar com um especialista no WhatsApp
+            </a>
+          </div>
+        </div>
+
       </div>
-
-      <div class="why__card">
-        <div class="why__icon">✓</div>
-        <h3>Projeto realmente sob medida</h3>
-        <p>Dimensionamento técnico conforme o layout e necessidade real do ambiente.</p>
-      </div>
-
-      <div class="why__card">
-        <div class="why__icon">✓</div>
-        <h3>Instalação profissional especializada</h3>
-        <p>Equipe técnica preparada para garantir desempenho, segurança e estética final.</p>
-      </div>
-
-      <div class="why__card">
-        <div class="why__icon">✓</div>
-        <h3>Atendimento presencial em Campinas</h3>
-        <p>Visita técnica sob agendamento para avaliação correta e precisa do projeto.</p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 </body>
 </html>
-
