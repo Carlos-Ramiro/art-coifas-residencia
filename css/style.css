@@ -1,12 +1,3 @@
-/* =========================
-   ART COIFAS — ULTRA PREMIUM (LEVÍSSIMO)
-   Ajustes deste round:
-   - accent mais “vivo premium”
-   - mobile: mais respiro no topo + centralizar até o CTA
-   - cards mais vitrificados e com presença
-   - vitrine com imagem da fábrica acima dos 3 modelos
-   ========================= */
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root{
@@ -14,10 +5,9 @@
   --navy-2: #0b2236;
   --navy-3: #071a2b;
 
-  /* Accent: mais premium e menos “apagado” */
-  --gold: #f2c86e; /* dourado claro elegante */
-  --gold-deep: #e0aa3e;
-  --gold-soft: rgba(242,200,110,.20);
+  /* mais vivo/premium (não apagado) */
+  --gold: #f4c76a;
+  --gold-soft: rgba(244,199,106,.18);
 
   --cta: #16a34a;
 
@@ -87,10 +77,6 @@ body{
   color: rgba(255,255,255,.92);
 }
 
-.lead .muted{
-  color: rgba(255,255,255,.78);
-}
-
 .text{
   font-size: 16px;
   line-height: 1.6;
@@ -107,23 +93,17 @@ body{
 .light{ color: var(--light); }
 .light-muted{ color: var(--light-muted); }
 
-/* -------------------------
-   BUTTONS
-   ------------------------- */
-
+/* BUTTONS */
 .btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-
   padding: 14px 16px;
   border-radius: 14px;
   text-decoration: none;
-
   font-size: 16px;
   font-weight: 800;
-
   transition: transform .12s ease, filter .12s ease;
   max-width: 100%;
 }
@@ -146,15 +126,11 @@ body{
   box-shadow: var(--shadow-strong);
 }
 
-/* -------------------------
-   HERO
-   ------------------------- */
-
+/* HERO */
 .hero{
   background: radial-gradient(1200px 620px at 20% 0%, var(--navy), var(--navy-3));
   color: var(--light);
-  /* mais respiro no topo no mobile */
-  padding: 44px 0 22px;
+  padding: 46px 0 22px;
   position: relative;
 }
 
@@ -163,10 +139,8 @@ body{
   gap: 16px;
 }
 
-/* centralizar tudo até o CTA no mobile */
-.hero__content{
-  text-align: center;
-}
+/* mobile: título e texto centralizados */
+.hero__content{ text-align: center; }
 
 .hero__eyebrow{
   display: inline-block;
@@ -183,26 +157,25 @@ body{
   gap: 10px;
 }
 
-/* NÃO mexer no botão até a imagem:
-   Mantive o mesmo fluxo e espaçamentos */
+/* abaixo do botão: volta pra ESQUERDA (como você pediu) */
 .microproof{
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   font-size: 13px;
   color: rgba(255,255,255,.84);
+  justify-content: flex-start;
 }
 
 .stars{ color: var(--gold); letter-spacing: 1px; }
 
 .bullets{
   list-style: none;
-  margin-top: 14px;
+  margin-top: 10px;
   display: grid;
-  gap: 8px;
+  gap: 10px;
   padding: 0;
-  justify-items: center;
+  justify-items: start; /* ESQUERDA */
 }
 
 .bullets li{
@@ -220,12 +193,13 @@ body{
   border-radius: 8px;
   align-items: center;
   justify-content: center;
-  background: rgba(242,200,110,.16);
-  border: 1px solid rgba(242,200,110,.28);
+  background: rgba(244,199,106,.16);
+  border: 1px solid rgba(244,199,106,.28);
   color: var(--gold);
   font-weight: 900;
 }
 
+/* Hero media: garante presença e no desktop vira 16:9 grande */
 .hero__media{
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -243,15 +217,12 @@ body{
 .hero__divider{
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(242,200,110,.65), transparent);
+  background: linear-gradient(90deg, transparent, rgba(244,199,106,.65), transparent);
   margin-top: 18px;
   opacity: .90;
 }
 
-/* -------------------------
-   SECTIONS
-   ------------------------- */
-
+/* SECTIONS */
 .section{ padding: 64px 0; }
 .section--muted{ background: var(--muted-bg); }
 .section--navy{
@@ -259,59 +230,47 @@ body{
   color: var(--light);
 }
 
-/* -------------------------
-   CARDS / GRIDS
-   ------------------------- */
-
+/* GRIDS / CARDS */
 .grid{
   margin-top: 26px;
   display: grid;
   gap: 14px;
 }
-
 .grid--2{ grid-template-columns: 1fr; }
 .grid--3{ grid-template-columns: 1fr; }
 
 .card{
   border-radius: var(--radius-lg);
-  padding: 22px;
   background: #fff;
   border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: var(--shadow-soft);
 }
 
-.glass{
-  background: rgba(255,255,255,0.90);
-}
-
-@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))){
-  .glass{
-    background: rgba(255,255,255,0.76);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-  }
-}
-
-/* Cards premium: mais presença (sem pesar) */
-.card--premium{
+/* “Por que escolher” com mais presença premium real */
+.card--why{
+  padding: 22px;
   position: relative;
-  border: 1px solid rgba(15, 43, 70, 0.10);
-  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.10);
+  overflow: hidden;
 }
 
-.card--premium::before{
+.card--why::before{
   content:"";
   position:absolute;
-  inset: 0;
-  border-radius: var(--radius-lg);
+  inset:0;
   pointer-events:none;
-  background: linear-gradient(135deg, rgba(242,200,110,.10), transparent 45%);
+  background: linear-gradient(135deg, rgba(244,199,106,.18), transparent 44%);
+  opacity: .9;
 }
 
-.card--premium:hover{
-  transform: translateY(-6px);
-  transition: transform .2s ease, box-shadow .2s ease;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+.card--why::after{
+  content:"";
+  position:absolute;
+  left: 18px;
+  right: 18px;
+  top: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(244,199,106,.95), rgba(244,199,106,.20));
 }
 
 .badge{
@@ -321,23 +280,14 @@ body{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  background: var(--gold-soft);
-  border: 1px solid rgba(242,200,110,.30);
+  background: rgba(15,43,70,.06);
+  border: 1px solid rgba(244,199,106,.38);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
   margin-bottom: 12px;
   font-size: 20px;
 }
 
-.badge--premium{
-  background: rgba(15,43,70,.06);
-  border: 1px solid rgba(242,200,110,.38);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
-}
-
-/* -------------------------
-   SPLIT (AUTORIDADE)
-   ------------------------- */
-
+/* SPLIT */
 .split{
   display: grid;
   gap: 16px;
@@ -375,28 +325,25 @@ body{
   font-size: 14px;
 }
 
-.dot-gold{
+.dot{
   width: 10px;
   height: 10px;
   border-radius: 999px;
   background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(242,200,110,.18);
+  box-shadow: 0 0 0 4px rgba(244,199,106,.18);
 }
 
 .note{
   margin-top: 14px;
   padding: 14px;
   border-radius: var(--radius-md);
-  background: rgba(242,200,110,.12);
-  border: 1px solid rgba(242,200,110,.24);
+  background: rgba(244,199,106,.12);
+  border: 1px solid rgba(244,199,106,.24);
   color: #1a2b3b;
   font-size: 14px;
 }
 
-/* -------------------------
-   QUOTES
-   ------------------------- */
-
+/* QUOTES */
 .quote{
   border-radius: var(--radius-lg);
   padding: 22px;
@@ -417,39 +364,19 @@ body{
   font-size: 13px;
 }
 
-/* -------------------------
-   FACTORY SHOWCASE (acima da vitrine)
-   ------------------------- */
-
-.factory-showcase{
-  margin-top: 22px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(15, 43, 70, 0.10);
-  box-shadow: var(--shadow-soft);
-  background: rgba(255,255,255,0.92);
-}
-
-.factory-showcase__media img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.factory-showcase__body{
-  padding: 18px 18px 20px;
-}
-
-/* -------------------------
-   MODELS
-   ------------------------- */
-
-.model{
+/* MODELS */
+.models .card{
   overflow: hidden;
   padding: 0;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.model img{
+.models .card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 58px rgba(15, 23, 42, 0.14);
+}
+
+.models img{
   width: 100%;
   height: auto;
   display: block;
@@ -459,15 +386,7 @@ body{
   padding: 18px 18px 20px;
 }
 
-.model--premium{
-  border: 1px solid rgba(15, 43, 70, 0.10);
-  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.10);
-}
-
-/* -------------------------
-   STEPS
-   ------------------------- */
-
+/* STEPS */
 .steps{
   margin-top: 24px;
   display: grid;
@@ -490,17 +409,13 @@ body{
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-family: var(--sans);
-  background: rgba(242,200,110,.16);
-  border: 1px solid rgba(242,200,110,.26);
+  background: rgba(244,199,106,.16);
+  border: 1px solid rgba(244,199,106,.26);
   color: #7b5a1c;
   margin-bottom: 10px;
 }
 
-/* -------------------------
-   FAQ
-   ------------------------- */
-
+/* FAQ */
 .faq{
   margin-top: 24px;
   display: grid;
@@ -520,7 +435,6 @@ body{
   list-style: none;
   padding: 16px 18px;
   font-weight: 800;
-  font-family: var(--sans);
   color: #0f172a;
 }
 
@@ -532,10 +446,7 @@ body{
   line-height: 1.6;
 }
 
-/* -------------------------
-   CTA FINAL
-   ------------------------- */
-
+/* CTA FINAL */
 .cta{
   background: linear-gradient(180deg, var(--navy-2), var(--navy-3));
   color: var(--light);
@@ -552,10 +463,7 @@ body{
   font-size: 13px;
 }
 
-/* -------------------------
-   FOOTER
-   ------------------------- */
-
+/* FOOTER */
 .footer{
   background: #071a2b;
   color: rgba(255,255,255,.78);
@@ -593,10 +501,7 @@ body{
 
 .footer__links a:hover{ color: #fff; }
 
-/* -------------------------
-   DESKTOP (SPLIT PREMIUM)
-   ------------------------- */
-
+/* DESKTOP */
 @media (min-width: 992px){
   .h1{ font-size: 54px; }
   .h2{ font-size: 38px; }
@@ -606,21 +511,31 @@ body{
   .hero{ padding: 64px 0 34px; }
 
   .hero__grid{
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 1.05fr 1fr;
     gap: 26px;
     align-items: center;
   }
 
-  .hero__content{
-    text-align: left;
-  }
+  .hero__content{ text-align: left; }
 
+  /* no desktop, microproof e bullets seguem à esquerda naturalmente */
   .microproof{ justify-content: flex-start; }
-  .hero__actions{ max-width: 520px; }
 
   .bullets{
     grid-template-columns: 1fr 1fr;
     justify-items: start;
+  }
+
+  /* HERO PC grande 16:9 (isso resolve o “não ficou 1920x1080 visualmente”) */
+  .hero__media{
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero__media img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .grid--2{ grid-template-columns: 1fr 1fr; gap: 18px; }
