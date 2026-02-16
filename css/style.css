@@ -1,64 +1,173 @@
 /* ===========================
-   HERO DESKTOP FULLSCREEN
+   ART COIFAS — HERO ONLY
+   PC: 1920x1080 fullscreen
+   Mobile: 800x600
    =========================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+:root{
+  --brand: #0f2b46;
+  --gold: #d4a017;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,.86);
+  --muted2: rgba(255,255,255,.76);
+}
+
+/* HERO BASE */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--text);
+  display: flex;
+  align-items: stretch;
+}
+
+/* BACKGROUND IMAGE */
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero__bg picture,
+.hero__bg img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero__bg img{
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.hero__overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg,
+      rgba(15,43,70,.92) 0%,
+      rgba(15,43,70,.62) 52%,
+      rgba(15,43,70,.22) 100%
+    ),
+    radial-gradient(900px 600px at 20% 18%, rgba(212,160,23,.16), transparent 55%);
+}
+
+/* WRAP */
+.hero__wrap{
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 3.2rem 1.25rem;
+}
+
+/* CONTENT */
+.hero__content{
+  width: min(760px, 100%);
+}
+
+.hero__eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color: rgba(255,255,255,.9);
+  padding: .55rem .85rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.hero__title{
+  margin-top: 1.1rem;
+  font-size: clamp(2.15rem, 1.4rem + 2.4vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.accent{ color: var(--gold); }
+
+.hero__lead{
+  margin-top: 1.05rem;
+  max-width: 62ch;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+/* CTA */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  margin-top: 1.35rem;
+  padding: 1.05rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 850;
+  letter-spacing: .01em;
+  text-decoration: none;
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.btn--whatsapp{
+  background: #1fb85a;
+  color: #fff;
+  box-shadow: 0 18px 44px rgba(31,184,90,.22);
+}
+.btn--whatsapp:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 22px 54px rgba(31,184,90,.26);
+}
+
+.btn__icon{ display: inline-flex; }
+.btn__icon svg{ display: block; }
+
+.hero__microproof{
+  margin-top: .85rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--muted2);
+  font-size: .95rem;
+}
+.stars{ color: var(--gold); letter-spacing: .08em; }
+
+.hero__bullets{
+  margin-top: .9rem;
+  list-style: none;
+  display: grid;
+  gap: .35rem;
+  color: var(--muted2);
+  font-size: .98rem;
+}
+.check{ color: var(--gold); font-weight: 900; margin-right: .35rem; }
+
+/* MOBILE: remove "ATENDIMENTO" */
+.desktop-only{ display: none; }
+
+/* DESKTOP */
 @media (min-width: 992px){
+  .desktop-only{ display: inline; }
 
-  .hero{
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero .container{
-    width: min(1320px, calc(100% - 4rem));
-    margin: 0 auto;
-    position: relative;
-    z-index: 3;
-  }
-
-  .hero__grid{
-    grid-template-columns: 1fr;
-  }
-
-  .hero__media--fullscreen{
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-    border: 0;
-    box-shadow: none;
-    z-index: 1;
-  }
-
-  .hero__media--fullscreen picture,
-  .hero__media--fullscreen img{
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero__media--fullscreen img{
-    object-fit: cover;
-    min-height: 100vh;
-  }
-
-  /* Overlay para leitura do texto */
-  .hero::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, rgba(15,43,70,0.88) 0%, rgba(15,43,70,0.55) 55%, rgba(15,43,70,0.25) 100%);
-    z-index: 2;
-    pointer-events: none;
+  .hero__wrap{
+    padding: 0 4rem;
   }
 
   .hero__content{
-    max-width: 720px;
-    position: relative;
-    z-index: 4;
+    width: min(820px, 100%);
+  }
+
+  .hero__bullets{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .35rem 1rem;
   }
 }
