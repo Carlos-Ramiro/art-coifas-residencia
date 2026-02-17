@@ -4,12 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
+
   <title>Coifa Piramidal Sob Medida em Campinas | Art Coifas</title>
   <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, acabamento premium e instalação profissional." />
 
-  <!-- LCP MOBILE -->
-  <link rel="preload" as="image" href="/images/hero-coifa-piramidal-mobile-800x600.webp" fetchpriority="high" />
-  <link rel="preload" as="image" href="/images/hero-coifa-piramidal-desktop-1920x1080.webp" />
+  <!-- =======================================================================
+    CONFIG IMAGENS + ALTs (EDITE AQUI QUANDO FOR TRANSFORMAR EM MODELO)
+    Regra: mantenha os nomes de arquivo consistentes e depois atualize os src/alt
+    dentro de cada bloco (Ctrl+F pelo nome do arquivo ou pelo comentário do bloco).
+
+    HERO (MOBILE IMG)
+    - src: images/hero-coifa-piramidal-mobile-800x600.webp
+    - alt: Coifa piramidal sob medida em Campinas
+
+    HERO (DESKTOP BACKGROUND)
+    - src: images/hero-coifa-piramidal-desktop-1920x1080.webp
+
+    BLOCO ESTRUTURA (IMG)
+    - src: images/fabricante-de-coifa-piramidal-em-campinas.webp
+    - alt: Estrutura de fabricação de coifa sob medida em Campinas
+
+    BLOCO GALERIA (3 IMGS)
+    - src: images/fabrica-de-coifa-piramidal-sob-medida-campinas.webp
+    - alt: Coifa sob medida em Campinas com acabamento premium
+
+    - src: images/fabrica-de-coifa-piramidal-em-campinas-sp.webp
+    - alt: Coifa sob medida em Campinas instalada em cozinha e área gourmet
+
+    - src: images/coifa-piramidal-churrasqueira-em-campinas.webp
+    - alt: Coifa sob medida em Campinas com instalação profissional
+  ======================================================================== -->
+
+  <!-- LCP MOBILE (não usar / no começo para funcionar em qualquer rota/pasta) -->
+  <link rel="preload" as="image" href="images/hero-coifa-piramidal-mobile-800x600.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/hero-coifa-piramidal-desktop-1920x1080.webp" />
 
   <style>
     :root{
@@ -23,7 +51,11 @@
       --light2:#eaf0f6;
       --dark:#07111c;
       --dark2:#0a1826;
+
+      /* HERO DESKTOP (centralizado aqui) */
+      --hero-desktop-bg: url("images/hero-coifa-piramidal-desktop-1920x1080.webp");
     }
+
     *{margin:0;padding:0;box-sizing:border-box}
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -37,7 +69,7 @@
       margin:0 auto;
     }
 
-    /* ================= COMEÇO BLOCO: HERO ================= */
+    /* ================= INÍCIO DO BLOCO: HERO ================= */
     .hero{
       background: var(--brand);
       color: var(--text);
@@ -134,7 +166,10 @@
         content:"";
         position:absolute;
         inset:0;
-        background:url("/images/hero-coifa-piramidal-desktop-1920x1080.webp") center/cover no-repeat;
+        background-image: var(--hero-desktop-bg);
+        background-position:center;
+        background-size:cover;
+        background-repeat:no-repeat;
         z-index:0;
       }
       .hero::after{
@@ -167,10 +202,10 @@
       .title{max-width:18ch;}
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
     }
-    /* ================= FIM BLOCO: HERO ================= */
+    /* ================= FIM DO BLOCO: HERO ================= */
 
 
-    /* ================= COMEÇO BLOCO: 3 CARDS (FLOW) ================= */
+    /* ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= */
     .flow{
       background:
         radial-gradient(900px 520px at 15% 20%, rgba(255,214,107,.12), transparent 55%),
@@ -285,13 +320,13 @@
       font-size:1.02rem;
       max-width:32ch;
     }
-    /* ================= FIM BLOCO: 3 CARDS (FLOW) ================= */
+    /* ================= FIM DO BLOCO: 3 CARDS (FLOW) ================= */
 
 
-    /* ================= COMEÇO BLOCO: ESTRUTURA ================= */
+    /* ================= INÍCIO DO BLOCO: ESTRUTURA ================= */
     .structure{
       background:#ffffff;
-      padding:92px 0 60px; /* ✅ ajustado para reduzir respiro */
+      padding:92px 0 60px;
     }
     .structure__grid{
       display:grid;
@@ -335,13 +370,13 @@
     .structure__list li{ display:flex; gap:.6rem; align-items:flex-start; }
     .structure__list .mark{ color:var(--gold); font-weight:900; margin-top:.05rem; }
     .structure__cta .btn{ margin-top:0; border-color: rgba(15,43,70,0.10); }
-    /* ================= FIM BLOCO: ESTRUTURA ================= */
+    /* ================= FIM DO BLOCO: ESTRUTURA ================= */
 
 
-    /* ================= COMEÇO BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= */
+    /* ================= INÍCIO DO BLOCO: GALERIA (3 CARDS) ================= */
     .piramidal-gallery{
       background:#ffffff;
-      padding:48px 0 62px; /* ✅ compacto, remove o buraco */
+      padding:48px 0 62px;
     }
     .piramidal-gallery__title{
       text-align:center;
@@ -384,7 +419,7 @@
     }
     .piramidal-card__media{
       width: 100%;
-      aspect-ratio: 4 / 3; /* ✅ trava 800x600 */
+      aspect-ratio: 4 / 3;
       background: #eef3f8;
     }
     .piramidal-card__media img{
@@ -406,61 +441,10 @@
       line-height: 1.65;
       font-size: .98rem;
     }
-    /* ================= FIM BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= */
+    /* ================= FIM DO BLOCO: GALERIA (3 CARDS) ================= */
 
 
-    /* ================= COMEÇO BLOCO: MODELOS ================= */
-    .models{
-      background:#ffffff;
-      padding: 62px 0 95px; /* ✅ reduz respiro em cima */
-    }
-    .models__title{
-      text-align:center;
-      font-size: clamp(1.95rem, 1.25rem + 2vw, 2.8rem);
-      font-weight:900;
-      color: var(--brand);
-      margin-bottom: 14px;
-      letter-spacing:-0.02em;
-    }
-    .models__sub{
-      text-align:center;
-      max-width: 74ch;
-      margin: 0 auto 48px;
-      color:#2a2f36;
-      line-height:1.7;
-      font-size:1.04rem;
-    }
-    .models__grid{
-      display:grid;
-      gap: 22px;
-    }
-    @media (min-width: 992px){
-      .models__grid{ grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    }
-    .models__card{
-      border-radius: 20px;
-      overflow:hidden;
-      background:#fff;
-      border: 1px solid rgba(15,43,70,.10);
-      box-shadow: 0 22px 60px rgba(15,43,70,.12);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-    .models__card:hover{
-      transform: translateY(-8px);
-      border-color: rgba(255,214,107,.40);
-      box-shadow: 0 34px 90px rgba(15,43,70,.16);
-    }
-    .models__card img{
-      width:100%;
-      height:auto;
-      display:block;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-    }
-    /* ================= FIM BLOCO: MODELOS ================= */
-
-
-    /* ================= COMEÇO BLOCO: DEPOIMENTOS (testimonials) ================= */
+    /* ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= */
     .testimonials{
       background:
         radial-gradient(900px 520px at 18% 22%, rgba(255,214,107,.12), transparent 55%),
@@ -574,10 +558,74 @@
       .testimonials__sub{ max-width: 34ch; margin: 0 auto 42px; }
       .testimonials__sub .subline{ display:block; }
     }
-    /* ================= FIM BLOCO: DEPOIMENTOS (testimonials) ================= */
+    /* ================= FIM DO BLOCO: DEPOIMENTOS ================= */
 
 
-    /* ================= COMEÇO BLOCO: CTA FOOTER (RODAPÉ) ================= */
+    /* ================= INÍCIO DO BLOCO: FAQ ================= */
+    .faq-dark{
+      padding:90px 0;
+      background: linear-gradient(180deg, #0f2b46 0%, #091a2c 100%);
+      color:#fff;
+    }
+    .faq-dark__title{
+      text-align:center;
+      font-size:2.2rem;
+      font-weight:900;
+      margin-bottom:60px;
+    }
+    .faq-dark__title span{ color: var(--gold); }
+    .faq-dark__list{
+      max-width:850px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+    .faq-dark__item{
+      background: rgba(255,255,255,.05);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+      transition:.3s ease;
+    }
+    .faq-dark__question{
+      width:100%;
+      background:none;
+      border:none;
+      padding:22px 26px;
+      font-size:1.05rem;
+      font-weight:700;
+      color:#fff;
+      text-align:left;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .faq-dark__question span{
+      font-size:1.4rem;
+      color: var(--gold);
+      transition:.3s ease;
+    }
+    .faq-dark__answer{
+      padding:0 26px 22px;
+      font-size:0.95rem;
+      color:rgba(255,255,255,.75);
+      line-height:1.7;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s ease;
+    }
+    .faq-dark__item.active{
+      border-color: rgba(255,214,107,.42);
+      background: rgba(255,255,255,.08);
+    }
+    .faq-dark__item.active .faq-dark__answer{ max-height:300px; }
+    .faq-dark__item.active .faq-dark__question span{ transform: rotate(45deg); }
+    /* ================= FIM DO BLOCO: FAQ ================= */
+
+
+    /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
     .cta-footer{
       padding:90px 0 40px;
       background: linear-gradient(180deg, #0f2b46 0%, #081a2e 100%);
@@ -647,7 +695,7 @@
       border-top:1px solid rgba(255,255,255,.06);
       padding-top:20px;
     }
-    /* ================= FIM BLOCO: CTA FOOTER (RODAPÉ) ================= */
+    /* ================= FIM DO BLOCO: CTA FOOTER ================= */
 
     @media (max-width: 768px){
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
@@ -659,6 +707,7 @@
 
 <body>
 
+<!-- ================= INÍCIO DO BLOCO: HERO ================= -->
 <header class="hero">
   <div class="hero__inner">
     <div class="wrap">
@@ -696,7 +745,7 @@
 
       <div class="hero__media">
         <img
-          src="/images/hero-coifa-piramidal-mobile-800x600.webp"
+          src="images/hero-coifa-piramidal-mobile-800x600.webp"
           alt="Coifa piramidal sob medida em Campinas"
           width="800"
           height="600"
@@ -708,7 +757,10 @@
     </div>
   </div>
 </header>
+<!-- ================= FIM DO BLOCO: HERO ================= -->
 
+
+<!-- ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= -->
 <section class="flow" aria-label="Etapas do atendimento">
   <div class="wrap">
     <h2 class="flow__title">Atendimento <span class="accent">presencial</span> e sob medida</h2>
@@ -747,14 +799,17 @@
     </div>
   </div>
 </section>
+<!-- ================= FIM DO BLOCO: 3 CARDS (FLOW) ================= -->
 
+
+<!-- ================= INÍCIO DO BLOCO: ESTRUTURA ================= -->
 <section class="structure">
   <div class="wrap">
     <div class="structure__grid">
       <div class="structure__media">
         <img
-          src="/images/fabricante-de-coifa-piramidal-em-campinas.webp"
-          alt="Estrutura de fabricação de coifa piramidal sob medida em Campinas"
+          src="images/fabricante-de-coifa-piramidal-em-campinas.webp"
+          alt="Estrutura de fabricação de coifa sob medida em Campinas"
           width="1200"
           height="800"
           loading="lazy"
@@ -795,21 +850,23 @@
     </div>
   </div>
 </section>
+<!-- ================= FIM DO BLOCO: ESTRUTURA ================= -->
 
-<!-- ================= BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= -->
-<section class="piramidal-gallery" aria-label="Detalhes da coifa piramidal sob medida">
+
+<!-- ================= INÍCIO DO BLOCO: GALERIA (3 CARDS) ================= -->
+<section class="piramidal-gallery" aria-label="Detalhes do produto">
   <div class="wrap">
-    <h2 class="piramidal-gallery__title">Detalhes do acabamento <span class="accent">piramidal</span></h2>
+    <h2 class="piramidal-gallery__title">Detalhes do acabamento <span class="accent">premium</span></h2>
     <p class="piramidal-gallery__sub">
-      Fotos reais de coifas piramidais sob medida: acabamento premium, encaixe preciso e instalação profissional em Campinas e região.
+      Fotos reais: acabamento premium, encaixe preciso e instalação profissional em Campinas e região.
     </p>
 
     <div class="piramidal-gallery__grid">
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="/images/fabrica-de-coifa-piramidal-sob-medida-campinas.webp"
-            alt="Coifa piramidal sob medida em Campinas com acabamento premium"
+            src="images/fabrica-de-coifa-piramidal-sob-medida-campinas.webp"
+            alt="Coifa sob medida em Campinas com acabamento premium"
             width="800"
             height="600"
             loading="lazy"
@@ -825,8 +882,8 @@
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="/images/fabrica-de-coifa-piramidal-em-campinas-sp.webp"
-            alt="Coifa piramidal sob medida em Campinas instalada em cozinha e área gourmet"
+            src="images/fabrica-de-coifa-piramidal-em-campinas-sp.webp"
+            alt="Coifa sob medida em Campinas instalada em cozinha e área gourmet"
             width="800"
             height="600"
             loading="lazy"
@@ -842,8 +899,8 @@
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="/images/coifa-piramidal-churrasqueira-em-campinas.webp"
-            alt="Coifa piramidal sob medida em Campinas com instalação profissional"
+            src="images/coifa-piramidal-churrasqueira-em-campinas.webp"
+            alt="Coifa sob medida em Campinas com instalação profissional"
             width="800"
             height="600"
             loading="lazy"
@@ -858,8 +915,10 @@
     </div>
   </div>
 </section>
-<!-- ================= FIM BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= -->
+<!-- ================= FIM DO BLOCO: GALERIA (3 CARDS) ================= -->
 
+
+<!-- ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= -->
 <section class="testimonials" aria-label="Depoimentos de clientes">
   <div class="wrap">
     <h2 class="testimonials__title">
@@ -901,7 +960,10 @@
     </div>
   </div>
 </section>
+<!-- ================= FIM DO BLOCO: DEPOIMENTOS ================= -->
 
+
+<!-- ================= INÍCIO DO BLOCO: FAQ ================= -->
 <section class="faq-dark">
   <div class="wrap">
     <h2 class="faq-dark__title">
@@ -910,7 +972,7 @@
 
     <div class="faq-dark__list">
       <div class="faq-dark__item">
-        <button class="faq-dark__question">
+        <button type="button" class="faq-dark__question">
           Vocês vendem coifas prontas?
           <span>+</span>
         </button>
@@ -921,18 +983,18 @@
       </div>
 
       <div class="faq-dark__item">
-        <button class="faq-dark__question">
+        <button type="button" class="faq-dark__question">
           Trabalham com coifa de vidro ou coifa de ilha?
           <span>+</span>
         </button>
         <div class="faq-dark__answer">
           Apenas em projetos especiais, sob consulta técnica.
-          Esta página é dedicada exclusivamente à fabricação de coifas piramidais sob medida.
+          Esta página é dedicada exclusivamente à fabricação de coifas sob medida.
         </div>
       </div>
 
       <div class="faq-dark__item">
-        <button class="faq-dark__question">
+        <button type="button" class="faq-dark__question">
           A coifa é realmente feita sob medida?
           <span>+</span>
         </button>
@@ -943,7 +1005,7 @@
       </div>
 
       <div class="faq-dark__item">
-        <button class="faq-dark__question">
+        <button type="button" class="faq-dark__question">
           Atendem Campinas e região?
           <span>+</span>
         </button>
@@ -955,79 +1017,10 @@
     </div>
   </div>
 </section>
+<!-- ================= FIM DO BLOCO: FAQ ================= -->
 
-<style>
-.faq-dark{
-  padding:90px 0;
-  background: linear-gradient(180deg, #0f2b46 0%, #091a2c 100%);
-  color:#fff;
-}
-.faq-dark__title{
-  text-align:center;
-  font-size:2.2rem;
-  font-weight:900;
-  margin-bottom:60px;
-}
-.faq-dark__title span{ color: var(--gold); }
-.faq-dark__list{
-  max-width:850px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-.faq-dark__item{
-  background: rgba(255,255,255,.05);
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.08);
-  overflow:hidden;
-  transition:.3s ease;
-}
-.faq-dark__question{
-  width:100%;
-  background:none;
-  border:none;
-  padding:22px 26px;
-  font-size:1.05rem;
-  font-weight:700;
-  color:#fff;
-  text-align:left;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.faq-dark__question span{
-  font-size:1.4rem;
-  color: var(--gold);
-  transition:.3s ease;
-}
-.faq-dark__answer{
-  padding:0 26px 22px;
-  font-size:0.95rem;
-  color:rgba(255,255,255,.75);
-  line-height:1.7;
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .4s ease;
-}
-.faq-dark__item.active{
-  border-color: rgba(255,214,107,.42);
-  background: rgba(255,255,255,.08);
-}
-.faq-dark__item.active .faq-dark__answer{ max-height:300px; }
-.faq-dark__item.active .faq-dark__question span{ transform: rotate(45deg); }
-</style>
 
-<script>
-document.querySelectorAll('.faq-dark__question').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const item = btn.parentElement;
-    item.classList.toggle('active');
-  });
-});
-</script>
-
+<!-- ================= INÍCIO DO BLOCO: CTA FOOTER ================= -->
 <section class="cta-footer">
   <div class="wrap">
     <div class="cta-footer__cta">
@@ -1079,6 +1072,17 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
     </div>
   </div>
 </section>
+<!-- ================= FIM DO BLOCO: CTA FOOTER ================= -->
+
+<!-- JS (sempre no final do body para evitar bagunça ao replicar) -->
+<script>
+  document.querySelectorAll('.faq-dark__question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
