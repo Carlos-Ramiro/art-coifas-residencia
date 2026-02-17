@@ -702,6 +702,27 @@
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
     }
+	/* ================= AJUSTE: QUEBRA DE LINHA (DESKTOP ONLY) ================= */
+@media (min-width: 992px){
+
+  /* 1) Frases curtas de CTA que NÃO podem quebrar feio */
+  .cta-footer__cta p,
+  .micro span{
+    white-space: nowrap;
+  }
+
+  /* 2) Evita quebra ruim do H1 quando o destaque fica “pendurado” */
+  .title .accent{
+    white-space: nowrap;
+  }
+
+  /* 3) Evita “quebra torta” na tarja superior (eyebrow) */
+  .eyebrow{
+    white-space: nowrap;
+  }
+}
+/* ================= FIM AJUSTE ================= */
+
   </style>
 </head>
 
