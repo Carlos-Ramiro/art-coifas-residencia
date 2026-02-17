@@ -228,8 +228,7 @@
       background:
         linear-gradient(180deg,
           rgba(255,255,255,.07) 0%,
-          rgba(255,255,255,.03) 100%
-        );
+          rgba(255,255,255,.03) 100%);
       border:1px solid rgba(255,255,255,.12);
       box-shadow:
         0 30px 80px rgba(0,0,0,.45),
@@ -240,18 +239,13 @@
       flex-direction:column;
       align-items:center;
       justify-content:flex-start;
-      transition:
-        transform .28s ease,
-        border-color .28s ease,
-        box-shadow .28s ease,
-        background .28s ease;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
     }
     .flow__card::after{
       content:"";
       position:absolute;
       inset:-70%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,214,107,.20), transparent 55%);
+      background: radial-gradient(circle at 30% 30%, rgba(255,214,107,.20), transparent 55%);
       transform: rotate(8deg);
       opacity:.55;
       pointer-events:none;
@@ -263,23 +257,15 @@
       background:
         linear-gradient(180deg,
           rgba(255,255,255,.09) 0%,
-          rgba(255,255,255,.04) 100%
-        );
+          rgba(255,255,255,.04) 100%);
     }
     .flow__num{
-      width:62px;
-      height:62px;
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      color: var(--gold);
+      width:62px;height:62px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;color: var(--gold);
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.16);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,214,107,.18),
-        0 10px 25px rgba(0,0,0,.35);
+      box-shadow: inset 0 0 0 1px rgba(255,214,107,.18), 0 10px 25px rgba(0,0,0,.35);
       margin: 4px auto 22px;
       font-size: 1.3rem;
       letter-spacing:.04em;
@@ -305,7 +291,7 @@
     /* ================= COMEÇO BLOCO: ESTRUTURA ================= */
     .structure{
       background:#ffffff;
-      padding:100px 0;
+      padding:92px 0 60px; /* ✅ ajustado para reduzir respiro */
     }
     .structure__grid{
       display:grid;
@@ -313,9 +299,7 @@
       align-items:center;
     }
     @media (min-width: 992px){
-      .structure__grid{
-        grid-template-columns: 1fr 1fr;
-      }
+      .structure__grid{ grid-template-columns: 1fr 1fr; }
     }
     .structure__media{
       border-radius:22px;
@@ -324,11 +308,7 @@
       box-shadow:0 22px 60px rgba(15,43,70,0.10);
       background:#fff;
     }
-    .structure__media img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
+    .structure__media img{ width:100%; height:auto; display:block; }
     .structure__title{
       font-size: clamp(1.8rem, 1.2rem + 1.6vw, 2.5rem);
       line-height:1.12;
@@ -352,27 +332,87 @@
       color:#2a2f36;
       font-weight:700;
     }
-    .structure__list li{
-      display:flex;
-      gap:.6rem;
-      align-items:flex-start;
-    }
-    .structure__list .mark{
-      color:var(--gold);
-      font-weight:900;
-      margin-top:.05rem;
-    }
-    .structure__cta .btn{
-      margin-top:0;
-      border-color: rgba(15,43,70,0.10);
-    }
+    .structure__list li{ display:flex; gap:.6rem; align-items:flex-start; }
+    .structure__list .mark{ color:var(--gold); font-weight:900; margin-top:.05rem; }
+    .structure__cta .btn{ margin-top:0; border-color: rgba(15,43,70,0.10); }
     /* ================= FIM BLOCO: ESTRUTURA ================= */
+
+
+    /* ================= COMEÇO BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= */
+    .piramidal-gallery{
+      background:#ffffff;
+      padding:48px 0 62px; /* ✅ compacto, remove o buraco */
+    }
+    .piramidal-gallery__title{
+      text-align:center;
+      color: var(--brand);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem);
+      margin-bottom: 10px;
+    }
+    .piramidal-gallery__sub{
+      text-align:center;
+      max-width: 78ch;
+      margin: 0 auto 38px;
+      color: #2a2f36;
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+    .piramidal-gallery__grid{
+      display:grid;
+      gap: 18px;
+    }
+    @media (min-width: 992px){
+      .piramidal-gallery__grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+    }
+    .piramidal-card{
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(15,43,70,0.10);
+      box-shadow: 0 18px 48px rgba(15,43,70,0.10);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .piramidal-card:hover{
+      transform: translateY(-6px);
+      border-color: rgba(255,214,107,.50);
+      box-shadow: 0 26px 70px rgba(15,43,70,0.14);
+    }
+    .piramidal-card__media{
+      width: 100%;
+      aspect-ratio: 4 / 3; /* ✅ trava 800x600 */
+      background: #eef3f8;
+    }
+    .piramidal-card__media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .piramidal-card__body{ padding: 18px 18px 20px; }
+    .piramidal-card__h{
+      color: var(--brand);
+      font-weight: 900;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .piramidal-card__p{
+      color:#2a2f36;
+      line-height: 1.65;
+      font-size: .98rem;
+    }
+    /* ================= FIM BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= */
 
 
     /* ================= COMEÇO BLOCO: MODELOS ================= */
     .models{
       background:#ffffff;
-      padding: 95px 0;
+      padding: 62px 0 95px; /* ✅ reduz respiro em cima */
     }
     .models__title{
       text-align:center;
@@ -395,10 +435,7 @@
       gap: 22px;
     }
     @media (min-width: 992px){
-      .models__grid{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-      }
+      .models__grid{ grid-template-columns: repeat(3, 1fr); gap: 28px; }
     }
     .models__card{
       border-radius: 20px;
@@ -457,8 +494,6 @@
       margin-bottom:14px;
     }
     .testimonials__title .accent{ color: var(--gold); }
-
-    /* Desktop: tudo em linha normal */
     .testimonials__title .tline2{ display:inline; }
 
     .testimonials__sub{
@@ -469,7 +504,6 @@
       line-height:1.7;
       font-size:1.04rem;
     }
-    /* Desktop: descrição em fluxo normal */
     .testimonials__sub .subline{ display:inline; }
 
     .testimonials__grid{
@@ -478,12 +512,7 @@
       align-items:stretch;
     }
     @media (min-width: 992px){
-      .testimonials__grid{
-        grid-template-columns: repeat(2, 1fr);
-        gap:28px;
-      }
-
-      /* ✅ AJUSTE 1 (SÓ PC): quebra depois de "Campinas," */
+      .testimonials__grid{ grid-template-columns: repeat(2, 1fr); gap:28px; }
       .testimonials__sub .subline:nth-child(2)::before{
         content:"\A";
         white-space:pre;
@@ -507,28 +536,11 @@
       transform: translateY(-6px);
       box-shadow: 0 36px 95px rgba(0,0,0,.42);
     }
-    .tstars{
-      color: var(--gold);
-      letter-spacing:.14em;
-      font-size: .95rem;
-      margin-bottom: 12px;
-      line-height:1;
-    }
-    .tquote{
-      color:#1a2533;
-      font-size: 1.02rem;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .tquote em{
-      font-style: italic;
-      color:#1f2c3d;
-    }
-    .tauthor{
-      font-weight:900;
-      color:#0f2b46;
-      font-size: 1rem;
-    }
+    .tstars{ color: var(--gold); letter-spacing:.14em; font-size: .95rem; margin-bottom: 12px; line-height:1; }
+    .tquote{ color:#1a2533; font-size: 1.02rem; line-height: 1.7; margin-bottom: 16px; }
+    .tquote em{ font-style: italic; color:#1f2c3d; }
+    .tauthor{ font-weight:900; color:#0f2b46; font-size: 1rem; }
+
     .testimonials__cta{
       margin-top: 34px;
       margin-bottom: 18px;
@@ -556,21 +568,10 @@
       box-shadow:0 22px 60px rgba(31,184,90,.28);
     }
 
-    /* ===== MOBILE ONLY: exatamente como no print ===== */
     @media (max-width: 768px){
       .testimonials{ padding: 98px 0 74px; }
-
-      /* TÍTULO: 1ª linha / 2ª linha */
-      .testimonials__title .tline2{
-        display:block;
-        margin-top:.15em;
-      }
-
-      /* DESCRIÇÃO: 3 linhas fixas */
-      .testimonials__sub{
-        max-width: 34ch;
-        margin: 0 auto 42px;
-      }
+      .testimonials__title .tline2{ display:block; margin-top:.15em; }
+      .testimonials__sub{ max-width: 34ch; margin: 0 auto 42px; }
       .testimonials__sub .subline{ display:block; }
     }
     /* ================= FIM BLOCO: DEPOIMENTOS (testimonials) ================= */
@@ -597,8 +598,6 @@
       margin-bottom:28px;
       line-height:1.6;
     }
-
-    /* ✅ AJUSTE 2 (SÓ PC): manter a frase em 1 linha no desktop */
     @media (min-width: 992px){
       .cta-footer__cta p{
         max-width: 80ch;
@@ -607,7 +606,6 @@
         white-space: nowrap;
       }
     }
-
     .btn--big{
       padding:18px 34px;
       font-size:1.05rem;
@@ -634,22 +632,14 @@
       line-height:1.6;
       color:rgba(255,255,255,.7);
     }
-    .cta-footer__col ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    .cta-footer__col li{
-      margin-bottom:10px;
-    }
+    .cta-footer__col ul{ list-style:none; padding:0; margin:0; }
+    .cta-footer__col li{ margin-bottom:10px; }
     .cta-footer__col a{
       color:rgba(255,255,255,.75);
       text-decoration:none;
       transition:.3s ease;
     }
-    .cta-footer__col a:hover{
-      color:var(--gold);
-    }
+    .cta-footer__col a:hover{ color:var(--gold); }
     .cta-footer__copy{
       text-align:center;
       font-size:.8rem;
@@ -659,14 +649,11 @@
     }
     /* ================= FIM BLOCO: CTA FOOTER (RODAPÉ) ================= */
 
-
-    /* ================= COMEÇO AJUSTES MOBILE ONLY ================= */
     @media (max-width: 768px){
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
     }
-    /* ================= FIM AJUSTES MOBILE ONLY ================= */
   </style>
 </head>
 
@@ -809,7 +796,70 @@
   </div>
 </section>
 
-<!-- ================= COMEÇO BLOCO: MODELOS ================= -->
+<!-- ================= BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= -->
+<section class="piramidal-gallery" aria-label="Detalhes da coifa piramidal sob medida">
+  <div class="wrap">
+    <h2 class="piramidal-gallery__title">Detalhes do acabamento <span class="accent">piramidal</span></h2>
+    <p class="piramidal-gallery__sub">
+      Fotos reais de coifas piramidais sob medida: acabamento premium, encaixe preciso e instalação profissional em Campinas e região.
+    </p>
+
+    <div class="piramidal-gallery__grid">
+      <article class="piramidal-card">
+        <div class="piramidal-card__media">
+          <img
+            src="/images/TROCAR-IMAGEM-01-800x600.webp"
+            alt="Coifa piramidal sob medida em Campinas com acabamento premium"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="piramidal-card__body">
+          <h3 class="piramidal-card__h">Acabamento premium e alinhamento perfeito</h3>
+          <p class="piramidal-card__p">Estrutura robusta, recortes limpos e acabamento pensado para ficar bonito e funcional no dia a dia.</p>
+        </div>
+      </article>
+
+      <article class="piramidal-card">
+        <div class="piramidal-card__media">
+          <img
+            src="/images/TROCAR-IMAGEM-02-800x600.webp"
+            alt="Coifa piramidal sob medida em Campinas instalada em cozinha e área gourmet"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="piramidal-card__body">
+          <h3 class="piramidal-card__h">Projeto sob medida para o seu ambiente</h3>
+          <p class="piramidal-card__p">Dimensões e detalhes definidos na visita técnica para encaixar no layout da cozinha ou área gourmet.</p>
+        </div>
+      </article>
+
+      <article class="piramidal-card">
+        <div class="piramidal-card__media">
+          <img
+            src="/images/TROCAR-IMAGEM-03-800x600.webp"
+            alt="Coifa piramidal sob medida em Campinas com instalação profissional"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="piramidal-card__body">
+          <h3 class="piramidal-card__h">Instalação profissional e resultado final</h3>
+          <p class="piramidal-card__p">Montagem precisa, acabamento de entrega e performance real — do projeto à instalação.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ================= FIM BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= -->
+
 <section class="models">
   <div class="wrap">
 
@@ -823,7 +873,6 @@
     </p>
 
     <div class="models__grid">
-
       <div class="models__card">
         <img
           src="/images/coifa-inox-sob-medida-campinas.webp"
@@ -856,11 +905,9 @@
           decoding="async"
         />
       </div>
-
     </div>
   </div>
 </section>
-<!-- ================= FIM BLOCO: MODELOS ================= -->
 
 <section class="testimonials" aria-label="Depoimentos de clientes">
   <div class="wrap">
@@ -911,7 +958,6 @@
     </h2>
 
     <div class="faq-dark__list">
-
       <div class="faq-dark__item">
         <button class="faq-dark__question">
           Vocês vendem coifas prontas?
@@ -955,7 +1001,6 @@
           incluindo Indaiatuba, Valinhos, Jundiaí, Sumaré, Hortolândia e Monte Mor.
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1021,72 +1066,6 @@
 }
 .faq-dark__item.active .faq-dark__answer{ max-height:300px; }
 .faq-dark__item.active .faq-dark__question span{ transform: rotate(45deg); }
-
-<!-- ================= BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= -->
-<section class="piramidal-gallery" aria-label="Detalhes da coifa piramidal sob medida">
-  <div class="wrap">
-    <h2 class="piramidal-gallery__title">Detalhes do acabamento <span class="accent">piramidal</span></h2>
-    <p class="piramidal-gallery__sub">
-      Fotos reais de coifas piramidais sob medida: acabamento premium, encaixe preciso e instalação profissional em Campinas e região.
-    </p>
-
-    <div class="piramidal-gallery__grid">
-      <article class="piramidal-card">
-        <div class="piramidal-card__media">
-          <img
-            src="/images/TROCAR-IMAGEM-01-800x600.webp"
-            alt="Coifa piramidal sob medida em Campinas com acabamento premium"
-            width="800"
-            height="600"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Acabamento premium e alinhamento perfeito</h3>
-          <p class="piramidal-card__p">Estrutura robusta, recortes limpos e acabamento pensado para ficar bonito e funcional no dia a dia.</p>
-        </div>
-      </article>
-
-      <article class="piramidal-card">
-        <div class="piramidal-card__media">
-          <img
-            src="/images/TROCAR-IMAGEM-02-800x600.webp"
-            alt="Coifa piramidal sob medida em Campinas instalada em cozinha e área gourmet"
-            width="800"
-            height="600"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Projeto sob medida para o seu ambiente</h3>
-          <p class="piramidal-card__p">Dimensões e detalhes definidos na visita técnica para encaixar no layout da cozinha ou área gourmet.</p>
-        </div>
-      </article>
-
-      <article class="piramidal-card">
-        <div class="piramidal-card__media">
-          <img
-            src="/images/TROCAR-IMAGEM-03-800x600.webp"
-            alt="Coifa piramidal sob medida em Campinas com instalação profissional"
-            width="800"
-            height="600"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Instalação profissional e resultado final</h3>
-          <p class="piramidal-card__p">Montagem precisa, acabamento de entrega e performance real — do projeto à instalação.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-<!-- ================= FIM BLOCO: GALERIA PIRAMIDAL (3 CARDS) ================= -->
-
-
 </style>
 
 <script>
@@ -1100,7 +1079,6 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
 
 <section class="cta-footer">
   <div class="wrap">
-
     <div class="cta-footer__cta">
       <h2>Peça seu orçamento direto com a fábrica</h2>
       <p>Fale com quem realmente entende de coifas sob&nbsp;medida.</p>
@@ -1148,7 +1126,6 @@ document.querySelectorAll('.faq-dark__question').forEach(btn=>{
     <div class="cta-footer__copy">
       © 2026 Art Coifas. Todos os direitos reservados.
     </div>
-
   </div>
 </section>
 
