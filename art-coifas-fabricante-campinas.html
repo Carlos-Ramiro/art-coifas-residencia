@@ -769,6 +769,61 @@
   .conversion-block__text{ max-width: 34ch; }
 }
 /* ================= FIM BLOCO ESTRATÉGICO ================= */
+/* ================= AJUSTES PREMIUM (ADD-ONLY / SEGURO) ================= */
+
+/* A) AMARELO MAIS VIVO (troca global sem mexer no HTML) */
+:root{
+  --gold: #ffbf1f; /* mais vivo e com mais contraste no branco */
+}
+
+/* B) TRANSIÇÕES MAIS SUAVES ENTRE BLOCOS (sem “bloco empilhado”) */
+.piramidal-gallery{
+  position: relative;
+  overflow: hidden;
+}
+
+/* “fade” sutil para entrar no bloco escuro seguinte */
+.piramidal-gallery::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-1px;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(7,17,28,.10) 100%);
+  pointer-events:none;
+}
+
+/* C) BLOCO DE CONVERSÃO CLARO (o “decisão técnica”) com cara premium */
+.conversion-proof{
+  background: #f6f8fb;               /* levemente off-white */
+  border-top: 1px solid rgba(15,43,70,.08);
+  border-bottom: 1px solid rgba(15,43,70,.08);
+  padding: 80px 0;                   /* mais respiro (sem mexer em outros blocos) */
+}
+
+/* Se você não tiver a classe .conversion-proof, use esta alternativa:
+   aplique no seu bloco pelo seletor que já existe (me diga a classe e eu adapto). */
+
+/* D) TIPOGRAFIA/IMPACTO do bloco de conversão (sem alterar mobile layout) */
+.conversion-proof h2{
+  font-size: clamp(2rem, 1.35rem + 2vw, 3rem);
+  letter-spacing: -0.02em;
+}
+.conversion-proof p{
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(15,43,70,.82);
+}
+
+/* E) REALCE PREMIUM NO AMARELO (quando usado em fundo branco) */
+.piramidal-gallery .accent,
+.structure .accent,
+.models .accent,
+.testimonials .accent,
+.faq-dark__title span{
+  text-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+/* ================= FIM AJUSTES PREMIUM ================= */
 
 
   </style>
