@@ -369,6 +369,60 @@
     /* ================= FIM BLOCO: ESTRUTURA ================= */
 
 
+    /* ================= COMEÇO BLOCO: MODELOS ================= */
+    .models{
+      background:#ffffff;
+      padding: 95px 0;
+    }
+    .models__title{
+      text-align:center;
+      font-size: clamp(1.95rem, 1.25rem + 2vw, 2.8rem);
+      font-weight:900;
+      color: var(--brand);
+      margin-bottom: 14px;
+      letter-spacing:-0.02em;
+    }
+    .models__sub{
+      text-align:center;
+      max-width: 74ch;
+      margin: 0 auto 48px;
+      color:#2a2f36;
+      line-height:1.7;
+      font-size:1.04rem;
+    }
+    .models__grid{
+      display:grid;
+      gap: 22px;
+    }
+    @media (min-width: 992px){
+      .models__grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+    }
+    .models__card{
+      border-radius: 20px;
+      overflow:hidden;
+      background:#fff;
+      border: 1px solid rgba(15,43,70,.10);
+      box-shadow: 0 22px 60px rgba(15,43,70,.12);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .models__card:hover{
+      transform: translateY(-8px);
+      border-color: rgba(255,214,107,.40);
+      box-shadow: 0 34px 90px rgba(15,43,70,.16);
+    }
+    .models__card img{
+      width:100%;
+      height:auto;
+      display:block;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    /* ================= FIM BLOCO: MODELOS ================= */
+
+
     /* ================= COMEÇO BLOCO: DEPOIMENTOS (testimonials) ================= */
     .testimonials{
       background:
@@ -754,6 +808,59 @@
     </div>
   </div>
 </section>
+
+<!-- ================= COMEÇO BLOCO: MODELOS ================= -->
+<section class="models">
+  <div class="wrap">
+
+    <h2 class="models__title">
+      Modelos de <span class="accent">coifa piramidal</span> sob medida
+    </h2>
+
+    <p class="models__sub">
+      Cada projeto é fabricado conforme o ambiente. Veja alguns exemplos
+      de acabamento e aplicação em cozinhas e áreas gourmet.
+    </p>
+
+    <div class="models__grid">
+
+      <div class="models__card">
+        <img
+          src="/images/coifa-inox-sob-medida-campinas.webp"
+          alt="Coifa piramidal inox sob medida instalada em Campinas"
+          width="600"
+          height="400"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="models__card">
+        <img
+          src="/images/coifa-projeto-personalizado-campinas.webp"
+          alt="Projeto personalizado de coifa piramidal sob medida em Campinas"
+          width="600"
+          height="400"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="models__card">
+        <img
+          src="/images/design-coifa-exclusiva-campinas.webp"
+          alt="Design exclusivo de coifa piramidal fabricada em Campinas"
+          width="600"
+          height="400"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= FIM BLOCO: MODELOS ================= -->
 
 <section class="testimonials" aria-label="Depoimentos de clientes">
   <div class="wrap">
