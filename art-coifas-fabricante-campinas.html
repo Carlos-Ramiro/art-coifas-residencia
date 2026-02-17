@@ -38,6 +38,13 @@
   <!-- LCP MOBILE (não usar / no começo para funcionar em qualquer rota/pasta) -->
   <link rel="preload" as="image" href="images/fabricante-coifas-campinas-hero-mobile.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="fabricante-coifas-campinas-hero.webp" />
+  
+  
+  
+  
+  
+  
+  
 
   <style>
     :root{
@@ -722,6 +729,13 @@
   }
 }
 /* ================= FIM AJUSTE ================= */
+
+/* === AJUSTE DESKTOP ONLY: evitar "região" sozinha na linha === */
+@media (min-width: 992px){
+  .piramidal-gallery__sub{
+    max-width: 74ch; /* estava 78ch — ajusta a quebra sem mexer no mobile */
+  }
+}
 
   </style>
 </head>
