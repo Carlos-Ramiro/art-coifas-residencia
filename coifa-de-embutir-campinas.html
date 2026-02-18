@@ -5,44 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
 
-  <title>Coifa Piramidal Sob Medida em Campinas | Art Coifas</title>
-  <meta name="description" content="Coifa piramidal sob medida em Campinas. Fabricação própria, acabamento premium e instalação profissional." />
+  <title>Coifas para Cozinhas em Campinas | Art Coifas</title>
+  <meta name="description" content="Coifas para cozinhas em Campinas: fabricação própria, acabamento premium e instalação profissional. Orçamento direto com a fábrica via WhatsApp." />
 
   <!-- =======================================================================
     CONFIG IMAGENS + ALTs (EDITE AQUI QUANDO FOR TRANSFORMAR EM MODELO)
-    Regra: mantenha os nomes de arquivo consistentes e depois atualize os src/alt
-    dentro de cada bloco (Ctrl+F pelo nome do arquivo ou pelo comentário do bloco).
-
-    HERO (MOBILE IMG)
-    - src: images/hero-coifa-piramidal-mobile-800x600.webp
-    - alt: Coifa piramidal sob medida em Campinas
+    Regra: troque os nomes/ALTs aqui e depois use Ctrl+F pelo nome do arquivo.
 
     HERO (DESKTOP BACKGROUND)
-    - src: images/hero-coifa-piramidal-desktop-1920x1080.webp
+    - src: images/hero-fabricante-desktop.webp
+    - alt (referência): Coifa para cozinha inox industrial instalada em bancada com cooktop e revestimento decorativo
+
+    HERO (MOBILE IMG)
+    - src: images/hero-fabricante-mobile.webp
+    - alt: Coifa para cozinha de ilha preta instalada sobre bancada de granito em ambiente integrado
 
     BLOCO ESTRUTURA (IMG)
-    - src: images/fabricante-de-coifa-piramidal-em-campinas.webp
-    - alt: Estrutura de fabricação de coifa sob medida em Campinas
+    - src: images/produto-15.webp
+    - alt: Coifa para cozinha preta instalada em área gourmet moderna com churrasqueira e bancada
 
     BLOCO GALERIA (3 IMGS)
-    - src: images/fabrica-de-coifa-piramidal-sob-medida-campinas.webp
-    - alt: Coifa sob medida em Campinas com acabamento premium
+    - src: images/produto-13.webp
+    - alt: Coifa para cozinha de embutir inox integrada em painel de madeira com churrasqueira
 
-    - src: images/fabrica-de-coifa-piramidal-em-campinas-sp.webp
-    - alt: Coifa sob medida em Campinas instalada em cozinha e área gourmet
+    - src: images/produto-14.webp
+    - alt: Coifa para cozinha de parede inox com vidro instalada em área gourmet com churrasqueira
 
-    - src: images/coifa-piramidal-churrasqueira-em-campinas.webp
-    - alt: Coifa sob medida em Campinas com instalação profissional
+    - src: images/produto-15.webp
+    - alt: Coifa para cozinha preta instalada em área gourmet moderna com churrasqueira e bancada
   ======================================================================== -->
 
-  <!-- LCP MOBILE (não usar / no começo para funcionar em qualquer rota/pasta) -->
-  <link rel="preload" as="image" href="images/hero-coifa-piramidal-mobile-800x600.webp" fetchpriority="high" />
-  <link rel="preload" as="image" href="images/hero-coifa-piramidal-desktop-1920x1080.webp" />
+  <!-- LCP: preloads corretos (evita warning de preload não usado) -->
+  <link rel="preload" as="image" href="images/hero-fabricante-mobile.webp" fetchpriority="high" media="(max-width: 991px)" />
+  <link rel="preload" as="image" href="images/hero-fabricante-desktop.webp" media="(min-width: 992px)" />
 
   <style>
     :root{
       --brand:#0f2b46;
-      --gold:#ffd66b;
+      --gold:#ffbf1f;
       --text:#ffffff;
       --muted:rgba(255,255,255,.86);
       --muted2:rgba(255,255,255,.76);
@@ -53,7 +53,7 @@
       --dark2:#0a1826;
 
       /* HERO DESKTOP (centralizado aqui) */
-      --hero-desktop-bg: url("images/hero-coifa-piramidal-desktop-1920x1080.webp");
+      --hero-desktop-bg: url("images/hero-fabricante-desktop.webp");
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -86,6 +86,7 @@
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.14);
       color:rgba(255,255,255,.92);
+      white-space:nowrap;
     }
     .title{
       margin-top:1.1rem;
@@ -94,6 +95,7 @@
       letter-spacing:-0.02em;
     }
     .accent{color:var(--gold)}
+    .title .accent{white-space:nowrap;}
     .lead{
       margin-top:1.05rem;
       max-width:62ch;
@@ -130,6 +132,7 @@
       font-size:.95rem;
       align-items:center;
     }
+    .micro span{white-space:nowrap;}
     .stars{color:var(--gold);letter-spacing:.08em}
     .bullets{
       margin-top:.95rem;
@@ -182,7 +185,7 @@
             rgba(15,43,70,.62) 52%,
             rgba(15,43,70,.20) 100%
           ),
-          radial-gradient(900px 600px at 20% 18%, rgba(255,214,107,.18), transparent 55%);
+          radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
         z-index:1;
         pointer-events:none;
       }
@@ -199,7 +202,7 @@
         grid-template-columns:max-content max-content;
         gap:.35rem 2rem;
       }
-      .title{max-width:18ch;}
+      .title{max-width:19ch;}
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
     }
     /* ================= FIM DO BLOCO: HERO ================= */
@@ -208,7 +211,7 @@
     /* ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= */
     .flow{
       background:
-        radial-gradient(900px 520px at 15% 20%, rgba(255,214,107,.12), transparent 55%),
+        radial-gradient(900px 520px at 15% 20%, rgba(255,191,31,.12), transparent 55%),
         radial-gradient(900px 520px at 85% 30%, rgba(31,184,90,.06), transparent 60%),
         linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
       padding:110px 0 95px;
@@ -222,7 +225,7 @@
       inset:-20%;
       background:
         radial-gradient(circle at 25% 25%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(circle at 80% 40%, rgba(255,214,107,.10), transparent 55%),
+        radial-gradient(circle at 80% 40%, rgba(255,191,31,.10), transparent 55%),
         radial-gradient(circle at 65% 85%, rgba(255,255,255,.05), transparent 58%);
       filter: blur(18px);
       pointer-events:none;
@@ -280,14 +283,14 @@
       content:"";
       position:absolute;
       inset:-70%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,214,107,.20), transparent 55%);
+      background: radial-gradient(circle at 30% 30%, rgba(255,191,31,.20), transparent 55%);
       transform: rotate(8deg);
       opacity:.55;
       pointer-events:none;
     }
     .flow__card:hover{
       transform: translateY(-10px);
-      border-color: rgba(255,214,107,.38);
+      border-color: rgba(255,191,31,.42);
       box-shadow: 0 40px 110px rgba(0,0,0,.55);
       background:
         linear-gradient(180deg,
@@ -300,7 +303,7 @@
       font-weight:900;color: var(--gold);
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.16);
-      box-shadow: inset 0 0 0 1px rgba(255,214,107,.18), 0 10px 25px rgba(0,0,0,.35);
+      box-shadow: inset 0 0 0 1px rgba(255,191,31,.18), 0 10px 25px rgba(0,0,0,.35);
       margin: 4px auto 22px;
       font-size: 1.3rem;
       letter-spacing:.04em;
@@ -377,6 +380,16 @@
     .piramidal-gallery{
       background:#ffffff;
       padding:48px 0 62px;
+      position: relative;
+      overflow: hidden;
+    }
+    .piramidal-gallery::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-1px;
+      height: 56px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(7,17,28,.10) 100%);
+      pointer-events:none;
     }
     .piramidal-gallery__title{
       text-align:center;
@@ -388,11 +401,12 @@
     }
     .piramidal-gallery__sub{
       text-align:center;
-      max-width: 78ch;
+      max-width: 74ch;
       margin: 0 auto 38px;
       color: #2a2f36;
       line-height: 1.7;
       font-size: 1.02rem;
+      text-wrap: balance;
     }
     .piramidal-gallery__grid{
       display:grid;
@@ -414,7 +428,7 @@
     }
     .piramidal-card:hover{
       transform: translateY(-6px);
-      border-color: rgba(255,214,107,.50);
+      border-color: rgba(255,191,31,.55);
       box-shadow: 0 26px 70px rgba(15,43,70,0.14);
     }
     .piramidal-card__media{
@@ -447,7 +461,7 @@
     /* ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= */
     .testimonials{
       background:
-        radial-gradient(900px 520px at 18% 22%, rgba(255,214,107,.12), transparent 55%),
+        radial-gradient(900px 520px at 18% 22%, rgba(255,191,31,.12), transparent 55%),
         radial-gradient(900px 520px at 82% 28%, rgba(255,255,255,.06), transparent 60%),
         linear-gradient(180deg, #07111c 0%, #0a1826 100%);
       padding: 110px 0 77px;
@@ -461,7 +475,7 @@
       inset:-20%;
       background:
         radial-gradient(circle at 25% 25%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(circle at 80% 40%, rgba(255,214,107,.10), transparent 55%),
+        radial-gradient(circle at 80% 40%, rgba(255,191,31,.10), transparent 55%),
         radial-gradient(circle at 65% 85%, rgba(255,255,255,.05), transparent 58%);
       filter: blur(18px);
       pointer-events:none;
@@ -617,12 +631,40 @@
       transition:max-height .4s ease;
     }
     .faq-dark__item.active{
-      border-color: rgba(255,214,107,.42);
+      border-color: rgba(255,191,31,.48);
       background: rgba(255,255,255,.08);
     }
     .faq-dark__item.active .faq-dark__answer{ max-height:300px; }
     .faq-dark__item.active .faq-dark__question span{ transform: rotate(45deg); }
     /* ================= FIM DO BLOCO: FAQ ================= */
+
+
+    /* ================= INÍCIO DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= */
+    .conversion-block{
+      background:#ffffff;
+      padding:70px 0 80px;
+      text-align:center;
+    }
+    .conversion-block__title{
+      font-size: clamp(1.8rem, 1.2rem + 1.4vw, 2.4rem);
+      line-height:1.15;
+      letter-spacing:-0.02em;
+      color: var(--brand);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .conversion-block__text{
+      max-width: 70ch;
+      margin: 0 auto 22px;
+      color:#2a2f36;
+      line-height:1.7;
+      font-size: 1.05rem;
+    }
+    @media (max-width: 768px){
+      .conversion-block{ padding: 56px 0 64px; }
+      .conversion-block__text{ max-width: 34ch; }
+    }
+    /* ================= FIM DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= */
 
 
     /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
@@ -697,6 +739,64 @@
     }
     /* ================= FIM DO BLOCO: CTA FOOTER ================= */
 
+
+    /* ================= INÍCIO DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
+    .wa-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:58px;
+      height:58px;
+      border-radius:999px;
+      background: var(--wa);
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+      transition: transform .2s ease, box-shadow .2s ease;
+      user-select:none;
+    }
+    .wa-float:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.42);
+    }
+    .wa-float svg{
+      width:28px;
+      height:28px;
+      display:block;
+      fill:#fff;
+    }
+    .wa-float__hint{
+      position:absolute;
+      right:72px;
+      bottom:50%;
+      transform: translateY(50%);
+      background: rgba(10, 24, 38, .92);
+      color:#fff;
+      border: 1px solid rgba(255,255,255,.14);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      font-size:.9rem;
+      white-space:nowrap;
+      box-shadow: 0 18px 50px rgba(0,0,0,.32);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .wa-float:hover .wa-float__hint{
+      opacity:1;
+      transform: translateY(50%) translateX(-4px);
+    }
+    @media (max-width: 768px){
+      .wa-float__hint{ display:none; }
+    }
+    /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
+
+
     @media (max-width: 768px){
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
@@ -716,18 +816,20 @@
       </div>
 
       <h1 class="title">
-        Coifa Piramidal <span class="accent">Sob Medida</span> em Campinas
+        Coifas para <span class="accent">Cozinhas</span> em Campinas
       </h1>
 
       <p class="lead">
-        Fabricação própria de coifas piramidais sob medida para cozinhas e áreas gourmet.
+        Fabricação própria de coifas para cozinhas e áreas gourmet.
         Atendimento técnico presencial, projeto personalizado e instalação profissional em Campinas e região.
       </p>
 
-      <a class="btn btn--wa"
+      <a class="btn btn--wa js-wa"
          href="https://wa.me/551932131636"
          target="_blank"
-         rel="noopener">
+         rel="noopener"
+         data-source="cta"
+         data-code="COIFAS PARA COZINHAS">
         Agendar visita técnica pelo WhatsApp
       </a>
 
@@ -745,8 +847,8 @@
 
       <div class="hero__media">
         <img
-          src="images/hero-coifa-piramidal-mobile-800x600.webp"
-          alt="Coifa piramidal sob medida em Campinas"
+          src="images/hero-fabricante-mobile.webp"
+          alt="Coifa para cozinha de ilha preta instalada sobre bancada de granito em ambiente integrado"
           width="800"
           height="600"
           loading="eager"
@@ -808,8 +910,8 @@
     <div class="structure__grid">
       <div class="structure__media">
         <img
-          src="images/fabricante-de-coifa-piramidal-em-campinas.webp"
-          alt="Estrutura de fabricação de coifa sob medida em Campinas"
+          src="images/produto-15.webp"
+          alt="Coifa para cozinha preta instalada em área gourmet moderna com churrasqueira e bancada"
           width="1200"
           height="800"
           loading="lazy"
@@ -842,7 +944,12 @@
         </ul>
 
         <div class="structure__cta">
-          <a class="btn btn--wa" href="https://wa.me/551932131636" target="_blank" rel="noopener">
+          <a class="btn btn--wa js-wa"
+             href="https://wa.me/551932131636"
+             target="_blank"
+             rel="noopener"
+             data-source="cta"
+             data-code="COIFAS PARA COZINHAS">
             Falar com um especialista no WhatsApp
           </a>
         </div>
@@ -865,8 +972,8 @@
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="images/fabrica-de-coifa-piramidal-sob-medida-campinas.webp"
-            alt="Coifa sob medida em Campinas com acabamento premium"
+            src="images/produto-13.webp"
+            alt="Coifa para cozinha de embutir inox integrada em painel de madeira com churrasqueira"
             width="800"
             height="600"
             loading="lazy"
@@ -874,16 +981,16 @@
           />
         </div>
         <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Acabamento premium e alinhamento perfeito</h3>
-          <p class="piramidal-card__p">Estrutura robusta, recortes limpos e acabamento pensado para ficar bonito e funcional no dia a dia.</p>
+          <h3 class="piramidal-card__h">Integração perfeita ao ambiente</h3>
+          <p class="piramidal-card__p">Projeto sob medida para encaixar com precisão no seu layout, com acabamento premium.</p>
         </div>
       </article>
 
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="images/fabrica-de-coifa-piramidal-em-campinas-sp.webp"
-            alt="Coifa sob medida em Campinas instalada em cozinha e área gourmet"
+            src="images/produto-14.webp"
+            alt="Coifa para cozinha de parede inox com vidro instalada em área gourmet com churrasqueira"
             width="800"
             height="600"
             loading="lazy"
@@ -891,16 +998,16 @@
           />
         </div>
         <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Projeto sob medida para o seu ambiente</h3>
-          <p class="piramidal-card__p">Dimensões e detalhes definidos na visita técnica para encaixar no layout da cozinha ou área gourmet.</p>
+          <h3 class="piramidal-card__h">Beleza e desempenho no dia a dia</h3>
+          <p class="piramidal-card__p">Recortes limpos, acabamento refinado e resultado final premium para sua cozinha.</p>
         </div>
       </article>
 
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="images/coifa-piramidal-churrasqueira-em-campinas.webp"
-            alt="Coifa sob medida em Campinas com instalação profissional"
+            src="images/produto-15.webp"
+            alt="Coifa para cozinha preta instalada em área gourmet moderna com churrasqueira e bancada"
             width="800"
             height="600"
             loading="lazy"
@@ -908,7 +1015,7 @@
           />
         </div>
         <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Instalação profissional e resultado final</h3>
+          <h3 class="piramidal-card__h">Instalação profissional e entrega final</h3>
           <p class="piramidal-card__p">Montagem precisa, acabamento de entrega e performance real — do projeto à instalação.</p>
         </div>
       </article>
@@ -954,7 +1061,12 @@
     </div>
 
     <div class="testimonials__cta">
-      <a href="https://wa.me/551932131636" target="_blank" rel="noopener">
+      <a class="js-wa"
+         href="https://wa.me/551932131636"
+         target="_blank"
+         rel="noopener"
+         data-source="cta"
+         data-code="COIFAS PARA COZINHAS">
         Falar com um especialista no WhatsApp
       </a>
     </div>
@@ -967,7 +1079,7 @@
 <section class="faq-dark">
   <div class="wrap">
     <h2 class="faq-dark__title">
-      Perguntas frequentes sobre <span>coifa sob medida</span>
+      Perguntas frequentes sobre <span>coifas para cozinhas</span>
     </h2>
 
     <div class="faq-dark__list">
@@ -984,12 +1096,11 @@
 
       <div class="faq-dark__item">
         <button type="button" class="faq-dark__question">
-          Trabalham com coifa de vidro ou coifa de ilha?
+          Trabalham com coifa de ilha, embutir e parede?
           <span>+</span>
         </button>
         <div class="faq-dark__answer">
-          Apenas em projetos especiais, sob consulta técnica.
-          Esta página é dedicada exclusivamente à fabricação de coifas sob medida.
+          Sim. O modelo ideal é definido na visita técnica conforme o seu ambiente e a necessidade de exaustão.
         </div>
       </div>
 
@@ -1020,6 +1131,31 @@
 <!-- ================= FIM DO BLOCO: FAQ ================= -->
 
 
+<!-- ================= INÍCIO DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= -->
+<section class="conversion-block" aria-label="Bloco de conversão">
+  <div class="wrap">
+    <h2 class="conversion-block__title">
+      Coifa para cozinha em Campinas é decisão técnica.
+    </h2>
+
+    <p class="conversion-block__text">
+      Atendimento presencial, fabricação própria e instalação profissional.
+      Você fala direto com quem projeta e executa.
+    </p>
+
+    <a class="btn btn--wa js-wa"
+       href="https://wa.me/551932131636"
+       target="_blank"
+       rel="noopener"
+       data-source="cta"
+       data-code="COIFAS PARA COZINHAS">
+      Solicitar orçamento no WhatsApp
+    </a>
+  </div>
+</section>
+<!-- ================= FIM DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= -->
+
+
 <!-- ================= INÍCIO DO BLOCO: CTA FOOTER ================= -->
 <section class="cta-footer">
   <div class="wrap">
@@ -1027,10 +1163,12 @@
       <h2>Peça seu orçamento direto com a fábrica</h2>
       <p>Fale com quem realmente entende de coifas sob&nbsp;medida.</p>
 
-      <a class="btn btn--wa btn--big"
+      <a class="btn btn--wa btn--big js-wa"
          href="https://wa.me/551932131636"
          target="_blank"
-         rel="noopener">
+         rel="noopener"
+         data-source="cta"
+         data-code="COIFAS PARA COZINHAS">
          Solicitar orçamento no WhatsApp
       </a>
     </div>
@@ -1074,15 +1212,197 @@
 </section>
 <!-- ================= FIM DO BLOCO: CTA FOOTER ================= -->
 
-<!-- JS (sempre no final do body para evitar bagunça ao replicar) -->
+
+<!-- ================= INÍCIO DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
+<a class="wa-float js-wa"
+   href="https://wa.me/551932131636"
+   target="_blank"
+   rel="noopener"
+   aria-label="Falar no WhatsApp"
+   data-source="float"
+   data-code="COIFAS PARA COZINHAS">
+  <span class="wa-float__hint">Orçamento no WhatsApp</span>
+
+  <!-- ÍCONE OFICIAL (SVG) -->
+  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <path d="M19.11 17.47c-.27-.14-1.57-.77-1.82-.86-.25-.09-.43-.14-.61.14-.18.27-.7.86-.86 1.04-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.71-1.33-1.59-1.49-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.9 2.9 4.6 4.06.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.57-.64 1.79-1.26.22-.62.22-1.15.16-1.26-.05-.11-.25-.18-.52-.32zM16.02 27.3h-.01c-1.89 0-3.75-.51-5.37-1.48l-.39-.23-3.78.99 1.01-3.68-.25-.38a11.22 11.22 0 0 1-1.73-5.96c0-6.2 5.05-11.24 11.26-11.24 3.01 0 5.84 1.17 7.96 3.29a11.17 11.17 0 0 1 3.3 7.95c0 6.2-5.05 11.24-11.26 11.24zm9.57-20.81A13.41 13.41 0 0 0 16 2.7C8.64 2.7 2.66 8.67 2.66 16.02c0 2.36.62 4.67 1.8 6.7L2.6 29.5l6.95-1.82a13.33 13.33 0 0 0 6.45 1.65h.01c7.36 0 13.34-5.98 13.34-13.33 0-3.56-1.39-6.91-3.76-9.51z"/>
+  </svg>
+</a>
+<!-- ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
+
+
+<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
 <script>
+  /* ========= CONFIG FIXA (NÃO ESPALHAR PELO HTML) ========= */
+  const AC_CFG = {
+    WA_PHONE_E164: "551932131636",
+    WEBAPP_URL: "https://script.google.com/macros/s/AKfycbyce6y_40SYTxaiYBjQ3NMpc9QQlAeS-PqatQCAosXDeu31JvxnhiL-cwSUi_IX3Fdo/exec",
+    CONVERSION_NAME: "whatsapp_lead_artcoifas",
+    GCLID_KEY: "ac_gclid_v1",
+    GCLID_TS_KEY: "ac_gclid_ts_v1",
+    GCLID_TTL_DAYS: 90
+  };
+
+  /* ========= FAQ ========= */
   document.querySelectorAll('.faq-dark__question').forEach((btn) => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       item.classList.toggle('active');
     });
   });
+
+  /* ========= GCLID (captura e persistência) ========= */
+  function getUrlParam(name){
+    try{
+      const u = new URL(window.location.href);
+      return u.searchParams.get(name);
+    }catch(e){
+      return null;
+    }
+  }
+  function nowMs(){ return Date.now(); }
+  function daysToMs(d){ return d * 24 * 60 * 60 * 1000; }
+
+  function storeGclidFromUrl(){
+    const gclid = getUrlParam("gclid");
+    if(gclid && gclid.trim()){
+      localStorage.setItem(AC_CFG.GCLID_KEY, gclid.trim());
+      localStorage.setItem(AC_CFG.GCLID_TS_KEY, String(nowMs()));
+    }
+  }
+  function readGclid(){
+    const g = (localStorage.getItem(AC_CFG.GCLID_KEY) || "").trim();
+    const ts = parseInt(localStorage.getItem(AC_CFG.GCLID_TS_KEY) || "0", 10);
+    if(!g) return "";
+    if(!ts) return g;
+    const ok = (nowMs() - ts) <= daysToMs(AC_CFG.GCLID_TTL_DAYS);
+    return ok ? g : "";
+  }
+
+  /* ========= event_id ========= */
+  function makeEventId(){
+    // simples e suficiente para dedup
+    const rnd = Math.random().toString(16).slice(2);
+    return "evt_" + Date.now() + "_" + rnd;
+  }
+
+  /* ========= timestamp yyyy-MM-dd HH:mm:ss (local) ========= */
+  function pad2(n){ return String(n).padStart(2,"0"); }
+  function formatLocalDateTime(){
+    const d = new Date();
+    return [
+      d.getFullYear(), "-", pad2(d.getMonth()+1), "-", pad2(d.getDate()),
+      " ",
+      pad2(d.getHours()), ":", pad2(d.getMinutes()), ":", pad2(d.getSeconds())
+    ].join("");
+  }
+
+  /* ========= WhatsApp message (CÓDIGO só no WhatsApp) ========= */
+  function buildWaMessage(code){
+    return "Olá! Quero um orçamento direto com a fábrica.\n" +
+           "CÓDIGO: " + code;
+  }
+  function buildWaUrl(code){
+    const text = encodeURIComponent(buildWaMessage(code));
+    return "https://wa.me/" + AC_CFG.WA_PHONE_E164 + "?text=" + text;
+  }
+
+  /* ========= Envio para planilha (sem CORS / sem depender de resposta) ========= */
+  function sendToSheets(payload){
+    // 1) sendBeacon (melhor)
+    try{
+      if(navigator.sendBeacon){
+        const blob = new Blob([JSON.stringify(payload)], { type: "text/plain;charset=UTF-8" });
+        const ok = navigator.sendBeacon(AC_CFG.WEBAPP_URL, blob);
+        if(ok) return true;
+      }
+    }catch(e){}
+
+    // 2) fetch no-cors com text/plain (evita preflight)
+    try{
+      fetch(AC_CFG.WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        keepalive: true,
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: JSON.stringify(payload)
+      });
+      return true;
+    }catch(e){}
+
+    // 3) fallback form-urlencoded (também “simple request”)
+    try{
+      const form = new URLSearchParams();
+      Object.keys(payload).forEach(k => form.append(k, String(payload[k] ?? "")));
+      fetch(AC_CFG.WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        keepalive: true,
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: form.toString()
+      });
+      return true;
+    }catch(e){}
+
+    // 4) último fallback: Image GET
+    try{
+      const q = new URLSearchParams();
+      Object.keys(payload).forEach(k => q.append(k, String(payload[k] ?? "")));
+      const img = new Image();
+      img.src = AC_CFG.WEBAPP_URL + "?" + q.toString();
+      return true;
+    }catch(e){}
+
+    return false;
+  }
+
+  /* ========= Handler central ========= */
+  function handleWhatsAppClick(ev, source, code){
+    // sempre: abrir WhatsApp (sem depender da planilha)
+    const waUrl = buildWaUrl(code);
+
+    // payload esperado pelo baseline (não inventar campos)
+    const payload = {
+      gclid: readGclid(), // pode ser vazio (orgânico)
+      conversion_name: AC_CFG.CONVERSION_NAME,
+      conversion_time: formatLocalDateTime(),
+      conversion_value: "0.00",
+      event_id: makeEventId()
+    };
+
+    // tenta enviar (não bloqueia UX)
+    sendToSheets(payload);
+
+    // abre WhatsApp
+    // (se o clique foi num link, mantém o comportamento padrão em nova aba)
+    try{
+      // preferir abrir manualmente para garantir que a URL com mensagem seja usada
+      ev.preventDefault();
+      window.open(waUrl, "_blank", "noopener");
+    }catch(e){
+      // fallback: deixa o link seguir
+    }
+  }
+
+  /* ========= Bind em todos os botões/links WhatsApp ========= */
+  function bindWhatsApp(){
+    const els = document.querySelectorAll(".js-wa");
+    els.forEach(el => {
+      const code = (el.getAttribute("data-code") || "COIFAS PARA COZINHAS").trim();
+      const source = (el.getAttribute("data-source") || "cta").trim();
+
+      // atualiza href para já ir com mensagem (também melhora fallback sem JS)
+      el.setAttribute("href", buildWaUrl(code));
+
+      el.addEventListener("click", (ev) => handleWhatsAppClick(ev, source, code), { passive: false });
+    });
+  }
+
+  // init
+  try{ storeGclidFromUrl(); }catch(e){}
+  bindWhatsApp();
 </script>
+<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
 
 </body>
 </html>
