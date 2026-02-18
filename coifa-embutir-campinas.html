@@ -1,290 +1,488 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coifa de Embutir Sob Medida | Fabricação e Instalação | Campinas</title>
-  <meta name="description" content="Coifa de Embutir sob medida fabricada e instalada em Campinas e região. Peça seu orçamento agora pelo WhatsApp e transforme sua área gourmet.">
-  <meta name="robots" content="noindex, nofollow">
+<title>Coifa de Embutir Sob Medida | Fabricação e Instalação | Campinas</title>
 
-  <!-- Preload LCP (prioridade absoluta no mobile) -->
-  <link rel="preload" href="images/hero-embutir-mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high">
-  <link rel="preload" href="images/hero-embutir-desktop.webp" as="image" media="(min-width: 768px)">
+<meta name="description" content="Coifa de Embutir sob medida fabricada e instalada em Campinas e região. Orçamento direto com a fábrica pelo WhatsApp.">
 
-  <link rel="stylesheet" href="css/style.css">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- PRIORIDADE MOBILE LCP -->
+<link rel="preload" href="images/hero-embutir-mobile.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" href="images/hero-embutir-desktop.webp" as="image" media="(min-width: 769px)">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial;
+background:#071322;
+color:#ffffff;
+line-height:1.5;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+width:100%;
+max-width:1100px;
+margin:auto;
+padding-left:20px;
+padding-right:20px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+
+}
+
+.hero picture{
+
+position:absolute;
+width:100%;
+height:100%;
+z-index:0;
+
+}
+
+.hero picture img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+width:100%;
+height:100%;
+
+background:linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.3));
+
+z-index:1;
+
+}
+
+.hero-content{
+
+position:relative;
+z-index:2;
+
+max-width:600px;
+
+padding-top:100px;
+padding-bottom:100px;
+
+}
+
+
+.hero-pill{
+
+font-size:12px;
+border:1px solid rgba(255,255,255,0.3);
+padding:6px 12px;
+display:inline-block;
+margin-bottom:15px;
+
+border-radius:20px;
+
+}
+
+
+.hero-title{
+
+font-size:48px;
+font-weight:bold;
+line-height:1.1;
+margin-bottom:15px;
+
+}
+
+
+.hero-title span{
+
+color:#f4b53f;
+
+}
+
+
+.hero-sub{
+
+font-size:18px;
+margin-bottom:25px;
+
+color:#ddd;
+
+}
+
+
+.btn{
+
+display:inline-block;
+
+background:#25D366;
+
+color:#071322;
+
+padding:14px 24px;
+
+border-radius:8px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-list{
+
+list-style:none;
+
+}
+
+.hero-list li{
+
+margin-bottom:8px;
+
+padding-left:20px;
+
+position:relative;
+
+}
+
+.hero-list li::before{
+
+content:"✓";
+
+position:absolute;
+left:0;
+color:#f4b53f;
+
+}
+
+
+
+/* ================= SECTION ================= */
+
+.section{
+
+padding-top:80px;
+padding-bottom:80px;
+
+}
+
+.section-title{
+
+font-size:32px;
+margin-bottom:20px;
+
+}
+
+.section-sub{
+
+color:#ccc;
+margin-bottom:40px;
+
+}
+
+
+/* ================= GRID ================= */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+
+}
+
+.card{
+
+background:#0f213a;
+padding:20px;
+border-radius:10px;
+
+}
+
+
+/* ================= IMAGE GRID ================= */
+
+.image-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+
+}
+
+.image-grid img{
+
+width:100%;
+border-radius:10px;
+
+}
+
+
+/* ================= CTA FINAL ================= */
+
+.cta-final{
+
+text-align:center;
+
+padding-top:60px;
+padding-bottom:60px;
+
+background:#0f213a;
+
+}
+
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+padding:30px;
+text-align:center;
+color:#aaa;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hero-title{
+
+font-size:32px;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.image-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-content{
+
+padding-top:60px;
+padding-bottom:60px;
+
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero" aria-label="Seção principal">
-    <picture class="hero__bg">
-      <source srcset="images/hero-embutir-desktop.webp" media="(min-width: 768px)">
-      <img
-        src="images/hero-embutir-mobile.webp"
-        alt="Coifa de embutir preta instalada em área gourmet moderna com churrasqueira e bancada"
-        width="800"
-        height="600"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-      >
-    </picture>
 
-    <div class="hero__overlay" aria-hidden="true"></div>
 
-    <div class="hero__content container">
-      <p class="hero__pill">ATENDIMENTO DIRETO COM A FÁBRICA · CAMPINAS E REGIÃO</p>
+<!-- HERO -->
 
-      <h1 class="hero__title">
-        Coifa de Embutir <span class="accent">Sob Medida</span> em Campinas
-      </h1>
+<section class="hero">
 
-      <p class="hero__sub">
-        Fabricação própria e instalação profissional para área gourmet e cozinha planejada.
-      </p>
+<picture>
 
-      <a
-        href="https://wa.me/551932131636?text=Olá,%20quero%20solicitar%20orçamento.%20Código%20-%20Coifa%20de%20Embutir"
-        class="btn-whatsapp btn-hero"
-        target="_blank"
-        rel="noopener"
-        aria-label="Solicitar orçamento no WhatsApp"
-      >
-        <span class="btn-whatsapp__icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.096.536 4.07 1.476 5.796L0 24l6.384-1.448A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.003-1.368l-.36-.214-3.717.843.899-3.617-.236-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
-          </svg>
-        </span>
-        Solicitar orçamento no WhatsApp
-      </a>
+<source srcset="images/hero-embutir-desktop.webp" media="(min-width:769px)">
 
-      <ul class="hero__checks" aria-label="Diferenciais rápidos">
-        <li>Atendimento presencial com visita técnica</li>
-        <li>Projeto sob medida e acabamento premium</li>
-        <li>Fabricação + instalação com prazo combinado</li>
-      </ul>
+<img src="images/hero-embutir-mobile.webp"
+alt="Coifa de embutir preta instalada em área gourmet moderna com churrasqueira e bancada"
+fetchpriority="high">
 
-      <p class="hero__trust">Resposta em até 1 hora · Orçamento sem compromisso</p>
-    </div>
-  </section>
+</picture>
 
-  <!-- PROCESSO -->
-  <section class="process section-pad" aria-label="Como funciona">
-    <div class="container">
-      <h2 class="section-title">Atendimento presencial e sob medida</h2>
-      <p class="section-sub">Do primeiro contato até a instalação final, um processo simples e direto.</p>
+<div class="hero-overlay"></div>
 
-      <div class="process__grid">
-        <article class="process__card">
-          <span class="process__num">01</span>
-          <h3 class="process__title">Visita técnica no local</h3>
-          <p class="process__text">Avaliamos medidas, layout e fluxo de ar para definir a coifa ideal.</p>
-        </article>
+<div class="container hero-content">
 
-        <article class="process__card">
-          <span class="process__num">02</span>
-          <h3 class="process__title">Definição do modelo ideal</h3>
-          <p class="process__text">Escolha de material, cor e acabamento alinhados ao seu projeto.</p>
-        </article>
+<div class="hero-pill">
 
-        <article class="process__card">
-          <span class="process__num">03</span>
-          <h3 class="process__title">Fabricação + instalação</h3>
-          <p class="process__text">Produção precisa e instalação profissional com resultado final premium.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+ATENDIMENTO DIRETO COM A FÁBRICA · CAMPINAS E REGIÃO
 
-  <!-- AUTORIDADE -->
-  <section class="authority section-pad" aria-label="Estrutura e equipe">
-    <div class="container authority__wrap">
-      <div class="authority__img-wrap">
-        <img
-          src="images/produto-4.webp"
-          alt="Coifa de embutir preta instalada em área gourmet moderna com churrasqueira e bancada"
-          loading="lazy"
-          decoding="async"
-          width="640"
-          height="480"
-        >
-      </div>
+</div>
 
-      <div class="authority__text">
-        <span class="label">Estrutura própria</span>
-        <h2 class="authority__title">Estrutura própria e equipe especializada</h2>
-        <p class="authority__p">
-          Fabricação direta com padrão premium e instalação feita por equipe técnica.
-          Projeto sob medida do corte ao acabamento.
-        </p>
+<h1 class="hero-title">
 
-        <ul class="authority__list">
-          <li>Produção própria com controle total</li>
-          <li>Definição do modelo na visita presencial</li>
-          <li>Garantia de fabricação e assistência</li>
-        </ul>
+Coifa de Embutir <span>Sob Medida</span> em Campinas
 
-        <a
-          href="https://wa.me/551932131636?text=Olá,%20quero%20solicitar%20orçamento.%20Código%20-%20Coifa%20de%20Embutir"
-          class="btn-whatsapp"
-          target="_blank"
-          rel="noopener"
-        >
-          Falar com um especialista no WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+</h1>
 
-  <!-- PROVA VISUAL -->
-  <section class="gallery section-pad" aria-label="Detalhes do acabamento">
-    <div class="container">
-      <h2 class="section-title">Detalhes do acabamento <span class="accent">premium</span></h2>
-      <p class="section-sub">Fotos reais de projetos com acabamento, precisão e instalação profissional.</p>
+<p class="hero-sub">
 
-      <div class="gallery__grid">
-        <article class="gallery__card">
-          <img
-            src="images/produto-4.webp"
-            alt="Coifa de embutir preta instalada em área gourmet moderna com churrasqueira e bancada"
-            loading="lazy"
-            decoding="async"
-            width="420"
-            height="315"
-          >
-          <h3 class="gallery__title">Acabamento premium e alinhamento perfeito</h3>
-          <p class="gallery__text">Integração limpa ao móvel planejado, com visual forte e discreto.</p>
-        </article>
+Projeto personalizado, fabricação própria e instalação profissional.
 
-        <article class="gallery__card">
-          <img
-            src="images/produto-5.webp"
-            alt="Coifa de embutir inox integrada em painel de madeira com cooktop e armários"
-            loading="lazy"
-            decoding="async"
-            width="420"
-            height="315"
-          >
-          <h3 class="gallery__title">Projeto sob medida para o seu ambiente</h3>
-          <p class="gallery__text">Dimensão e acabamento definidos para o layout da sua cozinha.</p>
-        </article>
+</p>
 
-        <article class="gallery__card">
-          <img
-            src="images/produto-6.webp"
-            alt="Coifa de embutir preta instalada em área gourmet com churrasqueira inox e tijolos"
-            loading="lazy"
-            decoding="async"
-            width="420"
-            height="315"
-          >
-          <h3 class="gallery__title">Instalação profissional e resultado final</h3>
-          <p class="gallery__text">Montagem precisa para performance real e visual premium.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<a class="btn"
+href="https://wa.me/551932131636?text=Olá,%20quero%20solicitar%20orçamento.%20Código%20-%20Coifa%20de%20Embutir"
+target="_blank">
 
-  <!-- DEPOIMENTOS -->
-  <section class="testimonials section-pad" aria-label="Depoimentos">
-    <div class="container">
-      <h2 class="section-title">Depoimentos de quem já instalou</h2>
-      <p class="section-sub">Atendimento direto com a fábrica, projeto sob medida e acabamento premium.</p>
+Solicitar orçamento no WhatsApp
 
-      <div class="testimonials__grid">
-        <article class="testimonial__card">
-          <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-          <p class="testimonial__text">“Atendimento profissional do início ao fim. A coifa ficou perfeita.”</p>
-          <p class="testimonial__author"><strong>Eduardo A. Gomes</strong></p>
-        </article>
+</a>
 
-        <article class="testimonial__card">
-          <div class="testimonial__stars" aria-hidden="true">★★★★★</div>
-          <p class="testimonial__text">“Projeto sob medida, acabamento excelente e comunicação clara.”</p>
-          <p class="testimonial__author"><strong>Giovanna Santiago</strong></p>
-        </article>
-      </div>
+<ul class="hero-list">
 
-      <div class="testimonials__cta">
-        <a
-          href="https://wa.me/551932131636?text=Olá,%20quero%20solicitar%20orçamento.%20Código%20-%20Coifa%20de%20Embutir"
-          class="btn-whatsapp"
-          target="_blank"
-          rel="noopener"
-        >
-          Falar com um especialista no WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+<li>Visita técnica presencial</li>
 
-  <!-- FAQ -->
-  <section class="faq section-pad" aria-label="Perguntas frequentes">
-    <div class="container">
-      <h2 class="section-title">Perguntas frequentes sobre coifa sob medida</h2>
+<li>Projeto sob medida</li>
 
-      <div class="faq__list">
-        <details class="faq__item">
-          <summary>Vocês vendem coifas prontas?</summary>
-          <p>Não. Cada coifa é fabricada sob medida conforme o seu projeto e ambiente.</p>
-        </details>
+<li>Fabricação e instalação profissional</li>
 
-        <details class="faq__item">
-          <summary>A coifa é realmente feita sob medida?</summary>
-          <p>Sim. Definimos dimensões, tipo de instalação e acabamento após a visita técnica.</p>
-        </details>
+</ul>
 
-        <details class="faq__item">
-          <summary>Atendem Campinas e região?</summary>
-          <p>Sim. Atendemos Campinas e cidades próximas com visita técnica e instalação.</p>
-        </details>
+</div>
 
-        <details class="faq__item">
-          <summary>Qual o prazo médio?</summary>
-          <p>Em geral, de 7 a 15 dias úteis após aprovação, variando conforme o projeto.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <!-- CTA FINAL -->
-  <section class="cta-final section-pad" aria-label="Orçamento final">
-    <div class="container cta-final__wrap">
-      <h2 class="cta-final__title">Peça seu orçamento direto com a fábrica</h2>
-      <p class="cta-final__sub">Fale com quem realmente entende de coifa sob medida.</p>
 
-      <a
-        href="https://wa.me/551932131636?text=Olá,%20quero%20solicitar%20orçamento.%20Código%20-%20Coifa%20de%20Embutir"
-        class="btn-whatsapp btn-large"
-        target="_blank"
-        rel="noopener"
-      >
-        Solicitar orçamento no WhatsApp
-      </a>
 
-      <p class="cta-final__trust">Mensagem automática: <strong>Código - Coifa de Embutir</strong></p>
-    </div>
-  </section>
+<!-- PROCESSO -->
 
-  <!-- FOOTER -->
-  <footer class="footer" aria-label="Rodapé">
-    <div class="container footer__wrap">
-      <div class="footer__left">
-        <p class="footer__brand">Art Coifas</p>
-        <p class="footer__small">Campinas - SP</p>
-      </div>
+<section class="section">
 
-      <nav class="footer__nav" aria-label="Links institucionais">
-        <a href="politica-de-privacidade.html">Política de Privacidade</a>
-        <a href="termos-de-uso.html">Termos de Uso</a>
-      </nav>
+<div class="container">
 
-      <p class="footer__copy">© 2026 — Todos os direitos reservados.</p>
-    </div>
-  </footer>
+<h2 class="section-title">
+
+Atendimento presencial e sob medida
+
+</h2>
+
+<p class="section-sub">
+
+Do primeiro contato até a instalação final.
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+Visita técnica no local
+
+</div>
+
+<div class="card">
+
+Definição do modelo ideal
+
+</div>
+
+<div class="card">
+
+Fabricação e instalação
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- GALERIA -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Detalhes do acabamento premium
+
+</h2>
+
+<div class="image-grid">
+
+<img src="images/produto-4.webp"
+alt="Coifa de embutir preta instalada em área gourmet moderna com churrasqueira e bancada">
+
+<img src="images/produto-5.webp"
+alt="Coifa de embutir inox integrada em painel de madeira com cooktop e armários">
+
+<img src="images/produto-6.webp"
+alt="Coifa de embutir preta instalada em área gourmet com churrasqueira inox e tijolos">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA FINAL -->
+
+<section class="cta-final">
+
+<div class="container">
+
+<h2>
+
+Peça seu orçamento direto com a fábrica
+
+</h2>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/551932131636?text=Olá,%20quero%20solicitar%20orçamento.%20Código%20-%20Coifa%20de%20Embutir"
+target="_blank">
+
+Solicitar orçamento no WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+© 2026 Art Coifas
+
+</footer>
+
+
 
 </body>
 </html>
