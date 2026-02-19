@@ -834,16 +834,25 @@
       .flow{ padding: 94px 0 90px; }
     }
 
-    /* Somente no mobile: evita corte da linha das estrelas + microtexto */
+    /* HERO microtexto — ajuste somente mobile */
 @media (max-width: 768px){
+
   .micro{
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     text-align: center;
-    gap: .35rem;
   }
-  .micro span{ white-space: normal; }
-  .micro .stars{ white-space: nowrap; } /* ★★★★★ sempre em uma linha */
+
+  /* esconde versão desktop */
+  .micro-desktop{
+    display:none;
+  }
+
+  /* mostra versão mobile */
+  .micro-mobile{
+    display:inline;
+    white-space:nowrap;
+  }
+
 }
 
   </style>
@@ -878,9 +887,20 @@
       </a>
 
       <div class="micro">
-        <span class="stars">★★★★★</span>
-        <span><strong>Do projeto ao encaixe final</strong> com acabamento premium</span>
-      </div>
+
+  <!-- versão desktop (permanece igual) -->
+  <span class="micro-desktop">
+    <span class="stars">★★★★★</span>
+    <strong>Atendimento premium</strong> do projeto à instalação
+  </span>
+
+  <!-- versão mobile -->
+  <span class="micro-mobile">
+    <strong>Do projeto ao encaixe final ★★★★★</strong>
+  </span>
+
+</div>
+
 
       <ul class="bullets" aria-label="Diferenciais">
         <li><span class="check">✓</span> Integração total ao móvel planejado</li>
