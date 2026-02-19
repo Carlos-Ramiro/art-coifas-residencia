@@ -212,9 +212,9 @@
         inset:0;
         background:
           linear-gradient(90deg,
-            rgba(15,43,70,.92) 0%,
-            rgba(15,43,70,.62) 52%,
-            rgba(15,43,70,.20) 100%
+            rgba(15,43,70,.96) 0%,
+            rgba(15,43,70,.64) 45%,
+            rgba(15,43,70,.08) 100%
           ),
           radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
         z-index:1;
@@ -832,29 +832,20 @@
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
+
+      /* Títulos centralizados no mobile (sem afetar desktop) */
+      .title,
+      .flow__title,
+      .structure__title,
+      .piramidal-gallery__title,
+      .testimonials__title,
+      .faq-dark__title,
+      .conversion-block__title,
+      .cta-footer__cta h2{
+        text-align:center;
+      }
+      .piramidal-card__h{ text-align:center; }
     }
-
-    /* HERO microtexto — ajuste somente mobile */
-@media (max-width: 768px){
-
-  .micro{
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* esconde versão desktop */
-  .micro-desktop{
-    display:none;
-  }
-
-  /* mostra versão mobile */
-  .micro-mobile{
-    display:inline;
-    white-space:nowrap;
-  }
-
-}
-
   </style>
 </head>
 
@@ -873,7 +864,7 @@
       </h1>
 
       <p class="lead">
-        Projeto técnico para encaixe perfeito no planejado, com fabricação própria e instalação profissional.
+        Integração perfeita ao seu planejado com projeto técnico, fabricação própria e instalação premium.
         Atendimento presencial em Campinas e região.
       </p>
 
@@ -887,26 +878,15 @@
       </a>
 
       <div class="micro">
-
-  <!-- versão desktop (permanece igual) -->
-  <span class="micro-desktop">
-    <span class="stars">★★★★★</span>
-    <strong>Atendimento premium</strong> do projeto à instalação
-  </span>
-
-  <!-- versão mobile -->
-  <span class="micro-mobile">
-    <strong>Do projeto ao encaixe final ★★★★★</strong>
-  </span>
-
-</div>
-
+        <span class="stars">★★★★★</span>
+        <span> Do projeto à instalação</span>
+      </div>
 
       <ul class="bullets" aria-label="Diferenciais">
         <li><span class="check">✓</span> Integração total ao móvel planejado</li>
-        <li><span class="check">✓</span> Medidas e recuos definidos na visita técnica</li>
+        <li><span class="check">✓</span> Projeto técnico sob medida</li>
         <li><span class="check">✓</span> Fabricação própria com padrão premium</li>
-        <li><span class="check">✓</span> Instalação especializada sem improviso</li>
+        <li><span class="check">✓</span> Instalação profissional especializada</li>
       </ul>
 
       <div class="hero__media">
@@ -924,7 +904,6 @@
   </div>
 </header>
 <!-- ================= FIM DO BLOCO: HERO ================= -->
-
 
 
 <!-- ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= -->
