@@ -83,7 +83,7 @@
       --dark2:#0a1826;
 
       /* HERO DESKTOP */
-      --hero-desktop-bg: url("images/hero-desktop-cozinha.webp.webp");
+      --hero-desktop-bg: url("images/hero-desktop-cozinha.webp");
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -157,6 +157,17 @@
     }
     .hero__media img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
     .desktop-only{display:none;}
+
+    /* ALT SEO para HERO DESKTOP (background) */
+    .hero__desktop-alt{
+      position:absolute;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      clip-path: inset(50%);
+      white-space:nowrap;
+    }
 
     @media (min-width: 992px){
       .desktop-only{display:inline;}
@@ -659,6 +670,18 @@
 <!-- ================= INÍCIO DO BLOCO: HERO ================= -->
 <header class="hero">
   <div class="hero__inner">
+
+    <!-- ALT SEO (HERO DESKTOP BACKGROUND) -->
+    <img
+      class="hero__desktop-alt"
+      src="images/hero-desktop-cozinha.webp"
+      alt="Coifa para cozinha inox sob medida instalada em cozinha planejada com bancada e iluminação embutida"
+      width="1920"
+      height="1080"
+      loading="eager"
+      decoding="async"
+    />
+
     <div class="wrap">
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
