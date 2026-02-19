@@ -169,9 +169,18 @@
       }
       .hero::after{
         content:""; position:absolute; inset:0;
+        /* Ajuste solicitado:
+           - Esquerda (texto): mais escuro
+           - Direita (imagem): mais clara */
         background:
-          linear-gradient(90deg, rgba(15,43,70,.92) 0%, rgba(15,43,70,.62) 52%, rgba(15,43,70,.20) 100%),
-          radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
+          linear-gradient(90deg,
+            rgba(7,17,28,.965) 0%,
+            rgba(15,43,70,.84) 46%,
+            rgba(15,43,70,.42) 68%,
+            rgba(15,43,70,.10) 100%
+          ),
+          radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%),
+          radial-gradient(900px 650px at 86% 32%, rgba(255,255,255,.10), transparent 58%);
         z-index:1; pointer-events:none;
       }
       .hero__inner{
@@ -624,6 +633,23 @@
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
     }
+
+    /* Ajuste solicitado: TODOS os títulos no mobile centralizados */
+    @media (max-width: 991px){
+      .title,
+      .flow__title,
+      .structure__title,
+      .piramidal-gallery__title,
+      .testimonials__title,
+      .faq-dark__title,
+      .conversion-block__title,
+      .cta-footer__cta h2,
+      .flow__card h3,
+      .piramidal-card__h,
+      .cta-footer__col h3{
+        text-align:center;
+      }
+    }
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
   </style>
 </head>
@@ -658,7 +684,7 @@
 
       <div class="micro">
         <span class="stars">★★★★★</span>
-        <span><strong>Atendimento premium</strong> do projeto à instalação</span>
+        <span>Do projeto à instalação</span>
       </div>
 
       <ul class="bullets" aria-label="Diferenciais">
