@@ -5,104 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
 
-  <title>Coifa de Ilha Sob Medida em Campinas | Art Coifas (Fábrica + Instalação)</title>
-  <meta name="description" content="Coifa de ilha sob medida em Campinas e região: visita técnica, fabricação própria e instalação premium. Fale direto com a fábrica e peça orçamento no WhatsApp." />
+  <title>Coifas Sob Medida <br> em Campinas | Art Coifas</title>
+  <meta name="description" content="Coifas sob medida em Campinas com fabricação própria e instalação profissional. Veja modelos e fale direto com a fábrica pelo WhatsApp." />
+
+  <!-- Favicons (pasta /favicon) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
 
   <!-- =======================================================================
-    CONFIG IMAGENS + ALTs (EDITE AQUI QUANDO FOR TRANSFORMAR EM MODELO)
+    CONFIG IMAGENS + ALTs (EDITAR AQUI)
     Regra: troque os nomes/ALTs aqui e depois use Ctrl+F pelo nome do arquivo.
 
+    LOGO
+    - src: images/logo-artcoifas.png
+
     HERO (DESKTOP BACKGROUND)
-    - src: images/hero-ilha-desktop.webp
-    - alt (referência): Coifa de ilha sob medida instalada sobre bancada central em cozinha moderna com acabamento premium
+    - src: images/hero-desktop-fabrica.webp
+    - alt (referência): Coifa de parede preta integrada em cozinha moderna com bancada de granito e churrasqueira.
 
     HERO (MOBILE IMG)
-    - src: images/hero-ilha-mobile.webp
-    - alt: Coifa de ilha preta sob medida instalada sobre bancada de granito em ambiente integrado
+    - src: images/hero-mobile-fabrica.webp
+    - alt: Coifa de embutir preta de grandes dimensões instalada em área gourmet com bancada preta.
 
-    BLOCO ESTRUTURA (IMG)
-    - src: images/estrutura-08.webp
-    - alt: Fabricação e estrutura própria para coifas sob medida com padrão premium em Campinas
+    MODELOS (3 IMGS)
+    - src: images/produto-home-1.webp
+    - alt: Coifa de ilha em inox instalada sobre bancada central em cozinha conceito aberto integrada.
+    - link: https://artcoifascampinas.com.br/coifa-de-ilha-campinas
 
-    BLOCO GALERIA (3 IMGS)
-    - src: images/produto-8.webp
-    - alt: Coifa de ilha sob medida em inox instalada sobre bancada central em cozinha planejada
+    - src: images/produto-home-2.webp
+    - alt: Coifa de parede em inox instalada em cozinha planejada com armários amadeirados e utensílios.
+    - link: https://artcoifascampinas.com.br/coifa-de-parede-campinas
 
-    - src: images/produto-9.webp
-    - alt: Coifa de ilha preta sob medida com acabamento premium em cozinha moderna
+    - src: images/produto-home-3.webp
+    - alt: Coifa de parede em inox instalada sobre churrasqueira em área gourmet com ripas amadeiradas.
+    - link: https://artcoifascampinas.com.br/coifa-de-embutir-campinas
 
-    - src: images/produto-10.webp
-    - alt: Coifa de ilha sob medida instalada com iluminação e acabamento refinado em área gourmet
+    FÁBRICA / PROCESSO (3 IMGS)
+    - src: images/fabrica-1.webp
+    - alt: Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais.
+
+    - src: images/fabrica-2.webp
+    - alt: Fachada da fábrica Art Coifas com veículos utilitários estacionados e identificação visual da empresa.
+
+    - src: images/fabrica-3.webp
+    - alt: Equipe de colaboradores da Art Coifas reunida em frente à sede da fábrica e veículos.
   ======================================================================== -->
 
-  <!-- LCP: preloads corretos (evita warning de preload não usado) -->
-  <link rel="preload" as="image" href="images/hero-ilha-mobile.webp" fetchpriority="high" media="(max-width: 991px)" />
-  <link rel="preload" as="image" href="images/hero-ilha-desktop.webp" media="(min-width: 992px)" />
+  <!-- LCP: preloads corretos (mobile com prioridade máxima) -->
+  <link rel="preload" as="image" href="images/hero-mobile-fabrica.webp" fetchpriority="high" media="(max-width: 991px)" />
+  <link rel="preload" as="image" href="images/hero-desktop-fabrica.webp" media="(min-width: 992px)" />
 
-  <!-- ========================= SCHEMA (JSON-LD) ========================= -->
+  <!-- Schema (sem promessas comerciais; dados básicos) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Art Coifas",
-    "description": "Fabricação e instalação de coifas sob medida em Campinas e região, com atendimento técnico presencial e acabamento premium.",
-    "areaServed": [
-      { "@type": "City", "name": "Campinas" }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua Doutor Eduardo Edarge Badaró, 1170",
-      "addressLocality": "Campinas",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Art Coifas",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+      "addressLocality":"Campinas",
+      "addressRegion":"SP",
+      "addressCountry":"BR"
     },
-    "telephone": "+55 19 3213-1636",
-    "url": "https://art-coifas-residencia.vercel.app/",
-    "sameAs": [],
-    "openingHours": [
-      "Mo-Fr 08:00-17:00"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Vocês fazem coifa de ilha sob medida?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. Cada coifa de ilha é fabricada sob medida conforme o layout da cozinha/área gourmet, o tamanho da bancada e o tipo de fogão/cooktop."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "A visita técnica é em Campinas e região?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. Atendemos Campinas e cidades da região metropolitana mediante agendamento para avaliar o ambiente e definir o melhor projeto."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "A coifa de ilha já inclui instalação?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. O atendimento é completo: visita técnica, fabricação própria e instalação profissional para encaixe preciso e performance real."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Trabalham com inox e pintura preta?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim. Definimos o acabamento na visita técnica conforme o seu ambiente: inox, pintura preta e outras opções sob projeto."
-        }
-      }
-    ]
+    "areaServed":"Campinas e região",
+    "telephone":"+55 19 3213-1636",
+    "url":"https://artcoifascampinas.com.br/"
   }
   </script>
 
@@ -120,7 +88,7 @@
       --dark2:#0a1826;
 
       /* HERO DESKTOP (centralizado aqui) */
-      --hero-desktop-bg: url("images/hero-ilha-desktop.webp");
+      --hero-desktop-bg: url("images/hero-desktop-fabrica.webp");
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -136,10 +104,284 @@
       margin:0 auto;
     }
 
+    /* ================= INÍCIO DO BLOCO: HEADER / NAV ================= */
+    .topbar{
+      position:absolute;
+      top:0; left:0; right:0;
+      z-index:5;
+      padding:14px 0;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:900;
+      letter-spacing:-0.01em;
+    }
+    .brand img{
+      width:auto;
+      height:34px;
+      display:block;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,.22));
+    }
+
+    .nav__center{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      gap:22px;
+      flex:1;
+    }
+    .nav__link{
+      color:rgba(255,255,255,.90);
+      text-decoration:none;
+      font-weight:800;
+      font-size:.95rem;
+      padding:10px 10px;
+      border-radius:10px;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .nav__link:hover{
+      background:rgba(255,255,255,.08);
+      color:#fff;
+    }
+
+    /* Dropdown */
+    .dd{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .dd__btn{
+      cursor:pointer;
+      border:none;
+      background:transparent;
+      color:rgba(255,255,255,.90);
+      font-weight:900;
+      font-size:.95rem;
+      padding:10px 10px;
+      border-radius:10px;
+      transition:.18s ease;
+      white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .dd__btn:hover{ background:rgba(255,255,255,.08); color:#fff; }
+    .dd__caret{
+      width:10px;height:10px;
+      border-right:2px solid rgba(255,255,255,.70);
+      border-bottom:2px solid rgba(255,255,255,.70);
+      transform: rotate(45deg);
+      margin-top:-2px;
+      transition:.18s ease;
+    }
+    .dd__panel{
+      position:absolute;
+      top:44px;
+      left:50%;
+      transform:translateX(-50%);
+      min-width:280px;
+      background:rgba(10,24,38,.96);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 24px 70px rgba(0,0,0,.45);
+      border-radius:14px;
+      overflow:hidden;
+      opacity:0;
+      pointer-events:none;
+      transition:.18s ease;
+      backdrop-filter: blur(10px);
+    }
+    .dd__panel a{
+      display:block;
+      padding:14px 16px;
+      text-decoration:none;
+      color:rgba(255,255,255,.90);
+      font-weight:800;
+      font-size:.95rem;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+    .dd__panel a:first-child{ border-top:none; }
+    .dd__panel a:hover{
+      background:rgba(255,255,255,.06);
+      color:#fff;
+    }
+    .dd:hover .dd__panel,
+    .dd:focus-within .dd__panel{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .dd:hover .dd__caret,
+    .dd:focus-within .dd__caret{
+      transform: rotate(225deg);
+      margin-top:2px;
+    }
+
+    .nav__right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .nav__wa{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:11px 16px;
+      border-radius:999px;
+      background:var(--wa);
+      color:#fff;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 16px 40px rgba(31,184,90,.22);
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .nav__wa:hover{
+      transform: translateY(-1px);
+      box-shadow:0 20px 54px rgba(31,184,90,.26);
+    }
+
+    .burger{
+      width:44px;height:44px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .burger:hover{ background:rgba(255,255,255,.10); }
+    .burger span{
+      width:18px;height:2px;
+      background:rgba(255,255,255,.92);
+      position:relative;
+      display:block;
+    }
+    .burger span::before,
+    .burger span::after{
+      content:"";
+      position:absolute;
+      left:0;
+      width:18px;height:2px;
+      background:rgba(255,255,255,.92);
+    }
+    .burger span::before{ top:-6px; }
+    .burger span::after{ top:6px; }
+
+    /* Drawer mobile */
+    .drawer{
+      position:fixed;
+      inset:0;
+      z-index:99999;
+      display:none;
+    }
+    .drawer.active{ display:block; }
+    .drawer__backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      backdrop-filter: blur(3px);
+    }
+    .drawer__panel{
+      position:absolute;
+      right:0;
+      top:0;
+      height:100%;
+      width:min(360px, 92vw);
+      background:rgba(10,24,38,.98);
+      border-left:1px solid rgba(255,255,255,.12);
+      box-shadow:-24px 0 70px rgba(0,0,0,.55);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .drawer__top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .drawer__close{
+      width:44px;height:44px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+    .drawer__close::before{
+      content:"✕";
+      color:rgba(255,255,255,.92);
+      font-weight:900;
+      font-size:1.05rem;
+      line-height:1;
+    }
+    .drawer__links a{
+      display:block;
+      padding:14px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      color:rgba(255,255,255,.90);
+      font-weight:900;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      transition:.18s ease;
+    }
+    .drawer__links a:hover{ background:rgba(255,255,255,.08); }
+    .drawer__links .sep{
+      margin:10px 0 8px;
+      color:rgba(255,255,255,.55);
+      font-weight:900;
+      font-size:.85rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .drawer__wa{
+      margin-top:auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 16px;
+      border-radius:999px;
+      background:var(--wa);
+      color:#fff;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 16px 40px rgba(31,184,90,.22);
+    }
+
+    @media (min-width: 992px){
+      .nav__center{ display:flex; }
+      .nav__wa{ display:inline-flex; }
+      .burger{ display:none; }
+    }
+    /* ================= FIM DO BLOCO: HEADER / NAV ================= */
+
+
     /* ================= INÍCIO DO BLOCO: HERO ================= */
     .hero{
       background: var(--brand);
       color: var(--text);
+      position:relative;
     }
     .eyebrow{
       display:inline-flex;
@@ -165,9 +407,10 @@
     .title .accent{white-space:nowrap;}
     .lead{
       margin-top:1.05rem;
-      max-width:62ch;
+      max-width:60ch;
       font-size:1.08rem;
       color:var(--muted);
+      text-wrap: balance;
     }
     .btn{
       display:inline-flex;
@@ -192,12 +435,13 @@
       box-shadow:0 22px 60px rgba(31,184,90,.28);
     }
     .micro{
-      margin-top:.9rem;
+      margin-top:.95rem;
       display:flex;
       gap:.6rem;
       color:var(--muted2);
       font-size:.95rem;
       align-items:center;
+      flex-wrap:wrap;
     }
     .micro span{white-space:nowrap;}
     .stars{color:var(--gold);letter-spacing:.08em}
@@ -208,6 +452,7 @@
       gap:.35rem;
       color:var(--muted2);
       font-size:.98rem;
+      max-width:64ch;
     }
     .check{color:var(--gold);font-weight:900;margin-right:.35rem}
     .hero__inner{ padding: 2.2rem 0 1.4rem; }
@@ -228,7 +473,6 @@
     @media (min-width: 992px){
       .desktop-only{display:inline;}
       .hero{
-        position:relative;
         min-height:100vh;
         overflow:hidden;
       }
@@ -242,24 +486,27 @@
         background-repeat:no-repeat;
         z-index:0;
       }
+
+      /* Overlay ajustado:
+         - MAIS escuro na esquerda (texto)
+         - MAIS claro na direita (produto)
+         (padrão replicável para todas as páginas) */
       .hero::after{
         content:"";
         position:absolute;
         inset:0;
-        /* AJUSTE (Desktop):
-           - Escurecer um pouco mais a área do texto (lado esquerdo)
-           - Clarear um pouco mais o lado direito (onde a coifa aparece)
-        */
         background:
           linear-gradient(90deg,
             rgba(15,43,70,.96) 0%,
-            rgba(15,43,70,.68) 52%,
-            rgba(15,43,70,.10) 100%
+            rgba(15,43,70,.72) 45%,
+            rgba(15,43,70,.28) 74%,
+            rgba(15,43,70,.12) 100%
           ),
           radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
         z-index:1;
         pointer-events:none;
       }
+
       .hero__inner{
         position:relative;
         z-index:2;
@@ -275,6 +522,7 @@
       }
       .title{max-width:19ch;}
       .wrap{ width:min(1200px, calc(100% - 5rem)); }
+      .topbar{ padding:16px 0; }
     }
     /* ================= FIM DO BLOCO: HERO ================= */
 
@@ -310,15 +558,17 @@
       letter-spacing:-0.02em;
       font-weight:900;
       margin-bottom:14px;
+      text-wrap: balance;
     }
     .flow__title .accent{ color: var(--gold); }
     .flow__sub{
       text-align:center;
-      max-width:72ch;
+      max-width:76ch;
       margin: 0 auto 52px;
       color: rgba(255,255,255,.82);
       line-height:1.7;
       font-size:1.04rem;
+      text-wrap: balance;
     }
     .flow__grid{
       display:grid;
@@ -386,18 +636,20 @@
       margin-bottom:14px;
       letter-spacing:-0.01em;
       color:#fff;
+      text-wrap: balance;
     }
     .flow__card p{
       text-align:center;
       color: rgba(255,255,255,.82);
       line-height:1.75;
       font-size:1.02rem;
-      max-width:32ch;
+      max-width:34ch;
+      text-wrap: balance;
     }
     /* ================= FIM DO BLOCO: 3 CARDS (FLOW) ================= */
 
 
-    /* ================= INÍCIO DO BLOCO: ESTRUTURA ================= */
+    /* ================= INÍCIO DO BLOCO: AUTORIDADE (IMG + TEXTO) ================= */
     .structure{
       background:#ffffff;
       padding:92px 0 60px;
@@ -425,13 +677,15 @@
       color:var(--brand);
       font-weight:900;
       margin-bottom:14px;
+      text-wrap: balance;
     }
     .structure__text{
       color:#2a2f36;
       line-height:1.7;
       font-size:1.02rem;
       margin-bottom:16px;
-      max-width:60ch;
+      max-width:62ch;
+      text-wrap: balance;
     }
     .structure__list{
       list-style:none;
@@ -439,22 +693,22 @@
       gap:.55rem;
       margin:18px 0 22px;
       color:#2a2f36;
-      font-weight:700;
+      font-weight:800;
     }
     .structure__list li{ display:flex; gap:.6rem; align-items:flex-start; }
     .structure__list .mark{ color:var(--gold); font-weight:900; margin-top:.05rem; }
     .structure__cta .btn{ margin-top:0; border-color: rgba(15,43,70,0.10); }
-    /* ================= FIM DO BLOCO: ESTRUTURA ================= */
+    /* ================= FIM DO BLOCO: AUTORIDADE (IMG + TEXTO) ================= */
 
 
-    /* ================= INÍCIO DO BLOCO: GALERIA (3 CARDS) ================= */
-    .piramidal-gallery{
+    /* ================= INÍCIO DO BLOCO: MODELOS (3 CARDS + LINKS) ================= */
+    .models{
       background:#ffffff;
       padding:48px 0 62px;
       position: relative;
       overflow: hidden;
     }
-    .piramidal-gallery::after{
+    .models::after{
       content:"";
       position:absolute;
       left:0; right:0; bottom:-1px;
@@ -462,71 +716,163 @@
       background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(7,17,28,.10) 100%);
       pointer-events:none;
     }
-    .piramidal-gallery__title{
+    .models__title{
       text-align:center;
       color: var(--brand);
       font-weight: 900;
       letter-spacing: -0.02em;
       font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem);
       margin-bottom: 10px;
+      text-wrap: balance;
     }
-    .piramidal-gallery__sub{
+    .models__sub{
       text-align:center;
-      max-width: 74ch;
+      max-width: 76ch;
       margin: 0 auto 38px;
       color: #2a2f36;
       line-height: 1.7;
       font-size: 1.02rem;
       text-wrap: balance;
     }
-    .piramidal-gallery__grid{
+    .models__grid{
       display:grid;
       gap: 18px;
     }
     @media (min-width: 992px){
-      .piramidal-gallery__grid{
+      .models__grid{
         grid-template-columns: repeat(3, 1fr);
         gap: 22px;
       }
     }
-    .piramidal-card{
+    .mcard{
       border-radius: 18px;
       overflow: hidden;
       background: #fff;
       border: 1px solid rgba(15,43,70,0.10);
       box-shadow: 0 18px 48px rgba(15,43,70,0.10);
       transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      display:flex;
+      flex-direction:column;
+      height:100%;
     }
-    .piramidal-card:hover{
+    .mcard:hover{
       transform: translateY(-6px);
       border-color: rgba(255,191,31,.55);
       box-shadow: 0 26px 70px rgba(15,43,70,0.14);
     }
-    .piramidal-card__media{
+    .mcard__media{
       width: 100%;
       aspect-ratio: 4 / 3;
       background: #eef3f8;
     }
-    .piramidal-card__media img{
+    .mcard__media img{
       width: 100%;
       height: 100%;
       object-fit: cover;
       display:block;
     }
-    .piramidal-card__body{ padding: 18px 18px 20px; }
-    .piramidal-card__h{
+    .mcard__body{ padding: 18px 18px 18px; display:flex; flex-direction:column; gap:10px; flex:1; }
+    .mcard__h{
       color: var(--brand);
       font-weight: 900;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       line-height: 1.25;
-      margin-bottom: 8px;
+      text-wrap: balance;
     }
-    .piramidal-card__p{
+    .mcard__p{
       color:#2a2f36;
       line-height: 1.65;
       font-size: .98rem;
+      text-wrap: balance;
     }
-    /* ================= FIM DO BLOCO: GALERIA (3 CARDS) ================= */
+    .mcard__cta{
+      margin-top:auto;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      color: var(--brand);
+      padding: 12px 0 0;
+    }
+    .mcard__cta:hover{ text-decoration: underline; }
+    /* ================= FIM DO BLOCO: MODELOS (3 CARDS + LINKS) ================= */
+
+
+    /* ================= INÍCIO DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= */
+    .factory{
+      background:#ffffff;
+      padding:28px 0 78px;
+    }
+    .factory__title{
+      text-align:center;
+      color: var(--brand);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem);
+      margin-bottom: 10px;
+      text-wrap: balance;
+    }
+    .factory__sub{
+      text-align:center;
+      max-width: 78ch;
+      margin: 0 auto 38px;
+      color: #2a2f36;
+      line-height: 1.7;
+      font-size: 1.02rem;
+      text-wrap: balance;
+    }
+    .factory__grid{
+      display:grid;
+      gap:18px;
+    }
+    @media (min-width: 992px){
+      .factory__grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap:22px;
+      }
+    }
+    .fcard{
+      border-radius:18px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid rgba(15,43,70,0.10);
+      box-shadow:0 18px 48px rgba(15,43,70,0.10);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+    .fcard:hover{
+      transform: translateY(-6px);
+      border-color: rgba(255,191,31,.55);
+      box-shadow: 0 26px 70px rgba(15,43,70,0.14);
+    }
+    .fcard__media{
+      width:100%;
+      aspect-ratio: 4 / 3;
+      background:#eef3f8;
+    }
+    .fcard__media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .fcard__body{ padding: 16px 18px 20px; }
+    .fcard__h{
+      color: var(--brand);
+      font-weight: 900;
+      font-size: 1.05rem;
+      margin-bottom:8px;
+      text-wrap: balance;
+    }
+    .fcard__p{
+      color:#2a2f36;
+      line-height:1.65;
+      font-size:.98rem;
+      text-wrap: balance;
+    }
+    /* ================= FIM DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= */
 
 
     /* ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= */
@@ -561,6 +907,7 @@
       letter-spacing:-0.02em;
       font-weight:900;
       margin-bottom:14px;
+      text-wrap: balance;
     }
     .testimonials__title .accent{ color: var(--gold); }
     .testimonials__title .tline2{ display:inline; }
@@ -572,6 +919,7 @@
       color: rgba(255,255,255,.82);
       line-height:1.7;
       font-size:1.04rem;
+      text-wrap: balance;
     }
     .testimonials__sub .subline{ display:inline; }
 
@@ -606,7 +954,7 @@
       box-shadow: 0 36px 95px rgba(0,0,0,.42);
     }
     .tstars{ color: var(--gold); letter-spacing:.14em; font-size: .95rem; margin-bottom: 12px; line-height:1; }
-    .tquote{ color:#1a2533; font-size: 1.02rem; line-height: 1.7; margin-bottom: 16px; }
+    .tquote{ color:#1a2533; font-size: 1.02rem; line-height: 1.7; margin-bottom: 16px; text-wrap: balance; }
     .tquote em{ font-style: italic; color:#1f2c3d; }
     .tauthor{ font-weight:900; color:#0f2b46; font-size: 1rem; }
 
@@ -657,6 +1005,7 @@
       font-size:2.2rem;
       font-weight:900;
       margin-bottom:60px;
+      text-wrap: balance;
     }
     .faq-dark__title span{ color: var(--gold); }
     .faq-dark__list{
@@ -679,18 +1028,21 @@
       border:none;
       padding:22px 26px;
       font-size:1.05rem;
-      font-weight:700;
+      font-weight:800;
       color:#fff;
       text-align:left;
       cursor:pointer;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:14px;
+      text-wrap: balance;
     }
     .faq-dark__question span{
       font-size:1.4rem;
       color: var(--gold);
       transition:.3s ease;
+      flex:0 0 auto;
     }
     .faq-dark__answer{
       padding:0 26px 22px;
@@ -700,42 +1052,15 @@
       max-height:0;
       overflow:hidden;
       transition:max-height .4s ease;
+      text-wrap: balance;
     }
     .faq-dark__item.active{
       border-color: rgba(255,191,31,.48);
       background: rgba(255,255,255,.08);
     }
-    .faq-dark__item.active .faq-dark__answer{ max-height:300px; }
+    .faq-dark__item.active .faq-dark__answer{ max-height:360px; }
     .faq-dark__item.active .faq-dark__question span{ transform: rotate(45deg); }
     /* ================= FIM DO BLOCO: FAQ ================= */
-
-
-    /* ================= INÍCIO DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= */
-    .conversion-block{
-      background:#ffffff;
-      padding:70px 0 80px;
-      text-align:center;
-    }
-    .conversion-block__title{
-      font-size: clamp(1.8rem, 1.2rem + 1.4vw, 2.4rem);
-      line-height:1.15;
-      letter-spacing:-0.02em;
-      color: var(--brand);
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-    .conversion-block__text{
-      max-width: 70ch;
-      margin: 0 auto 22px;
-      color:#2a2f36;
-      line-height:1.7;
-      font-size: 1.05rem;
-    }
-    @media (max-width: 768px){
-      .conversion-block{ padding: 56px 0 64px; }
-      .conversion-block__text{ max-width: 34ch; }
-    }
-    /* ================= FIM DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= */
 
 
     /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
@@ -746,31 +1071,32 @@
     }
     .cta-footer__cta{
       text-align:center;
-      max-width:700px;
+      max-width:760px;
       margin:0 auto 70px;
     }
     .cta-footer__cta h2{
       font-size:2rem;
       font-weight:900;
       margin-bottom:18px;
+      text-wrap: balance;
     }
     .cta-footer__cta p{
       color:rgba(255,255,255,.75);
       margin-bottom:28px;
       line-height:1.6;
+      text-wrap: balance;
     }
     @media (min-width: 992px){
       .cta-footer__cta p{
-        max-width: 80ch;
+        max-width: 78ch;
         margin-left:auto;
         margin-right:auto;
-        white-space: nowrap;
       }
     }
     .btn--big{
       padding:18px 34px;
       font-size:1.05rem;
-      font-weight:700;
+      font-weight:800;
     }
     .cta-footer__divider{
       height:1px;
@@ -786,12 +1112,13 @@
     .cta-footer__col h3{
       font-size:1rem;
       margin-bottom:16px;
-      font-weight:800;
+      font-weight:900;
     }
     .cta-footer__col p{
       font-size:.9rem;
       line-height:1.6;
       color:rgba(255,255,255,.7);
+      text-wrap: balance;
     }
     .cta-footer__col ul{ list-style:none; padding:0; margin:0; }
     .cta-footer__col li{ margin-bottom:10px; }
@@ -850,7 +1177,7 @@
       border: 1px solid rgba(255,255,255,.14);
       padding:10px 12px;
       border-radius:12px;
-      font-weight:800;
+      font-weight:900;
       font-size:.9rem;
       white-space:nowrap;
       box-shadow: 0 18px 50px rgba(0,0,0,.32);
@@ -868,24 +1195,33 @@
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
 
 
-    /* ================= AJUSTES MOBILE: títulos centralizados ================= */
-    @media (max-width: 991px){
-      .title{ text-align:center; }
-      .flow__title{ text-align:center; }
-      .structure__title{ text-align:center; }
-      .piramidal-gallery__title{ text-align:center; }
-      .testimonials__title{ text-align:center; }
-      .faq-dark__title{ text-align:center; }
-      .conversion-block__title{ text-align:center; }
-      .cta-footer__cta h2{ text-align:center; }
-      .cta-footer__col h3{ text-align:center; }
-      .piramidal-card__h{ text-align:center; }
-    }
-
+    /* ================= REGRAS MOBILE (CENTRALIZAR TÍTULOS) ================= */
     @media (max-width: 768px){
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
+
+      /* títulos de seções centralizados no mobile */
+      .structure__title,
+      .models__title,
+      .factory__title,
+      .flow__title,
+      .testimonials__title,
+      .faq-dark__title,
+      .cta-footer__cta h2{
+        text-align:center;
+      }
+
+      .structure__text,
+      .models__sub,
+      .factory__sub,
+      .flow__sub,
+      .testimonials__sub,
+      .cta-footer__cta p{
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -893,7 +1229,88 @@
 <body>
 
 <!-- ================= INÍCIO DO BLOCO: HERO ================= -->
-<header class="hero">
+<header class="hero" id="top">
+  <!-- ================= INÍCIO DO BLOCO: HEADER / NAV ================= -->
+  <div class="topbar" aria-label="Topo e navegação">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Art Coifas - Início">
+          <img src="images/logo-artcoifas.png" alt="Art Coifas" width="120" height="34" decoding="async" />
+        </a>
+
+        <nav class="nav__center" aria-label="Menu principal">
+          <div class="dd">
+            <button class="dd__btn" type="button" aria-haspopup="true" aria-expanded="false">
+              Modelos <span class="dd__caret" aria-hidden="true"></span>
+            </button>
+            <div class="dd__panel" role="menu" aria-label="Modelos de coifa">
+              <a role="menuitem" href="https://artcoifascampinas.com.br/coifa-de-parede-campinas">Coifa de Parede</a>
+              <a role="menuitem" href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas">Coifa de Ilha</a>
+              <a role="menuitem" href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas">Coifa de Embutir</a>
+              <a role="menuitem" href="https://artcoifascampinas.com.br/coifa-para-churrasqueira-campinas">Coifa para Churrasqueira</a>
+              <a role="menuitem" href="https://artcoifascampinas.com.br/coifa-para-cozinha-campinas">Coifa para Cozinha</a>
+            </div>
+          </div>
+
+          <a class="nav__link" href="#fabrica">Fábrica</a>
+          <a class="nav__link" href="#depoimentos">Depoimentos</a>
+          <a class="nav__link" href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav__right">
+          <a class="nav__wa js-wa"
+             href="https://wa.me/551932131636"
+             target="_blank"
+             rel="noopener"
+             data-source="menu"
+             data-code="ART COIFAS CAMPINAS">
+            WhatsApp
+          </a>
+
+          <button class="burger" type="button" aria-label="Abrir menu" id="jsBurger">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="drawer" id="jsDrawer" aria-label="Menu mobile">
+    <div class="drawer__backdrop" id="jsDrawerBackdrop" aria-hidden="true"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Navegação">
+      <div class="drawer__top">
+        <a class="brand" href="#top" aria-label="Art Coifas - Início">
+          <img src="images/logo-artcoifas.png" alt="Art Coifas" width="120" height="34" decoding="async" />
+        </a>
+        <button class="drawer__close" type="button" aria-label="Fechar menu" id="jsDrawerClose"></button>
+      </div>
+
+      <div class="drawer__links">
+        <div class="sep">Modelos</div>
+        <a href="https://artcoifascampinas.com.br/coifa-de-parede-campinas">Coifa de Parede</a>
+        <a href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas">Coifa de Ilha</a>
+        <a href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas">Coifa de Embutir</a>
+        <a href="https://artcoifascampinas.com.br/coifa-para-churrasqueira-campinas">Coifa para Churrasqueira</a>
+        <a href="https://artcoifascampinas.com.br/coifa-para-cozinha-campinas">Coifa para Cozinha</a>
+
+        <div class="sep">Seções</div>
+        <a href="#fabrica">Fábrica</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a class="drawer__wa js-wa"
+         href="https://wa.me/551932131636"
+         target="_blank"
+         rel="noopener"
+         data-source="menu_mobile"
+         data-code="ART COIFAS CAMPINAS">
+        Falar no WhatsApp
+      </a>
+    </div>
+  </aside>
+  <!-- ================= FIM DO BLOCO: HEADER / NAV ================= -->
+
   <div class="hero__inner">
     <div class="wrap">
       <div class="eyebrow">
@@ -901,12 +1318,11 @@
       </div>
 
       <h1 class="title">
-        Coifa de <span class="accent">Ilha</span> sob medida em Campinas
+        Coifas <span class="accent">sob medida</span> em Campinas
       </h1>
 
       <p class="lead">
-        Coifa de ilha com visita técnica presencial, fabricação própria e instalação premium.
-        Projeto personalizado para sua cozinha ou área gourmet em Campinas e região.
+        Fabricação própria, projeto técnico personalizado e instalação profissional para cozinhas e áreas gourmet.
       </p>
 
       <a class="btn btn--wa js-wa"
@@ -914,26 +1330,26 @@
          target="_blank"
          rel="noopener"
          data-source="cta"
-         data-code="COIFA DE ILHA">
-        Agendar visita técnica pelo WhatsApp
+         data-code="ART COIFAS CAMPINAS">
+        Falar com a fábrica no WhatsApp
       </a>
 
       <div class="micro">
         <span class="stars">★★★★★</span>
-        <span>Do projeto à instalação</span>
+        <span><strong>Atendimento técnico</strong> do projeto à instalação</span>
       </div>
 
       <ul class="bullets" aria-label="Diferenciais">
-        <li><span class="check">✓</span> Projeto técnico sob medida para ilha</li>
-        <li><span class="check">✓</span> Visita presencial sob agendamento</li>
-        <li><span class="check">✓</span> Fabricação própria com padrão premium</li>
+        <li><span class="check">✓</span> Visita técnica sob agendamento</li>
+        <li><span class="check">✓</span> Modelo definido para o seu ambiente</li>
+        <li><span class="check">✓</span> Acabamento premium (inox e pintura)</li>
         <li><span class="check">✓</span> Instalação profissional especializada</li>
       </ul>
 
       <div class="hero__media">
         <img
-          src="images/hero-ilha-mobile.webp"
-          alt="Coifa de ilha preta sob medida instalada sobre bancada de granito em ambiente integrado"
+          src="images/hero-mobile-fabrica.webp"
+          alt="Coifa de embutir preta de grandes dimensões instalada em área gourmet com bancada preta."
           width="800"
           height="600"
           loading="eager"
@@ -948,12 +1364,11 @@
 
 
 <!-- ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= -->
-<section class="flow" aria-label="Etapas do atendimento">
+<section class="flow" aria-label="Como funciona o atendimento">
   <div class="wrap">
     <h2 class="flow__title">Atendimento <span class="accent">presencial</span> e sob medida</h2>
     <p class="flow__sub">
-      Você fala direto com a fábrica em Campinas. Nosso especialista vai até o local, define a melhor coifa de ilha com você
-      e entregamos a coifa pronta com acabamento premium.
+      Você fala direto com a fábrica em Campinas. Avaliamos o ambiente, definimos o modelo e entregamos com acabamento premium e instalação profissional.
     </p>
 
     <div class="flow__grid">
@@ -961,8 +1376,7 @@
         <div class="flow__num">01</div>
         <h3>Visita técnica no local</h3>
         <p>
-          Agendamos a visita presencial para avaliar a bancada/ilha, o fogão ou cooktop e a altura ideal.
-          Você não precisa medir nada.
+          Avaliamos o espaço, o fogão/cooktop e o layout da cozinha ou área gourmet para orientar o projeto com precisão.
         </p>
       </div>
 
@@ -970,8 +1384,7 @@
         <div class="flow__num">02</div>
         <h3>Definição do modelo ideal</h3>
         <p>
-          Definimos o projeto da coifa de ilha: dimensões, acabamento (inox, preta e outras opções),
-          iluminação e detalhes do seu ambiente.
+          Indicamos o modelo certo para o seu ambiente: parede, ilha ou embutir, com acabamento em inox ou pintura.
         </p>
       </div>
 
@@ -979,8 +1392,7 @@
         <div class="flow__num">03</div>
         <h3>Fabricação + instalação</h3>
         <p>
-          Produção interna com controle total do corte ao acabamento final. Instalação profissional especializada para encaixe preciso,
-          desempenho real e resultado premium.
+          Produção interna e instalação profissional para garantir encaixe preciso, bom desempenho e acabamento de entrega.
         </p>
       </div>
     </div>
@@ -989,14 +1401,14 @@
 <!-- ================= FIM DO BLOCO: 3 CARDS (FLOW) ================= -->
 
 
-<!-- ================= INÍCIO DO BLOCO: ESTRUTURA ================= -->
-<section class="structure">
+<!-- ================= INÍCIO DO BLOCO: AUTORIDADE (IMG + TEXTO) ================= -->
+<section class="structure" aria-label="Estrutura e atendimento">
   <div class="wrap">
     <div class="structure__grid">
       <div class="structure__media">
         <img
-          src="images/estrutura-08.webp"
-          alt="Fabricação e estrutura própria para coifas sob medida com padrão premium em Campinas"
+          src="images/fabrica-1.webp"
+          alt="Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais."
           width="1200"
           height="800"
           loading="lazy"
@@ -1006,26 +1418,22 @@
 
       <div class="structure__content">
         <h2 class="structure__title">
-          Estrutura própria<br>
-          e equipe especializada
+          Fabricação própria<br>
+          e atendimento local
         </h2>
 
         <p class="structure__text">
-          <strong>Fabricação própria em Campinas desde 2000.</strong>
-          Atendemos mais de 100 cidades da região e já são mais de 10.000 projetos
-          para cozinhas residenciais e áreas gourmet.
+          Estrutura completa em Campinas para projetar, fabricar e instalar coifas sob medida para residências e áreas gourmet.
         </p>
 
         <p class="structure__text">
-          Você fala direto com quem projeta, fabrica e instala.
-          Controle total do projeto — do corte ao acabamento —
-          com precisão técnica e padrão elevado.
+          Você fala com quem entende do projeto e acompanha a execução — do planejamento ao acabamento final.
         </p>
 
         <ul class="structure__list" aria-label="Pontos de autoridade">
-          <li><span class="mark">✓</span><span>Produção interna com controle técnico</span></li>
-          <li><span class="mark">✓</span><span>Definição do modelo na visita presencial</span></li>
-          <li><span class="mark">✓</span><span>Garantia de fabricação e assistência técnica</span></li>
+          <li><span class="mark">✓</span><span>Produção interna com padrão de acabamento</span></li>
+          <li><span class="mark">✓</span><span>Visita técnica e orientação do modelo</span></li>
+          <li><span class="mark">✓</span><span>Instalação profissional especializada</span></li>
         </ul>
 
         <div class="structure__cta">
@@ -1034,7 +1442,7 @@
              target="_blank"
              rel="noopener"
              data-source="cta"
-             data-code="COIFA DE ILHA">
+             data-code="ART COIFAS CAMPINAS">
             Falar com um especialista no WhatsApp
           </a>
         </div>
@@ -1042,76 +1450,144 @@
     </div>
   </div>
 </section>
-<!-- ================= FIM DO BLOCO: ESTRUTURA ================= -->
+<!-- ================= FIM DO BLOCO: AUTORIDADE (IMG + TEXTO) ================= -->
 
 
-<!-- ================= INÍCIO DO BLOCO: GALERIA (3 CARDS) ================= -->
-<section class="piramidal-gallery" aria-label="Detalhes do produto">
+<!-- ================= INÍCIO DO BLOCO: MODELOS (3 CARDS + LINKS) ================= -->
+<section class="models" id="modelos" aria-label="Modelos principais">
   <div class="wrap">
-    <h2 class="piramidal-gallery__title">Detalhes do acabamento <span class="accent">premium</span></h2>
-    <p class="piramidal-gallery__sub">
-      Fotos reais: acabamento premium, encaixe preciso e instalação profissional em Campinas e região.
+    <h2 class="models__title">Modelos principais para <span class="accent">residência</span></h2>
+    <p class="models__sub">
+      Veja os modelos mais procurados em Campinas e acesse as páginas com detalhes e fotos de cada tipo de coifa.
     </p>
 
-    <div class="piramidal-gallery__grid">
-      <article class="piramidal-card">
-        <div class="piramidal-card__media">
+    <div class="models__grid">
+      <article class="mcard">
+        <div class="mcard__media">
           <img
-            src="images/produto-8.webp"
-            alt="Coifa de ilha sob medida em inox instalada sobre bancada central em cozinha planejada"
+            src="images/produto-home-2.webp"
+            alt="Coifa de parede em inox instalada em cozinha planejada com armários amadeirados e utensílios."
             width="800"
             height="600"
             loading="lazy"
             decoding="async"
           />
         </div>
-        <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Integração perfeita ao ambiente</h3>
-          <p class="piramidal-card__p">Projeto sob medida para encaixar com precisão na sua ilha, com acabamento premium e visual limpo.</p>
+        <div class="mcard__body">
+          <h3 class="mcard__h">Coifa de Parede</h3>
+          <p class="mcard__p">Ideal para cozinhas planejadas e áreas gourmet, com ótimo aproveitamento de espaço.</p>
+          <a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-parede-campinas">Ver detalhes do modelo →</a>
         </div>
       </article>
 
-      <article class="piramidal-card">
-        <div class="piramidal-card__media">
+      <article class="mcard">
+        <div class="mcard__media">
           <img
-            src="images/produto-9.webp"
-            alt="Coifa de ilha preta sob medida com acabamento premium em cozinha moderna"
+            src="images/produto-home-1.webp"
+            alt="Coifa de ilha em inox instalada sobre bancada central em cozinha conceito aberto integrada."
             width="800"
             height="600"
             loading="lazy"
             decoding="async"
           />
         </div>
-        <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Beleza e desempenho no dia a dia</h3>
-          <p class="piramidal-card__p">Acabamento refinado e presença premium para valorizar a cozinha e manter o ambiente mais confortável.</p>
+        <div class="mcard__body">
+          <h3 class="mcard__h">Coifa de Ilha</h3>
+          <p class="mcard__p">Perfeita para cozinhas integradas, com presença visual forte e acabamento premium.</p>
+          <a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas">Ver detalhes do modelo →</a>
         </div>
       </article>
 
-      <article class="piramidal-card">
-        <div class="piramidal-card__media">
+      <article class="mcard">
+        <div class="mcard__media">
           <img
-            src="images/produto-10.webp"
-            alt="Coifa de ilha sob medida instalada com iluminação e acabamento refinado em área gourmet"
+            src="images/produto-home-3.webp"
+            alt="Coifa de parede em inox instalada sobre churrasqueira em área gourmet com ripas amadeiradas."
             width="800"
             height="600"
             loading="lazy"
             decoding="async"
           />
         </div>
-        <div class="piramidal-card__body">
-          <h3 class="piramidal-card__h">Instalação profissional e entrega final</h3>
-          <p class="piramidal-card__p">Montagem precisa, acabamento de entrega e resultado premium — do projeto à instalação.</p>
+        <div class="mcard__body">
+          <h3 class="mcard__h">Coifa de Embutir</h3>
+          <p class="mcard__p">Integração discreta ao ambiente, com projeto sob medida para encaixe perfeito.</p>
+          <a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas">Ver detalhes do modelo →</a>
         </div>
       </article>
     </div>
   </div>
 </section>
-<!-- ================= FIM DO BLOCO: GALERIA (3 CARDS) ================= -->
+<!-- ================= FIM DO BLOCO: MODELOS (3 CARDS + LINKS) ================= -->
+
+
+<!-- ================= INÍCIO DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= -->
+<section class="factory" id="fabrica" aria-label="Fábrica e processo">
+  <div class="wrap">
+    <h2 class="factory__title">Fábrica e processo</h2>
+    <p class="factory__sub">
+      Estrutura, equipe e produção interna em Campinas para garantir padrão de acabamento e instalação profissional.
+    </p>
+
+    <div class="factory__grid">
+      <article class="fcard">
+        <div class="fcard__media">
+          <img
+            src="images/fabrica-1.webp"
+            alt="Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais."
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__h">Produção interna</h3>
+          <p class="fcard__p">Controle do processo e padrão de acabamento com equipe própria e estrutura completa.</p>
+        </div>
+      </article>
+
+      <article class="fcard">
+        <div class="fcard__media">
+          <img
+            src="images/fabrica-2.webp"
+            alt="Fachada da fábrica Art Coifas com veículos utilitários estacionados e identificação visual da empresa."
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__h">Estrutura e operação</h3>
+          <p class="fcard__p">Atendimento local e organização para atender Campinas e região com padrão consistente.</p>
+        </div>
+      </article>
+
+      <article class="fcard">
+        <div class="fcard__media">
+          <img
+            src="images/fabrica-3.webp"
+            alt="Equipe de colaboradores da Art Coifas reunida em frente à sede da fábrica e veículos."
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__h">Equipe</h3>
+          <p class="fcard__p">Projeto, fabricação e instalação com profissionais especializados e acompanhamento técnico.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ================= FIM DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= -->
 
 
 <!-- ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= -->
-<section class="testimonials" aria-label="Depoimentos de clientes">
+<section class="testimonials" id="depoimentos" aria-label="Depoimentos de clientes">
   <div class="wrap">
     <h2 class="testimonials__title">
       Depoimentos de quem <span class="tline2 accent">já instalou</span>
@@ -1128,7 +1604,7 @@
         <div>
           <div class="tstars" aria-label="5 estrelas">★★★★★</div>
           <p class="tquote">
-            <em>"A coifa de ilha ficou perfeita. A visita técnica facilitou tudo e o acabamento final é realmente premium."</em>
+            <em>"Atendimento profissional do início ao fim. A equipe ajudou na definição do modelo e a instalação ficou perfeita."</em>
           </p>
         </div>
         <div class="tauthor">Eduardo A. Gomes</div>
@@ -1138,7 +1614,7 @@
         <div>
           <div class="tstars" aria-label="5 estrelas">★★★★★</div>
           <p class="tquote">
-            <em>"Projeto sob medida, comunicação clara e instalação impecável. Valeu cada detalhe."</em>
+            <em>"Projeto sob medida, acabamento excelente e comunicação clara durante todo o processo."</em>
           </p>
         </div>
         <div class="tauthor">Giovanna Santiago</div>
@@ -1151,8 +1627,8 @@
          target="_blank"
          rel="noopener"
          data-source="cta"
-         data-code="COIFA DE ILHA">
-        Falar com um especialista no WhatsApp
+         data-code="ART COIFAS CAMPINAS">
+        Falar com a fábrica no WhatsApp
       </a>
     </div>
   </div>
@@ -1161,41 +1637,41 @@
 
 
 <!-- ================= INÍCIO DO BLOCO: FAQ ================= -->
-<section class="faq-dark">
+<section class="faq-dark" id="faq">
   <div class="wrap">
     <h2 class="faq-dark__title">
-      Perguntas frequentes sobre <span>coifa de ilha</span>
+      Perguntas frequentes sobre <span>coifas sob medida</span>
     </h2>
 
     <div class="faq-dark__list">
       <div class="faq-dark__item">
         <button type="button" class="faq-dark__question">
-          Vocês fazem coifa de ilha sob medida?
+          Vocês vendem coifas prontas?
           <span>+</span>
         </button>
         <div class="faq-dark__answer">
-          Sim. Cada coifa de ilha é fabricada sob medida, conforme o tamanho da bancada/ilha, o tipo de fogão/cooktop,
-          a altura ideal e o acabamento desejado.
+          Não. Cada coifa é fabricada sob medida, conforme as dimensões e necessidades do seu ambiente.
+          Não trabalhamos com modelos prontos ou de catálogo.
         </div>
       </div>
 
       <div class="faq-dark__item">
         <button type="button" class="faq-dark__question">
-          Como definimos o tamanho e a altura da coifa de ilha?
+          Trabalham com coifa de ilha, embutir e parede?
           <span>+</span>
         </button>
         <div class="faq-dark__answer">
-          Definimos tudo na visita técnica presencial. Avaliamos o layout, medidas, pé-direito e o ponto ideal para desempenho e estética.
+          Sim. O modelo ideal é definido na visita técnica conforme o seu ambiente e a necessidade de exaustão.
         </div>
       </div>
 
       <div class="faq-dark__item">
         <button type="button" class="faq-dark__question">
-          A coifa de ilha já inclui instalação?
+          A coifa é realmente feita sob medida?
           <span>+</span>
         </button>
         <div class="faq-dark__answer">
-          Sim. Nosso atendimento é completo: visita técnica, fabricação própria e instalação profissional especializada.
+          Sim. Cada projeto é desenvolvido conforme as medidas do ambiente, tipo de instalação e acabamento desejado.
         </div>
       </div>
 
@@ -1205,8 +1681,8 @@
           <span>+</span>
         </button>
         <div class="faq-dark__answer">
-          Sim. Atendemos Campinas e cidades da região metropolitana,
-          incluindo Indaiatuba, Valinhos, Jundiaí, Sumaré, Hortolândia e Monte Mor.
+          Sim. Atendimento residencial em Campinas e cidades da região.
+          A confirmação de agenda e deslocamento é feita diretamente pelo WhatsApp.
         </div>
       </div>
     </div>
@@ -1215,45 +1691,20 @@
 <!-- ================= FIM DO BLOCO: FAQ ================= -->
 
 
-<!-- ================= INÍCIO DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= -->
-<section class="conversion-block" aria-label="Bloco de conversão">
-  <div class="wrap">
-    <h2 class="conversion-block__title">
-      Coifa de ilha em Campinas é decisão técnica.
-    </h2>
-
-    <p class="conversion-block__text">
-      Visita presencial, fabricação própria e instalação premium.
-      Você fala direto com quem projeta e executa.
-    </p>
-
-    <a class="btn btn--wa js-wa"
-       href="https://wa.me/551932131636"
-       target="_blank"
-       rel="noopener"
-       data-source="cta"
-       data-code="COIFA DE ILHA">
-      Solicitar orçamento no WhatsApp
-    </a>
-  </div>
-</section>
-<!-- ================= FIM DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= -->
-
-
 <!-- ================= INÍCIO DO BLOCO: CTA FOOTER ================= -->
-<section class="cta-footer">
+<section class="cta-footer" aria-label="Chamada final">
   <div class="wrap">
     <div class="cta-footer__cta">
-      <h2>Peça seu orçamento direto com a fábrica</h2>
-      <p>Fale com quem realmente entende de coifas sob&nbsp;medida.</p>
+      <h2>Fale direto com a fábrica</h2>
+      <p>Se já sabe o modelo, chame no WhatsApp. Se preferir, veja os modelos principais acima.</p>
 
       <a class="btn btn--wa btn--big js-wa"
          href="https://wa.me/551932131636"
          target="_blank"
          rel="noopener"
          data-source="cta"
-         data-code="COIFA DE ILHA">
-         Solicitar orçamento no WhatsApp
+         data-code="ART COIFAS CAMPINAS">
+         Falar no WhatsApp
       </a>
     </div>
 
@@ -1281,11 +1732,14 @@
       </div>
 
       <div class="cta-footer__col">
-        <h3>Atendimento</h3>
-        <p>
-          Atendimento direto com a fábrica.<br>
-          Coifa de ilha sob medida e instalação premium.
-        </p>
+        <h3>Modelos</h3>
+        <ul>
+          <li><a href="https://artcoifascampinas.com.br/coifa-de-parede-campinas">Coifa de Parede</a></li>
+          <li><a href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas">Coifa de Ilha</a></li>
+          <li><a href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas">Coifa de Embutir</a></li>
+          <li><a href="https://artcoifascampinas.com.br/coifa-para-churrasqueira-campinas">Coifa para Churrasqueira</a></li>
+          <li><a href="https://artcoifascampinas.com.br/coifa-para-cozinha-campinas">Coifa para Cozinha</a></li>
+        </ul>
       </div>
     </div>
 
@@ -1304,8 +1758,8 @@
    rel="noopener"
    aria-label="Falar no WhatsApp"
    data-source="float"
-   data-code="COIFA DE ILHA">
-  <span class="wa-float__hint">Orçamento no WhatsApp</span>
+   data-code="ART COIFAS CAMPINAS">
+  <span class="wa-float__hint">WhatsApp</span>
 
   <!-- ÍCONE OFICIAL (SVG) -->
   <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
@@ -1315,7 +1769,7 @@
 <!-- ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
 
 
-<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
+<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + MENU) ================= -->
 <script>
   /* ========= CONFIG FIXA (NÃO ESPALHAR PELO HTML) ========= */
   const AC_CFG = {
@@ -1326,6 +1780,36 @@
     GCLID_TS_KEY: "ac_gclid_ts_v1",
     GCLID_TTL_DAYS: 90
   };
+
+  /* ========= Menu mobile (drawer) ========= */
+  (function(){
+    const burger = document.getElementById("jsBurger");
+    const drawer = document.getElementById("jsDrawer");
+    const closeBtn = document.getElementById("jsDrawerClose");
+    const backdrop = document.getElementById("jsDrawerBackdrop");
+
+    function openDrawer(){
+      if(!drawer) return;
+      drawer.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+    function closeDrawer(){
+      if(!drawer) return;
+      drawer.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    if(burger) burger.addEventListener("click", openDrawer);
+    if(closeBtn) closeBtn.addEventListener("click", closeDrawer);
+    if(backdrop) backdrop.addEventListener("click", closeDrawer);
+
+    // fecha ao clicar em links internos (#)
+    if(drawer){
+      drawer.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener("click", closeDrawer);
+      });
+    }
+  })();
 
   /* ========= FAQ ========= */
   document.querySelectorAll('.faq-dark__question').forEach((btn) => {
@@ -1365,7 +1849,6 @@
 
   /* ========= event_id ========= */
   function makeEventId(){
-    // simples e suficiente para dedup
     const rnd = Math.random().toString(16).slice(2);
     return "evt_" + Date.now() + "_" + rnd;
   }
@@ -1383,7 +1866,7 @@
 
   /* ========= WhatsApp message (CÓDIGO só no WhatsApp) ========= */
   function buildWaMessage(code){
-    return "Olá! Quero um orçamento direto com a fábrica.\n" +
+    return "Olá! Quero falar com a fábrica.\n" +
            "CÓDIGO: " + code;
   }
   function buildWaUrl(code){
@@ -1393,7 +1876,6 @@
 
   /* ========= Envio para planilha (sem CORS / sem depender de resposta) ========= */
   function sendToSheets(payload){
-    // 1) sendBeacon (melhor)
     try{
       if(navigator.sendBeacon){
         const blob = new Blob([JSON.stringify(payload)], { type: "text/plain;charset=UTF-8" });
@@ -1402,7 +1884,6 @@
       }
     }catch(e){}
 
-    // 2) fetch no-cors com text/plain (evita preflight)
     try{
       fetch(AC_CFG.WEBAPP_URL, {
         method: "POST",
@@ -1414,7 +1895,6 @@
       return true;
     }catch(e){}
 
-    // 3) fallback form-urlencoded (também “simple request”)
     try{
       const form = new URLSearchParams();
       Object.keys(payload).forEach(k => form.append(k, String(payload[k] ?? "")));
@@ -1428,7 +1908,6 @@
       return true;
     }catch(e){}
 
-    // 4) último fallback: Image GET
     try{
       const q = new URLSearchParams();
       Object.keys(payload).forEach(k => q.append(k, String(payload[k] ?? "")));
@@ -1442,40 +1921,32 @@
 
   /* ========= Handler central ========= */
   function handleWhatsAppClick(ev, source, code){
-    // sempre: abrir WhatsApp (sem depender da planilha)
     const waUrl = buildWaUrl(code);
 
-    // payload esperado pelo baseline (não inventar campos)
     const payload = {
-      gclid: readGclid(), // pode ser vazio (orgânico)
+      gclid: readGclid(),
       conversion_name: AC_CFG.CONVERSION_NAME,
       conversion_time: formatLocalDateTime(),
       conversion_value: "0.00",
       event_id: makeEventId()
     };
 
-    // tenta enviar (não bloqueia UX)
     sendToSheets(payload);
 
-    // abre WhatsApp
     try{
       ev.preventDefault();
       window.open(waUrl, "_blank", "noopener");
-    }catch(e){
-      // fallback: deixa o link seguir
-    }
+    }catch(e){}
   }
 
   /* ========= Bind em todos os botões/links WhatsApp ========= */
   function bindWhatsApp(){
     const els = document.querySelectorAll(".js-wa");
     els.forEach(el => {
-      const code = (el.getAttribute("data-code") || "COIFA DE ILHA").trim();
+      const code = (el.getAttribute("data-code") || "ART COIFAS CAMPINAS").trim();
       const source = (el.getAttribute("data-source") || "cta").trim();
 
-      // atualiza href para já ir com mensagem (também melhora fallback sem JS)
       el.setAttribute("href", buildWaUrl(code));
-
       el.addEventListener("click", (ev) => handleWhatsAppClick(ev, source, code), { passive: false });
     });
   }
@@ -1484,7 +1955,7 @@
   try{ storeGclidFromUrl(); }catch(e){}
   bindWhatsApp();
 </script>
-<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
+<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + MENU) ================= -->
 
 </body>
 </html>
