@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
 
-  <title>Coifas Sob Medida <br> em Campinas | Art Coifas</title>
+  <title>Coifas Sob Medida em Campinas | Art Coifas</title>
   <meta name="description" content="Coifas sob medida em Campinas com fabricação própria e instalação profissional. Veja modelos e fale direto com a fábrica pelo WhatsApp." />
 
   <!-- Favicons (pasta /favicon) -->
@@ -51,9 +51,8 @@
     - alt: Equipe de colaboradores da Art Coifas reunida em frente à sede da fábrica e veículos.
   ======================================================================== -->
 
-  <!-- LCP: preloads corretos (mobile com prioridade máxima) -->
+  <!-- LCP: preload APENAS da imagem mobile (prioridade máxima) -->
   <link rel="preload" as="image" href="images/hero-mobile-fabrica.webp" fetchpriority="high" media="(max-width: 991px)" />
-  <link rel="preload" as="image" href="images/hero-desktop-fabrica.webp" media="(min-width: 992px)" />
 
   <!-- Schema (sem promessas comerciais; dados básicos) -->
   <script type="application/ld+json">
@@ -405,6 +404,7 @@
     }
     .accent{color:var(--gold)}
     .title .accent{white-space:nowrap;}
+    .nowrap{white-space:nowrap;}
     .lead{
       margin-top:1.05rem;
       max-width:60ch;
@@ -497,10 +497,10 @@
         inset:0;
         background:
           linear-gradient(90deg,
-            rgba(15,43,70,.96) 0%,
-            rgba(15,43,70,.72) 45%,
-            rgba(15,43,70,.28) 74%,
-            rgba(15,43,70,.12) 100%
+            rgba(15,43,70,.98) 0%,
+            rgba(15,43,70,.78) 44%,
+            rgba(15,43,70,.26) 74%,
+            rgba(15,43,70,.08) 100%
           ),
           radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
         z-index:1;
@@ -1197,9 +1197,22 @@
 
     /* ================= REGRAS MOBILE (CENTRALIZAR TÍTULOS) ================= */
     @media (max-width: 768px){
-      .hero__inner{ padding: 1.9rem 0 1.05rem; }
+      /* desce o conteúdo do HERO para a eyebrow não encostar no header */
+      .hero__inner{ padding: 5.35rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
+
+      /* centralizações no HERO (títulos e elementos) */
+      .eyebrow{
+        display:inline-flex;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .title{ text-align:center; }
+      .lead{ text-align:center; }
+      .btn{ margin-left:auto; margin-right:auto; }
+      .micro{ justify-content:center; }
+      .bullets{ margin-left:auto; margin-right:auto; justify-items:center; }
 
       /* títulos de seções centralizados no mobile */
       .structure__title,
@@ -1318,7 +1331,8 @@
       </div>
 
       <h1 class="title">
-        Coifas <span class="accent">sob medida</span> em Campinas
+        Coifas <span class="accent">sob medida</span><br>
+        <span class="nowrap">em Campinas</span>
       </h1>
 
       <p class="lead">
