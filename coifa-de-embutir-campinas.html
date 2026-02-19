@@ -833,6 +833,19 @@
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
     }
+
+    /* Somente no mobile: evita corte da linha das estrelas + microtexto */
+@media (max-width: 768px){
+  .micro{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .35rem;
+  }
+  .micro span{ white-space: normal; }
+  .micro .stars{ white-space: nowrap; } /* ★★★★★ sempre em uma linha */
+}
+
   </style>
 </head>
 
