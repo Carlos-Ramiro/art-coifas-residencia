@@ -56,24 +56,27 @@
   <!-- LCP: preload APENAS da imagem mobile (prioridade máxima) -->
   <link rel="preload" as="image" href="images/hero-mobile-fabrica.webp" fetchpriority="high" media="(max-width: 991px)" />
 
-  <!-- Schema (sem promessas comerciais; dados básicos) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Art Coifas",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
-      "addressLocality":"Campinas",
-      "addressRegion":"SP",
-      "addressCountry":"BR"
-    },
-    "areaServed":"Campinas e região",
-    "telephone":"+55 19 3213-1636",
-    "url":"https://artcoifascampinas.com.br/"
-  }
-  </script>
+  <!-- Schema (LocalBusiness otimizado) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "@id":"https://artcoifascampinas.com.br/#localbusiness",
+  "name":"Art Coifas",
+  "url":"https://artcoifascampinas.com.br/",
+  "telephone":"+55 19 3213-1636",
+  "image":"https://artcoifascampinas.com.br/images/hero-cozinha-desktop.webp",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+    "addressLocality":"Campinas",
+    "addressRegion":"SP",
+    "addressCountry":"BR"
+  },
+  "areaServed":"Campinas e região",
+  "sameAs":[]
+}
+</script>
   
   
   
