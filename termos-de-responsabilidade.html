@@ -6,11 +6,11 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Termos de Responsabilidade | Art Coifas</title>
   <meta name="description" content="Termos de Responsabilidade da Art Coifas. Condições gerais de atendimento, análise e instalação." />
-<!-- Favicons (pasta /favicon) -->
-<link rel="icon" href="/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+  <!-- Favicons (pasta /favicon) -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
   <style>
     :root{
@@ -165,7 +165,8 @@
   <div class="wrap">
     <div class="top">
       <div class="brand"><span class="dot"></span>Art Coifas</div>
-      <a class="back" href="/">← Voltar para o site</a>
+      <!-- CORRIGIDO: evitar "/" para não depender de rewrite -->
+      <a class="back" href="index.html">← Voltar para o site</a>
     </div>
     <h1>Termos de Responsabilidade</h1>
     <p class="sub">Condições gerais de atendimento, análise técnica e execução. Objetivo: alinhar expectativas e evitar ruído.</p>
@@ -215,14 +216,14 @@
       <p>Para falar com um especialista e iniciar a análise técnica do seu projeto, use o canal oficial abaixo.</p>
 
       <div class="cta">
-  <a class="btn btn--wa js-wa"
-     href="#"
-     data-source="legal"
-     data-code="termos_cta"
-  >Falar no WhatsApp</a>
+        <a class="btn btn--wa js-wa"
+           href="#"
+           data-source="legal"
+           data-code="termos_cta"
+        >Falar no WhatsApp</a>
 
-  <a class="btn" href="index.html">Voltar para o site</a>
-</div>
+        <a class="btn" href="index.html">Voltar para o site</a>
+      </div>
     </div>
   </div>
 </main>
@@ -230,5 +231,135 @@
 <footer>
   © 2026 <span class="gold">Art Coifas</span>. Todos os direitos reservados.
 </footer>
+
+<!-- WHATSAPP + PLANILHA (MINIMAL, ROBUSTO) -->
+<script>
+  (function(){
+    "use strict";
+
+    // Config (IGUAL às páginas principais)
+    const AC_CFG = {
+      WA_PHONE_E164: "551932131636",
+      WEBAPP_URL: "https://script.google.com/macros/s/AKfycbyce6y_40SYTxaiYBjQ3NMpc9QQlAeS-PqatQCAosXDeu31JvxnhiL-cwSUi_IX3Fdo/exec",
+      CONVERSION_NAME: "whatsapp_lead_artcoifas"
+    };
+
+    // Helpers
+    function getParam(name){
+      try { return new URLSearchParams(window.location.search).get(name) || ""; }
+      catch(e){ return ""; }
+    }
+
+    function getOrCreateEventId(){
+      try{
+        const key = "ac_event_id";
+        let id = localStorage.getItem(key);
+        if(!id){
+          id = "ac_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,10);
+          localStorage.setItem(key, id);
+        }
+        return id;
+      }catch(e){
+        return "ac_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2,10);
+      }
+    }
+
+    function storeGclidIfPresent(){
+      const gclid = getParam("gclid");
+      if(!gclid) return "";
+      try { localStorage.setItem("ac_gclid", gclid); } catch(e) {}
+      return gclid;
+    }
+
+    function getStoredGclid(){
+      try { return localStorage.getItem("ac_gclid") || ""; } catch(e){ return ""; }
+    }
+
+    function nowUtc(){
+      // yyyy-MM-dd HH:mm:ss em UTC
+      const d = new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+      return d.getUTCFullYear() + "-" + pad(d.getUTCMonth()+1) + "-" + pad(d.getUTCDate()) +
+        " " + pad(d.getUTCHours()) + ":" + pad(d.getUTCMinutes()) + ":" + pad(d.getUTCSeconds());
+    }
+
+    function buildWaMessage(code){
+      // Mensagem curta e neutra (página legal)
+      const page = (document.title || "Art Coifas").trim();
+      return "Olá! Vim pelo site (página: " + page + "). Quero falar com a Art Coifas.";
+    }
+
+    function waUrl(code){
+      const text = encodeURIComponent(buildWaMessage(code));
+      return "https://wa.me/" + AC_CFG.WA_PHONE_E164 + "?text=" + text;
+    }
+
+    function sendLead(payload){
+      const url = AC_CFG.WEBAPP_URL;
+      if(!url) return;
+
+      const body = new URLSearchParams(payload).toString();
+
+      // 1) sendBeacon (melhor)
+      try{
+        if(navigator.sendBeacon){
+          const blob = new Blob([body], { type: "application/x-www-form-urlencoded" });
+          const ok = navigator.sendBeacon(url, blob);
+          if(ok) return;
+        }
+      }catch(e){}
+
+      // 2) fetch keepalive (fallback)
+      try{
+        fetch(url, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body,
+          keepalive: true
+        }).catch(function(){});
+      }catch(e){}
+
+      // 3) pixel GET (último fallback)
+      try{
+        const img = new Image();
+        img.src = url + "?" + body;
+      }catch(e){}
+    }
+
+    // Boot
+    storeGclidIfPresent();
+
+    document.addEventListener("click", function(e){
+      const a = e.target && e.target.closest ? e.target.closest("a.js-wa") : null;
+      if(!a) return;
+
+      e.preventDefault();
+
+      const source = a.getAttribute("data-source") || "unknown";
+      const code = a.getAttribute("data-code") || "unknown";
+
+      const gclid = getStoredGclid();
+      const eventId = getOrCreateEventId();
+
+      // Envia pra planilha (mesma estrutura das páginas principais)
+      sendLead({
+        gclid: gclid,
+        conversion_name: AC_CFG.CONVERSION_NAME,
+        conversion_time: nowUtc(),
+        conversion_value: "0.00",
+        currency: "BRL",
+        event_id: eventId,
+        source: source,
+        code: code,
+        page: window.location.pathname || "termos-de-responsabilidade.html"
+      });
+
+      // Abre WhatsApp
+      window.open(waUrl(code), "_blank", "noopener");
+    }, true);
+  })();
+</script>
+
 </body>
 </html>
