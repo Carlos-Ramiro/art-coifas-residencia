@@ -45,30 +45,47 @@
   <link rel="preload" as="image" href="images/hero-ilha-desktop.webp" media="(min-width: 992px)" />
 
   <!-- ========================= SCHEMA (JSON-LD) ========================= -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Art Coifas",
-    "description": "Fabricação e instalação de coifas sob medida em Campinas e região, com atendimento técnico presencial e acabamento premium.",
-    "areaServed": [
-      { "@type": "City", "name": "Campinas" }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua Doutor Eduardo Edarge Badaró, 1170",
-      "addressLocality": "Campinas",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "telephone": "+55 19 3213-1636",
-    "url": "https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html",
-    "sameAs": [],
-    "openingHours": [
-      "Mo-Fr 08:00-17:00"
-    ]
-  }
-  </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "@id":"https://artcoifascampinas.com.br/#localbusiness",
+  "name":"Art Coifas",
+  "description":"Fabricação e instalação de coifas sob medida em Campinas e região, com atendimento técnico presencial.",
+  "url":"https://artcoifascampinas.com.br/",
+  "telephone":"+55 19 3213-1636",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+    "addressLocality":"Campinas",
+    "addressRegion":"SP",
+    "addressCountry":"BR"
+  },
+  "areaServed":{
+    "@type":"AdministrativeArea",
+    "name":"Campinas e região"
+  },
+  "openingHours":[
+    "Mo-Fr 08:00-17:00"
+  ],
+  "sameAs":[],
+  "makesOffer":[
+    {
+      "@type":"Offer",
+      "url":"https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html",
+      "itemOffered":{
+        "@type":"Service",
+        "name":"Coifa de ilha sob medida (fabricação e instalação)",
+        "serviceType":"Projeto, fabricação e instalação de coifa de ilha sob medida",
+        "areaServed":{
+          "@type":"AdministrativeArea",
+          "name":"Campinas e região"
+        }
+      }
+    }
+  ]
+}
+</script>
 
   <script type="application/ld+json">
   {
@@ -109,23 +126,7 @@
       }
     ]
   }
-  </script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  </script> 
 
   <style>
     :root{
@@ -1004,7 +1005,7 @@
       </p>
 
       <a class="btn btn--wa js-wa"
-         href="https://wa.me/551932131636"
+         href="#"
          target="_blank"
          rel="noopener"
          data-source="cta"
@@ -1125,7 +1126,7 @@
 
         <div class="structure__cta">
           <a class="btn btn--wa js-wa"
-             href="https://wa.me/551932131636"
+             href="#"
              target="_blank"
              rel="noopener"
              data-source="cta"
@@ -1242,7 +1243,7 @@
 
     <div class="testimonials__cta">
       <a class="js-wa"
-         href="https://wa.me/551932131636"
+         href="#"
          target="_blank"
          rel="noopener"
          data-source="cta"
@@ -1316,7 +1317,7 @@
       <p>Fale com quem realmente entende de coifas sob&nbsp;medida.</p>
 
       <a class="btn btn--wa btn--big js-wa"
-         href="https://wa.me/551932131636"
+         href="#"
          target="_blank"
          rel="noopener"
          data-source="cta"
@@ -1367,7 +1368,7 @@
 
 <!-- ================= INÍCIO DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
 <a class="wa-float js-wa"
-   href="https://wa.me/551932131636"
+   href="#"
    target="_blank"
    rel="noopener"
    aria-label="Falar no WhatsApp"
