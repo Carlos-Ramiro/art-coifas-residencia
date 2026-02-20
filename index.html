@@ -1301,6 +1301,67 @@
       text-align:center;
     }
   }
+  /* ================= PATCH PREMIUM (MOBILE ONLY) ================= */
+@media (max-width: 768px){
+
+  /* 1) Padrão premium no mobile:
+     - TÍTULOS e CTAs: centro
+     - TEXTOS longos e LISTAS: esquerda */
+  .structure__text,
+  .flow__sub,
+  .models__sub,
+  .factory__sub,
+  .testimonials__sub,
+  .cta-footer__cta p{
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 62ch;
+  }
+
+  /* Listas sempre à esquerda (evita “amadorismo” visual) */
+  .structure__list,
+  .bullets{
+    justify-items: start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Mantém CTA sempre centralizado e com padrão de largura */
+  .btn,
+  .testimonials__cta a,
+  .cta-footer__cta .btn{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: min(520px, 100%);
+  }
+
+  /* 2) Ajuste do CTA no bloco "Depoimentos" (descer um pouco) */
+  .testimonials__cta{
+    margin-top: 48px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* 3) Corrigir CTA do bloco "Fabricação própria..." (buraco feio)
+     - Mais ar ANTES do botão
+     - Menos ar DEPOIS do botão (aproxima do próximo bloco) */
+  .structure{
+    padding-bottom: 42px !important;
+  }
+  .structure__cta{
+    margin-top: 18px !important;
+  }
+  .structure__cta .btn{
+    margin-top: 0 !important;
+  }
+
+  /* Aproxima o próximo bloco sem “esticar” o espaço */
+  .models{
+    padding-top: 36px !important;
+  }
+}
+/* ================= END PATCH ================= */
 </style>
   
   
