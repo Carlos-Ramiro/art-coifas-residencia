@@ -652,13 +652,7 @@
     }
     @media (max-width: 768px){ .wa-float__hint{ display:none; } }
 
-    @media (max-width: 768px){
-      .hero__inner{ padding: 1.9rem 0 1.05rem; }
-      .hero__media{ margin-top: 1.0rem; }
-      .flow{ padding: 94px 0 90px; }
-    }
-
-    /* Ajuste solicitado: TODOS os títulos no mobile centralizados */
+    /* Unificado: TODOS os estilos mobile (max-width: 991px) */
     @media (max-width: 991px){
       .title,
       .flow__title,
@@ -674,26 +668,49 @@
         text-align:center;
       }
     }
+
+    /* Unificado: TODOS os estilos mobile (max-width: 768px) */
+    @media (max-width: 768px){
+      /* HERO */
+      .hero__inner{ padding: 1.9rem 0 1.05rem; }
+      .hero__media{ margin-top: 1.0rem; }
+      .flow{ padding: 94px 0 90px; }
+
+      /* DEPOIMENTOS */
+      .testimonials{ padding: 98px 0 74px; }
+      .testimonials__title .tline2{ display:block; margin-top:.15em; }
+      .testimonials__sub{ max-width: 34ch; margin: 0 auto 42px; }
+      .testimonials__sub .subline{ display:block; }
+
+      /* CONVERSÃO */
+      .conversion-block{ padding: 56px 0 64px; }
+      .conversion-block__text{ max-width: 34ch; }
+
+      /* BOTÃO FLUTUANTE */
+      .wa-float__hint{ display:none; }
+
+      /* CTA FOOTER */
+      .cta-footer__cta p{
+        max-width: 80ch;
+        margin-left:auto;
+        margin-right:auto;
+        white-space: nowrap;
+      }
+
+      /* CTAs específicos */
+      .structure__cta,
+      .structure .structure__cta,
+      .structure .btn.btn--wa{
+        margin-top: 26px !important;
+      }
+      .structure__cta{ padding-top: 10px !important; }
+      .testimonials__cta,
+      .testimonials .testimonials__cta,
+      .testimonials .testimonials__cta a{
+        margin-top: 44px !important;
+      }
+    }
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
-  @media (max-width: 768px){
-
-  /* DESCE CTA do bloco Estrutura/Fabricação (container + botão) */
-  .structure__cta,
-  .structure .structure__cta,
-  .structure .btn.btn--wa{
-    margin-top: 26px !important;
-  }
-
-  /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
-  .structure__cta{ padding-top: 10px !important; }
-
-  /* DESCE CTA do Depoimentos (container + botão) */
-  .testimonials__cta,
-  .testimonials .testimonials__cta,
-  .testimonials .testimonials__cta a{
-    margin-top: 44px !important;
-  }
-}
   
   </style>
 </head>
@@ -815,8 +832,8 @@
     <div class="structure__grid">
       <div class="structure__media">
         <img
-          src="images/produto-3.webp"
-          alt="Coifa para cozinha de parede sob medida em inox com acabamento premium instalada em ambiente planejado"
+          src="images/estrutura-008.webp"
+          alt="Fachada da fábrica Art Coifas com equipe reunida em frente ao prédio"
           width="1200"
           height="800"
           loading="lazy"
@@ -892,7 +909,7 @@
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="images/produto-2.webp"
+            src="images/estrutura-008.webp"
             alt="Coifa para cozinha inox sob medida integrada em marcenaria planejada com fogão e revestimento"
             width="800"
             height="600"
@@ -909,7 +926,7 @@
       <article class="piramidal-card">
         <div class="piramidal-card__media">
           <img
-            src="images/produto-3.webp"
+            src="images/estrutura-008.webp"
             alt="Coifa para cozinha de parede sob medida em inox com acabamento premium instalada em ambiente planejado"
             width="800"
             height="600"
