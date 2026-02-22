@@ -175,7 +175,6 @@
       background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.14);
       color:rgba(255,255,255,.92);
-      white-space:nowrap;
     }
     .title{
       margin-top:1.1rem;
@@ -184,7 +183,7 @@
       letter-spacing:-0.02em;
     }
     .accent{color:var(--gold)}
-    .title .accent{white-space:nowrap;}
+    .title .accent{}
     .lead{
       margin-top:1.05rem;
       max-width:62ch;
@@ -221,7 +220,7 @@
       font-size:.95rem;
       align-items:center;
     }
-    .micro span{white-space:nowrap;}
+    .micro span{}
     .stars{color:var(--gold);letter-spacing:.08em}
     .bullets{
       margin-top:.95rem;
@@ -728,32 +727,6 @@
     /* ================= FIM DO BLOCO: FAQ ================= */
 
 
-    /* ================= INÍCIO DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= */
-    .conversion-block{
-      background:#ffffff;
-      padding:70px 0 80px;
-      text-align:center;
-    }
-    .conversion-block__title{
-      font-size: clamp(1.8rem, 1.2rem + 1.4vw, 2.4rem);
-      line-height:1.15;
-      letter-spacing:-0.02em;
-      color: var(--brand);
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-    .conversion-block__text{
-      max-width: 70ch;
-      margin: 0 auto 22px;
-      color:#2a2f36;
-      line-height:1.7;
-      font-size: 1.05rem;
-    }
-    @media (max-width: 768px){
-      .conversion-block{ padding: 56px 0 64px; }
-      .conversion-block__text{ max-width: 34ch; }
-    }
-    /* ================= FIM DO BLOCO: BLOCO ESTRATÉGICO DE CONVERSÃO ================= */
 
 
     /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
@@ -776,14 +749,6 @@
       color:rgba(255,255,255,.75);
       margin-bottom:28px;
       line-height:1.6;
-    }
-    @media (min-width: 992px){
-      .cta-footer__cta p{
-        max-width: 80ch;
-        margin-left:auto;
-        margin-right:auto;
-        white-space: nowrap;
-      }
     }
     .btn--big{
       padding:18px 34px;
@@ -880,12 +845,10 @@
       opacity:1;
       transform: translateY(50%) translateX(-4px);
     }
-    @media (max-width: 768px){
-      .wa-float__hint{ display:none; }
-    }
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
 
 
+    /* ================= MOBILE PADRÃO CONGELÁVEL (SÓ MOBILE / NÃO MEXE NO DESKTOP) ================= */
     @media (max-width: 768px){
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
@@ -898,31 +861,39 @@
       .piramidal-gallery__title,
       .testimonials__title,
       .faq-dark__title,
-      .conversion-block__title,
       .cta-footer__cta h2{
         text-align:center;
       }
       .piramidal-card__h{ text-align:center; }
+
+      /* BOTÃO FLUTUANTE WHATSAPP */
+      .wa-float__hint{ display:none; }
+
+      /* DESCE CTA do bloco Estrutura/Fabricação (container + botão) */
+      .structure__cta,
+      .structure .structure__cta,
+      .structure .btn.btn--wa{
+        margin-top: 26px !important;
+      }
+
+      /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
+      .structure__cta{ padding-top: 10px !important; }
+
+      /* DESCE CTA do Depoimentos (container + botão) */
+      .testimonials__cta,
+      .testimonials .testimonials__cta,
+      .testimonials .testimonials__cta a{
+        margin-top: 44px !important;
+      }
     }
-	@media (max-width: 768px){
 
-  /* DESCE CTA do bloco Estrutura/Fabricação (container + botão) */
-  .structure__cta,
-  .structure .structure__cta,
-  .structure .btn.btn--wa{
-    margin-top: 26px !important;
-  }
-
-  /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
-  .structure__cta{ padding-top: 10px !important; }
-
-  /* DESCE CTA do Depoimentos (container + botão) */
-  .testimonials__cta,
-  .testimonials .testimonials__cta,
-  .testimonials .testimonials__cta a{
-    margin-top: 44px !important;
-  }
-}
+    @media (min-width: 992px){
+      .cta-footer__cta p{
+        max-width: 80ch;
+        margin-left:auto;
+        margin-right:auto;
+      }
+    }
   </style>
   
   
