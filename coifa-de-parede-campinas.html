@@ -107,6 +107,7 @@
       background:#0b0f14;
       color:#111;
       overflow-x: hidden;
+      max-width: 100vw;
     }
     img{max-width:100%;height:auto;display:block}
     a{color:inherit}
@@ -843,6 +844,9 @@
       .flow{ padding: 94px 0 90px; }
 
       /* CORREÇÃO DE CORTE (TEXTO E IMAGEM) */
+      h1, h2, h3, .title, .flow__title, .structure__title, .piramidal-gallery__title, .testimonials__title, .faq-dark__title {
+        word-wrap: break-word; overflow-wrap: break-word;
+      }
       .title .accent { white-space: normal !important; }
       .hero__media img {
         aspect-ratio: auto !important; object-fit: contain !important; height: auto !important;
