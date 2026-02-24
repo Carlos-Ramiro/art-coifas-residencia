@@ -88,6 +88,7 @@
   
   <style>
   :root{
+    -webkit-text-size-adjust: 100%; /* Previne zoom automatico de texto no iOS que quebra layout */
     --brand:#0f2b46;
     --gold:#ffbf1f;
     --text:#ffffff;
@@ -116,6 +117,7 @@
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     background:#0b0f14;
     color:#111;
+    overflow-x: hidden; /* Garante que nada exceda a largura da tela */
   }
   img{max-width:100%;height:auto;display:block}
   a{color:inherit}
@@ -1363,6 +1365,16 @@
   /* Aproxima o próximo bloco sem “esticar” o espaço */
   .models{
     padding-top: 36px !important;
+  }
+
+  /* CORREÇÃO DE CORTE DE CONTEÚDO (SOLICITAÇÃO DO CLIENTE) */
+  .nowrap, .title .accent {
+    white-space: normal !important; /* Permite que textos longos quebrem linha */
+  }
+  .hero__media img {
+    aspect-ratio: auto !important; /* Remove proporção fixa */
+    object-fit: contain !important; /* Garante que a imagem apareça inteira sem cortes */
+    height: auto !important;
   }
 }
 /* ================= END PATCH ================= */
