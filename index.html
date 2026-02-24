@@ -712,6 +712,7 @@
     border:1px solid rgba(15,43,70,0.10);
     box-shadow:0 22px 60px rgba(15,43,70,0.10);
     background:#fff;
+    box-sizing: border-box; width: 100%;
   }
   .structure__media img{ width:100%; height:auto; display:block; }
   .structure__title{
@@ -886,6 +887,7 @@
     height:100%;
     display:flex;
     flex-direction:column;
+    box-sizing: border-box;
   }
   .fcard:hover{
     transform: translateY(-6px);
@@ -896,6 +898,7 @@
     width:100%;
     aspect-ratio: 4 / 3;
     background:#eef3f8;
+    box-sizing: border-box;
   }
   .fcard__media img{
     width:100%;
@@ -1378,10 +1381,21 @@
   h1, h2, h3, .title, .flow__title, .structure__title, .models__title, .factory__title, .testimonials__title, .faq-dark__title {
     word-wrap: break-word; overflow-wrap: break-word;
   }
-  .hero__media img {
-    aspect-ratio: auto !important; /* Remove proporção fixa */
-    object-fit: contain !important; /* Garante que a imagem apareça inteira sem cortes */
+
+  /* CORREÇÃO HERO MOBILE (Mobile-First / Sem cortes) */
+  .hero__inner .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero__media {
     height: auto !important;
+    min-height: auto !important;
+  }
+  .hero__media img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
   }
 }
 /* ================= END PATCH ================= */
@@ -1597,8 +1611,7 @@
         <img
           src="images/fabrica-1.webp"
           alt="Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais."
-          width="1200"
-          height="800"
+          style="width: 100%; height: auto;"
           loading="lazy"
           decoding="async"
         />
@@ -1723,8 +1736,7 @@
           <img
             src="images/fabrica-1.webp"
             alt="Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais."
-            width="800"
-            height="600"
+            style="width: 100%; height: auto;"
             loading="lazy"
             decoding="async"
           />
@@ -1740,8 +1752,7 @@
           <img
             src="images/fabrica-2.webp"
             alt="Fachada da fábrica Art Coifas com veículos utilitários estacionados e identificação visual da empresa."
-            width="800"
-            height="600"
+            style="width: 100%; height: auto;"
             loading="lazy"
             decoding="async"
           />
@@ -1757,8 +1768,7 @@
           <img
             src="images/fabrica-3.webp"
             alt="Equipe de colaboradores da Art Coifas reunida em frente à sede da fábrica e veículos."
-            width="800"
-            height="600"
+            style="width: 100%; height: auto;"
             loading="lazy"
             decoding="async"
           />
