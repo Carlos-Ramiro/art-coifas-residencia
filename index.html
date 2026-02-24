@@ -118,6 +118,7 @@
     background:#0b0f14;
     color:#111;
     overflow-x: hidden; /* Garante que nada exceda a largura da tela */
+    max-width: 100vw;
   }
   img{max-width:100%;height:auto;display:block}
   a{color:inherit}
@@ -426,8 +427,8 @@
     letter-spacing:-0.02em;
   }
   .accent{color:var(--gold)}
-  .title .accent{white-space:nowrap;}
-  .nowrap{white-space:nowrap;}
+  .title .accent{white-space:normal;}
+  .nowrap{white-space:normal;}
   .lead{
     margin-top:1.05rem;
     max-width:60ch;
@@ -1368,8 +1369,8 @@
   }
 
   /* CORREÇÃO DE CORTE DE CONTEÚDO (SOLICITAÇÃO DO CLIENTE) */
-  .nowrap, .title .accent {
-    white-space: normal !important; /* Permite que textos longos quebrem linha */
+  h1, h2, h3, .title, .flow__title, .structure__title, .models__title, .factory__title, .testimonials__title, .faq-dark__title {
+    word-wrap: break-word; overflow-wrap: break-word;
   }
   .hero__media img {
     aspect-ratio: auto !important; /* Remove proporção fixa */
