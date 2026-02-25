@@ -1611,10 +1611,16 @@
         <img
           src="images/fabrica-1.webp"
           alt="Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais."
-          style="width: 100%; height: auto;"
+          style="width: 100%; height: 280px; object-fit: cover; object-position: center; display: block;"
           loading="lazy"
           decoding="async"
         />
+        <style>
+          /* Ajuste para garantir que em telas grandes a imagem volte ao automático */
+          @media (min-width: 992px) {
+            .structure__media img { height: auto !important; }
+          }
+        </style>
       </div>
 
       <div class="structure__content">
