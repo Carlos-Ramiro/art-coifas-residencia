@@ -15,26 +15,6 @@
 
   <link rel="preload" as="image" href="images/hero-mobile-fabrica.webp" fetchpriority="high" media="(max-width: 991px)" />
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "@id":"https://artcoifascampinas.com.br/#localbusiness",
-    "name":"Art Coifas",
-    "url":"https://artcoifascampinas.com.br/",
-    "telephone":"+55 19 3213-1636",
-    "image":"https://artcoifascampinas.com.br/images/hero-cozinha-desktop.webp",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
-      "addressLocality":"Campinas",
-      "addressRegion":"SP",
-      "addressCountry":"BR"
-    },
-    "areaServed":"Campinas e região"
-  }
-  </script>
-  
   <style>
   :root{
     -webkit-text-size-adjust: 100%;
@@ -49,138 +29,83 @@
     --dark:#07111c;
     --dark2:#0a1826;
     --hero-desktop-bg: url("images/hero-desktop-fabrica.webp");
-    --section-y-desktop: 96px;
-    --section-y-mobile: 72px;
     --cta-minw-desktop: 320px;
     --cta-maxw-mobile: 420px;
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
-  html, body{ overflow-x: hidden; max-width: 100vw; margin: 0; padding: 0; position: relative; }
-  body{ font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#0b0f14; color:#111; }
+  html, body{ overflow-x: hidden; max-width: 100vw; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#0b0f14; color:#111; }
   img{max-width:100%;height:auto;display:block}
-  h1, h2{ overflow-wrap: break-word; }
-  a{color:inherit}
   .wrap{ width:min(1100px, calc(100% - 2.5rem)); margin:0 auto; }
 
-  /* NAV & HEADER */
+  /* HEADER & NAV */
   .topbar{ position:absolute; top:0; left:0; right:0; z-index:5; padding:14px 0; }
   .nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
-  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:#fff; font-weight:900; }
   .brand img{ height:34px; filter: drop-shadow(0 10px 24px rgba(0,0,0,.22)); }
-  .nav__center{ display:none; align-items:center; justify-content:center; gap:22px; flex:1; }
-  .nav__link{ color:rgba(255,255,255,.90); text-decoration:none; font-weight:800; font-size:.95rem; padding:10px; border-radius:10px; transition:.18s ease; }
-  .nav__link:hover{ background:rgba(255,255,255,.08); color:#fff; }
-
-  /* Dropdown */
-  .dd{ position:relative; display:inline-flex; align-items:center; gap:8px; }
-  .dd__btn{ cursor:pointer; border:none; background:transparent; color:rgba(255,255,255,.90); font-weight:900; font-size:.95rem; padding:10px; display:inline-flex; align-items:center; gap:8px; }
-  .dd__caret{ width:10px; height:10px; border-right:2px solid rgba(255,255,255,.70); border-bottom:2px solid rgba(255,255,255,.70); transform: rotate(45deg); transition:.18s ease; }
-  .dd__panel{ position:absolute; top:44px; left:50%; transform:translateX(-50%); min-width:280px; background:rgba(10,24,38,.96); border:1px solid rgba(255,255,255,.12); border-radius:14px; opacity:0; pointer-events:none; transition:.18s ease; backdrop-filter: blur(10px); }
-  .dd__panel a{ display:block; padding:14px 16px; text-decoration:none; color:rgba(255,255,255,.90); font-weight:800; border-top:1px solid rgba(255,255,255,.07); }
-  .dd:hover .dd__panel{ opacity:1; pointer-events:auto; }
-  .dd:hover .dd__caret{ transform: rotate(225deg); }
-
-  .nav__right{ display:flex; align-items:center; gap:12px; }
-  .nav__wa{ display:none; align-items:center; padding:11px 16px; border-radius:999px; background:var(--wa); color:#fff; font-weight:900; text-decoration:none; transition:.18s ease; }
-  .burger{ width:44px; height:44px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.06); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; }
-  .burger span{ width:18px; height:2px; background:rgba(255,255,255,.92); position:relative; }
-  .burger span::before{ content:""; position:absolute; top:-6px; width:18px; height:2px; background:rgba(255,255,255,.92); left:0; }
-  .burger span::after{ content:""; position:absolute; top:6px; width:18px; height:2px; background:rgba(255,255,255,.92); left:0; }
+  .nav__center{ display:none; align-items:center; gap:22px; flex:1; justify-content:center; }
+  .nav__link{ color:rgba(255,255,255,.9); text-decoration:none; font-weight:800; font-size:.95rem; }
+  .nav__wa{ display:none; background:var(--wa); color:#fff; padding:11px 20px; border-radius:999px; text-decoration:none; font-weight:900; }
 
   /* HERO */
-  .hero{ background: var(--brand); color: var(--text); position:relative; }
-  .hero__inner{ padding: 2.2rem 0 1.4rem; }
+  .hero{ background: var(--brand); color: var(--text); position:relative; overflow:hidden; }
+  .hero__inner{ padding: 2.2rem 0 1.4rem; position:relative; z-index:2; }
   .eyebrow{ display:inline-flex; font-weight:800; text-transform:uppercase; font-size:.78rem; padding:.55rem .85rem; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); }
   .title{ margin-top:1.1rem; font-size: clamp(2.1rem, 1.3rem + 2.6vw, 4rem); line-height:1.05; letter-spacing:-0.02em; }
   .accent{color:var(--gold)}
   .lead{ margin-top:1.05rem; max-width:60ch; font-size:1.08rem; color:var(--muted); text-wrap: balance; }
-  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.65rem; margin-top:1.35rem; padding:1.05rem 1.45rem; border-radius:999px; font-weight:900; text-decoration:none; transition:.2s ease; }
+  
+  /* BOTÕES SISTEMA ÚNICO */
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.65rem; margin-top:1.35rem; padding:1.05rem 1.45rem; border-radius:999px; font-weight:900; text-decoration:none; transition:.2s ease; border:1px solid rgba(255,255,255,.12); }
   .btn--wa{ background: var(--wa); color:#fff; box-shadow:0 18px 44px rgba(31,184,90,.22); }
-  .hero__media{ margin-top: 1.25rem; border-radius: 18px; overflow:hidden; border:1px solid rgba(255,255,255,.12); }
+  @media (min-width: 992px){ .btn--wa{ min-width: var(--cta-minw-desktop); } }
+
   .bullets{ list-style:none; display:grid; gap:.35rem; color:var(--muted2); font-size:.98rem; margin-top:1rem; }
   .check{color:var(--gold); font-weight:900; margin-right:.35rem}
+  .hero__media{ margin-top: 1.25rem; border-radius: 18px; overflow:hidden; border:1px solid rgba(255,255,255,.12); }
 
-  /* FLOW (CARDS) */
-  .flow{ background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%); padding:110px 0 95px; color:#fff; position:relative; }
-  .flow__title{ text-align:center; font-size: clamp(2rem, 1.35rem + 2vw, 3rem); font-weight:900; margin-bottom:14px; }
-  .flow__sub{ text-align:center; max-width:76ch; margin: 0 auto 52px; color: rgba(255,255,255,.82); line-height:1.7; }
-  .flow__grid{ display:grid; gap:22px; }
-  .flow__card{ border-radius:22px; padding:42px 34px; background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); text-align:center; }
-  .flow__num{ width:60px; height:60px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--gold); color:var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-weight:900; font-size:1.3rem; }
+  /* FLOW & FACTORY */
+  .flow{ background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%); padding:110px 0 95px; color:#fff; }
+  .flow__title, .factory__title, .models__title{ text-align:center; font-weight:900; margin-bottom:14px; font-size: clamp(2rem, 1.35rem + 2vw, 3rem); }
+  .flow__grid, .factory__grid, .models__grid{ display:grid; gap:22px; }
+  .flow__card{ border-radius:22px; padding:40px; background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); text-align:center; }
+  .flow__num{ width:60px; height:60px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-weight:900; }
 
-  /* FACTORY (Substituindo o bloco antigo) */
-  .factory{ background:#ffffff; padding:80px 0; }
-  .factory__title{ text-align:center; color: var(--brand); font-weight: 900; font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem); margin-bottom: 10px; }
-  .factory__sub{ text-align:center; max-width: 78ch; margin: 0 auto 38px; color: #2a2f36; line-height: 1.7; }
-  .factory__grid{ display:grid; gap:18px; }
-  .fcard{ border-radius:18px; overflow:hidden; background:#fff; border:1px solid rgba(15,43,70,0.10); box-shadow:0 18px 48px rgba(15,43,70,0.10); }
-  .fcard__media{ width:100%; aspect-ratio: 4 / 3; }
-  .fcard__media img{ width:100%; height:100%; object-fit:cover; }
-  .fcard__body{ padding: 16px 18px 20px; }
-  .fcard__h{ color: var(--brand); font-weight: 900; font-size: 1.05rem; margin-bottom:8px; }
-  .fcard__p{ color:#2a2f36; font-size:.98rem; line-height:1.65; }
+  .factory{ background:#fff; padding:80px 0; }
+  .fcard{ border-radius:18px; overflow:hidden; border:1px solid rgba(15,43,70,0.1); box-shadow:0 18px 48px rgba(0,0,0,0.05); }
+  .fcard__body{ padding:20px; }
+  .fcard__h{ color:var(--brand); font-weight:900; margin-bottom:8px; }
 
   /* MODELS */
   .models{ background:#f8fafc; padding:80px 0; }
-  .models__title{ text-align:center; color: var(--brand); font-weight: 900; font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem); margin-bottom: 10px; }
-  .models__grid{ display:grid; gap: 18px; margin-top:40px; }
-  .mcard{ border-radius: 18px; overflow: hidden; background: #fff; border: 1px solid rgba(15,43,70,0.10); display:flex; flex-direction:column; }
-  .mcard__body{ padding: 18px; flex:1; display:flex; flex-direction:column; }
-  .mcard__cta{ margin-top:auto; font-weight:900; color: var(--brand); text-decoration:none; padding-top:12px; }
+  .mcard{ background:#fff; border-radius:18px; overflow:hidden; border:1px solid rgba(15,43,70,0.1); display:flex; flex-direction:column; }
+  .mcard__body{ padding:20px; flex:1; display:flex; flex-direction:column; }
+  .mcard__cta{ margin-top:auto; font-weight:900; color:var(--brand); text-decoration:none; padding-top:15px; }
 
-  /* TESTIMONIALS */
-  .testimonials{ background: var(--dark); padding: 110px 0 77px; color:#fff; }
-  .testimonials__grid{ display:grid; gap:22px; margin-top:40px; }
-  .tcard{ background:#fff; border-radius:16px; padding:28px; color:#111; }
-  .tstars{ color: var(--gold); margin-bottom:12px; }
-  .tauthor{ font-weight:900; color:var(--brand); margin-top:12px; }
-
-  /* FAQ */
-  .faq-dark{ padding:90px 0; background: var(--brand); color:#fff; }
-  .faq-dark__item{ background: rgba(255,255,255,.05); border-radius:14px; margin-bottom:15px; }
-  .faq-dark__question{ width:100%; background:none; border:none; padding:22px; color:#fff; font-weight:800; text-align:left; cursor:pointer; display:flex; justify-content:space-between; }
-  .faq-dark__answer{ padding:0 22px 22px; color:rgba(255,255,255,.7); max-height:0; overflow:hidden; transition:0.3s; }
-  .faq-dark__item.active .faq-dark__answer{ max-height:200px; }
+  /* FAQ DARK */
+  .faq-dark{ padding:90px 0; background: linear-gradient(180deg, #0f2b46 0%, #091a2c 100%); color:#fff; }
+  .faq-dark__list{ max-width:850px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+  .faq-dark__item{ background: rgba(255,255,255,.05); border-radius:14px; border:1px solid rgba(255,255,255,.08); overflow:hidden; }
+  .faq-dark__question{ width:100%; background:none; border:none; padding:22px 26px; color:#fff; font-weight:800; cursor:pointer; display:flex; justify-content:space-between; align-items:center; text-align:left; font-size:1.05rem; }
+  .faq-dark__question span{ color:var(--gold); font-size:1.4rem; transition:.3s; }
+  .faq-dark__answer{ padding:0 26px 22px; color:rgba(255,255,255,.75); line-height:1.7; max-height:0; overflow:hidden; transition:max-height .4s ease; }
+  .faq-dark__item.active .faq-dark__answer{ max-height:300px; }
+  .faq-dark__item.active .faq-dark__question span{ transform:rotate(45deg); }
 
   /* FOOTER */
-  .cta-footer{ padding:90px 0 40px; background: #081a2e; color:#fff; text-align:center; }
-  .cta-footer__info{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:40px; text-align:left; margin-top:60px; }
-
-  /* WHATSAPP FLOAT */
-  .wa-float{ position:fixed; right:20px; bottom:20px; width:60px; height:60px; background:var(--wa); border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:99; box-shadow:0 10px 25px rgba(0,0,0,.3); }
+  .cta-footer{ padding:90px 0 40px; background:#081a2e; color:#fff; text-align:center; }
+  .wa-float{ position:fixed; right:20px; bottom:20px; width:60px; height:60px; background:var(--wa); border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:99; }
   .wa-float svg{ width:30px; fill:#fff; }
 
-  /* MEDIA QUERIES */
   @media (min-width: 992px){
-    .nav__center{ display:flex; }
-    .nav__wa{ display:inline-flex; }
-    .burger{ display:none; }
-    .hero__inner{ min-height:100vh; display:flex; align-items:center; }
-    .hero::before{ content:""; position:absolute; inset:0; background-image: var(--hero-desktop-bg); background-size:cover; z-index:0; }
-    .hero::after{ content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(15,43,70,1) 0%, rgba(15,43,70,.8) 50%, transparent 100%); z-index:1; }
-    .hero__inner .wrap{ position:relative; z-index:2; }
-    .hero__media{ display:none; }
+    .nav__center, .nav__wa{ display:flex; }
+    .hero::before{ content:""; position:absolute; inset:0; background-image: var(--hero-desktop-bg); background-size:cover; }
+    .hero::after{ content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(15,43,70,1) 0%, rgba(15,43,70,.7) 50%, transparent 100%); }
     .flow__grid, .factory__grid, .models__grid{ grid-template-columns: repeat(3, 1fr); }
-    .testimonials__grid{ grid-template-columns: 1fr 1fr; }
-    .btn--wa{ min-width: var(--cta-minw-desktop); }
   }
-
   @media (max-width: 768px){
-    .hero__inner{ padding-top: 100px; }
-    .title{ text-align:center; }
-    .lead, .eyebrow, .btn{ display:flex; margin-left:auto; margin-right:auto; text-align:center; }
-    .bullets{ justify-content:center; }
+    .btn{ width:100%; max-width:var(--cta-maxw-mobile); margin-left:auto; margin-right:auto; }
   }
   </style>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-641363659');
-  </script>
 </head>
 
 <body>
@@ -189,24 +114,14 @@
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
-        <a class="brand" href="#top">
-          <img src="images/logo-artcoifas.png" alt="Art Coifas" width="120">
-        </a>
+        <a class="brand" href="#top"><img src="images/logo-artcoifas.png" alt="Art Coifas"></a>
         <nav class="nav__center">
-          <div class="dd">
-            <button class="dd__btn">Modelos <span class="dd__caret"></span></button>
-            <div class="dd__panel">
-              <a href="https://artcoifascampinas.com.br/coifa-de-parede-campinas.html">Coifa de Parede</a>
-              <a href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html">Coifa de Ilha</a>
-              <a href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas.html">Coifa de Embutir</a>
-            </div>
-          </div>
+          <a class="nav__link" href="#modelos">Modelos</a>
           <a class="nav__link" href="#fabrica">Fábrica</a>
-          <a class="nav__link" href="#depoimentos">Depoimentos</a>
+          <a class="nav__link" href="#faq">FAQ</a>
         </nav>
         <div class="nav__right">
-          <a class="nav__wa js-wa" href="#" data-code="ART COIFAS CAMPINAS">WhatsApp</a>
-          <button class="burger" id="jsBurger"><span></span></button>
+          <a class="nav__wa js-wa" href="#" data-code="ART COIFAS">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -216,16 +131,14 @@
     <div class="wrap">
       <div class="eyebrow">ATENDIMENTO DIRETO COM A FÁBRICA • CAMPINAS</div>
       <h1 class="title">Coifas <span class="accent">sob medida</span> em Campinas</h1>
-      <p class="lead">Fabricação própria e instalação profissional para cozinhas e áreas gourmet.</p>
-      <a class="btn btn--wa js-wa" href="#" data-code="ART COIFAS CAMPINAS">Falar com a fábrica no WhatsApp</a>
+      <p class="lead">Fabricação própria, projeto técnico e instalação profissional para cozinhas e áreas gourmet.</p>
+      <a class="btn btn--wa js-wa" href="#" data-code="HERO ART COIFAS">Falar com a fábrica no WhatsApp</a>
       <ul class="bullets">
-        <li><span class="check">✓</span> Visita técnica local</li>
-        <li><span class="check">✓</span> Projetos personalizados</li>
-        <li><span class="check">✓</span> Instalação especializada</li>
+        <li><span class="check">✓</span> Visita técnica presencial</li>
+        <li><span class="check">✓</span> Acabamento premium em inox</li>
+        <li><span class="check">✓</span> Instalação profissional</li>
       </ul>
-      <div class="hero__media">
-        <img src="images/hero-mobile-fabrica.webp" alt="Coifa instalada">
-      </div>
+      <div class="hero__media"><img src="images/hero-mobile-fabrica.webp" alt="Coifa em Campinas"></div>
     </div>
   </div>
 </header>
@@ -233,23 +146,10 @@
 <section class="flow">
   <div class="wrap">
     <h2 class="flow__title">Atendimento <span class="accent">presencial</span></h2>
-    <p class="flow__sub">Processo simplificado para garantir o melhor resultado no seu ambiente.</p>
     <div class="flow__grid">
-      <div class="flow__card">
-        <div class="flow__num">01</div>
-        <h3>Visita técnica</h3>
-        <p>Avaliamos o espaço e o layout para orientar o projeto com precisão.</p>
-      </div>
-      <div class="flow__card">
-        <div class="flow__num">02</div>
-        <h3>Modelo Ideal</h3>
-        <p>Indicamos o modelo certo: parede, ilha ou embutir.</p>
-      </div>
-      <div class="flow__card">
-        <div class="flow__num">03</div>
-        <h3>Instalação</h3>
-        <p>Produção e montagem com foco em acabamento premium.</p>
-      </div>
+      <div class="flow__card"><div class="flow__num">01</div><h3>Visita técnica</h3><p>Avaliamos o espaço para orientar o projeto com precisão.</p></div>
+      <div class="flow__card"><div class="flow__num">02</div><h3>Modelo Ideal</h3><p>Definimos o modelo certo para seu layout.</p></div>
+      <div class="flow__card"><div class="flow__num">03</div><h3>Instalação</h3><p>Entrega e montagem com equipe própria.</p></div>
     </div>
   </div>
 </section>
@@ -257,32 +157,22 @@
 <section class="factory" id="fabrica">
   <div class="wrap">
     <h2 class="factory__title">Fábrica e <span class="accent">Processo</span></h2>
-    <p class="factory__sub">Estrutura completa e produção interna para garantir qualidade total.</p>
     <div class="factory__grid">
       <article class="fcard">
-        <div class="fcard__media"><img src="images/fabrica-1.webp" alt="Produção interna"></div>
-        <div class="fcard__body">
-          <h3 class="fcard__h">Produção interna</h3>
-          <p class="fcard__p">Controle rigoroso do padrão de acabamento em cada peça.</p>
-        </div>
+        <div class="fcard__media"><img src="images/fabrica-1.webp" alt="Produção Art Coifas"></div>
+        <div class="fcard__body"><h3 class="fcard__h">Produção interna</h3><p>Controle total do acabamento e qualidade.</p></div>
       </article>
       <article class="fcard">
-        <div class="fcard__media"><img src="images/fabrica-2.webp" alt="Estrutura"></div>
-        <div class="fcard__body">
-          <h3 class="fcard__h">Estrutura local</h3>
-          <p class="fcard__p">Atendimento ágil em Campinas e toda a região metropolitana.</p>
-        </div>
+        <div class="fcard__media"><img src="images/fabrica-2.webp" alt="Estrutura Art Coifas"></div>
+        <div class="fcard__body"><h3 class="fcard__h">Estrutura local</h3><p>Sede própria em Campinas para agilidade.</p></div>
       </article>
       <article class="fcard">
-        <div class="fcard__media"><img src="images/fabrica-3.webp" alt="Equipe"></div>
-        <div class="fcard__body">
-          <h3 class="fcard__h">Equipe Especializada</h3>
-          <p class="fcard__p">Profissionais treinados para fabricação e instalação técnica.</p>
-        </div>
+        <div class="fcard__media"><img src="images/fabrica-3.webp" alt="Equipe Art Coifas"></div>
+        <div class="fcard__body"><h3 class="fcard__h">Equipe</h3><p>Profissionais especializados em instalação.</p></div>
       </article>
     </div>
-    <div style="text-align: center; margin-top: 40px;">
-        <a class="btn btn--wa js-wa" href="#" data-code="FÁBRICA ART COIFAS">Falar com especialista</a>
+    <div style="text-align:center; margin-top:40px;">
+        <a class="btn btn--wa js-wa" href="#" data-code="ESPECIALISTA FÁBRICA">Falar com um especialista</a>
     </div>
   </div>
 </section>
@@ -292,62 +182,40 @@
     <h2 class="models__title">Modelos para <span class="accent">Residência</span></h2>
     <div class="models__grid">
       <article class="mcard">
-        <div class="fcard__media"><img src="images/produto-home-2.webp" alt="Coifa Parede"></div>
-        <div class="mcard__body">
-          <h3>Coifa de Parede</h3>
-          <p>Ideal para cozinhas planejadas e áreas gourmet.</p>
-          <a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-parede-campinas.html">Ver detalhes →</a>
-        </div>
+        <img src="images/produto-home-2.webp" alt="Parede">
+        <div class="mcard__body"><h3>Coifa de Parede</h3><p>Ideal para cozinhas planejadas.</p><a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-parede-campinas.html">Ver detalhes →</a></div>
       </article>
       <article class="mcard">
-        <div class="fcard__media"><img src="images/produto-home-1.webp" alt="Coifa Ilha"></div>
-        <div class="mcard__body">
-          <h3>Coifa de Ilha</h3>
-          <p>Presença visual forte para cozinhas integradas.</p>
-          <a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html">Ver detalhes →</a>
-        </div>
+        <img src="images/produto-home-1.webp" alt="Ilha">
+        <div class="mcard__body"><h3>Coifa de Ilha</h3><p>Para cozinhas em conceito aberto.</p><a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html">Ver detalhes →</a></div>
       </article>
       <article class="mcard">
-        <div class="fcard__media"><img src="images/produto-home-3.webp" alt="Coifa Embutir"></div>
-        <div class="mcard__body">
-          <h3>Coifa de Embutir</h3>
-          <p>Integração discreta e sob medida para o móvel.</p>
-          <a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas.html">Ver detalhes →</a>
-        </div>
+        <img src="images/produto-home-3.webp" alt="Embutir">
+        <div class="mcard__body"><h3>Coifa de Embutir</h3><p>Discreta e integrada ao móvel.</p><a class="mcard__cta" href="https://artcoifascampinas.com.br/coifa-de-embutir-campinas.html">Ver detalhes →</a></div>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" id="depoimentos">
-  <div class="wrap">
-    <h2 class="flow__title">Depoimentos</h2>
-    <div class="testimonials__grid">
-      <div class="tcard">
-        <div class="tstars">★★★★★</div>
-        <p>"Atendimento profissional do início ao fim. A instalação ficou perfeita."</p>
-        <div class="tauthor">Eduardo A. Gomes</div>
-      </div>
-      <div class="tcard">
-        <div class="tstars">★★★★★</div>
-        <p>"Projeto sob medida com acabamento excelente. Recomendo."</p>
-        <div class="tauthor">Giovanna Santiago</div>
-      </div>
     </div>
   </div>
 </section>
 
 <section class="faq-dark" id="faq">
   <div class="wrap">
-    <h2 class="flow__title">Dúvidas Frequentes</h2>
+    <h2 class="flow__title" style="text-align:center; margin-bottom:50px;">Perguntas <span class="accent">Frequentes</span></h2>
     <div class="faq-dark__list">
       <div class="faq-dark__item">
-        <button class="faq-dark__question">A coifa é realmente sob medida? <span>+</span></button>
-        <div class="faq-dark__answer">Sim. Cada projeto é desenvolvido conforme as medidas reais do seu fogão e bancada.</div>
+        <button class="faq-dark__question">Vocês vendem coifas prontas? <span>+</span></button>
+        <div class="faq-dark__answer">Não. Cada coifa é fabricada sob medida, conforme as dimensões e necessidades do seu ambiente.</div>
       </div>
       <div class="faq-dark__item">
-        <button class="faq-dark__question">Atendem toda a região? <span>+</span></button>
-        <div class="faq-dark__answer">Sim, atendemos Campinas e cidades vizinhas com visita técnica agendada.</div>
+        <button class="faq-dark__question">Trabalham com coifa de ilha, embutir e parede? <span>+</span></button>
+        <div class="faq-dark__answer">Sim. O modelo ideal é definido na visita técnica conforme o seu ambiente e a necessidade de exaustão.</div>
+      </div>
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">A coifa é realmente feita sob medida? <span>+</span></button>
+        <div class="faq-dark__answer">Sim. Cada projeto é desenvolvido conforme as medidas do ambiente, tipo de instalação e acabamento desejado.</div>
+      </div>
+      <div class="faq-dark__item">
+        <button class="faq-dark__question">Atendem Campinas e região? <span>+</span></button>
+        <div class="faq-dark__answer">Sim. Atendimento residencial em Campinas e cidades da região metropolitana.</div>
       </div>
     </div>
   </div>
@@ -356,23 +224,13 @@
 <footer class="cta-footer">
   <div class="wrap">
     <h2>Fale direto com a fábrica</h2>
-    <p>Solicite seu orçamento via WhatsApp agora mesmo.</p>
+    <p>Segunda a Sexta: 08h às 17h. Rua Dr. Eduardo Edarge Badaró, 1170 - Campinas.</p>
     <a class="btn btn--wa js-wa" href="#" data-code="RODAPE ART COIFAS">Falar no WhatsApp</a>
-    <div class="cta-footer__info">
-      <div>
-        <h3>Art Coifas</h3>
-        <p>Rua Dr. Eduardo Edarge Badaró, 1170<br>Campinas - SP</p>
-      </div>
-      <div>
-        <h3>Horário</h3>
-        <p>Segunda a Sexta: 08h às 17h</p>
-      </div>
-    </div>
     <div style="margin-top:40px; font-size:12px; opacity:0.5;">© 2026 Art Coifas. Todos os direitos reservados.</div>
   </div>
 </footer>
 
-<a class="wa-float js-wa" href="#" data-code="FLOAT WHATSAPP">
+<a class="wa-float js-wa" href="#" data-code="FLOAT ART COIFAS">
   <svg viewBox="0 0 32 32"><path d="M19.11 17.47c-.27-.14-1.57-.77-1.82-.86-.25-.09-.43-.14-.61.14-.18.27-.7.86-.86 1.04-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.71-1.33-1.59-1.49-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.9 2.9 4.6 4.06.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.57-.64 1.79-1.26.22-.62.22-1.15.16-1.26-.05-.11-.25-.18-.52-.32zM16.02 27.3h-.01c-1.89 0-3.75-.51-5.37-1.48l-.39-.23-3.78.99 1.01-3.68-.25-.38a11.22 11.22 0 0 1-1.73-5.96c0-6.2 5.05-11.24 11.26-11.24 3.01 0 5.84 1.17 7.96 3.29a11.17 11.17 0 0 1 3.3 7.95c0 6.2-5.05 11.24-11.26 11.24zm9.57-20.81A13.41 13.41 0 0 0 16 2.7C8.64 2.7 2.66 8.67 2.66 16.02c0 2.36.62 4.67 1.8 6.7L2.6 29.5l6.95-1.82a13.33 13.33 0 0 0 6.45 1.65h.01c7.36 0 13.34-5.98 13.34-13.33 0-3.56-1.39-6.91-3.76-9.51z"/></svg>
 </a>
 
@@ -394,10 +252,6 @@
       window.open(`https://wa.me/${WA_PHONE}?text=${text}`, '_blank');
     });
   });
-
-  // Burger Menu
-  const burger = document.getElementById('jsBurger');
-  // (Adicionar lógica de drawer se necessário, mas o código acima já remove o erro da seção)
 </script>
 
 </body>
