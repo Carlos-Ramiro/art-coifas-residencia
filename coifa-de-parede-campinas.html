@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
 
   <title>Coifa de Parede Sob Medida em Campinas | Fabricação + Instalação | Art Coifas</title>
   <meta name="description" content="Coifa de parede sob medida em Campinas e região: fabricação própria, projeto técnico e instalação premium. Orçamento direto com a fábrica via WhatsApp." />
@@ -217,16 +216,14 @@
         min-height:100vh;
         overflow:hidden;
       }
-      .hero::before{
-        content:"";
-        position:absolute;
-        inset:0;
-        background-image: var(--hero-desktop-bg);
-        background-position:center;
-        background-size:cover;
-        background-repeat:no-repeat;
-        z-index:0;
-      }
+    .hero__desktop-bg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:0;
+    }
       .hero::after{
         content:"";
         position:absolute;
@@ -877,6 +874,16 @@
 <header class="hero">
   <div class="hero__inner">
     <div class="wrap">
+      <!-- HERO DESKTOP IMG (background substitute) -->
+      <img
+        class="hero__desktop-bg"
+        src="images/hero-desktop.webp"
+        alt="Coifa de parede preta instalada em área gourmet moderna com churrasqueira e armários planejados"
+        width="1920"
+        height="1080"
+        loading="eager"
+        decoding="async"
+      />
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
       </div>
