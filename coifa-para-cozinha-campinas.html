@@ -6,26 +6,27 @@
 
   <title>Coifa para Cozinha Sob Medida em Campinas | Fabricação + Instalação | Art Coifas</title>
   <meta name="description" content="Coifa para cozinha sob medida em Campinas e região: projeto técnico, fabricação própria e instalação premium. Orçamento direto com a fábrica via WhatsApp." />
-<!-- Favicons (pasta /favicon) -->
-<link rel="icon" href="/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+
+  <!-- Favicons (pasta /favicon) -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
   <!-- =======================================================================
     CONFIG IMAGENS + ALTs (EDITE AQUI QUANDO FOR TRANSFORMAR EM MODELO)
 
     HERO (DESKTOP BACKGROUND)
-    - src: images/hero-cozinha-desktop.webp
-    - alt (referência): Coifa para cozinha inox sob medida instalada em cozinha planejada com bancada e iluminação embutida
+    - src: images/hero-desktop-cozinha.webp
+    - descrição (acessível): Coifa para cozinha inox sob medida instalada em cozinha planejada com bancada e iluminação embutida
 
-    HERO (MOBILE IMG)
+    HERO (MOBILE IMG)  ✅ LCP PRINCIPAL
     - src: images/hero-mobile-cozinha.webp
     - alt: Coifa para cozinha sob medida em inox instalada em cozinha planejada com armários e cooktop
 
     BLOCO ESTRUTURA (IMG)
-    - src: images/produto-3.webp
-    - alt: Coifa para cozinha de parede sob medida em inox com acabamento premium instalada em ambiente planejado
+    - src: images/estrutura-008.webp
+    - alt: Fachada da fábrica Art Coifas com equipe reunida em frente ao prédio
 
     BLOCO GALERIA (3 IMGS)
     - src: images/produto-1.webp
@@ -38,48 +39,48 @@
     - alt: Coifa para cozinha de parede sob medida em inox com acabamento premium instalada em ambiente planejado
   ======================================================================== -->
 
-  <!-- LCP: preloads corretos (evita warning de preload não usado) -->
+  <!-- LCP: preloads corretos (somente o que precisa) -->
   <link rel="preload" as="image" href="images/hero-mobile-cozinha.webp" fetchpriority="high" media="(max-width: 991px)" />
   <link rel="preload" as="image" href="images/hero-desktop-cozinha.webp" media="(min-width: 992px)" />
 
- <!-- Schema (SEO / Ads landing hygiene) -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://artcoifascampinas.com.br/#localbusiness",
-  "name":"Art Coifas",
-  "url":"https://artcoifascampinas.com.br/",
-  "telephone":"+55 19 3213-1636",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
-    "addressLocality":"Campinas",
-    "addressRegion":"SP",
-    "addressCountry":"BR"
-  },
-  "areaServed":{
-    "@type":"AdministrativeArea",
-    "name":"Campinas e região"
-  },
-  "sameAs":[],
-  "makesOffer":[
-    {
-      "@type":"Offer",
-      "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html",
-      "itemOffered":{
-        "@type":"Service",
-        "name":"Coifa para cozinha sob medida (fabricação e instalação)",
-        "serviceType":"Projeto, fabricação e instalação de coifa para cozinha sob medida",
-        "areaServed":{
-          "@type":"AdministrativeArea",
-          "name":"Campinas e região"
+  <!-- Schema (SEO / Ads landing hygiene) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "@id":"https://artcoifascampinas.com.br/#localbusiness",
+    "name":"Art Coifas",
+    "url":"https://artcoifascampinas.com.br/",
+    "telephone":"+55 19 3213-1636",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+      "addressLocality":"Campinas",
+      "addressRegion":"SP",
+      "addressCountry":"BR"
+    },
+    "areaServed":{
+      "@type":"AdministrativeArea",
+      "name":"Campinas e região"
+    },
+    "sameAs":[],
+    "makesOffer":[
+      {
+        "@type":"Offer",
+        "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html",
+        "itemOffered":{
+          "@type":"Service",
+          "name":"Coifa para cozinha sob medida (fabricação e instalação)",
+          "serviceType":"Projeto, fabricação e instalação de coifa para cozinha sob medida",
+          "areaServed":{
+            "@type":"AdministrativeArea",
+            "name":"Campinas e região"
+          }
         }
       }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
   <style>
     :root{
@@ -118,6 +119,19 @@
     .wrap{
       width:min(1100px, calc(100% - 2.5rem));
       margin:0 auto;
+    }
+
+    /* Acessibilidade: texto apenas para leitores de tela */
+    .sr-only{
+      position:absolute !important;
+      width:1px !important;
+      height:1px !important;
+      padding:0 !important;
+      margin:-1px !important;
+      overflow:hidden !important;
+      clip:rect(0,0,0,0) !important;
+      white-space:nowrap !important;
+      border:0 !important;
     }
 
     /* ================= INÍCIO DO BLOCO: HERO ================= */
@@ -179,17 +193,6 @@
     .hero__media img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
     .desktop-only{display:none;}
 
-    /* ALT SEO para HERO DESKTOP (background) */
-    .hero__desktop-alt{
-      position:absolute;
-      width:1px;
-      height:1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      clip-path: inset(50%);
-      white-space:nowrap;
-    }
-
     @media (min-width: 992px){
       .desktop-only{display:inline;}
       .hero{ position:relative; min-height:100vh; overflow:hidden; }
@@ -201,9 +204,6 @@
       }
       .hero::after{
         content:""; position:absolute; inset:0;
-        /* Ajuste solicitado:
-           - Esquerda (texto): mais escuro
-           - Direita (imagem): mais clara */
         background:
           linear-gradient(90deg,
             rgba(7,17,28,.965) 0%,
@@ -651,28 +651,23 @@
 
     /* Unificado: TODOS os estilos mobile (max-width: 768px) */
     @media (max-width: 768px){
-      /* HERO */
       .hero__inner{ padding: 1.9rem 0 1.05rem; }
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
 
-      /* DEPOIMENTOS */
       .testimonials{ padding: 98px 0 74px; }
       .testimonials__title .tline2{ display:block; margin-top:.15em; }
       .testimonials__sub{ max-width: 34ch; margin: 0 auto 42px; }
       .testimonials__sub .subline{ display:block; }
 
-      /* BOTÃO FLUTUANTE */
       .wa-float__hint{ display:none; }
 
-      /* CTA FOOTER */
       .cta-footer__cta p{
         max-width: 34ch;
         margin-left: auto;
         margin-right: auto;
       }
 
-      /* CTAs específicos */
       .structure__cta,
       .structure .structure__cta,
       .structure .btn.btn--wa{
@@ -685,23 +680,18 @@
         margin-top: 44px !important;
       }
 
-      /* CORREÇÃO DE CORTE (TEXTO E IMAGEM) */
       .title .accent { white-space: normal !important; }
-      .hero__media img {
-        aspect-ratio: auto !important; object-fit: contain !important; height: auto !important;
-      }
     }
-    /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
-  
   </style>
+
   <!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-641363659');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-641363659');
+  </script>
 </head>
 
 <body>
@@ -709,17 +699,10 @@
 <!-- ================= INÍCIO DO BLOCO: HERO ================= -->
 <header class="hero">
   <div class="hero__inner">
-
-    <!-- ALT SEO (HERO DESKTOP BACKGROUND) -->
-    <img
-      class="hero__desktop-alt"
-      src="images/hero-desktop-cozinha.webp"
-      alt="Coifa para cozinha inox sob medida instalada em cozinha planejada com bancada e iluminação embutida"
-      width="1920"
-      height="1080"
-      loading="eager"
-      decoding="async"
-    />
+    <!-- Descrição acessível do background do HERO (SEM baixar imagem no mobile) -->
+    <span class="sr-only">
+      Coifa para cozinha inox sob medida instalada em cozinha planejada com bancada e iluminação embutida.
+    </span>
 
     <div class="wrap">
       <div class="eyebrow">
@@ -823,7 +806,8 @@
         <img
           src="images/estrutura-008.webp"
           alt="Fachada da fábrica Art Coifas com equipe reunida em frente ao prédio"
-          style="width: 100%; height: auto;"
+          width="800"
+          height="600"
           loading="lazy"
           decoding="async"
         />
@@ -1068,13 +1052,13 @@
         </p>
       </div>
 
-     <div class="cta-footer__col">
-  <h3>Institucional</h3>
-  <ul>
-    <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
-    <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
-  </ul>
-</div>
+      <div class="cta-footer__col">
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
+        </ul>
+      </div>
 
       <div class="cta-footer__col">
         <h3>Atendimento</h3>
