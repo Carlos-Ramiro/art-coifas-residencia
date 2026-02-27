@@ -41,17 +41,17 @@
   ======================================================================== -->
 
   <!-- LCP: preloads corretos -->
-  <link rel="preload" as="image" href="images/hero-mobile-cozinha.webp" fetchpriority="high" media="(max-width: 991px)" />
-  <link rel="preload" as="image" href="images/hero-desktop-cozinha.webp" media="(min-width: 992px)" />
+  <link rel="preload" as="image" href="/images/hero-mobile-cozinha.webp" fetchpriority="high" media="(max-width: 991px)" />
+  <link rel="preload" as="image" href="/images/hero-desktop-cozinha.webp" media="(min-width: 992px)" />
 
   <!-- Schema (SEO / Ads landing hygiene) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"LocalBusiness",
-    "@id":"https://artcoifascampinas.com.br/#localbusiness",
+    "@id":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html#localbusiness",
     "name":"Art Coifas",
-    "url":"https://artcoifascampinas.com.br/",
+    "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html",
     "telephone":"+55 19 3213-1636",
     "address":{
       "@type":"PostalAddress",
@@ -196,7 +196,7 @@
       /* ✅ FIX: define o background desktop só no breakpoint desktop */
       .hero::before{
         content:""; position:absolute; inset:0;
-        background-image: url("images/hero-desktop-cozinha.webp");
+        background-image: url("/images/hero-desktop-cozinha.webp");
         background-position:center; background-size:cover; background-repeat:no-repeat;
         z-index:0;
       }
@@ -682,6 +682,19 @@
       .hero__media img {
         aspect-ratio: auto !important; object-fit: contain !important; height: auto !important;
       }
+
+      /* ✅ PERF: reduz custo de blur/efeitos pesados no mobile (mantém estética) */
+      .flow::before,
+      .testimonials::before{
+        filter: none !important;
+        opacity: .65 !important;
+      }
+    }
+
+    /* ✅ PERF: renderização mais rápida abaixo da dobra (sem mudar visual) */
+    .flow, .structure, .piramidal-gallery, .testimonials, .faq-dark, .cta-footer{
+      content-visibility: auto;
+      contain-intrinsic-size: 800px;
     }
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
   </style>
@@ -738,14 +751,13 @@
 
       <ul class="bullets" aria-label="Diferenciais">
         <li><span class="check">✓</span> Projeto sob medida para sua cozinha</li>
-        <li><span class="check">✓</span> Fabricação própria com padrão premium</li>
         <li><span class="check">✓</span> Instalação profissional especializada</li>
         <li><span class="check">✓</span> Modelos: parede, ilha e embutir (sob projeto)</li>
       </ul>
 
       <div class="hero__media">
         <img
-          src="images/hero-mobile-cozinha.webp"
+          src="/images/hero-mobile-cozinha.webp"
           alt="Coifa para cozinha sob medida em inox instalada em cozinha planejada com armários e cooktop"
           width="800"
           height="600"
@@ -811,7 +823,7 @@
       <div class="structure__grid">
         <div class="structure__media">
           <img
-            src="images/estrutura-008.webp"
+            src="/images/estrutura-008.webp"
             alt="Fachada da fábrica Art Coifas com equipe reunida em frente ao prédio"
             style="width: 100%; height: auto;"
             loading="lazy"
@@ -872,7 +884,7 @@
         <article class="piramidal-card">
           <div class="piramidal-card__media">
             <img
-              src="images/produto-1.webp"
+              src="/images/produto-1.webp"
               alt="Coifa para cozinha preta sob medida instalada em cozinha gourmet com bancada e iluminação quente"
               width="800"
               height="600"
@@ -889,7 +901,7 @@
         <article class="piramidal-card">
           <div class="piramidal-card__media">
             <img
-              src="images/produto-2.webp"
+              src="/images/produto-2.webp"
               alt="Coifa para cozinha inox sob medida integrada em marcenaria planejada com fogão e revestimento"
               width="800"
               height="600"
@@ -906,7 +918,7 @@
         <article class="piramidal-card">
           <div class="piramidal-card__media">
             <img
-              src="images/produto-3.webp"
+              src="/images/produto-3.webp"
               alt="Coifa para cozinha de parede sob medida em inox com acabamento premium instalada em ambiente planejado"
               width="800"
               height="600"
@@ -1112,7 +1124,8 @@
     CONVERSION_NAME: "whatsapp_lead_artcoifas",
     GCLID_KEY: "ac_gclid_v1",
     GCLID_TS_KEY: "ac_gclid_ts_v1",
-    GCLID_TTL_DAYS: 90
+    GCLID_TTL_DAYS: 90,
+    EVENT_ID_KEY: "ac_evt_id_v1"
   };
 
   document.querySelectorAll('.faq-dark__question').forEach((btn) => {
@@ -1147,6 +1160,15 @@
   function makeEventId(){
     const rnd = Math.random().toString(16).slice(2);
     return "evt_" + Date.now() + "_" + rnd;
+  }
+
+  function getOrCreateEventId(){
+    let eventId = sessionStorage.getItem(AC_CFG.EVENT_ID_KEY);
+    if(!eventId){
+      eventId = makeEventId();
+      sessionStorage.setItem(AC_CFG.EVENT_ID_KEY, eventId);
+    }
+    return eventId;
   }
 
   function pad2(n){ return String(n).padStart(2,"0"); }
@@ -1213,12 +1235,17 @@
 
   function handleWhatsAppClick(ev, source, code){
     const waUrl = buildWaUrl(code);
+    const eventId = getOrCreateEventId();
     const payload = {
       gclid: readGclid(),
       conversion_name: AC_CFG.CONVERSION_NAME,
       conversion_time: formatLocalDateTime(),
       conversion_value: "0.00",
-      event_id: makeEventId()
+      conversion_currency: "BRL",
+      event_id: eventId,
+      code: code,
+      source: source,
+      url: window.location.href
     };
 
     sendToSheets(payload);
@@ -1243,5 +1270,6 @@
 </script>
 <!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
 
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v67327c56f0bb4ef8b305cae61679db8f1769101564043" integrity="sha512-rdcWY47ByXd76cbCFzznIcEaCN71jqkWBBqlwhF1SY7KubdLKZiEGeP7AyieKZlGP9hbY/MhGrwXzJC/HulNyg==" data-cf-beacon='{"version":"2024.11.0","token":"9413dd8ee4ef4ea7a6641bcf15d31e00","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
