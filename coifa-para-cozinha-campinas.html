@@ -481,6 +481,23 @@
       .testimonials__sub{ max-width: 34ch; margin: 0 auto 42px; }
       .testimonials__sub .subline{ display:block; }
     }
+    /* ✅ FIX: centralizar CTA WhatsApp no mobile */
+@media (max-width: 768px){
+  .hero .btn{
+    display:flex;              /* deixa o botão ocupar linha e permitir centralização interna */
+    width:100%;
+    max-width: 420px;          /* evita ficar largo demais */
+    margin-left:auto;
+    margin-right:auto;
+    justify-content:center;    /* centraliza o texto/ícone dentro do botão */
+    text-align:center;
+  }
+}
+@media (max-width: 768px){
+  .hero .btn{
+    box-shadow:0 16px 40px rgba(31,184,90,.22);
+  }
+}
     /* ================= FIM DO BLOCO: DEPOIMENTOS ================= */
 
     /* ================= INÍCIO DO BLOCO: FAQ ================= */
