@@ -1,30 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
+  <!-- STAGING: manter bloqueio -->
+  <meta name="robots" content="noindex, nofollow" />
 
   <title>Coifas Sob Medida em Campinas | Art Coifas</title>
-
   <meta name="description" content="Coifas sob medida em Campinas com fabricação própria e instalação profissional. Veja modelos e fale direto com a fábrica pelo WhatsApp." />
 
-
-
   <!-- Favicons (pasta /favicon) -->
-
- <link rel="icon" href="/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
-
-
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
   <!-- =======================================================================
     CONFIG IMAGENS + ALTs (EDITAR AQUI)
@@ -33,12 +23,13 @@
     LOGO
     - src: images/logo-artcoifas.png
 
-    HERO (DESKTOP BACKGROUND)
+    HERO (DESKTOP BG)
     - src: images/hero-desktop-fabrica.webp
     - alt (referência): Coifa de parede preta integrada em cozinha moderna com bancada de granito e churrasqueira.
 
-    HERO (MOBILE IMG)
-    - src: images/hero-mobile-fabrica.webp
+    HERO (MOBILE IMG - LCP)
+    - src 640: images/hero-mobile-640-fabrica.webp
+    - src 800: images/hero-mobile-800-fabrica.webp
     - alt: Coifa de embutir preta de grandes dimensões instalada em área gourmet com bancada preta.
 
     MODELOS (3 IMGS)
@@ -65,50 +56,50 @@
     - alt: Equipe de colaboradores da Art Coifas reunida em frente à sede da fábrica e veículos.
   ======================================================================== -->
 
+  <!-- LCP: preload MOBILE (com imagesrcset/imagesizes) -->
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-mobile-640-fabrica.webp"
+    imagesrcset="images/hero-mobile-640-fabrica.webp 640w, images/hero-mobile-800-fabrica.webp 800w"
+    imagesizes="(max-width: 768px) 100vw, 800px"
+    fetchpriority="high"
+    media="(max-width: 991px)"
+  />
 
-
-  <!-- LCP: preload APENAS da imagem mobile (prioridade máxima) -->
-  <link rel="preload" as="image" href="images/hero-mobile-fabrica.webp" fetchpriority="high" media="(max-width: 991px)" />
-  <!-- LCP: preload da imagem desktop (para desktop) -->
-  <link rel="preload" as="image" href="images/hero-desktop-fabrica.webp" media="(min-width: 992px)" />
-
-
+  <!-- Preload DESKTOP (somente desktop) -->
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-desktop-fabrica.webp"
+    media="(min-width: 992px)"
+  />
 
   <!-- Schema (LocalBusiness otimizado) -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://artcoifascampinas.com.br/#localbusiness",
-  "name":"Art Coifas",
-  "url":"https://artcoifascampinas.com.br/",
-  "telephone":"+55 19 3213-1636",
-  "image":"https://artcoifascampinas.com.br/images/hero-cozinha-desktop.webp",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
-    "addressLocality":"Campinas",
-    "addressRegion":"SP",
-    "addressCountry":"BR"
-  },
-  "areaServed":"Campinas e região",
-  "sameAs":[]
-}
-</script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "@id":"https://artcoifascampinas.com.br/#localbusiness",
+    "name":"Art Coifas",
+    "url":"https://artcoifascampinas.com.br/",
+    "telephone":"+55 19 3213-1636",
+    "image":"https://artcoifascampinas.com.br/images/hero-desktop-fabrica.webp",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+      "addressLocality":"Campinas",
+      "addressRegion":"SP",
+      "addressCountry":"BR"
+    },
+    "areaServed":"Campinas e região",
+    "sameAs":[]
+  }
+  </script>
+
   <style>
   :root{
-    -webkit-text-size-adjust: 100%; /* Previne zoom automatico de texto no iOS que quebra layout */
+    -webkit-text-size-adjust: 100%;
     --brand:#0f2b46;
     --gold:#ffbf1f;
     --text:#ffffff;
@@ -120,16 +111,14 @@
     --dark:#07111c;
     --dark2:#0a1826;
 
-    /* HERO DESKTOP (centralizado aqui) */
+    /* HERO DESKTOP (controlado só no breakpoint desktop via ::before) */
     --hero-desktop-bg: url("images/hero-desktop-fabrica.webp");
 
-    /* === PADRÃO PREMIUM DE ESPAÇAMENTO (BASE) === */
     --section-y-desktop: 96px;
     --section-y-mobile: 72px;
 
-    /* === PADRÃO CTA === */
-    --cta-minw-desktop: 320px;   /* garante “presença” no desktop mesmo com texto curto */
-    --cta-maxw-mobile: 420px;    /* evita botão gigante demais no mobile */
+    --cta-minw-desktop: 320px;
+    --cta-maxw-mobile: 420px;
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
@@ -204,7 +193,6 @@
     color:#fff;
   }
 
-  /* Dropdown */
   .dd{
     position:relative;
     display:inline-flex;
@@ -331,7 +319,6 @@
   .burger span::before{ top:-6px; }
   .burger span::after{ top:6px; }
 
-  /* Drawer mobile */
   .drawer{
     position:fixed;
     inset:0;
@@ -425,13 +412,46 @@
   }
   /* ================= FIM DO BLOCO: HEADER / NAV ================= */
 
-
   /* ================= INÍCIO DO BLOCO: HERO ================= */
   .hero{
     background: var(--brand);
     color: var(--text);
     position:relative;
+    overflow:hidden;
   }
+
+  /* DESKTOP: background só no breakpoint desktop */
+  @media (min-width: 992px){
+    .hero{
+      min-height:100vh;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: var(--hero-desktop-bg);
+      background-size: cover;
+      background-position: center right;
+      background-repeat:no-repeat;
+      z-index:0;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,
+          rgba(15,43,70,.98) 0%,
+          rgba(15,43,70,.78) 44%,
+          rgba(15,43,70,.26) 74%,
+          rgba(15,43,70,.08) 100%
+        ),
+        radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
+      z-index:1;
+      pointer-events:none;
+    }
+  }
+
   .eyebrow{
     display:inline-flex;
     gap:.5rem;
@@ -463,7 +483,6 @@
     text-wrap: balance;
   }
 
-  /* === BOTÕES (SISTEMA ÚNICO) === */
   .btn{
     display:inline-flex;
     align-items:center;
@@ -489,11 +508,9 @@
     transform:translateY(-2px);
     box-shadow:0 22px 60px rgba(31,184,90,.28);
   }
-  /* “presença premium” no desktop (texto curto não deixa pequeno demais) */
   @media (min-width: 992px){
     .btn--wa{ min-width: var(--cta-minw-desktop); }
   }
-  /* mobile: botão confortável, sem exagero */
   @media (max-width: 768px){
     .btn--wa{
       width:100%;
@@ -524,55 +541,29 @@
     max-width:64ch;
   }
   .check{color:var(--gold);font-weight:900;margin-right:.35rem}
-  .hero__inner{ padding: 2.2rem 0 1.4rem; }
+
+  .hero__inner{ padding: 2.2rem 0 1.4rem; position:relative; z-index:2; }
   .hero__media{
     margin-top: 1.25rem;
     border-radius: 18px;
     overflow:hidden;
     border:1px solid rgba(255,255,255,.12);
     box-shadow: 0 18px 50px rgba(0,0,0,.30);
+    background: rgba(255,255,255,.06);
   }
   .hero__media img{
     width:100%;
+    height:auto;
     aspect-ratio:4/3;
     object-fit:cover;
+    display:block;
   }
   .desktop-only{display:none;}
 
   @media (min-width: 992px){
     .desktop-only{display:inline;}
-    .hero{
-      min-height:100vh;
-      overflow:hidden;
-      position:relative;
-    }
-    .hero__desktop-bg{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      z-index:0;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(15,43,70,.98) 0%,
-          rgba(15,43,70,.78) 44%,
-          rgba(15,43,70,.26) 74%,
-          rgba(15,43,70,.08) 100%
-        ),
-        radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
-      z-index:1;
-      pointer-events:none;
-    }
 
     .hero__inner{
-      position:relative;
-      z-index:2;
       min-height:100vh;
       display:flex;
       align-items:center;
@@ -588,7 +579,6 @@
     .topbar{ padding:16px 0; }
   }
   /* ================= FIM DO BLOCO: HERO ================= */
-
 
   /* ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= */
   .flow{
@@ -711,59 +701,82 @@
   }
   /* ================= FIM DO BLOCO: 3 CARDS (FLOW) ================= */
 
-
-  /* ================= INÍCIO DO BLOCO: AUTORIDADE (IMG + TEXTO) ================= */
-  .structure{
+  /* ================= INÍCIO DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= */
+  .factory{
     background:#ffffff;
-    padding:92px 0 60px;
+    padding:28px 0 78px;
   }
-  .structure__grid{
+  .factory__title{
+    text-align:center;
+    color: var(--brand);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem);
+    margin-bottom: 10px;
+    text-wrap: balance;
+  }
+  .factory__sub{
+    text-align:center;
+    max-width: 78ch;
+    margin: 0 auto 38px;
+    color: #2a2f36;
+    line-height: 1.7;
+    font-size: 1.02rem;
+    text-wrap: balance;
+  }
+  .factory__grid{
     display:grid;
-    gap:34px;
-    align-items:center;
+    gap:18px;
   }
   @media (min-width: 992px){
-    .structure__grid{ grid-template-columns: 1fr 1fr; }
+    .factory__grid{
+      grid-template-columns: repeat(3, 1fr);
+      gap:22px;
+    }
   }
-  .structure__media{
-    border-radius:22px;
+  .fcard{
+    border-radius:18px;
     overflow:hidden;
-    border:1px solid rgba(15,43,70,0.10);
-    box-shadow:0 22px 60px rgba(15,43,70,0.10);
     background:#fff;
-    box-sizing: border-box; width: 100%;
+    border:1px solid rgba(15,43,70,0.10);
+    box-shadow:0 18px 48px rgba(15,43,70,0.10);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    box-sizing: border-box;
   }
-  .structure__media img{ width:100%; height:auto; display:block; }
-  .structure__title{
-    font-size: clamp(1.8rem, 1.2rem + 1.6vw, 2.5rem);
-    line-height:1.12;
-    letter-spacing:-0.02em;
-    color:var(--brand);
-    font-weight:900;
-    margin-bottom:14px;
+  .fcard:hover{
+    transform: translateY(-6px);
+    border-color: rgba(255,191,31,.55);
+    box-shadow: 0 26px 70px rgba(15,43,70,0.14);
+  }
+  .fcard__media{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    background:#eef3f8;
+    box-sizing: border-box;
+  }
+  .fcard__media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .fcard__body{ padding: 16px 18px 20px; }
+  .fcard__h{
+    color: var(--brand);
+    font-weight: 900;
+    font-size: 1.05rem;
+    margin-bottom:8px;
     text-wrap: balance;
   }
-  .structure__text{
+  .fcard__p{
     color:#2a2f36;
-    line-height:1.7;
-    font-size:1.02rem;
-    margin-bottom:16px;
-    max-width:62ch;
+    line-height:1.65;
+    font-size:.98rem;
     text-wrap: balance;
   }
-  .structure__list{
-    list-style:none;
-    display:grid;
-    gap:.55rem;
-    margin:18px 0 22px;
-    color:#2a2f36;
-    font-weight:800;
-  }
-  .structure__list li{ display:flex; gap:.6rem; align-items:flex-start; }
-  .structure__list .mark{ color:var(--gold); font-weight:900; margin-top:.05rem; }
-  .structure__cta .btn{ margin-top:0; border-color: rgba(15,43,70,0.10); }
-  /* ================= FIM DO BLOCO: AUTORIDADE (IMG + TEXTO) ================= */
-
+  /* ================= FIM DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= */
 
   /* ================= INÍCIO DO BLOCO: MODELOS (3 CARDS + LINKS) ================= */
   .models{
@@ -862,85 +875,6 @@
   .mcard__cta:hover{ text-decoration: underline; }
   /* ================= FIM DO BLOCO: MODELOS (3 CARDS + LINKS) ================= */
 
-
-  /* ================= INÍCIO DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= */
-  .factory{
-    background:#ffffff;
-    padding:28px 0 78px;
-  }
-  .factory__title{
-    text-align:center;
-    color: var(--brand);
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    font-size: clamp(1.7rem, 1.15rem + 1.4vw, 2.35rem);
-    margin-bottom: 10px;
-    text-wrap: balance;
-  }
-  .factory__sub{
-    text-align:center;
-    max-width: 78ch;
-    margin: 0 auto 38px;
-    color: #2a2f36;
-    line-height: 1.7;
-    font-size: 1.02rem;
-    text-wrap: balance;
-  }
-  .factory__grid{
-    display:grid;
-    gap:18px;
-  }
-  @media (min-width: 992px){
-    .factory__grid{
-      grid-template-columns: repeat(3, 1fr);
-      gap:22px;
-    }
-  }
-  .fcard{
-    border-radius:18px;
-    overflow:hidden;
-    background:#fff;
-    border:1px solid rgba(15,43,70,0.10);
-    box-shadow:0 18px 48px rgba(15,43,70,0.10);
-    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    box-sizing: border-box;
-  }
-  .fcard:hover{
-    transform: translateY(-6px);
-    border-color: rgba(255,191,31,.55);
-    box-shadow: 0 26px 70px rgba(15,43,70,0.14);
-  }
-  .fcard__media{
-    width:100%;
-    aspect-ratio: 4 / 3;
-    background:#eef3f8;
-    box-sizing: border-box;
-  }
-  .fcard__media img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-  .fcard__body{ padding: 16px 18px 20px; }
-  .fcard__h{
-    color: var(--brand);
-    font-weight: 900;
-    font-size: 1.05rem;
-    margin-bottom:8px;
-    text-wrap: balance;
-  }
-  .fcard__p{
-    color:#2a2f36;
-    line-height:1.65;
-    font-size:.98rem;
-    text-wrap: balance;
-  }
-  /* ================= FIM DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= */
-
-
   /* ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= */
   .testimonials{
     background:
@@ -1024,16 +958,13 @@
   .tquote em{ font-style: italic; color:#1f2c3d; }
   .tauthor{ font-weight:900; color:#0f2b46; font-size: 1rem; }
 
-  /* === CTA DOS DEPOIMENTOS (FAIXA PREMIUM + PADRÃO DE BOTÃO) === */
   .testimonials__cta{
-    /* mais respiro e “zona CTA” clara */
     margin-top: 46px;
     padding-top: 18px;
     padding-bottom: 12px;
     display:flex;
     justify-content:center;
   }
-  /* força esse CTA a seguir o MESMO sistema do .btn--wa */
   .testimonials__cta a{
     display:inline-flex;
     align-items:center;
@@ -1056,11 +987,9 @@
     transform: translateY(-2px);
     box-shadow:0 22px 60px rgba(31,184,90,.28);
   }
-  /* presença no desktop */
   @media (min-width: 992px){
     .testimonials__cta a{ min-width: var(--cta-minw-desktop); }
   }
-  /* mobile: largura confortável + respiro menor */
   @media (max-width: 768px){
     .testimonials{ padding: 92px 0 66px; }
     .testimonials__title .tline2{ display:block; margin-top:.15em; }
@@ -1080,7 +1009,6 @@
     }
   }
   /* ================= FIM DO BLOCO: DEPOIMENTOS ================= */
-
 
   /* ================= INÍCIO DO BLOCO: FAQ ================= */
   .faq-dark{
@@ -1155,7 +1083,6 @@
   }
   /* ================= FIM DO BLOCO: FAQ ================= */
 
-
   /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
   .cta-footer{
     padding:90px 0 40px;
@@ -1187,7 +1114,7 @@
     }
   }
   .btn--big{
-    padding:1.05rem 1.45rem;        /* igual ao sistema */
+    padding:1.05rem 1.45rem;
     font-size:1.02rem;
     font-weight:900;
   }
@@ -1236,7 +1163,6 @@
     .cta-footer__divider{ margin-bottom: 44px; }
   }
   /* ================= FIM DO BLOCO: CTA FOOTER ================= */
-
 
   /* ================= INÍCIO DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
   .wa-float{
@@ -1294,15 +1220,12 @@
   }
   /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
 
-
   /* ================= REGRAS MOBILE (CENTRALIZAR TÍTULOS) ================= */
   @media (max-width: 768px){
-    /* desce o conteúdo do HERO para a eyebrow não encostar no header */
     .hero__inner{ padding: 5.35rem 0 1.05rem; }
     .hero__media{ margin-top: 1.0rem; }
     .flow{ padding: 94px 0 90px; }
 
-    /* centralizações no HERO (títulos e elementos) */
     .eyebrow{
       display:inline-flex;
       margin-left:auto;
@@ -1314,8 +1237,6 @@
     .micro{ justify-content:center; }
     .bullets{ margin-left:auto; margin-right:auto; justify-items:center; }
 
-    /* títulos de seções centralizados no mobile */
-    .structure__title,
     .models__title,
     .factory__title,
     .flow__title,
@@ -1325,7 +1246,6 @@
       text-align:center;
     }
 
-    .structure__text,
     .models__sub,
     .factory__sub,
     .flow__sub,
@@ -1338,122 +1258,47 @@
   }
 
   /* ================= PATCH PREMIUM (MOBILE ONLY) ================= */
-@media (max-width: 768px){
+  @media (max-width: 768px){
+    .flow__sub,
+    .models__sub,
+    .factory__sub,
+    .testimonials__sub,
+    .cta-footer__cta p{
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 62ch;
+    }
 
-  /* 1) Padrão premium no mobile:
-     - TÍTULOS e CTAs: centro
-     - TEXTOS longos e LISTAS: esquerda */
-  .structure__text,
-  .flow__sub,
-  .models__sub,
-  .factory__sub,
-  .testimonials__sub,
-  .cta-footer__cta p{
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    max-width: 62ch;
-  }
+    .bullets{
+      justify-items: start !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      text-align: left !important;
+    }
 
-  /* Listas sempre à esquerda (evita “amadorismo” visual) */
-  .structure__list,
-  .bullets{
-    justify-items: start !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    text-align: left !important;
+    .btn,
+    .testimonials__cta a,
+    .cta-footer__cta .btn{
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: min(520px, 100%);
+    }
   }
+  /* ================= END PATCH ================= */
+  </style>
 
-  /* Mantém CTA sempre centralizado e com padrão de largura */
-  .btn,
-  .testimonials__cta a,
-  .cta-footer__cta .btn{
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: min(520px, 100%);
-  }
-
-  /* 2) Ajuste do CTA no bloco "Depoimentos" (descer um pouco) */
-  .testimonials__cta{
-    margin-top: 48px !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* 3) Corrigir CTA do bloco "Fabricação própria..." (buraco feio)
-     - Mais ar ANTES do botão
-     - Menos ar DEPOIS do botão (aproxima do próximo bloco) */
-  .structure{
-    padding-bottom: 42px !important;
-  }
-  .structure__cta{
-    margin-top: 18px !important;
-  }
-  .structure__cta .btn{
-    margin-top: 0 !important;
-  }
-
-  /* Aproxima o próximo bloco sem “esticar” o espaço */
-  .models{
-    padding-top: 36px !important;
-  }
-
-  /* CORREÇÃO DE CORTE DE CONTEÚDO (SOLICITAÇÃO DO CLIENTE) */
-  h1, h2, h3, .title, .flow__title, .structure__title, .models__title, .factory__title, .testimonials__title, .faq-dark__title {
-    word-wrap: break-word; overflow-wrap: break-word;
-  }
-
-  /* CORREÇÃO HERO MOBILE (Mobile-First / Sem cortes) */
-  .hero__inner .wrap {
-    display: flex;
-    flex-direction: column;
-  }
-  .hero__media {
-    height: auto !important;
-    min-height: auto !important;
-  }
-  .hero__media img {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: auto !important;
-    object-fit: contain !important;
-  }
-}
-
-/* ================= END PATCH ================= */
-
-
-/* Ajuste fino: descer apenas o CTA do bloco Fabricação no mobile */
-@media (max-width: 768px){
-  .structure__cta{
-    margin-top: 36px !important; /* aumenta o espaço acima do botão */
-  }
-}
-
-</style>
-  
   <!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-641363659');
-</script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-641363659');
+  </script>
 </head>
 
 <body>
-
 
 <!-- ================= INÍCIO DO BLOCO: HERO ================= -->
 <header class="hero" id="top">
@@ -1540,16 +1385,6 @@
 
   <div class="hero__inner">
     <div class="wrap">
-      <!-- HERO DESKTOP IMG (background substitute) -->
-      <img
-        class="hero__desktop-bg"
-        src="images/hero-desktop-fabrica.webp"
-        alt="Coifa de parede preta integrada em cozinha moderna com bancada de granito e churrasqueira."
-        width="1920"
-        height="1080"
-        loading="eager"
-        decoding="async"
-      />
 
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
@@ -1585,9 +1420,12 @@
         <li><span class="check">✓</span> Instalação profissional especializada</li>
       </ul>
 
+      <!-- MOBILE: LCP principal -->
       <div class="hero__media">
         <img
-          src="images/hero-mobile-fabrica.webp"
+          src="images/hero-mobile-640-fabrica.webp"
+          srcset="images/hero-mobile-640-fabrica.webp 640w, images/hero-mobile-800-fabrica.webp 800w"
+          sizes="(max-width: 768px) 100vw, 800px"
           alt="Coifa de embutir preta de grandes dimensões instalada em área gourmet com bancada preta."
           width="800"
           height="600"
@@ -1596,11 +1434,11 @@
           decoding="async"
         />
       </div>
+
     </div>
   </div>
 </header>
 <!-- ================= FIM DO BLOCO: HERO ================= -->
-
 
 <!-- ================= INÍCIO DO BLOCO: 3 CARDS (FLOW) ================= -->
 <section class="flow" aria-label="Como funciona o atendimento">
@@ -1639,7 +1477,6 @@
 </section>
 <!-- ================= FIM DO BLOCO: 3 CARDS (FLOW) ================= -->
 
-
 <!-- ================= INÍCIO DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= -->
 <section class="factory" id="fabrica" aria-label="Fábrica e processo">
   <div class="wrap">
@@ -1654,7 +1491,6 @@
           <img
             src="images/fabrica-1.webp"
             alt="Operários trabalhando na linha de produção interna da fábrica de coifas industriais e residenciais."
-            style="width: 100%; height: auto;"
             loading="lazy"
             decoding="async"
           />
@@ -1670,7 +1506,6 @@
           <img
             src="images/fabrica-2.webp"
             alt="Fachada da fábrica Art Coifas com veículos utilitários estacionados e identificação visual da empresa."
-            style="width: 100%; height: auto;"
             loading="lazy"
             decoding="async"
           />
@@ -1686,7 +1521,6 @@
           <img
             src="images/fabrica-3.webp"
             alt="Equipe de colaboradores da Art Coifas reunida em frente à sede da fábrica e veículos."
-            style="width: 100%; height: auto;"
             loading="lazy"
             decoding="async"
           />
@@ -1700,7 +1534,6 @@
   </div>
 </section>
 <!-- ================= FIM DO BLOCO: FÁBRICA / PROCESSO (3 IMAGENS) ================= -->
-
 
 <!-- ================= INÍCIO DO BLOCO: MODELOS (3 CARDS + LINKS) ================= -->
 <section class="models" id="modelos" aria-label="Modelos principais">
@@ -1769,7 +1602,6 @@
 </section>
 <!-- ================= FIM DO BLOCO: MODELOS (3 CARDS + LINKS) ================= -->
 
-
 <!-- ================= INÍCIO DO BLOCO: DEPOIMENTOS ================= -->
 <section class="testimonials" id="depoimentos" aria-label="Depoimentos de clientes">
   <div class="wrap">
@@ -1818,7 +1650,6 @@
   </div>
 </section>
 <!-- ================= FIM DO BLOCO: DEPOIMENTOS ================= -->
-
 
 <!-- ================= INÍCIO DO BLOCO: FAQ ================= -->
 <section class="faq-dark" id="faq">
@@ -1874,7 +1705,6 @@
 </section>
 <!-- ================= FIM DO BLOCO: FAQ ================= -->
 
-
 <!-- ================= INÍCIO DO BLOCO: CTA FOOTER ================= -->
 <section class="cta-footer" aria-label="Chamada final">
   <div class="wrap">
@@ -1908,12 +1738,12 @@
       </div>
 
       <div class="cta-footer__col">
-  <h3>Institucional</h3>
-  <ul>
-    <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
-    <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
-  </ul>
-</div>
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
+        </ul>
+      </div>
 
       <div class="cta-footer__col">
         <h3>Modelos</h3>
@@ -1934,9 +1764,6 @@
 </section>
 <!-- ================= FIM DO BLOCO: CTA FOOTER ================= -->
 
-
-https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
-
 <!-- ================= INÍCIO DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
 <a class="wa-float js-wa"
    href="#"
@@ -1947,18 +1774,14 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
    data-code="ART COIFAS CAMPINAS">
   <span class="wa-float__hint">WhatsApp</span>
 
-  <!-- ÍCONE OFICIAL (SVG) -->
   <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
     <path d="M19.11 17.47c-.27-.14-1.57-.77-1.82-.86-.25-.09-.43-.14-.61.14-.18.27-.7.86-.86 1.04-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.71-1.33-1.59-1.49-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.9 2.9 4.6 4.06.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.57-.64 1.79-1.26.22-.62.22-1.15.16-1.26-.05-.11-.25-.18-.52-.32zM16.02 27.3h-.01c-1.89 0-3.75-.51-5.37-1.48l-.39-.23-3.78.99 1.01-3.68-.25-.38a11.22 11.22 0 0 1-1.73-5.96c0-6.2 5.05-11.24 11.26-11.24 3.01 0 5.84 1.17 7.96 3.29a11.17 11.17 0 0 1 3.3 7.95c0 6.2-5.05 11.24-11.26 11.24zm9.57-20.81A13.41 13.41 0 0 0 16 2.7C8.64 2.7 2.66 8.67 2.66 16.02c0 2.36.62 4.67 1.8 6.7L2.6 29.5l6.95-1.82a13.33 13.33 0 0 0 6.45 1.65h.01c7.36 0 13.34-5.98 13.34-13.33 0-3.56-1.39-6.91-3.76-9.51z"/>
   </svg>
-
 </a>
 <!-- ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
 
-
 <!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + MENU) ================= -->
 <script>
-  /* ========= CONFIG FIXA (NÃO ESPALHAR PELO HTML) ========= */
   const AC_CFG = {
     WA_PHONE_E164: "551932131636",
     WEBAPP_URL: "https://script.google.com/macros/s/AKfycbyce6y_40SYTxaiYBjQ3NMpc9QQlAeS-PqatQCAosXDeu31JvxnhiL-cwSUi_IX3Fdo/exec",
@@ -1968,7 +1791,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     GCLID_TTL_DAYS: 90
   };
 
-  /* ========= Menu mobile (drawer) ========= */
   (function(){
     const burger = document.getElementById("jsBurger");
     const drawer = document.getElementById("jsDrawer");
@@ -1990,7 +1812,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     if(closeBtn) closeBtn.addEventListener("click", closeDrawer);
     if(backdrop) backdrop.addEventListener("click", closeDrawer);
 
-    // fecha ao clicar em links internos (#)
     if(drawer){
       drawer.querySelectorAll('a[href^="#"]').forEach(a=>{
         a.addEventListener("click", closeDrawer);
@@ -1998,7 +1819,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     }
   })();
 
-  /* ========= FAQ ========= */
   document.querySelectorAll('.faq-dark__question').forEach((btn) => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -2006,7 +1826,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     });
   });
 
-  /* ========= GCLID (captura e persistência) ========= */
   function getUrlParam(name){
     try{
       const u = new URL(window.location.href);
@@ -2034,13 +1853,11 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     return ok ? g : "";
   }
 
-  /* ========= event_id ========= */
   function makeEventId(){
     const rnd = Math.random().toString(16).slice(2);
     return "evt_" + Date.now() + "_" + rnd;
   }
 
-  /* ========= timestamp yyyy-MM-dd HH:mm:ss (local) ========= */
   function pad2(n){ return String(n).padStart(2,"0"); }
   function formatLocalDateTime(){
     const d = new Date();
@@ -2051,7 +1868,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     ].join("");
   }
 
-  /* ========= WhatsApp message (CÓDIGO só no WhatsApp) ========= */
   function buildWaMessage(code){
     return "Olá! Quero falar com a fábrica.\n" +
            "CÓDIGO: " + code;
@@ -2061,7 +1877,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     return "https://wa.me/" + AC_CFG.WA_PHONE_E164 + "?text=" + text;
   }
 
-  /* ========= Envio para planilha (sem CORS / sem depender de resposta) ========= */
   function sendToSheets(payload){
     try{
       if(navigator.sendBeacon){
@@ -2106,7 +1921,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     return false;
   }
 
-  /* ========= Handler central ========= */
   function handleWhatsAppClick(ev, source, code){
     const waUrl = buildWaUrl(code);
 
@@ -2126,7 +1940,6 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     }catch(e){}
   }
 
-  /* ========= Bind em todos os botões/links WhatsApp ========= */
   function bindWhatsApp(){
     const els = document.querySelectorAll(".js-wa");
     els.forEach(el => {
@@ -2138,12 +1951,10 @@ https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html
     });
   }
 
-  // init
   try{ storeGclidFromUrl(); }catch(e){}
   bindWhatsApp();
 </script>
-
 <!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + MENU) ================= -->
-</body>
 
+</body>
 </html>
