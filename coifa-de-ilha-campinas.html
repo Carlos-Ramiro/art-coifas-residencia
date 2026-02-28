@@ -6,22 +6,23 @@
 
   <title>Coifa de Ilha Sob Medida em Campinas | Art Coifas (Fábrica + Instalação)</title>
   <meta name="description" content="Coifa de ilha sob medida em Campinas e região: visita técnica, fabricação própria e instalação premium. Fale direto com a fábrica e peça orçamento no WhatsApp." />
-<!-- Favicons (pasta /favicon) -->
-<link rel="icon" href="/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+  <!-- Favicons (pasta /favicon) -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
   <!-- =======================================================================
     CONFIG IMAGENS + ALTs (EDITE AQUI QUANDO FOR TRANSFORMAR EM MODELO)
     Regra: troque os nomes/ALTs aqui e depois use Ctrl+F pelo nome do arquivo.
 
     HERO (DESKTOP BACKGROUND)
-    - src: images/hero-ilha-desktop.webp
+    - src: images/hero-ilha-desktop-12.webp
     - alt (referência): Coifa de ilha sob medida instalada sobre bancada central em cozinha moderna com acabamento premium
 
     HERO (MOBILE IMG)
-    - src: images/hero-ilha-mobile.webp
+    - NOVA (menor): images/hero-mobile-640-ilha.webp (640x480)
+    - padrão (já existe): images/hero-ilha-mobile.webp (800x600)
     - alt: Coifa de ilha preta sob medida instalada sobre bancada de granito em ambiente integrado
 
     BLOCO ESTRUTURA (IMG)
@@ -39,52 +40,60 @@
     - alt: Coifa de ilha sob medida instalada com iluminação e acabamento refinado em área gourmet
   ======================================================================== -->
 
-  <!-- LCP: preloads corretos (evita warning de preload não usado) -->
-  <link rel="preload" as="image" href="images/hero-ilha-mobile.webp" fetchpriority="high" media="(max-width: 991px)" />
+  <!-- LCP: preloads corretos (casando com srcset real) -->
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-mobile-640-ilha.webp"
+    fetchpriority="high"
+    media="(max-width: 991px)"
+    imagesrcset="images/hero-mobile-640-ilha.webp 640w, images/hero-ilha-mobile.webp 800w"
+    imagesizes="(max-width: 991px) 100vw, 800px"
+  />
   <link rel="preload" as="image" href="images/hero-ilha-desktop-12.webp" media="(min-width: 992px)" />
 
   <!-- ========================= SCHEMA (JSON-LD) ========================= -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://artcoifascampinas.com.br/#localbusiness",
-  "name":"Art Coifas",
-  "description":"Fabricação e instalação de coifas sob medida em Campinas e região, com atendimento técnico presencial.",
-  "url":"https://artcoifascampinas.com.br/",
-  "telephone":"+55 19 3213-1636",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
-    "addressLocality":"Campinas",
-    "addressRegion":"SP",
-    "addressCountry":"BR"
-  },
-  "areaServed":{
-    "@type":"AdministrativeArea",
-    "name":"Campinas e região"
-  },
-  "openingHours":[
-    "Mo-Fr 08:00-17:00"
-  ],
-  "sameAs":[],
-  "makesOffer":[
-    {
-      "@type":"Offer",
-      "url":"https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html",
-      "itemOffered":{
-        "@type":"Service",
-        "name":"Coifa de ilha sob medida (fabricação e instalação)",
-        "serviceType":"Projeto, fabricação e instalação de coifa de ilha sob medida",
-        "areaServed":{
-          "@type":"AdministrativeArea",
-          "name":"Campinas e região"
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "@id":"https://artcoifascampinas.com.br/#localbusiness",
+    "name":"Art Coifas",
+    "description":"Fabricação e instalação de coifas sob medida em Campinas e região, com atendimento técnico presencial.",
+    "url":"https://artcoifascampinas.com.br/",
+    "telephone":"+55 19 3213-1636",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+      "addressLocality":"Campinas",
+      "addressRegion":"SP",
+      "addressCountry":"BR"
+    },
+    "areaServed":{
+      "@type":"AdministrativeArea",
+      "name":"Campinas e região"
+    },
+    "openingHours":[
+      "Mo-Fr 08:00-17:00"
+    ],
+    "sameAs":[],
+    "makesOffer":[
+      {
+        "@type":"Offer",
+        "url":"https://artcoifascampinas.com.br/coifa-de-ilha-campinas.html",
+        "itemOffered":{
+          "@type":"Service",
+          "name":"Coifa de ilha sob medida (fabricação e instalação)",
+          "serviceType":"Projeto, fabricação e instalação de coifa de ilha sob medida",
+          "areaServed":{
+            "@type":"AdministrativeArea",
+            "name":"Campinas e região"
+          }
         }
       }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -125,7 +134,7 @@
       }
     ]
   }
-  </script> 
+  </script>
 
   <style>
     :root{
@@ -191,7 +200,6 @@
       letter-spacing:-0.02em;
     }
     .accent{color:var(--gold)}
-    .title .accent{}
     .lead{
       margin-top:1.05rem;
       max-width:62ch;
@@ -228,7 +236,6 @@
       font-size:.95rem;
       align-items:center;
     }
-    .micro span{}
     .stars{color:var(--gold);letter-spacing:.08em}
     .bullets{
       margin-top:.95rem;
@@ -240,18 +247,24 @@
     }
     .check{color:var(--gold);font-weight:900;margin-right:.35rem}
     .hero__inner{ padding: 2.2rem 0 1.4rem; }
+
+    /* Anti-CLS: reserva de box do HERO (mobile) */
     .hero__media{
       margin-top: 1.25rem;
       border-radius: 18px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 18px 50px rgba(0,0,0,.30);
+      background: rgba(255,255,255,.06);
     }
     .hero__media img{
       width:100%;
       aspect-ratio:4/3;
       object-fit:cover;
+      height:auto;
+      display:block;
     }
+
     .desktop-only{display:none;}
 
     @media (min-width: 992px){
@@ -261,14 +274,19 @@
         min-height:100vh;
         overflow:hidden;
       }
-      .hero__desktop-bg{
+
+      /* Desktop HERO: background CSS apenas no breakpoint desktop */
+      .hero::before{
+        content:"";
         position:absolute;
         inset:0;
-        width:100%;
-        height:100%;
-        object-fit:cover;
+        background-image: var(--hero-desktop-bg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         z-index:0;
       }
+
       .hero::after{
         content:"";
         position:absolute;
@@ -734,8 +752,6 @@
     /* ================= FIM DO BLOCO: FAQ ================= */
 
 
-
-
     /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
     .cta-footer{
       padding:90px 0 40px;
@@ -882,8 +898,6 @@
       .structure .btn.btn--wa{
         margin-top: 26px !important;
       }
-
-      /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
       .structure__cta{ padding-top: 10px !important; }
 
       /* DESCE CTA do Depoimentos (container + botão) */
@@ -893,14 +907,11 @@
         margin-top: 44px !important;
       }
 
-    /* CORREÇÃO DE CORTE (TEXTO E IMAGEM) */
-    h1, h2, h3, .title, .flow__title, .structure__title, .piramidal-gallery__title, .testimonials__title, .faq-dark__title {
-      word-wrap: break-word; overflow-wrap: break-word;
-    }
-    .title .accent { white-space: normal !important; }
-    .hero__media img {
-      aspect-ratio: auto !important; object-fit: contain !important; height: auto !important;
-    }
+      /* CORREÇÃO DE CORTE (TEXTO) */
+      h1, h2, h3, .title, .flow__title, .structure__title, .piramidal-gallery__title, .testimonials__title, .faq-dark__title {
+        word-wrap: break-word; overflow-wrap: break-word;
+      }
+      .title .accent { white-space: normal !important; }
     }
 
     @media (min-width: 992px){
@@ -911,73 +922,43 @@
       }
     }
   </style>
-  
-  <!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-641363659');
-</script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+  <!-- Google Tag (gtag.js) - carregamento adiado para não competir com LCP -->
+  <script>
+    (function(){
+      var GA_ID = "AW-641363659";
+      function loadGtag(){
+        if (window.__gtag_loaded) return;
+        window.__gtag_loaded = true;
+
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag("js", new Date());
+        gtag("config", GA_ID);
+      }
+
+      function schedule(){
+        if ("requestIdleCallback" in window){
+          requestIdleCallback(loadGtag, { timeout: 2500 });
+        } else {
+          setTimeout(loadGtag, 1800);
+        }
+      }
+
+      if (document.readyState === "complete") {
+        schedule();
+      } else {
+        window.addEventListener("load", schedule, { once: true });
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -986,16 +967,6 @@
 <header class="hero">
   <div class="hero__inner">
     <div class="wrap">
-      <!-- HERO DESKTOP IMG (background substitute) -->
-      <img
-        class="hero__desktop-bg"
-        src="images/hero-ilha-desktop-12.webp"
-        alt="Coifa de ilha sob medida instalada sobre bancada central em cozinha moderna com acabamento premium"
-        width="1920"
-        height="1080"
-        loading="eager"
-        decoding="async"
-      />
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
       </div>
@@ -1022,7 +993,6 @@
         <span class="stars">★★★★★</span>
         <span>Do projeto à instalação</span>
       </div>
-      
 
       <ul class="bullets" aria-label="Diferenciais">
         <li><span class="check">✓</span> Projeto técnico sob medida para ilha</li>
@@ -1033,7 +1003,9 @@
 
       <div class="hero__media">
         <img
-          src="images/hero-ilha-mobile.webp"
+          src="images/hero-mobile-640-ilha.webp"
+          srcset="images/hero-mobile-640-ilha.webp 640w, images/hero-ilha-mobile.webp 800w"
+          sizes="(max-width: 991px) 100vw, 800px"
           alt="Coifa de ilha preta sob medida instalada sobre bancada de granito em ambiente integrado"
           width="800"
           height="600"
@@ -1313,6 +1285,7 @@
   </div>
 </section>
 <!-- ================= FIM DO BLOCO: FAQ ================= -->
+
 <!-- ================= INÍCIO DO BLOCO: CTA FOOTER ================= -->
 <section class="cta-footer">
   <div class="wrap">
@@ -1346,12 +1319,12 @@
       </div>
 
       <div class="cta-footer__col">
-  <h3>Institucional</h3>
-  <ul>
-    <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
-    <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
-  </ul>
-</div>
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
+        </ul>
+      </div>
 
       <div class="cta-footer__col">
         <h3>Atendimento</h3>
@@ -1438,7 +1411,6 @@
 
   /* ========= event_id ========= */
   function makeEventId(){
-    // simples e suficiente para dedup
     const rnd = Math.random().toString(16).slice(2);
     return "evt_" + Date.now() + "_" + rnd;
   }
@@ -1466,7 +1438,6 @@
 
   /* ========= Envio para planilha (sem CORS / sem depender de resposta) ========= */
   function sendToSheets(payload){
-    // 1) sendBeacon (melhor)
     try{
       if(navigator.sendBeacon){
         const blob = new Blob([JSON.stringify(payload)], { type: "text/plain;charset=UTF-8" });
@@ -1475,7 +1446,6 @@
       }
     }catch(e){}
 
-    // 2) fetch no-cors com text/plain (evita preflight)
     try{
       fetch(AC_CFG.WEBAPP_URL, {
         method: "POST",
@@ -1487,7 +1457,6 @@
       return true;
     }catch(e){}
 
-    // 3) fallback form-urlencoded (também “simple request”)
     try{
       const form = new URLSearchParams();
       Object.keys(payload).forEach(k => form.append(k, String(payload[k] ?? "")));
@@ -1501,7 +1470,6 @@
       return true;
     }catch(e){}
 
-    // 4) último fallback: Image GET
     try{
       const q = new URLSearchParams();
       Object.keys(payload).forEach(k => q.append(k, String(payload[k] ?? "")));
@@ -1515,28 +1483,22 @@
 
   /* ========= Handler central ========= */
   function handleWhatsAppClick(ev, source, code){
-    // sempre: abrir WhatsApp (sem depender da planilha)
     const waUrl = buildWaUrl(code);
 
-    // payload esperado pelo baseline (não inventar campos)
     const payload = {
-      gclid: readGclid(), // pode ser vazio (orgânico)
+      gclid: readGclid(),
       conversion_name: AC_CFG.CONVERSION_NAME,
       conversion_time: formatLocalDateTime(),
       conversion_value: "0.00",
       event_id: makeEventId()
     };
 
-    // tenta enviar (não bloqueia UX)
     sendToSheets(payload);
 
-    // abre WhatsApp
     try{
       ev.preventDefault();
       window.open(waUrl, "_blank", "noopener");
-    }catch(e){
-      // fallback: deixa o link seguir
-    }
+    }catch(e){}
   }
 
   /* ========= Bind em todos os botões/links WhatsApp ========= */
@@ -1546,14 +1508,11 @@
       const code = (el.getAttribute("data-code") || "COIFA DE ILHA").trim();
       const source = (el.getAttribute("data-source") || "cta").trim();
 
-      // atualiza href para já ir com mensagem (também melhora fallback sem JS)
       el.setAttribute("href", buildWaUrl(code));
-
       el.addEventListener("click", (ev) => handleWhatsAppClick(ev, source, code), { passive: false });
     });
   }
 
-  // init
   try{ storeGclidFromUrl(); }catch(e){}
   bindWhatsApp();
 </script>
