@@ -21,9 +21,23 @@
     HERO (MOBILE IMG)  ✅ LCP PRINCIPAL - src: images/hero-mobile-cozinha.webp
   ======================================================================== -->
 
-  <!-- ✅ LCP: preloads corretos (mantém) -->
-  <link rel="preload" as="image" href="/images/hero-mobile-cozinha.webp" fetchpriority="high" media="(max-width: 991px)" />
-  <link rel="preload" as="image" href="/images/hero-desktop-cozinha.webp" media="(min-width: 992px)" />
+  <link rel="preconnect" href="https://artcoifascampinas.com.br" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+  
+  <!-- ✅ LCP: preload correto com srcset (mobile) + preload desktop -->
+<link rel="preload"
+      as="image"
+      href="/images/hero-mobile-640.webp"
+      imagesrcset="/images/hero-mobile-640.webp 640w,
+                   /images/hero-mobile-800.webp 800w"
+      imagesizes="(max-width: 768px) 90vw, 800px"
+      fetchpriority="high">
+
+<link rel="preload"
+      as="image"
+      href="/images/hero-desktop-cozinha.webp"
+      media="(min-width: 992px)">
 
   <!-- Schema (SEO / Ads landing hygiene) -->
   <script type="application/ld+json">
@@ -258,20 +272,25 @@
         <li><span class="check">✓</span> Modelos: parede, ilha e embutir (sob projeto)</li>
       </ul>
 
-      <div class="hero__media">
+      <div class="hero__media">  
+	  
         <img
-          src="/images/hero-mobile-cozinha.webp"
-          alt="Coifa para cozinha sob medida em inox instalada em cozinha planejada com armários e cooktop"
-          width="800"
-          height="600"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-    </div>
-  </div>
+  src="/images/hero-mobile-640.webp"
+  srcset="/images/hero-mobile-640.webp 640w,
+          /images/hero-mobile-800.webp 800w"
+  sizes="(max-width: 768px) 90vw, 800px"
+  alt="Coifa para cozinha sob medida em inox instalada em cozinha planejada com armários e cooktop"
+  width="800"
+  height="600"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+/>
+</div>
+</div>
+</div>
 </header>
+
 <!-- ================= FIM DO BLOCO: HERO ================= -->
 
 
