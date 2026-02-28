@@ -19,8 +19,9 @@
     - src: images/hero-churrasqueira-desktop.webp
     - alt (referência): Coifa para churrasqueira inox instalada em cozinha gourmet integrada com armários verdes e bancada
 
-    HERO (MOBILE IMG)
-    - src: images/hero-churrasqueira-mobile.webp
+    HERO (MOBILE IMG) — PROTOCOLO LCP
+    - src menor (NOVA 640x480): images/hero-mobile-640-churrasqueira.webp
+    - src padrão (800x600): images/hero-churrasqueira-mobile.webp
     - alt: Coifa para churrasqueira preta integrada em parede de tijolos com parrilla e fechamento lateral
 
     BLOCO ESTRUTURA (IMG)  [TEMPORÁRIO: usando produto-223.webp até você enviar a imagem final]
@@ -38,8 +39,14 @@
     - alt: Coifa para churrasqueira de parede inox instalada em ambiente gourmet com revestimento ripado amadeirado
   ======================================================================== -->
 
-  <!-- LCP: preloads corretos (evita warning de preload não usado) -->
-  <link rel="preload" as="image" href="images/hero-churrasqueira-mobile.webp" fetchpriority="high" media="(max-width: 991px)" />
+  <!-- LCP: preloads corretos (casando com srcset real do HERO mobile) -->
+  <link rel="preload"
+        as="image"
+        href="images/hero-mobile-640-churrasqueira.webp"
+        imagesrcset="images/hero-mobile-640-churrasqueira.webp 640w, images/hero-churrasqueira-mobile.webp 800w"
+        imagesizes="100vw"
+        fetchpriority="high"
+        media="(max-width: 991px)" />
   <link rel="preload" as="image" href="images/hero-churrasqueira-desktop.webp" media="(min-width: 992px)" />
 
   <!-- Schema (SEO / Ads landing hygiene) -->
@@ -95,7 +102,7 @@
       --dark:#07111c;
       --dark2:#0a1826;
 
-      /* HERO DESKTOP */
+      /* HERO DESKTOP (NÃO MUDAR O NOME) */
       --hero-desktop-bg: url("images/hero-churrasqueira-desktop.webp");
     }
 
@@ -169,14 +176,19 @@
     }
     .check{color:var(--gold);font-weight:900;margin-right:.35rem}
     .hero__inner{ padding: 2.2rem 0 1.4rem; }
+
+    /* Anti-CLS: reserva o box do HERO no mobile */
     .hero__media{
       margin-top: 1.25rem;
       border-radius: 18px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 18px 50px rgba(0,0,0,.30);
+      aspect-ratio: 4 / 3;
+      background: rgba(255,255,255,.06);
     }
-    .hero__media img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
+    .hero__media img{ width:100%; height:100%; object-fit:cover; }
+
     .desktop-only{display:none;}
 
     @media (min-width: 992px){
@@ -190,9 +202,6 @@
       }
       .hero::after{
         content:""; position:absolute; inset:0;
-        /* Ajuste solicitado:
-           - Esquerda (texto): mais escuro
-           - Direita (imagem): mais clara */
         background:
           linear-gradient(90deg,
             rgba(7,17,28,.965) 0%,
@@ -628,11 +637,8 @@
       .hero__media{ margin-top: 1.0rem; }
       .flow{ padding: 94px 0 90px; }
 
-      /* CORREÇÃO DE CORTE (TEXTO E IMAGEM) */
+      /* CORREÇÃO DE CORTE (TEXTO) */
       .title .accent { white-space: normal !important; }
-      .hero__media img {
-        aspect-ratio: auto !important; object-fit: contain !important; height: auto !important;
-      }
     }
 
     /* Ajuste solicitado: TODOS os títulos no mobile centralizados */
@@ -651,36 +657,64 @@
       }
     }
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
-  
-  @media (max-width: 768px){
 
-  /* DESCE CTA do bloco Estrutura/Fabricação (container + botão) */
-  .structure__cta,
-  .structure .structure__cta,
-  .structure .btn.btn--wa{
-    margin-top: 26px !important;
-  }
+    @media (max-width: 768px){
+      /* DESCE CTA do bloco Estrutura/Fabricação (container + botão) */
+      .structure__cta,
+      .structure .structure__cta,
+      .structure .btn.btn--wa{
+        margin-top: 26px !important;
+      }
 
-  /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
-  .structure__cta{ padding-top: 10px !important; }
+      /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
+      .structure__cta{ padding-top: 10px !important; }
 
-  /* DESCE CTA do Depoimentos (container + botão) */
-  .testimonials__cta,
-  .testimonials .testimonials__cta,
-  .testimonials .testimonials__cta a{
-    margin-top: 44px !important;
-  }
-}
+      /* DESCE CTA do Depoimentos (container + botão) */
+      .testimonials__cta,
+      .testimonials .testimonials__cta,
+      .testimonials .testimonials__cta a{
+        margin-top: 44px !important;
+      }
+    }
   </style>
-  <!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-641363659');
-</script>
 
+  <!-- Google Tag (gtag.js) — adiado para não competir com LCP -->
+  <script>
+    (function(){
+      var AW_ID = "AW-641363659";
+
+      function loadGtag(){
+        if (window.__ac_gtag_loaded) return;
+        window.__ac_gtag_loaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ window.dataLayer.push(arguments); }
+        window.gtag = window.gtag;
+
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(AW_ID);
+        s.onload = function(){
+          try{
+            gtag("js", new Date());
+            gtag("config", AW_ID);
+          }catch(e){}
+        };
+        document.head.appendChild(s);
+      }
+
+      function schedule(){
+        if ("requestIdleCallback" in window){
+          requestIdleCallback(function(){ loadGtag(); }, { timeout: 2500 });
+        } else {
+          setTimeout(loadGtag, 1800);
+        }
+      }
+
+      if (document.readyState === "complete") schedule();
+      else window.addEventListener("load", schedule, { once: true });
+    })();
+  </script>
 
 </head>
 
@@ -726,7 +760,9 @@
 
       <div class="hero__media">
         <img
-          src="/images/produto-mobile-333.webp"
+          src="images/hero-mobile-640-churrasqueira.webp"
+          srcset="images/hero-mobile-640-churrasqueira.webp 640w, images/hero-churrasqueira-mobile.webp 800w"
+          sizes="100vw"
           alt="Coifa para churrasqueira preta integrada em parede de tijolos com parrilla e fechamento lateral"
           width="800"
           height="600"
@@ -1037,12 +1073,12 @@
       </div>
 
       <div class="cta-footer__col">
-  <h3>Institucional</h3>
-  <ul>
-    <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
-    <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
-  </ul>
-</div>
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
+        </ul>
+      </div>
 
       <div class="cta-footer__col">
         <h3>Atendimento</h3>
