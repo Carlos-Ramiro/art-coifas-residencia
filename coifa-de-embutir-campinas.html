@@ -6,22 +6,24 @@
 
   <title>Coifa de Embutir Sob Medida em Campinas | Fabricação + Instalação | Art Coifas</title>
   <meta name="description" content="Coifa de embutir sob medida em Campinas e região. Projeto técnico, fabricação própria e instalação premium integrada ao seu planejado. Orçamento direto no WhatsApp." />
-<!-- Favicons (pasta /favicon) -->
-<link rel="icon" href="/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+
+  <!-- Favicons (pasta /favicon) -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
   <!-- =======================================================================
     CONFIG IMAGENS + ALTs (EDITE AQUI QUANDO FOR TRANSFORMAR EM MODELO)
     Regra: troque os nomes/ALTs aqui e depois use Ctrl+F pelo nome do arquivo.
 
-    HERO (DESKTOP BACKGROUND)
-    - src: images/hero-embutir-desktop.webp
+    HERO (DESKTOP BACKGROUND - CSS só no breakpoint desktop)
+    - src: images/hero-desktop-embutir.webp  (1920x1080)
     - alt (referência): Coifa de embutir preta instalada em área gourmet moderna com bancada e churrasqueira
 
-    HERO (MOBILE IMG)
-    - src: images/hero-embutir-mobile.webp
+    HERO (MOBILE IMG - LCP real com <img>)
+    - src menor (NOVA): images/hero-mobile-640-embutir.webp (640x480)
+    - src padrão (já existe): images/hero-mobile-embutir.webp (800x600)
     - alt: Coifa de embutir preta integrada em bancada gourmet com churrasqueira e iluminação focada
 
     BLOCO ESTRUTURA (IMG)
@@ -39,65 +41,61 @@
     - alt: Coifa de embutir preta instalada sobre churrasqueira com sistema de parrilla e motor
   ======================================================================== -->
 
-  <!-- LCP: preloads corretos (evita warning de preload não usado) -->
-  <link rel="preload" as="image" href="images/hero-embutir-mobile.webp" fetchpriority="high" media="(max-width: 991px)" />
-  <link rel="preload" as="image" href="images/hero-embutir-desktop.webp" media="(min-width: 992px)" />
+  <!-- LCP: PRELOADS CORRETOS (mobile com imagesrcset/imagesizes + desktop com media) -->
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-mobile-640-embutir.webp"
+    fetchpriority="high"
+    media="(max-width: 991px)"
+    imagesrcset="images/hero-mobile-640-embutir.webp 640w, images/hero-mobile-embutir.webp 800w"
+    imagesizes="100vw"
+  />
+  <link
+    rel="preload"
+    as="image"
+    href="images/hero-desktop-embutir.webp"
+    media="(min-width: 992px)"
+  />
 
   <!-- Schema -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://artcoifascampinas.com.br/#localbusiness",
-  "name":"Art Coifas",
-  "url":"https://artcoifascampinas.com.br/",
-  "telephone":"+55 19 3213-1636",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
-    "addressLocality":"Campinas",
-    "addressRegion":"SP",
-    "addressCountry":"BR"
-  },
-  "areaServed":{
-    "@type":"AdministrativeArea",
-    "name":"Campinas e região"
-  },
-  "makesOffer":[
-    {
-      "@type":"Offer",
-      "url":"https://artcoifascampinas.com.br/coifa-de-embutir-campinas.html",
-      "itemOffered":{
-        "@type":"Service",
-        "name":"Coifa de embutir sob medida (fabricação e instalação)",
-        "serviceType":"Projeto, fabricação e instalação de coifa de embutir sob medida",
-        "areaServed":{
-          "@type":"AdministrativeArea",
-          "name":"Campinas e região"
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "@id":"https://artcoifascampinas.com.br/#localbusiness",
+    "name":"Art Coifas",
+    "url":"https://artcoifascampinas.com.br/",
+    "telephone":"+55 19 3213-1636",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Rua Doutor Eduardo Edarge Badaró, 1170",
+      "addressLocality":"Campinas",
+      "addressRegion":"SP",
+      "addressCountry":"BR"
+    },
+    "areaServed":{
+      "@type":"AdministrativeArea",
+      "name":"Campinas e região"
+    },
+    "makesOffer":[
+      {
+        "@type":"Offer",
+        "url":"https://artcoifascampinas.com.br/coifa-de-embutir-campinas.html",
+        "itemOffered":{
+          "@type":"Service",
+          "name":"Coifa de embutir sob medida (fabricação e instalação)",
+          "serviceType":"Projeto, fabricação e instalação de coifa de embutir sob medida",
+          "areaServed":{
+            "@type":"AdministrativeArea",
+            "name":"Campinas e região"
+          }
         }
       }
-    }
-  ]
-}
-</script>
-  
-  
+    ]
+  }
+  </script>
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
  <style>
   :root{
     -webkit-text-size-adjust: 100%;
@@ -111,9 +109,6 @@
     --light2:#eaf0f6;
     --dark:#07111c;
     --dark2:#0a1826;
-
-    /* HERO DESKTOP (centralizado aqui) */
-    --hero-desktop-bg: url("images/coifa-embutir-hero-desktop.webp");
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
@@ -162,7 +157,6 @@
     letter-spacing:-0.02em;
   }
   .accent{color:var(--gold)}
-  .title .accent{}
   .lead{
     margin-top:1.05rem;
     max-width:62ch;
@@ -199,7 +193,6 @@
     font-size:.95rem;
     align-items:center;
   }
-  .micro span{}
   .stars{color:var(--gold);letter-spacing:.08em}
   .bullets{
     margin-top:.95rem;
@@ -211,65 +204,74 @@
   }
   .check{color:var(--gold);font-weight:900;margin-right:.35rem}
   .hero__inner{ padding: 2.2rem 0 1.4rem; }
+
+  /* Anti-CLS: box reservado do HERO no mobile */
   .hero__media{
     margin-top: 1.25rem;
     border-radius: 18px;
     overflow:hidden;
     border:1px solid rgba(255,255,255,.12);
     box-shadow: 0 18px 50px rgba(0,0,0,.30);
+    background: rgba(255,255,255,.06);
   }
   .hero__media img{
     width:100%;
     aspect-ratio:4/3;
     object-fit:cover;
   }
+
   .desktop-only{display:none;}
 
-    @media (min-width: 992px){
-      .desktop-only{display:inline;}
-      .hero{
-        position:relative;
-        min-height:100vh;
-        overflow:hidden;
-      }
-      .hero__desktop-bg{
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        z-index:0;
-      }
-      .hero::after{
-        content:"";
-        position:absolute;
-        inset:0;
-        background:
-          linear-gradient(90deg,
-            rgba(15,43,70,.96) 0%,
-            rgba(15,43,70,.64) 45%,
-            rgba(15,43,70,.08) 100%
-          ),
-          radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
-        z-index:1;
-        pointer-events:none;
-      }
-      .hero__inner{
-        position:relative;
-        z-index:2;
-        min-height:100vh;
-        display:flex;
-        align-items:center;
-        padding:0;
-      }
-      .hero__media{display:none;}
-      .bullets{
-        grid-template-columns:max-content max-content;
-        gap:.35rem 2rem;
-      }
-      .title{max-width:19ch;}
-      .wrap{ width:min(1200px, calc(100% - 5rem)); }
+  @media (min-width: 992px){
+    .desktop-only{display:inline;}
+    .hero{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
     }
+
+    /* HERO DESKTOP: background no CSS só no breakpoint desktop */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: url("images/hero-desktop-embutir.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index:0;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,
+          rgba(15,43,70,.96) 0%,
+          rgba(15,43,70,.64) 45%,
+          rgba(15,43,70,.08) 100%
+        ),
+        radial-gradient(900px 600px at 20% 18%, rgba(255,191,31,.18), transparent 55%);
+      z-index:1;
+      pointer-events:none;
+    }
+    .hero__inner{
+      position:relative;
+      z-index:2;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:0;
+    }
+    .hero__media{display:none;}
+    .bullets{
+      grid-template-columns:max-content max-content;
+      gap:.35rem 2rem;
+    }
+    .title{max-width:19ch;}
+    .wrap{ width:min(1200px, calc(100% - 5rem)); }
+  }
   /* ================= FIM DO BLOCO: HERO ================= */
 
 
@@ -706,8 +708,6 @@
   /* ================= FIM DO BLOCO: FAQ ================= */
 
 
-
-
   /* ================= INÍCIO DO BLOCO: CTA FOOTER ================= */
   .cta-footer{
     padding:90px 0 40px;
@@ -877,40 +877,21 @@
 
     /* 4) CORREÇÃO DO "BURACO" NO BLOCO ESTRUTURA (CTA MAIS "DESCIDO" E LIMPO) */
     .structure__list{ margin-bottom: 16px !important; }
-    .structure__cta{ margin-top: 26px !important; } /* <- AQUI é onde "desce mais um pouco" o CTA do bloco Fabricação/Estrutura */
+    .structure__cta{ margin-top: 26px !important; }
     .structure__cta .btn{ margin-top: 0 !important; }
-
-    /* 5) DEPOIMENTOS: CTA COM RESPIRO CONSISTENTE (EVITA FICAR COLADO) */
-    .testimonials__cta{ margin-top: 44px !important; }
-
-    /* DESCE CTA do bloco Estrutura/Fabricação (container + botão) */
-    .structure__cta,
-    .structure .structure__cta,
-    .structure .btn.btn--wa{
-      margin-top: 26px !important;
-    }
-
-    /* Se o CTA estiver dentro de algum wrapper flex, garante respiro real */
     .structure__cta{ padding-top: 10px !important; }
 
-    /* DESCE CTA do Depoimentos (container + botão) */
-    .testimonials__cta,
-    .testimonials .testimonials__cta,
-    .testimonials .testimonials__cta a{
-      margin-top: 44px !important;
-    }
+    /* 5) DEPOIMENTOS: CTA COM RESPIRO CONSISTENTE */
+    .testimonials__cta{ margin-top: 44px !important; }
 
     /* BOTÃO FLUTUANTE WHATSAPP */
     .wa-float__hint{ display:none; }
 
-    /* CORREÇÃO DE CORTE (TEXTO E IMAGEM) */
+    /* CORREÇÃO DE CORTE (TEXTO) */
     h1, h2, h3, .title, .flow__title, .structure__title, .piramidal-gallery__title, .testimonials__title, .faq-dark__title {
       word-wrap: break-word; overflow-wrap: break-word;
     }
     .title .accent { white-space: normal !important; }
-    .hero__media img {
-      aspect-ratio: auto !important; object-fit: contain !important; height: auto !important;
-    }
   }
 
   @media (min-width: 992px){
@@ -921,36 +902,6 @@
     }
   }
 </style>
-  <!-- Google Tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-641363659"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-641363659');
-</script>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 </head>
 
 <body>
@@ -959,16 +910,6 @@
 <header class="hero">
   <div class="hero__inner">
     <div class="wrap">
-      <!-- HERO DESKTOP IMG (background substitute) -->
-      <img
-        class="hero__desktop-bg"
-        src="images/hero-embutir-desktop.webp"
-        alt="Coifa de embutir preta instalada em área gourmet moderna com bancada e churrasqueira"
-        width="1920"
-        height="1080"
-        loading="eager"
-        decoding="async"
-      />
       <div class="eyebrow">
         <span class="desktop-only">ATENDIMENTO </span>DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO
       </div>
@@ -1005,7 +946,9 @@
 
       <div class="hero__media">
         <img
-          src="images/hero-embutir-mobile.webp"
+          src="images/hero-mobile-640-embutir.webp"
+          srcset="images/hero-mobile-640-embutir.webp 640w, images/hero-mobile-embutir.webp 800w"
+          sizes="100vw"
           alt="Coifa de embutir preta integrada em bancada gourmet com churrasqueira e iluminação focada"
           width="800"
           height="600"
@@ -1069,7 +1012,10 @@
         <img
           src="images/estrutura-coifa-de-embutir-10.webp"
           alt="Equipe de instaladores uniformizados em frente à fachada da fábrica Art Coifas"
-          v>
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
 
       <div class="structure__content">
         <h2 class="structure__title">
@@ -1279,14 +1225,6 @@
 <!-- ================= FIM DO BLOCO: FAQ ================= -->
 
 
-
-
-
-
-
-
-
-
 <!-- ================= INÍCIO DO BLOCO: CTA FOOTER ================= -->
 <section class="cta-footer">
   <div class="wrap">
@@ -1320,12 +1258,12 @@
       </div>
 
       <div class="cta-footer__col">
-  <h3>Institucional</h3>
-  <ul>
-    <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
-    <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
-  </ul>
-</div>
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="https://artcoifascampinas.com.br/politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a href="https://artcoifascampinas.com.br/termos-de-responsabilidade.html">Termos de Responsabilidade</a></li>
+        </ul>
+      </div>
 
       <div class="cta-footer__col">
         <h3>Atendimento</h3>
@@ -1361,8 +1299,40 @@
 <!-- ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
 
 
-<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
+<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + GTAG DELAY) ================= -->
 <script>
+  /* ========= GTAG (Ads) — adiado para não competir com LCP ========= */
+  (function(){
+    const GTAG_ID = "AW-641363659";
+    let loaded = false;
+
+    function loadGtag(){
+      if(loaded) return;
+      loaded = true;
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = window.gtag;
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + GTAG_ID;
+      document.head.appendChild(s);
+
+      window.gtag = function(){ dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", GTAG_ID);
+    }
+
+    if("requestIdleCallback" in window){
+      requestIdleCallback(loadGtag, { timeout: 2500 });
+    }else{
+      window.addEventListener("load", function(){
+        setTimeout(loadGtag, 1500);
+      });
+    }
+  })();
+
   /* ========= CONFIG FIXA (NÃO ESPALHAR PELO HTML) ========= */
   const AC_CFG = {
     WA_PHONE_E164: "551932131636",
@@ -1516,7 +1486,7 @@
   try{ storeGclidFromUrl(); }catch(e){}
   bindWhatsApp();
 </script>
-<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
+<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + GTAG DELAY) ================= -->
 
 </body>
 </html>
