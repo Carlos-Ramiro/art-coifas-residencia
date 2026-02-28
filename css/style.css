@@ -1,7 +1,3 @@
-
-
-
-
 /* ===========================
    ART COIFAS — HERO ONLY
    PC: 1920x1080 fullscreen
@@ -184,6 +180,7 @@ h1, h2 { overflow-wrap: break-word; }
     gap: .35rem 1rem;
   }
 }
+
 /* ===========================
    MOBILE: imagem NÃO como background
    (PC continua fullscreen)
@@ -200,6 +197,7 @@ h1, h2 { overflow-wrap: break-word; }
     position: relative;
     inset: auto;
     z-index: 1;
+    background: #0f2b46;       /* fallback (não pesa) */
   }
 
   /* remove overlay pesado no mobile (opcional, mas melhora) */
@@ -209,6 +207,8 @@ h1, h2 { overflow-wrap: break-word; }
 
   /* conteúdo vem primeiro */
   .hero__wrap{
+    position: relative;        /* <<< correção */
+    z-index: 3;                /* <<< correção */
     padding: 2.2rem 1.25rem 1.25rem;
   }
 
@@ -219,7 +219,5 @@ h1, h2 { overflow-wrap: break-word; }
     aspect-ratio: 4 / 3;       /* 800x600 */
     object-fit: cover;
     border-radius: 18px;
-
-    
   }
 }
