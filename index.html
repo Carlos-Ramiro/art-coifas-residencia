@@ -60,7 +60,7 @@
   <link
     rel="preload"
     as="image"
-    href="/images/hero-mobile-640-fabrica.webp"
+    href="/images/hero-mobile-800-fabrica.webp"
     imagesrcset="/images/hero-mobile-640-fabrica.webp 640w, /images/hero-mobile-800-fabrica.webp 800w"
     imagesizes="(max-width: 768px) 100vw, 800px"
     fetchpriority="high"
@@ -951,7 +951,7 @@
   }
   .tcard:hover{
     transform: translateY(-6px);
-    box-shadow: 0 36px 95px rgba(0,0,0,.42);
+    box-shadow:0 36px 95px rgba(0,0,0,.42);
   }
   .tstars{ color: var(--gold); letter-spacing:.14em; font-size: .95rem; margin-bottom: 12px; line-height:1; }
   .tquote{ color:#1a2533; font-size: 1.02rem; line-height: 1.7; margin-bottom: 16px; text-wrap: balance; }
@@ -1451,7 +1451,7 @@
       <!-- MOBILE: LCP principal -->
       <div class="hero__media">
         <img
-          src="/images/hero-mobile-640-fabrica.webp"
+          src="/images/hero-mobile-800-fabrica.webp"
           srcset="/images/hero-mobile-640-fabrica.webp 640w, /images/hero-mobile-800-fabrica.webp 800w"
           sizes="(max-width: 768px) 100vw, 800px"
           alt="Coifa de embutir preta de grandes dimensões instalada em área gourmet com bancada preta."
@@ -1460,6 +1460,7 @@
           loading="eager"
           fetchpriority="high"
           decoding="async"
+          onerror="this.onerror=null;this.src='/images/hero-mobile-800-fabrica.webp';"
         />
       </div>
 
