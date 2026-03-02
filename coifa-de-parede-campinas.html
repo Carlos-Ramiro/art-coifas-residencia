@@ -12,12 +12,21 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
-  <link rel="preload" as="image" href="images/hero-mobeli-640.webp" fetchpriority="high" media="(max-width: 768px)" />
-  <link rel="preload" as="image" href="images/hero-desktop.webp" media="(min-width: 992px)" />
+  <!-- ✅ Preload LCP mobile (usa o 640 como href + srcset com 640/800) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/hero-mobeli-640.webp"
+    fetchpriority="high"
+    media="(max-width: 991px)"
+    imagesrcset="/images/hero-mobeli-640.webp 640w, /images/hero-mobeli-800.webp 800w"
+    imagesizes="100vw"
+  />
+  <!-- ✅ Preload desktop -->
+  <link rel="preload" as="image" href="/images/hero-desktop.webp" media="(min-width: 992px)" />
 
   <style>
     :root{
-      -webkit-text-size-adjust: 100%;
       --brand:#0f2b46;
       --gold:#ffbf1f;
       --text:#ffffff;
@@ -28,6 +37,7 @@
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
+    html{ -webkit-text-size-adjust: 100%; }
     html, body{ overflow-x: hidden; max-width: 100vw; }
     body{ font-family:system-ui,-apple-system,sans-serif; background:#0b0f14; color:#111; line-height: 1.5; }
     img{ max-width:100%; height:auto; display:block; }
@@ -36,10 +46,13 @@
     /* --- HERO --- */
     .hero{ background: var(--brand); color: var(--text); position: relative; overflow: hidden; }
     .hero__inner{ padding: 2.5rem 0 1.5rem; position: relative; z-index: 2; }
-    
-    .eyebrow{ 
-      display:inline-flex; gap:.5rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; 
-      font-size:.75rem; padding:.5rem .8rem; border-radius:999px; background:rgba(255,255,255,.08); 
+
+    /* ✅ CRÍTICO: a imagem do desktop não pode aparecer no mobile */
+    .hero__desktop-bg{ display:none; }
+
+    .eyebrow{
+      display:inline-flex; gap:.5rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+      font-size:.75rem; padding:.5rem .8rem; border-radius:999px; background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.14); color:rgba(255,255,255,.9);
     }
 
@@ -47,9 +60,9 @@
     .accent{ color:var(--gold); }
     .lead{ margin-top:1.2rem; max-width:60ch; font-size:1.1rem; color:var(--muted); }
 
-    .btn{ 
-      display:inline-flex; align-items:center; gap:.7rem; margin-top:1.5rem; padding:1.1rem 1.5rem; 
-      border-radius:999px; font-weight:900; text-decoration:none; transition:.2s ease; 
+    .btn{
+      display:inline-flex; align-items:center; gap:.7rem; margin-top:1.5rem; padding:1.1rem 1.5rem;
+      border-radius:999px; font-weight:900; text-decoration:none; transition:.2s ease;
     }
     .btn--wa{ background: var(--wa); color:#fff; box-shadow:0 15px 35px rgba(31,184,90,.25); }
     .btn--wa:hover{ transform:translateY(-2px); box-shadow:0 20px 45px rgba(31,184,90,.3); }
@@ -57,11 +70,23 @@
     .bullets{ margin-top:1.2rem; list-style:none; display:grid; gap:.5rem; color:rgba(255,255,255,.8); font-size:1rem; }
     .check{ color:var(--gold); font-weight:900; margin-right:.4rem; }
 
-    .hero__media{ margin-top: 2rem; border-radius: 20px; overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+    .hero__media{
+      margin-top: 2rem;
+      border-radius: 20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+      background: rgba(255,255,255,.03);
+    }
+    /* reserva espaço e ajuda CLS */
+    .hero__media img{ width:100%; height:auto; aspect-ratio: 4 / 3; object-fit: cover; }
 
     @media (min-width: 992px){
       .hero{ min-height:100vh; display: flex; align-items: center; }
-      .hero__desktop-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+      .hero__desktop-bg{
+        display:block;
+        position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
+      }
       .hero::after{
         content:""; position:absolute; inset:0; z-index:1;
         background: linear-gradient(90deg, rgba(15,43,70,0.98) 0%, rgba(15,43,70,0.7) 60%, rgba(15,43,70,0.1) 100%);
@@ -80,14 +105,14 @@
     .flow{ background: var(--dark); color: #fff; position: relative; }
     .flow .section-sub{ color: rgba(255,255,255,.8); }
     .flow__grid{ display:grid; gap:25px; }
-    .flow__card{ 
-      padding:40px; border-radius:25px; background: rgba(255,255,255,.04); 
+    .flow__card{
+      padding:40px; border-radius:25px; background: rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.1); transition: .3s ease;
     }
     .flow__card:hover{ transform: translateY(-8px); border-color: var(--gold); }
     .flow__num{ width:50px; height:50px; border-radius:50%; border:2px solid var(--gold); color:var(--gold); display:flex; align-items:center; justify-content:center; font-weight:900; margin-bottom:20px; }
     .flow__card h3{ margin-bottom:12px; font-size:1.3rem; }
-    
+
     @media (min-width: 992px){ .flow__grid{ grid-template-columns: repeat(3, 1fr); } }
 
     /* --- STRUCTURE --- */
@@ -95,10 +120,12 @@
     .structure__grid{ display:grid; gap:50px; align-items:center; }
     .structure__media img{ border-radius:25px; box-shadow: 0 25px 60px rgba(0,0,0,.1); }
     .structure__list{ list-style:none; margin: 25px 0; display:grid; gap:10px; font-weight:700; }
-    
+
     @media (min-width: 992px){ .structure__grid{ grid-template-columns: 1.1fr 0.9fr; } }
 
     /* --- GALLERY --- */
+    /* ✅ CRÍTICO: essa seção estava caindo no fundo escuro com texto escuro */
+    .piramidal-gallery{ background:#fff; }
     .piramidal-card{ border-radius: 20px; overflow: hidden; background: #fff; border: 1px solid #eee; box-shadow: 0 15px 40px rgba(0,0,0,.05); transition: .3s ease; }
     .piramidal-card:hover{ transform: translateY(-5px); border-color: var(--gold); }
     .piramidal-card__media img{ aspect-ratio: 4/3; object-fit: cover; }
@@ -106,15 +133,6 @@
     .piramidal-card__h{ color: var(--brand); font-weight: 900; margin-bottom: 8px; }
 
     @media (min-width: 992px){ .piramidal-gallery__grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:25px; } }
-
-    /* --- TESTIMONIALS --- */
-    .testimonials{ background: var(--dark2); color: #fff; }
-    .tcard{ background:#fff; color:#111; padding:30px; border-radius:20px; }
-    .tstars{ color: var(--gold); margin-bottom:15px; }
-    .tquote{ font-style: italic; margin-bottom:15px; }
-    .tauthor{ font-weight: 900; color: var(--brand); }
-
-    @media (min-width: 992px){ .testimonials__grid{ display:grid; grid-template-columns: 1fr 1fr; gap:30px; } }
 
     /* --- FAQ --- */
     .faq-dark{ background: var(--brand); color:#fff; }
@@ -135,7 +153,6 @@
     /* --- MOBILE ADJUSTS --- */
     @media (max-width: 768px){
       .section-title, .title, .structure__content{ text-align:center; }
-      .structure__list li{ justify-content: center; }
       .btn{ width:100%; justify-content:center; }
     }
   </style>
@@ -151,13 +168,13 @@
 <body>
 
 <header class="hero">
-  <img class="hero__desktop-bg" src="images/hero-desktop.webp" alt="Coifa de parede preta premium Art Coifas" width="1920" height="1080" loading="eager">
+  <img class="hero__desktop-bg" src="/images/hero-desktop.webp" alt="Coifa de parede preta premium Art Coifas" width="1920" height="1080" loading="eager">
   <div class="hero__inner">
     <div class="wrap">
       <div class="eyebrow">DIRETO COM A FÁBRICA • CAMPINAS E REGIÃO</div>
       <h1 class="title">Coifa de <span class="accent">Parede</span> sob medida em Campinas</h1>
       <p class="lead">Projetos exclusivos para cozinha e área gourmet. Fabricação própria e instalação especializada com padrão 10/10.</p>
-      
+
       <a href="#" class="btn btn--wa js-wa" data-code="COIFA DE PAREDE" data-source="hero">
         Agendar visita técnica no WhatsApp
       </a>
@@ -170,10 +187,17 @@
       </ul>
 
       <div class="hero__media">
-        <picture>
-          <source srcset="images/hero-mobeli-640.webp" media="(max-width: 768px)">
-          <img src="images/hero-parede-mobile.webp" alt="Coifa de Parede Campinas" width="800" height="600" loading="eager" fetchpriority="high">
-        </picture>
+        <img
+          src="/images/hero-mobeli-800.webp"
+          srcset="/images/hero-mobeli-640.webp 640w, /images/hero-mobeli-800.webp 800w"
+          sizes="100vw"
+          alt="Coifa de Parede sob medida em Campinas"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
       </div>
     </div>
   </div>
@@ -207,7 +231,7 @@
   <div class="wrap">
     <div class="structure__grid">
       <div class="structure__media">
-        <img src="images/estrutura-008.webp" alt="Equipe Art Coifas Campinas" loading="lazy">
+        <img src="/images/estrutura-008.webp" alt="Equipe Art Coifas Campinas" loading="lazy">
       </div>
       <div class="structure__content">
         <h2 class="section-title" style="text-align:left">Estrutura Própria</h2>
@@ -229,21 +253,21 @@
     <p class="section-sub">Veja fotos reais de instalações realizadas em Campinas.</p>
     <div class="piramidal-gallery__grid">
       <div class="piramidal-card">
-        <img src="images/produto-50.webp" alt="Coifa Inox de Parede" loading="lazy">
+        <img src="/images/produto-50.webp" alt="Coifa Inox de Parede" loading="lazy">
         <div class="piramidal-card__body">
           <h3 class="piramidal-card__h">Linha Inox Escovado</h3>
           <p>O clássico que nunca sai de moda, com durabilidade extrema.</p>
         </div>
       </div>
       <div class="piramidal-card">
-        <img src="images/produto-51.webp" alt="Coifa Preta de Parede" loading="lazy">
+        <img src="/images/produto-51.webp" alt="Coifa Preta de Parede" loading="lazy">
         <div class="piramidal-card__body">
           <h3 class="piramidal-card__h">Linha Black Edition</h3>
           <p>Modernidade e sofisticação para áreas gourmet integradas.</p>
         </div>
       </div>
       <div class="piramidal-card">
-        <img src="images/produto-52.webp" alt="Instalação de Coifa Campinas" loading="lazy">
+        <img src="/images/produto-52.webp" alt="Instalação de Coifa Campinas" loading="lazy">
         <div class="piramidal-card__body">
           <h3 class="piramidal-card__h">Projetos Especiais</h3>
           <p>Soluções para cozinhas com pé direito alto ou recuos complexos.</p>
@@ -325,8 +349,7 @@
         e.preventDefault();
         const code = el.getAttribute('data-code');
         const gclid = getGclid();
-        
-        // Envio para planilha
+
         fetch(AC_CFG.WEBAPP_URL, {
           method: 'POST',
           mode: 'no-cors',
