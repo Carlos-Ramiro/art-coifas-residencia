@@ -1360,163 +1360,198 @@
 </a>
 <!-- ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= -->
 
-
-<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
+<!-- ================= INÍCIO DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + GTAG DELAY) ================= -->
 <script>
-  /* ========= CONFIG FIXA (NÃO ESPALHAR PELO HTML) ========= */
+(function () {
   const AC_CFG = {
     WA_PHONE_E164: "551932131636",
-    WEBAPP_URL: "https://script.google.com/macros/s/AKfycbyce6y_40SYTxaiYBjQ3NMpc9QQlAeS-PqatQCAosXDeu31JvxnhiL-cwSUi_IX3Fdo/exec",
-    CONVERSION_NAME: "whatsapp_lead_artcoifas",
+    CRM_AJAX_URL: "https://app-calhas.topesite.com.br/wp-admin/admin-ajax.php",
+    EMPRESA_PROJETO: "art_coifas",
+    MODELO_VENDA_PADRAO: "a_definir",
     GCLID_KEY: "ac_gclid_v1",
     GCLID_TS_KEY: "ac_gclid_ts_v1",
-    GCLID_TTL_DAYS: 90
+    GCLID_TTL_DAYS: 90,
+    OPEN_DELAY_MS: 180
   };
 
-  /* ========= FAQ ========= */
-  document.querySelectorAll('.faq-dark__question').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      item.classList.toggle('active');
-    });
-  });
-
-  /* ========= GCLID (captura e persistência) ========= */
-  function getUrlParam(name){
-    try{
-      const u = new URL(window.location.href);
-      return u.searchParams.get(name);
-    }catch(e){
+  function getUrlParam(name) {
+    try {
+      return new URL(window.location.href).searchParams.get(name);
+    } catch (e) {
       return null;
     }
   }
-  function nowMs(){ return Date.now(); }
-  function daysToMs(d){ return d * 24 * 60 * 60 * 1000; }
 
-  function storeGclidFromUrl(){
+  function nowMs() {
+    return Date.now();
+  }
+
+  function daysToMs(d) {
+    return d * 24 * 60 * 60 * 1000;
+  }
+
+  function storeGclidFromUrl() {
     const gclid = getUrlParam("gclid");
-    if(gclid && gclid.trim()){
+    if (gclid && gclid.trim()) {
       localStorage.setItem(AC_CFG.GCLID_KEY, gclid.trim());
       localStorage.setItem(AC_CFG.GCLID_TS_KEY, String(nowMs()));
     }
   }
-  function readGclid(){
+
+  function readGclid() {
     const g = (localStorage.getItem(AC_CFG.GCLID_KEY) || "").trim();
     const ts = parseInt(localStorage.getItem(AC_CFG.GCLID_TS_KEY) || "0", 10);
-    if(!g) return "";
-    if(!ts) return g;
-    const ok = (nowMs() - ts) <= daysToMs(AC_CFG.GCLID_TTL_DAYS);
-    return ok ? g : "";
+
+    if (!g) return "";
+    if (!ts) return g;
+
+    return (nowMs() - ts) <= daysToMs(AC_CFG.GCLID_TTL_DAYS) ? g : "";
   }
 
-  /* ========= event_id ========= */
-  function makeEventId(){
+  function makeEventId() {
     const rnd = Math.random().toString(16).slice(2);
     return "evt_" + Date.now() + "_" + rnd;
   }
 
-  /* ========= timestamp yyyy-MM-dd HH:mm:ss (local) ========= */
-  function pad2(n){ return String(n).padStart(2,"0"); }
-  function formatLocalDateTime(){
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function formatLocalDateTime() {
     const d = new Date();
     return [
-      d.getFullYear(), "-", pad2(d.getMonth()+1), "-", pad2(d.getDate()),
+      d.getFullYear(), "-", pad2(d.getMonth() + 1), "-", pad2(d.getDate()),
       " ",
       pad2(d.getHours()), ":", pad2(d.getMinutes()), ":", pad2(d.getSeconds())
     ].join("");
   }
 
-  /* ========= WhatsApp message (CÓDIGO só no WhatsApp) ========= */
-  function buildWaMessage(code){
+  function buildWaMessage(code) {
     return "Olá! Quero um orçamento direto com a fábrica.\n" +
            "CÓDIGO: " + code;
   }
-  function buildWaUrl(code){
+
+  function buildWaUrl(code) {
     const text = encodeURIComponent(buildWaMessage(code));
     return "https://wa.me/" + AC_CFG.WA_PHONE_E164 + "?text=" + text;
   }
 
-  /* ========= Envio para planilha (sem CORS / sem depender de resposta) ========= */
-  function sendToSheets(payload){
-    try{
-      if(navigator.sendBeacon){
-        const blob = new Blob([JSON.stringify(payload)], { type: "text/plain;charset=UTF-8" });
-        const ok = navigator.sendBeacon(AC_CFG.WEBAPP_URL, blob);
-        if(ok) return true;
+  function buildBody(payload) {
+    const body = new URLSearchParams();
+    body.append("action", "crm_whatsapp_click");
+    body.append("empresa_projeto", payload.empresa_projeto || "");
+    body.append("modelo_venda", payload.modelo_venda || "");
+    body.append("gclid", payload.gclid || "");
+    body.append("pagina_origem", payload.pagina_origem || "");
+    body.append("event_id", payload.event_id || "");
+    body.append("utm_source", payload.utm_source || "");
+    body.append("utm_medium", payload.utm_medium || "");
+    body.append("utm_campaign", payload.utm_campaign || "");
+    body.append("utm_term", payload.utm_term || "");
+    body.append("utm_content", payload.utm_content || "");
+    body.append("referrer", payload.referrer || "");
+    body.append("data_clique_google", payload.data_clique_google || "");
+    return body;
+  }
+
+  function sendToCRM(payload) {
+    const body = buildBody(payload);
+    const bodyString = body.toString();
+
+    try {
+      if (navigator.sendBeacon) {
+        const beaconBody = new Blob([bodyString], {
+          type: "application/x-www-form-urlencoded;charset=UTF-8"
+        });
+        const ok = navigator.sendBeacon(AC_CFG.CRM_AJAX_URL, beaconBody);
+        if (ok) return true;
       }
-    }catch(e){}
+    } catch (e) {}
 
-    try{
-      fetch(AC_CFG.WEBAPP_URL, {
+    try {
+      fetch(AC_CFG.CRM_AJAX_URL, {
         method: "POST",
         mode: "no-cors",
+        credentials: "omit",
         keepalive: true,
-        headers: { "Content-Type": "text/plain;charset=UTF-8" },
-        body: JSON.stringify(payload)
-      });
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        body: bodyString
+      }).catch(function(){});
       return true;
-    }catch(e){}
+    } catch (e) {}
 
-    try{
-      const form = new URLSearchParams();
-      Object.keys(payload).forEach(k => form.append(k, String(payload[k] ?? "")));
-      fetch(AC_CFG.WEBAPP_URL, {
-        method: "POST",
-        mode: "no-cors",
-        keepalive: true,
-        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-        body: form.toString()
-      });
-      return true;
-    }catch(e){}
-
-    try{
-      const q = new URLSearchParams();
-      Object.keys(payload).forEach(k => q.append(k, String(payload[k] ?? "")));
+    try {
       const img = new Image();
-      img.src = AC_CFG.WEBAPP_URL + "?" + q.toString();
+      img.src = AC_CFG.CRM_AJAX_URL + "?" + bodyString;
       return true;
-    }catch(e){}
+    } catch (e) {}
 
     return false;
   }
 
-  /* ========= Handler central ========= */
-  function handleWhatsAppClick(ev, source, code){
+  function handleWhatsAppClick(ev, source, code) {
     const waUrl = buildWaUrl(code);
+    const eventId = makeEventId();
+    const url = new URL(window.location.href);
 
     const payload = {
+      empresa_projeto: AC_CFG.EMPRESA_PROJETO,
+      modelo_venda: AC_CFG.MODELO_VENDA_PADRAO,
       gclid: readGclid(),
-      conversion_name: AC_CFG.CONVERSION_NAME,
-      conversion_time: formatLocalDateTime(),
-      conversion_value: "0.00",
-      event_id: makeEventId()
+      pagina_origem: window.location.pathname,
+      event_id: eventId,
+      utm_source: url.searchParams.get("utm_source") || "",
+      utm_medium: url.searchParams.get("utm_medium") || "",
+      utm_campaign: url.searchParams.get("utm_campaign") || "",
+      utm_term: url.searchParams.get("utm_term") || "",
+      utm_content: url.searchParams.get("utm_content") || "",
+      referrer: document.referrer || "",
+      data_clique_google: formatLocalDateTime(),
+      source: source || "cta"
     };
 
-    sendToSheets(payload);
-
-    try{
+    try {
       ev.preventDefault();
+    } catch (e) {}
+
+    sendToCRM(payload);
+
+    setTimeout(function () {
       window.open(waUrl, "_blank", "noopener");
-    }catch(e){}
+    }, AC_CFG.OPEN_DELAY_MS);
   }
 
-  /* ========= Bind em todos os botões/links WhatsApp ========= */
-  function bindWhatsApp(){
-    const els = document.querySelectorAll(".js-wa");
-    els.forEach(el => {
+  function bindWhatsApp() {
+    document.querySelectorAll(".js-wa").forEach(function (el) {
       const code = (el.getAttribute("data-code") || "COIFA DE ILHA").trim();
       const source = (el.getAttribute("data-source") || "cta").trim();
 
       el.setAttribute("href", buildWaUrl(code));
-      el.addEventListener("click", (ev) => handleWhatsAppClick(ev, source, code), { passive: false });
+      el.addEventListener("click", function (ev) {
+        handleWhatsAppClick(ev, source, code);
+      }, { passive: false });
     });
   }
 
-  try{ storeGclidFromUrl(); }catch(e){}
+  function bindFaq() {
+    document.querySelectorAll(".faq-dark__question").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const item = btn.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+  }
+
+  try { storeGclidFromUrl(); } catch (e) {}
+  bindFaq();
   bindWhatsApp();
+})();
 </script>
-<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA) ================= -->
+
+<!-- ================= FIM DO BLOCO: JS CENTRAL (FAQ + WHATSAPP + PLANILHA + GTAG DELAY) ================= -->
 
 </body>
 </html>
+
