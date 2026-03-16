@@ -37,9 +37,10 @@
   {
     "@context":"https://schema.org",
     "@type":"LocalBusiness",
-    "@id":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html#localbusiness",
+    "@id":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas#localbusiness",
     "name":"Art Coifas",
-    "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html",
+    "description":"Empresa especializada em projeto, fabricação própria e instalação de coifas sob medida em Campinas e região.",
+    "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas",
     "telephone":"+55 19 3213-1636",
     "address":{
       "@type":"PostalAddress",
@@ -52,11 +53,11 @@
       "@type":"AdministrativeArea",
       "name":"Campinas e região"
     },
-    "sameAs":[],
+    
     "makesOffer":[
       {
         "@type":"Offer",
-        "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas.html",
+        "url":"https://artcoifascampinas.com.br/coifa-para-cozinha-campinas",
         "itemOffered":{
           "@type":"Service",
           "name":"Coifa para cozinha sob medida (fabricação e instalação)",
@@ -700,11 +701,87 @@
     }
 
     /* ✅ PERF: renderização mais rápida abaixo da dobra */
-    .flow, .structure, .piramidal-gallery, .testimonials, .faq-dark, .cta-footer{
+    .flow, .structure, .piramidal-gallery, .testimonials, .indicado, .faq-dark, .cta-footer{
       content-visibility: auto;
       contain-intrinsic-size: 800px;
     }
     /* ================= FIM DO BLOCO: BOTÃO FLUTUANTE WHATSAPP ================= */
+    /* ================= INÍCIO DO BLOCO: PARA QUEM É (INDICADO) ================= */
+    .indicado{
+      background:#f2f5f9;
+      padding:72px 0 68px;
+    }
+    .indicado__grid{
+      display:grid;
+      gap:24px;
+    }
+    @media (min-width: 768px){
+      .indicado__grid{ grid-template-columns: 1fr 1fr; gap:32px; }
+    }
+    .indicado__col{
+      border-radius:18px;
+      padding:34px 30px 32px;
+      border:1px solid transparent;
+    }
+    .indicado__col--sim{
+      background:#fff;
+      border-color:rgba(31,184,90,.22);
+      box-shadow: 0 16px 48px rgba(31,184,90,.08);
+    }
+    .indicado__col--nao{
+      background:#fff;
+      border-color:rgba(214,54,56,.16);
+      box-shadow: 0 16px 48px rgba(214,54,56,.06);
+    }
+    .indicado__icon{
+      font-size:1.6rem;
+      margin-bottom:10px;
+      line-height:1;
+    }
+    .indicado__col--sim .indicado__icon{ color:#1fb85a; }
+    .indicado__col--nao .indicado__icon{ color:#d63638; }
+    .indicado__title{
+      font-size:1.1rem;
+      font-weight:900;
+      color:var(--brand);
+      margin-bottom:16px;
+      line-height:1.3;
+    }
+    .indicado__list{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:0;
+      margin:0;
+    }
+    .indicado__list li{
+      font-size:.97rem;
+      color:#2a2f36;
+      line-height:1.55;
+      padding-left:18px;
+      position:relative;
+    }
+    .indicado__col--sim .indicado__list li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:#1fb85a;
+      font-weight:900;
+    }
+    .indicado__col--nao .indicado__list li::before{
+      content:"✕";
+      position:absolute;
+      left:0;
+      color:#d63638;
+      font-weight:900;
+    }
+    @media (max-width: 991px){
+      .indicado__title{ text-align:center; }
+      .indicado__icon{ text-align:center; }
+    }
+    /* ================= FIM DO BLOCO: PARA QUEM É (INDICADO) ================= */
+
   </style>
 
   <!-- ✅ Google Ads Tag (gtag) — adiado para depois do LCP -->
@@ -766,15 +843,15 @@
 
       <div class="micro">
         <span class="stars">★★★★★</span>
-        <span>Do projeto à instalação</span>
+        <span>Do projeto à instalação — tudo feito pela fábrica</span>
       </div>
 
       <ul class="bullets" aria-label="Diferenciais">
-        <li><span class="check">✓</span> Projeto sob medida para sua cozinha</li>
-        <li><span class="check">✓</span> Instalação profissional especializada</li>
-        <li><span class="check">✓</span> Acabamento premium (inox e pintura)</li>
-        <li><span class="check">✓</span> Modelos: parede, ilha e embutir (sob projeto)</li>
-        </ul>
+        <li><span class="check">✓</span> Projeto técnico sob medida para sua cozinha</li>
+        <li><span class="check">✓</span> Fabricação própria — não revendemos modelos prontos</li>
+        <li><span class="check">✓</span> Instalação feita pela própria equipe da fábrica</li>
+        <li><span class="check">✓</span> Modelos: parede, ilha e embutir (somente sob projeto)</li>
+      </ul>
 
       <div class="hero__media">
         <img
@@ -864,6 +941,11 @@
           <p class="structure__text">
             Fabricamos modelos sob projeto (parede, ilha e embutir), em inox ou preto.
             O modelo ideal é definido na visita técnica conforme o seu espaço.
+          </p>
+
+          <p class="structure__text" style="font-size:.94rem;color:#555;border-left:3px solid #ffbf1f;padding-left:14px;margin-top:4px;">
+            <strong>Importante:</strong> atendemos projetos completos — do projeto à instalação.
+            Não fazemos instalação de coifas compradas prontas em outras lojas, nem vendemos peças ou modelos avulsos.
           </p>
 
           <ul class="structure__list" aria-label="Pontos de autoridade">
@@ -996,6 +1078,34 @@
     </div>
   </section>
 
+  <section class="indicado" aria-label="Para quem é este atendimento">
+    <div class="wrap">
+      <div class="indicado__grid">
+        <div class="indicado__col indicado__col--sim">
+          <div class="indicado__icon">✔</div>
+          <h3 class="indicado__title">Este atendimento é para você se:</h3>
+          <ul class="indicado__list">
+            <li>Quer uma coifa fabricada sob medida para sua cozinha</li>
+            <li>Está reformando ou construindo e precisa de projeto técnico</li>
+            <li>Tem cozinha planejada e precisa de encaixe preciso na marcenaria</li>
+            <li>Quer fabricação e instalação feitas pela mesma equipe</li>
+            <li>Está em Campinas ou na região metropolitana</li>
+          </ul>
+        </div>
+        <div class="indicado__col indicado__col--nao">
+          <div class="indicado__icon">✕</div>
+          <h3 class="indicado__title">Não atendemos se você precisa de:</h3>
+          <ul class="indicado__list">
+            <li>Instalação de coifa comprada pronta em loja ou marketplace</li>
+            <li>Manutenção, peças ou filtros de coifa de outra marca</li>
+            <li>Troca de motor ou reparo de equipamento de terceiros</li>
+            <li>Soluções fora do escopo de projeto completo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-dark">
     <div class="wrap">
       <h2 class="faq-dark__title">
@@ -1003,13 +1113,44 @@
       </h2>
 
       <div class="faq-dark__list">
+
         <div class="faq-dark__item">
           <button type="button" class="faq-dark__question">
-            Vocês fazem coifa para cozinha sob medida?
+            Vocês fazem coifa sob medida ou vendem modelos prontos?
             <span>+</span>
           </button>
           <div class="faq-dark__answer">
-            Sim. A coifa é projetada conforme o fogão/cooktop, altura, recuos e necessidade de captação, garantindo desempenho real no dia a dia.
+            Fazemos exclusivamente coifas sob medida, com fabricação própria. Não revendemos modelos de loja, marketplace ou outras marcas. Cada coifa é projetada e fabricada aqui, conforme as medidas e o layout da sua cozinha.
+          </div>
+        </div>
+
+        <div class="faq-dark__item">
+          <button type="button" class="faq-dark__question">
+            Vocês instalam coifa que eu já comprei em outra loja?
+            <span>+</span>
+          </button>
+          <div class="faq-dark__answer">
+            Não. Nossa instalação é parte do processo de fabricação e está vinculada às coifas que produzimos. Não realizamos instalação avulsa de equipamentos adquiridos em outros lugares.
+          </div>
+        </div>
+
+        <div class="faq-dark__item">
+          <button type="button" class="faq-dark__question">
+            Qual a diferença entre coifa sob medida e modelo pronto de loja?
+            <span>+</span>
+          </button>
+          <div class="faq-dark__answer">
+            A coifa de loja vem em tamanhos fixos e pode não se encaixar bem ao fogão, à marcenaria ou à altura do ambiente. A coifa sob medida é dimensionada para o seu espaço específico: largura, profundidade, altura e recuos são definidos em visita técnica, garantindo captação eficiente e acabamento integrado ao projeto da cozinha.
+          </div>
+        </div>
+
+        <div class="faq-dark__item">
+          <button type="button" class="faq-dark__question">
+            Preciso de coifa para cozinha planejada — como funciona?
+            <span>+</span>
+          </button>
+          <div class="faq-dark__answer">
+            É o nosso principal tipo de atendimento. Fazemos visita técnica, medimos o espaço e alinhamos as dimensões com o projeto da marcenaria. A coifa é fabricada para encaixar com precisão e o acabamento segue o visual do ambiente.
           </div>
         </div>
 
@@ -1019,17 +1160,17 @@
             <span>+</span>
           </button>
           <div class="faq-dark__answer">
-            Depende do seu layout. Na visita técnica definimos o modelo ideal para captar com eficiência e manter o visual premium da cozinha.
+            Depende do layout da sua cozinha. Coifa de parede é indicada quando o fogão fica junto à parede. Coifa de ilha é para fogões e cooktops centrais. Coifa de embutir é para quem quer um acabamento discreto, integrado ao móvel. Na visita técnica definimos o modelo mais adequado ao seu espaço.
           </div>
         </div>
 
         <div class="faq-dark__item">
           <button type="button" class="faq-dark__question">
-            Inox ou preto: qual acabamento posso escolher?
+            Vocês fazem manutenção, troca de filtro ou peças de coifa?
             <span>+</span>
           </button>
           <div class="faq-dark__answer">
-            Trabalhamos com inox e pintura preta (entre outras opções sob projeto). O acabamento ideal depende do estilo da cozinha e do seu objetivo visual.
+            Não realizamos manutenção, troca de filtros ou fornecimento de peças para coifas de outras marcas. Nossa atuação é focada em projeto, fabricação e instalação de coifas sob medida.
           </div>
         </div>
 
@@ -1039,9 +1180,10 @@
             <span>+</span>
           </button>
           <div class="faq-dark__answer">
-            Sim. Atendemos Campinas e cidades da região metropolitana, incluindo Indaiatuba, Valinhos, Jundiaí, Sumaré, Hortolândia e Monte Mor.
+            Sim. Atendemos Campinas e cidades da região, conforme viabilidade técnica do projeto.
           </div>
         </div>
+
       </div>
     </div>
   </section>
